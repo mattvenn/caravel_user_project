@@ -12,6 +12,8 @@ The OpenLANE config was generated with this command:
 
     ./multi_tool.py --create-openlane-config --project 0 --duplicate 15 --force-delete
 
+![multi macro](pics/multi_macro.png)
+
 ## RGB Mixer
 
 * Author: Matt Venn
