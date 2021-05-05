@@ -1,11 +1,11 @@
 ---
 project:
-  description: "A template SoC for Google sponsored Open MPW shuttles for SKY130."
+  description: "Multi project tools with projects from multiple authors"
   foundry: "SkyWater"
-  git_url: "https://github.com/efabless/caravel_project_example.git"
-  organization: "Efabless"
-  organization_url: "http://efabless.com"
-  owner: "Tim Edwards"
+  git_url: "https://github.com/mattvenn/caravel_user_project/"
+  organization: ""
+  organization_url: ""
+  owner: "Matt Venn"
   process: "SKY130"
   project_name: "Caravel"
   project_id: "00000000"
