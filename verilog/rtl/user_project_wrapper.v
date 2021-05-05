@@ -31,7 +31,7 @@
 
 module user_project_wrapper #(
     parameter BITS = 32
-) (
+)(
 `ifdef USE_POWER_PINS
     inout vdda1,	// User area 1 3.3V supply
     inout vdda2,	// User area 2 3.3V supply
@@ -78,52 +78,665 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
+    // instantiate user project here
+        wrapped_rgb_mixer wrapped_rgb_mixer(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
 
-user_proj_example mprj (
-    `ifdef USE_POWER_PINS
-	.vdda1(vdda1),	// User area 1 3.3V power
-	.vdda2(vdda2),	// User area 2 3.3V power
-	.vssa1(vssa1),	// User area 1 analog ground
-	.vssa2(vssa2),	// User area 2 analog ground
-	.vccd1(vccd1),	// User area 1 1.8V power
-	.vccd2(vccd2),	// User area 2 1.8V power
-	.vssd1(vssd1),	// User area 1 digital ground
-	.vssd2(vssd2),	// User area 2 digital ground
-    `endif
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
 
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
 
-    // MGMT SoC Wishbone Slave
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+0])
+        );
 
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .wbs_sel_i(wbs_sel_i),
-    .wbs_adr_i(wbs_adr_i),
-    .wbs_dat_i(wbs_dat_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
+    wrapped_frequency_counter wrapped_frequency_counter(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
 
-    // Logic Analyzer
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
 
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
 
-    // IO Pads
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+1])
+        );
 
-    .io_in (io_in),
-    .io_out(io_out),
-    .io_oeb(io_oeb),
+    wrapped_rgb_mixer wrapped_rgb_mixer2(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
 
-    // IRQ
-    .irq(user_irq)
-);
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+2])
+        );
+
+    wrapped_frequency_counter wrapped_frequency_counter3(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+3])
+        );
+
+    wrapped_rgb_mixer wrapped_rgb_mixer4(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+4])
+        );
+
+    wrapped_frequency_counter wrapped_frequency_counter5(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+5])
+        );
+
+    wrapped_rgb_mixer wrapped_rgb_mixer6(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+6])
+        );
+
+    wrapped_frequency_counter wrapped_frequency_counter7(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+7])
+        );
+
+    wrapped_rgb_mixer wrapped_rgb_mixer8(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+8])
+        );
+
+    wrapped_frequency_counter wrapped_frequency_counter9(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+9])
+        );
+
+    wrapped_rgb_mixer wrapped_rgb_mixer10(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+10])
+        );
+
+    wrapped_frequency_counter wrapped_frequency_counter11(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+11])
+        );
+
+    wrapped_rgb_mixer wrapped_rgb_mixer12(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+12])
+        );
+
+    wrapped_frequency_counter wrapped_frequency_counter13(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+13])
+        );
+
+    wrapped_rgb_mixer wrapped_rgb_mixer14(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+14])
+        );
+
+    wrapped_frequency_counter wrapped_frequency_counter15(
+        `ifdef USE_POWER_PINS
+        .vdda1(vdda1),  // User area 1 3.3V power
+        .vdda2(vdda2),  // User area 2 3.3V power
+        .vssa1(vssa1),  // User area 1 analog ground
+        .vssa2(vssa2),  // User area 2 analog ground
+        .vccd1(vccd1),  // User area 1 1.8V power
+        .vccd2(vccd2),  // User area 2 1.8V power
+        .vssd1(vssd1),  // User area 1 digital ground
+        .vssd2(vssd2),  // User area 2 digital ground 
+        `endif
+    
+        // interface as user_proj_example.v
+        .wb_clk_i   (wb_clk_i),
+        .wb_rst_i   (wb_rst_i),
+        .wbs_stb_i  (wbs_stb_i),
+        .wbs_cyc_i  (wbs_cyc_i),
+        .wbs_we_i   (wbs_we_i),
+        .wbs_sel_i  (wbs_sel_i),
+        .wbs_dat_i  (wbs_dat_i),
+        .wbs_adr_i  (wbs_adr_i),
+        .wbs_ack_o  (wbs_ack_o),
+        .wbs_dat_o  (wbs_dat_o),
+
+        // only provide first 32 bits to reduce wiring congestion
+        .la_data_in (la_data_in [31:0]),
+        .la_data_out(la_data_out[31:0]),
+        .la_oenb    (la_oenb[31:0]),
+
+        // IOs
+        .io_in      (io_in),
+        .io_out     (io_out),
+        .io_oeb     (io_oeb),
+
+        // IRQs
+        .irq        (user_irq),
+        
+        // active input, only connect tristated outputs if this is high
+        .active     (la_data_in[32+15])
+        );
+
+
+    // end of module instantiation
 
 endmodule	// user_project_wrapper
-
 `default_nettype wire
