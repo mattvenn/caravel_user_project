@@ -10,7 +10,7 @@ This index was made with [multi project tools](https://github.com/mattvenn/multi
 
 The OpenLANE config was generated with this command:
 
-    ./multi_tool.py --create-openlane-config --project 0 --duplicate 15 --force-delete
+    ./multi_tool.py --create-openlane-config --copy-gds --fill 16 --force-delete
 
 ![multi macro](pics/multi_macro.png)
 
