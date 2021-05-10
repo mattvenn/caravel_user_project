@@ -24,5 +24,8 @@
     `include "gl/user_proj_example.v"
 `else
     `include "user_project_wrapper.v"
-    `include "user_proj_example.v"
+    `include "rgb_mixer/src/rgb_mixer.v"
+    `include "rgb_mixer/src/debounce.v"
+    `include "rgb_mixer/src/pwm.v"
+    `include "rgb_mixer/src/encoder.v"
 `endif
