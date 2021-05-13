@@ -107,13 +107,13 @@ rgb_mixer rgb_mixer (
 
     .pwm0_out(io_out[14]),
     .pwm1_out(io_out[15]),
-    .pwm2_out(io_out[16])
+    .pwm2_out(io_out[16]),
 
+    .out_en_b0(io_oeb[14]),
+    .out_en_b1(io_oeb[15]),
+    .out_en_b2(io_oeb[16])
 
 );
-
-    // always enable all outputs
-    assign io_oeb = {`MPRJ_IO_PADS{1'b0}};
 
 endmodule	// user_project_wrapper
 
