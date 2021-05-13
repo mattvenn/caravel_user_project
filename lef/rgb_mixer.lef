@@ -1,0 +1,250 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO rgb_mixer
+  CLASS BLOCK ;
+  FOREIGN rgb_mixer ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 200.000 BY 200.000 ;
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 48.390 0.000 48.670 4.000 ;
+    END
+  END clk
+  PIN enc0_a
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 125.840 200.000 126.440 ;
+    END
+  END enc0_a
+  PIN enc0_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 195.590 196.000 195.870 200.000 ;
+    END
+  END enc0_b
+  PIN enc1_a
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 2.390 0.000 2.670 4.000 ;
+    END
+  END enc1_a
+  PIN enc1_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 196.000 57.840 200.000 58.440 ;
+    END
+  END enc1_b
+  PIN enc2_a
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 103.590 196.000 103.870 200.000 ;
+    END
+  END enc2_a
+  PIN enc2_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 9.290 196.000 9.570 200.000 ;
+    END
+  END enc2_b
+  PIN out_en_b0
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 139.440 4.000 140.040 ;
+    END
+  END out_en_b0
+  PIN out_en_b1
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 57.590 196.000 57.870 200.000 ;
+    END
+  END out_en_b1
+  PIN out_en_b2
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 188.690 0.000 188.970 4.000 ;
+    END
+  END out_en_b2
+  PIN pwm0_out
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 71.440 4.000 72.040 ;
+    END
+  END pwm0_out
+  PIN pwm1_out
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 149.590 196.000 149.870 200.000 ;
+    END
+  END pwm1_out
+  PIN pwm2_out
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 94.390 0.000 94.670 4.000 ;
+    END
+  END pwm2_out
+  PIN reset
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 140.390 0.000 140.670 4.000 ;
+    END
+  END reset
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 174.640 10.640 176.240 187.920 ;
+    END
+  END vccd1
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 21.040 10.640 22.640 187.920 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 97.840 10.640 99.440 187.920 ;
+    END
+  END vssd1
+  PIN vccd2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 177.940 10.880 179.540 187.680 ;
+    END
+  END vccd2
+  PIN vccd2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 24.340 10.880 25.940 187.680 ;
+    END
+  END vccd2
+  PIN vssd2
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 101.140 10.880 102.740 187.680 ;
+    END
+  END vssd2
+  PIN vdda1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 181.240 10.880 182.840 187.680 ;
+    END
+  END vdda1
+  PIN vdda1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 27.640 10.880 29.240 187.680 ;
+    END
+  END vdda1
+  PIN vssa1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 104.440 10.880 106.040 187.680 ;
+    END
+  END vssa1
+  PIN vdda2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 184.540 10.880 186.140 187.680 ;
+    END
+  END vdda2
+  PIN vdda2
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 30.940 10.880 32.540 187.680 ;
+    END
+  END vdda2
+  PIN vssa2
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 107.740 10.880 109.340 187.680 ;
+    END
+  END vssa2
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 194.120 187.765 ;
+      LAYER met1 ;
+        RECT 2.370 10.640 195.890 187.920 ;
+      LAYER met2 ;
+        RECT 2.400 195.720 9.010 196.000 ;
+        RECT 9.850 195.720 57.310 196.000 ;
+        RECT 58.150 195.720 103.310 196.000 ;
+        RECT 104.150 195.720 149.310 196.000 ;
+        RECT 150.150 195.720 195.310 196.000 ;
+        RECT 2.400 4.280 195.860 195.720 ;
+        RECT 2.950 4.000 48.110 4.280 ;
+        RECT 48.950 4.000 94.110 4.280 ;
+        RECT 94.950 4.000 140.110 4.280 ;
+        RECT 140.950 4.000 188.410 4.280 ;
+        RECT 189.250 4.000 195.860 4.280 ;
+      LAYER met3 ;
+        RECT 4.000 140.440 196.000 187.845 ;
+        RECT 4.400 139.040 196.000 140.440 ;
+        RECT 4.000 126.840 196.000 139.040 ;
+        RECT 4.000 125.440 195.600 126.840 ;
+        RECT 4.000 72.440 196.000 125.440 ;
+        RECT 4.400 71.040 196.000 72.440 ;
+        RECT 4.000 58.840 196.000 71.040 ;
+        RECT 4.000 57.440 195.600 58.840 ;
+        RECT 4.000 10.715 196.000 57.440 ;
+      LAYER met4 ;
+        RECT 142.895 74.295 143.225 84.825 ;
+  END
+END rgb_mixer
+END LIBRARY
+
