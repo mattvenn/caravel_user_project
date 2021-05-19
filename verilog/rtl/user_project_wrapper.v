@@ -82,7 +82,7 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
+wb_buttons_leds wb_buttons_leds (
     `ifdef USE_POWER_PINS
 	.vdda1(vdda1),	// User area 1 3.3V power
 	.vdda2(vdda2),	// User area 2 3.3V power
@@ -94,34 +94,24 @@ user_proj_example mprj (
 	.vssd2(vssd2),	// User area 2 digital ground
     `endif
 
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
+    // clock & reset
+    .clk(wb_clk_i),
+    .reset(wb_rst_i),
 
-    // MGMT SoC Wishbone Slave
+    // wishbone
+    .i_wb_cyc   (wbs_cyc_i),
+    .i_wb_stb   (wbs_stb_i),
+    .i_wb_we    (wbs_we_i),
+    .i_wb_addr  (wbs_adr_i),
+    .i_wb_data  (wbs_dat_i),
+    .o_wb_ack   (wbs_ack_o),
+    .o_wb_data  (wbs_dat_o),
 
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .wbs_sel_i(wbs_sel_i),
-    .wbs_adr_i(wbs_adr_i),
-    .wbs_dat_i(wbs_dat_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
+    // buttons & leds
+    .buttons    (io_in[9:7]),
+    .leds       (io_out[17:10]),
+    .led_enb    (io_oeb[17:10])
 
-    // Logic Analyzer
-
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
-
-    // IO Pads
-
-    .io_in (io_in),
-    .io_out(io_out),
-    .io_oeb(io_oeb),
-
-    // IRQ
-    .irq(user_irq)
 );
 
 endmodule	// user_project_wrapper
