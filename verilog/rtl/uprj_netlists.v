@@ -1,4 +1,6 @@
-// SPDX-FileCopyrightText: 2020 Efabless Corporation
+// SPDX-FileCopyrightText: 
+// 2020 Efabless Corporation
+// 2021 Matt Venn
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,8 +23,13 @@
     // Assume default net type to be wire because GL netlists don't have the wire definitions
     `default_nettype wire
     `include "gl/user_project_wrapper.v"
-    `include "gl/user_proj_example.v"
+    
 `else
     `include "user_project_wrapper.v"
-    `include "user_proj_example.v"
+    //  1 ('Frequency counter',)         : ../course/wrapped_frequency_counter
+	`include "wrapped_frequency_counter/wrapper.v"
+	`include "wrapped_frequency_counter/frequency_counter/src/edge_detect.v"
+	`include "wrapped_frequency_counter/frequency_counter/src/frequency_counter.v"
+	`include "wrapped_frequency_counter/frequency_counter/src/seven_segment.v"
+
 `endif
