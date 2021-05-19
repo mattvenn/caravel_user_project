@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed May 19 14:12:06 2021
+[*]
+[dumpfile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_wishbone_demo/verilog/dv/wb_buttons_leds/wb_buttons_leds.vcd"
+[dumpfile_mtime] "Wed May 19 14:09:22 2021"
+[dumpfile_size] 101701167
+[savefile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_wishbone_demo/verilog/dv/wb_buttons_leds/wb_buttons_leds.gtkw"
+[timestart] 0
+[size] 2213 1348
+[pos] 991 159
+*-26.000000 179800000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] wb_buttons_leds_tb.
+[treeopen] wb_buttons_leds_tb.uut.
+[treeopen] wb_buttons_leds_tb.uut.mprj.
+[treeopen] wb_buttons_leds_tb.uut.soc.
+[treeopen] wb_buttons_leds_tb.uut.soc.soc.
+[sst_width] 494
+[signals_width] 546
+[sst_expanded] 1
+[sst_vpaned_height] 903
+@28
+wb_buttons_leds_tb.clock
+wb_buttons_leds_tb.buttons[2:0]
+@22
+wb_buttons_leds_tb.leds[7:0]
+@200
+-
+@22
+wb_buttons_leds_tb.uut.mprj.wb_buttons_leds.i_wb_addr[31:0]
+@28
+wb_buttons_leds_tb.uut.mprj.wb_buttons_leds.i_wb_cyc
+wb_buttons_leds_tb.uut.mprj.wb_buttons_leds.i_wb_we
+wb_buttons_leds_tb.uut.mprj.wb_buttons_leds.i_wb_stb
+@23
+wb_buttons_leds_tb.uut.mprj.wb_buttons_leds.i_wb_data[31:0]
+@22
+wb_buttons_leds_tb.uut.mprj.wb_buttons_leds.o_wb_data[31:0]
+[pattern_trace] 1
+[pattern_trace] 0
