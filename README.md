@@ -14,3 +14,7 @@ The [firmware](verilog/dv/wb_buttons_leds/wb_buttons_leds.c) listens for all 3 b
 
 The [testbench](verilog/dv/wb_buttons_leds/wb_buttons_leds_tb.v) provides the button presses and finished when the lights are on.
 
+# Setup
+
+If you want to try this, then note it's using the MPW2 tools. Follow the [install instructions here to setup the PDK](docs/source/index.rst) 
+You will also need a RISCV toolchain in order to compile the firmware.
