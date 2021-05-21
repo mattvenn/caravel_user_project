@@ -26,10 +26,12 @@
     
 `else
     `include "user_project_wrapper.v"
-    //  1 ('Frequency counter',)         : ../course/wrapped_frequency_counter
-	`include "wrapped_frequency_counter/wrapper.v"
-	`include "wrapped_frequency_counter/frequency_counter/src/edge_detect.v"
-	`include "wrapped_frequency_counter/frequency_counter/src/frequency_counter.v"
-	`include "wrapped_frequency_counter/frequency_counter/src/seven_segment.v"
+    //  2 ('A5/1 Wishbone',)             : /home/matt/work/asic-workshop/course/participants/group1/jamieiles/a5-1-wb-macro
+	`include "a5-1-wb-macro/src/wrapper.v"
+	`include "a5-1-wb-macro/src/Fifo.v"
+	`include "a5-1-wb-macro/src/A5If.v"
+	`include "a5-1-wb-macro/src/A5Generator.v"
+	`include "a5-1-wb-macro/src/A5LFSR.v"
+	`include "a5-1-wb-macro/src/A5Buffer.v"
 
 `endif
