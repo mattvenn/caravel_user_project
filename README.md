@@ -17,7 +17,7 @@ The OpenLANE config was generated with this command:
 ## RGB Mixer
 
 * Author: Matt Venn
-* Github: [https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw2](https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw2)
+* Github: [https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw-two-c](https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw-two-c)
 * Description: reads 3 encoders and generates PWM signals to drive an RGB LED
 
 ![RGB Mixer](pics/schematic.jpg)
@@ -30,6 +30,11 @@ The OpenLANE config was generated with this command:
 
 ![Frequency counter](pics/frequency_counter.png)
 
----
+## A5/1 Wishbone
 
-Refer to [README](docs/source/README.md) for this sample project documentation. 
+* Author: Jamie Iles
+* Github: [https://github.com/jamieiles/a5-1-wb-macro](https://github.com/jamieiles/a5-1-wb-macro)
+* Description: A5/1 cryto block connected via wishbone to PicoRV32
+
+![A5/1 Wishbone](pics/a5macro.png)
+
