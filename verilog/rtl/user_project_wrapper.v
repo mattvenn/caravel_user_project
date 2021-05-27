@@ -120,12 +120,13 @@ module user_project_wrapper #(
         .active     (la_data_in[32+1])
         );
 
-    LOGO LOGO();
+    LOGO LOGO(.VSUBS());
 
     // end of module instantiation
 
 endmodule	// user_project_wrapper
 `default_nettype wire
 
-module LOGO();
+module LOGO(
+    inout VSUBS);
 endmodule
