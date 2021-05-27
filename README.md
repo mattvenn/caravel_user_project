@@ -14,6 +14,7 @@ The OpenLANE config was generated with this command:
 
 ![multi macro](pics/multi_macro.png)
 
+
 ## RGB Mixer
 
 * Author: Matt Venn
@@ -25,7 +26,7 @@ The OpenLANE config was generated with this command:
 ## Frequency counter
 
 * Author: Matt Venn
-* Github: [https://github.com/mattvenn/wrapped_frequency_counter/tree/caravel-mpw2](https://github.com/mattvenn/wrapped_frequency_counter/tree/caravel-mpw2)
+* Github: [https://github.com/mattvenn/wrapped_frequency_counter/tree/caravel-mpw-two-c](https://github.com/mattvenn/wrapped_frequency_counter/tree/caravel-mpw-two-c)
 * Description: Counts pulses on input and displays frequency on 2  seven segment displays
 
 ![Frequency counter](pics/frequency_counter.png)
@@ -37,4 +38,20 @@ The OpenLANE config was generated with this command:
 * Description: A5/1 cryto block connected via wishbone to PicoRV32
 
 ![A5/1 Wishbone](pics/a5macro.png)
+
+## Fibonacci
+
+* Author: Konrad Rzeszutek Wilk
+* Github: [https://github.com/konradwilk/fibonacci](https://github.com/konradwilk/fibonacci)
+* Description: Fibonacci emitter connected to [37:8] and controlled via wishbone
+
+![Fibonacci](pics/wrapper_fibonacci.gds.png)
+
+## Pong
+
+* Author: Erik van Zijst
+* Github: [https://github.com/erikvanzijst/wrapped_project_template.git](https://github.com/erikvanzijst/wrapped_project_template.git)
+* Description: A hardware implementation of Pong
+
+![Pong](pics/pong.jpg)
 
