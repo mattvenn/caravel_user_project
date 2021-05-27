@@ -26,12 +26,18 @@
     
 `else
     `include "user_project_wrapper.v"
-    //  2 ('A5/1 Wishbone',)             : /home/matt/work/asic-workshop/course/participants/group1/jamieiles/a5-1-wb-macro
-	`include "a5-1-wb-macro/src/wrapper.v"
-	`include "a5-1-wb-macro/src/Fifo.v"
-	`include "a5-1-wb-macro/src/A5If.v"
-	`include "a5-1-wb-macro/src/A5Generator.v"
-	`include "a5-1-wb-macro/src/A5LFSR.v"
-	`include "a5-1-wb-macro/src/A5Buffer.v"
+    //  4 ('Pong',)                      : /home/matt/work/asic-workshop/course/participants/group2/ericz/wrapped_pong
+	`include "wrapped_pong/wrapper.v"
+	`include "wrapped_pong/pong/src/debounce.v"
+	`include "wrapped_pong/pong/src/rot_encoder.v"
+	`include "wrapped_pong/pong/src/clkdiv.v"
+	`include "wrapped_pong/pong/src/screen.v"
+	`include "wrapped_pong/pong/src/game.v"
+	`include "wrapped_pong/pong/src/trig.v"
+	`include "wrapped_pong/pong/src/paddle.v"
+	`include "wrapped_pong/pong/src/ball.v"
+	`include "wrapped_pong/pong/src/score.v"
+	`include "wrapped_pong/pong/src/rnd.v"
+	`include "wrapped_pong/pong/src/pong.v"
 
 `endif
