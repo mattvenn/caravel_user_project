@@ -26,18 +26,13 @@
     
 `else
     `include "user_project_wrapper.v"
-    //  4 ('Pong',)                      : /home/matt/work/asic-workshop/course/participants/group2/ericz/wrapped_pong
-	`include "wrapped_pong/wrapper.v"
-	`include "wrapped_pong/pong/src/debounce.v"
-	`include "wrapped_pong/pong/src/rot_encoder.v"
-	`include "wrapped_pong/pong/src/clkdiv.v"
-	`include "wrapped_pong/pong/src/screen.v"
-	`include "wrapped_pong/pong/src/game.v"
-	`include "wrapped_pong/pong/src/trig.v"
-	`include "wrapped_pong/pong/src/paddle.v"
-	`include "wrapped_pong/pong/src/ball.v"
-	`include "wrapped_pong/pong/src/score.v"
-	`include "wrapped_pong/pong/src/rnd.v"
-	`include "wrapped_pong/pong/src/pong.v"
+    //  7 ('memLCDdriver',)              : /home/matt/work/asic-workshop/course/participants/group3/matthewb/wrapped_memLCDdriver
+	`include "wrapped_memLCDdriver/wrapper.v"
+	`include "wrapped_memLCDdriver/memLCDdriver/src/memLCDdriver.v"
+	`include "wrapped_memLCDdriver/memLCDdriver/src/spi_s.v"
+	`include "wrapped_memLCDdriver/memLCDdriver/src/sfifo.v"
+	`include "wrapped_memLCDdriver/memLCDdriver/src/fifomem.v"
+	`include "wrapped_memLCDdriver/memLCDdriver/src/clockdiv.v"
+	`include "wrapped_memLCDdriver/memLCDdriver/src/memlcd_fsm.v"
 
 `endif

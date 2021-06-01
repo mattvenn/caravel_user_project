@@ -14,7 +14,6 @@ The OpenLANE config was generated with this command:
 
 ![multi macro](pics/multi_macro.png)
 
-
 ## RGB Mixer
 
 * Author: Matt Venn
@@ -50,8 +49,16 @@ The OpenLANE config was generated with this command:
 ## Pong
 
 * Author: Erik van Zijst
-* Github: [https://github.com/erikvanzijst/wrapped_project_template.git](https://github.com/erikvanzijst/wrapped_project_template.git)
+* Github: [https://github.com/erikvanzijst/wrapped_pong.git](https://github.com/erikvanzijst/wrapped_pong.git)
 * Description: A hardware implementation of Pong
 
 ![Pong](pics/pong.jpg)
+
+## memLCDdriver
+
+* Author: Matt Beach
+* Github: [https://github.com/matt-beach/wrapped_memLCDdriver.git](https://github.com/matt-beach/wrapped_memLCDdriver.git)
+* Description: SPI to 64-color memory LCD interface
+
+![memLCDdriver](pics/empty.png)
 
