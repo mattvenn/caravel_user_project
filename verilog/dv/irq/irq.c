@@ -22,9 +22,8 @@
 // Test SPI interface running on a timed loop 
 // -------------------------------------------------------------------------
 
-// Ring buffer latest valid position held here
-#define reg_ringbuf_ptr   (*(volatile uint32_t*)0x0000000c)
-#define reg_ringbuf_start (*(volatile uint16_t*)0x00000030)
+// where the interrupt will write to
+#define reg_interrupt   (*(volatile uint32_t*)0x0000000a)
 
 void main()
 {
@@ -37,57 +36,29 @@ void main()
     reg_mprj_io_33 = GPIO_MODE_MGMT_STD_OUTPUT;
     reg_mprj_io_32 = GPIO_MODE_MGMT_STD_OUTPUT;
 
-    // Configure GPIO lower bits to assert the data (16 bits)
-    reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_30 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_29 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_28 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_27 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_26 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_25 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_24 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_23 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_22 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_21 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_20 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_19 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_18 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_17 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_16 = GPIO_MODE_MGMT_STD_OUTPUT;
-
-    // Configure SPI pins (note:  opposite of housekeeping, which is default)
-    reg_mprj_io_4 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_3 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_2 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_1 = GPIO_MODE_MGMT_STD_INPUT_NOPULL;
-
     /* Apply the GPIO configuration */
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    /* Switch input disable = 0 to prevent SoC from driving SPI signals */
-    reg_mprj_io_4 = GPIO_MODE_MGMT_STD_BIDIRECTIONAL;
-    reg_mprj_io_3 = GPIO_MODE_MGMT_STD_BIDIRECTIONAL;
-    reg_mprj_io_2 = GPIO_MODE_MGMT_STD_BIDIRECTIONAL;
-
     reg_mprj_datah = 0x5;	// Signal start of test
     reg_mprj_datal = 0;
 
+    // TODO following line hangs the cpu
+//    reg_interrupt = 1; 
+
     // Note: SPI is enabled in the start.S routine, not needed here.
 
-    // Loop, writing last received value from SPI to the GPIO
+    // setup interrupt generator
+	reg_la0_oenb = reg_la0_iena = 0x0;    // enable output, disable inputs from user area
+    reg_la0_data = 500 + (1 << 16); // set the count down value and trigger the start of the timer
+    reg_la0_data = 0;
 
-    while (1) {
-        data = *((uint16_t *)(reg_ringbuf_ptr - 1)); 
-
-	// Assert the most recent data capture on the GPIO lines
-        reg_mprj_datal = (uint32_t)data << 16;
-
-	// The following code shows the ring buffer address incrementing
-        // reg_mprj_datal = (uint32_t)((int16_t *)(reg_ringbuf_ptr) << 16);
-
-	if (data == 0x0a) break;
+    // wait for interrupt to be raised, the interrupt routine defined in start.S will set it to 0
+    // TODO change this back to memory address once that part is working
+    while (true) {
+    //while (reg_interrupt == 1) {
     }
+
     reg_mprj_datah = 0xa;	// Signal end of test
 }
 

@@ -1,0 +1,80 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed Jun  2 11:09:11 2021
+[*]
+[dumpfile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_irq_demo/verilog/dv/irq/irq.vcd"
+[dumpfile_mtime] "Wed Jun  2 11:08:17 2021"
+[dumpfile_size] 129771421
+[savefile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_irq_demo/verilog/dv/irq/irq.gtkw"
+[timestart] 0
+[size] 2102 1137
+[pos] -1 -1
+*-26.000000 153300000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] irq_tb.
+[treeopen] irq_tb.uut.
+[treeopen] irq_tb.uut.mprj.
+[treeopen] irq_tb.uut.storage.
+[sst_width] 814
+[signals_width] 401
+[sst_expanded] 1
+[sst_vpaned_height] 420
+@28
+irq_tb.RSTB
+@800200
+-flash
+@28
+irq_tb.flash_clk
+irq_tb.flash_csb
+irq_tb.flash_io0
+irq_tb.flash_io1
+@1000200
+-flash
+@800029
+irq_tb.uut.mprj.user_irq[2:0]
+@29
+(0)irq_tb.uut.mprj.user_irq[2:0]
+(1)irq_tb.uut.mprj.user_irq[2:0]
+(2)irq_tb.uut.mprj.user_irq[2:0]
+@1001201
+-group_end
+@22
+irq_tb.status[3:0]
+@28
+irq_tb.uut.mprj.mprj.reset
+@24
+irq_tb.uut.mprj.mprj.counter[15:0]
+@28
+irq_tb.uut.mprj.mprj.interrupt
+@24
+irq_tb.uut.mprj.mprj.state[2:0]
+@c00022
+irq_tb.uut.mprj.mprj.la_data_in[127:0]
+@28
+(111)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(112)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(113)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(114)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(115)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(116)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(117)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(118)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(119)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(120)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(121)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(122)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(123)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(124)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(125)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(126)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+(127)irq_tb.uut.mprj.mprj.la_data_in[127:0]
+@1401200
+-group_end
+@200
+-
+@22
+irq_tb.uut.storage.SRAM_0.\mem[2][31:0]
+irq_tb.uut.storage.SRAM_0.\mem[3][31:0]
+irq_tb.uut.storage.SRAM_0.\mem[10][31:0]
+irq_tb.uut.storage.SRAM_0.\mem[11][31:0]
+[pattern_trace] 1
+[pattern_trace] 0

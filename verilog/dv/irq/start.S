@@ -49,92 +49,12 @@ irq_vec:
         sw x4,   4*4+0x10(zero)
         sw x5,   5*4+0x10(zero)
 
-	// Register use:
-	// t0 :  SPI base address
-	// t1 :  Step value
-	// t2 :  Ring buffer position
-	// t4 :  SPI read value
-	// t5 :  Temporary values
-
-	// Reset timer for a long count.  0x04000000 should correspond to
-	// about 1 second at a 64MHz clock.  There are three steps to the
-	// interrupt, so the timer should expire at 1/3 of the cycle time
-
-	li   t5, 0x00002000
-	picorv32_timer_insn(t5, t5)
-
-	// This method works in three steps.  The step count is kept at address 10
-	lb   t1, 10(zero)
-
-	/* Increment the step count */
-	addi t1, t1, 1
-
-	/* If the step count is 3, set back to zero */
-	addi t5, t1, -3
-	bnez t5, irq_2
-	sb   zero, 10(zero)
-	j    irq_3
-
-irq_2:
-	/* Write back updated step count */
-	sb   t1, 10(zero)
-
-irq_3:
-	/* Get ring buffer position 1 ahead (+2 bytes), and store in t2 */
-	lw   t2, 12(zero)
-	addi t2, t2, 2
-
-	/* Wrap ring buffer at end (back to 0x30) */
-	li   t5, 0x1000		// ends at memory address 0x1000
-        blt  t2, t5, irq_4
-	li   t5, 0x0fd0
-	sub  t2, t2, t5
-irq_4:
-
-	/* Set SPI base address */
-	/* (0x24000000 = config, 0x24000004 = data) */
-	li   t0, 0x24000000
-
-	/* Check if the step count is 3 */
-	addi t5, t1, -3
-	bnez t5, irq_6
-
-	/* Read SPI byte */
-	lb   t4, 4(t0)
-
-	/* Store in next ring buffer position lower 8 bits */
-	sb   t4, 0(t2)
-
-	/* Update ring buffer address */
-	sw   t2, 12(zero)
-
-	/* Clear stream mode (clears CSB) */
-	li	t5, 0x2082
-	sh	t5, 0(t0)
+    # Set step value (0) in memory position 0x000a
+    li   t0, 0x0000000a
+    sb   zero, 0(t0)
 
 	j irq_done
 	
-irq_6:
-	/* Check if the step count is 2 */
-	addi t5, t1, -2
-	bnez t5, irq_7
-
-	/* Step 2 only: */
-	/* Read SPI byte */
-	lb   t4, 4(t0)
-
-	/* Store in next ring buffer position upper 8 bits */
-	sb   t4, 1(t2)
-
-irq_7:
-	// Steps 1 and 2:
-
-	/* Configure SPI for stream mode (sets CSB until cleared) */
-	li	t5, 0x3082
-	sh	t5, 0(t0)
-
-	/* Initiate SPI transfer.  Write zero to reg_spi_data */
-	sw	zero, 4(t0)
 
 irq_done:
         /* restore registers */
@@ -200,41 +120,10 @@ addi x31, zero, 0
 # addi x1, x1, 4
 # blt x1, sp, setmemloop
 
-# Write these instructions to memory location zero and following:
-# lui t4, 0x10000	= 10000eb7
-# addi t4, t4, 4	= 0e91
-# jalr t4, 0		= 000e80e7
-#
-# These three instructions jump to 0x10000004, which is the location
-# of the interrupt handler.  For a fast interrupt handler, the whole
-# handler should be moved into SRAM.
-
-li  t4, 0x10000eb7
-sw  t4, 0(zero)
-li  t4, 0x80e70e91
-sw  t4, 4(zero)
-li  t4, 0x000e
-sw  t4, 8(zero)
-
-# Set step value (0) in memory position 0x000a
-li   t0, 0x0000000a
-sb   zero, 0(t0)
-
-# Set ring buffer address (0x30) in memory position 0x000c
-li   t4, 0x0030
-sw   t4, 12(zero)
-
+#  TODO change to external
 # Enable the timer IRQ only
 li   t4, 0xfff0
 picorv32_maskirq_insn(t4, t4)
-
-# Set the picorv32 32-bit counter/timer to trigger the first interrupt.
-# After that it's the responsibility of the irq() routine to deal with it.
-# (see above)  The first interrupt is not timed and is longer than the
-# 1/16MHz timing.
-
-li t4, 0x2000
-picorv32_timer_insn(t4, t4)
 
 # call main
 call main

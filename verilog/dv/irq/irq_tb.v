@@ -27,7 +27,6 @@
 `include "uprj_netlists.v"
 `include "caravel_netlists.v"
 `include "spiflash.v"
-`include "spi_test.v"
 
 module irq_tb;
 
@@ -56,7 +55,7 @@ module irq_tb;
 		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[11]);
 		
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (50) begin
+		repeat (10) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
@@ -72,16 +71,10 @@ module irq_tb;
 
 	wire [37:0] mprj_io;	// Most of these are no-connects
 	wire [3:0]  status;
-	wire [15:0] checkbits;
 
-	assign checkbits = mprj_io[31:16];
 	assign status = mprj_io[35:32];
 	// assign mprj_io[3] = 1'b1;	// Force CSB high.
 
-	assign mic_sck = mprj_io[4];
-	assign mic_csb = mprj_io[3];
-	assign mic_sdi = mprj_io[2];
-	assign mprj_io[1] = mic_sdo;
 
 	wire flash_csb;
 	wire flash_clk;
@@ -124,10 +117,6 @@ module irq_tb;
 		power2 <= 1'b1;
 	end
                
-	always @(checkbits, status) begin
-		#1 $display("GPIO state = %b (%b)", checkbits, status);
-	end
-
 	wire VDD3V3;
 	wire VDD1V8;
 	wire VSS;
@@ -182,13 +171,6 @@ module irq_tb;
 		.io1(flash_io1),
 		.io2(),			// not used
 		.io3()			// not used
-	);
-
-	spi_test spi_mic (
-		.csb(mic_csb),
-		.clk(mic_sck),
-		.sdi(mic_sdi),
-		.sdo(mic_sdo)
 	);
 
 endmodule
