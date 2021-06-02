@@ -117,7 +117,6 @@ addi x31, zero, 0
 # addi x1, x1, 4
 # blt x1, sp, setmemloop
 
-#  TODO change to external
 # Enable the user interrupts only on irq[14:12]
 # https://github.com/efabless/caravel-lite/blob/13f2590e4b3a74b910dac56a6b757f5a66fd5212/verilog/rtl/mgmt_soc.v#L360
 li   t4, 0x7000 
