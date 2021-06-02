@@ -23,7 +23,8 @@
 // -------------------------------------------------------------------------
 
 // where the interrupt will write to
-#define reg_interrupt   (*(volatile uint32_t*)0x0000000a)
+#define reg_interrupt      (*(volatile uint32_t*)0x0000000a)
+#define reg_interrupt_en   (*(volatile uint32_t*)0x26000008)
 
 void main()
 {
@@ -39,6 +40,8 @@ void main()
     /* Apply the GPIO configuration */
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
+
+    reg_interrupt_en = 7; // enable all user irqs
 
     reg_mprj_datah = 0x5;	// Signal start of test
     reg_mprj_datal = 0;
