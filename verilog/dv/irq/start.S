@@ -21,10 +21,7 @@
 /* Code modified specifically for this testbench */
 /*-----------------------------------------------*/
 /* Memory addresses reserved:			 */
-/* 000a :	Step count (0 to 5)		 */	
-/* 000c-000f :	Last valid data position	 */
-/* 0010-0028 :  Register store during IRQ	 */
-/* 0030-0050 :	Test ring buffer		 */
+/* 000a :	register for flagging the interrupt */	
 /*-----------------------------------------------*/
 
 #undef ENABLE_FASTIRQ
@@ -49,7 +46,7 @@ irq_vec:
         sw x4,   4*4+0x10(zero)
         sw x5,   5*4+0x10(zero)
 
-    # Set step value (0) in memory position 0x000a
+    # Set special reg to 0
     li   t0, 0x0000000a
     sb   zero, 0(t0)
 
@@ -121,8 +118,9 @@ addi x31, zero, 0
 # blt x1, sp, setmemloop
 
 #  TODO change to external
-# Enable the timer IRQ only
-li   t4, 0xfff0
+# Enable the user interrupts only on irq[14:12]
+# https://github.com/efabless/caravel-lite/blob/13f2590e4b3a74b910dac56a6b757f5a66fd5212/verilog/rtl/mgmt_soc.v#L360
+li   t4, 0x7000 
 picorv32_maskirq_insn(t4, t4)
 
 # call main
