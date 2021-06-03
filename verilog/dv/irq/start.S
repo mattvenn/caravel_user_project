@@ -124,13 +124,21 @@ addi x31, zero, 0
 # addi x1, x1, 4
 # blt x1, sp, setmemloop
 
-# copied from Tim's demo. These instructions jump from the 0 address to the actual interrupt handler in the flash
-li  t4, 0x10000eb7  # instruction: lui t4,0x10000
-sw  t4, 0(zero)     # address 0
-li  t4, 0x80e70e91  # instruction: jalr ra
-sw  t4, 4(zero)     # address 4
-li  t4, 0x000e      # instruction: offset?
-sw  t4, 8(zero)     # address 8
+# This part copied from Tim's demo. 
+# Write these instructions to memory location zero and following:
+# lui t4, 0x10000	= 10000eb7
+# addi t4, t4, 4	= 0e91
+# jalr t4, 0		= 000e80e7
+#
+# These three instructions jump to 0x10000004, which is the location
+# of the interrupt handler.  For a fast interrupt handler, the whole
+# handler should be moved into SRAM.
+li  t4, 0x10000eb7
+sw  t4, 0(zero)
+li  t4, 0x80e70e91
+sw  t4, 4(zero)
+li  t4, 0x000e
+sw  t4, 8(zero)
 
 # Enable the user interrupts only on irq[14:12]
 # needs to be 0 to allow the interrupt
