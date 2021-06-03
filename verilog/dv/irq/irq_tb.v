@@ -49,13 +49,15 @@ module irq_tb;
 		$dumpfile("irq.vcd");
 		$dumpvars(0, irq_tb);
 		// Save lower bytes of SRAM where relevant data are kept
+		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[0]);
+		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[1]);
 		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[2]);
 		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[3]);
+		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[4]);
 		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[10]);
-		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[11]);
 		
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (10) begin
+		repeat (20) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
