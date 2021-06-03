@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Wed Jun  2 12:09:21 2021
+[*] Thu Jun  3 12:46:31 2021
 [*]
 [dumpfile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_irq_demo/verilog/dv/irq/irq.vcd"
-[dumpfile_mtime] "Wed Jun  2 12:06:27 2021"
-[dumpfile_size] 129583324
+[dumpfile_mtime] "Thu Jun  3 12:43:05 2021"
+[dumpfile_size] 183649644
 [savefile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_irq_demo/verilog/dv/irq/irq.gtkw"
 [timestart] 0
-[size] 2524 1137
-[pos] -576 13
-*-26.000000 157300000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 2488 1529
+[pos] -1 -1
+*-26.000000 153600000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] irq_tb.
 [treeopen] irq_tb.uut.
 [treeopen] irq_tb.uut.mprj.
@@ -21,38 +21,25 @@
 [treeopen] irq_tb.uut.storage.
 [treeopen] irq_tb.uut.storage.SRAM_0.
 [sst_width] 814
-[signals_width] 594
+[signals_width] 760
 [sst_expanded] 1
-[sst_vpaned_height] 420
+[sst_vpaned_height] 503
 @28
 irq_tb.RSTB
 @800200
--flash
-@28
-irq_tb.flash_clk
-irq_tb.flash_csb
-irq_tb.flash_io0
-irq_tb.flash_io1
-@1000200
--flash
+-irq gen
 @800028
 irq_tb.uut.mprj.user_irq[2:0]
 @28
-(0)irq_tb.uut.mprj.user_irq[2:0]
-(1)irq_tb.uut.mprj.user_irq[2:0]
 (2)irq_tb.uut.mprj.user_irq[2:0]
 @1001200
 -group_end
 @22
 irq_tb.status[3:0]
-@28
-irq_tb.uut.mprj.mprj.reset
 @24
 irq_tb.uut.mprj.mprj.counter[15:0]
 @28
 irq_tb.uut.mprj.mprj.interrupt
-@24
-irq_tb.uut.mprj.mprj.state[2:0]
 @c00022
 irq_tb.uut.mprj.mprj.la_data_in[127:0]
 @28
@@ -75,24 +62,24 @@ irq_tb.uut.mprj.mprj.la_data_in[127:0]
 (127)irq_tb.uut.mprj.mprj.la_data_in[127:0]
 @1401200
 -group_end
+@1000200
+-irq gen
 @200
 -
-@22
-irq_tb.uut.storage.SRAM_0.\mem[2][31:0]
-irq_tb.uut.storage.SRAM_0.\mem[3][31:0]
-irq_tb.uut.storage.SRAM_0.\mem[10][31:0]
-irq_tb.uut.storage.SRAM_0.\mem[11][31:0]
-@800022
-irq_tb.uut.soc.soc.cpu.picorv32_core.irq[31:0]
-@28
-(17)irq_tb.uut.soc.soc.cpu.picorv32_core.irq[31:0]
-(18)irq_tb.uut.soc.soc.cpu.picorv32_core.irq[31:0]
-(19)irq_tb.uut.soc.soc.cpu.picorv32_core.irq[31:0]
-@1001200
--group_end
-@22
-irq_tb.uut.soc.soc.cpu.picorv32_core.irq_mask[31:0]
 @28
 irq_tb.uut.soc.soc.mprj_ctrl.mprj_ctrl.user_irq_ena[2:0]
+@200
+-
+@800200
+-picorv
+@22
+irq_tb.uut.soc.soc.cpu.picorv32_core.reg_pc[31:0]
+irq_tb.uut.soc.soc.cpu.picorv32_core.next_insn_opcode[31:0]
+irq_tb.uut.soc.soc.cpu.picorv32_core.irq_mask[31:0]
+@28
+(19)irq_tb.uut.soc.soc.cpu.picorv32_core.irq[31:0]
+irq_tb.uut.soc.soc.cpu.picorv32_core.irq_active
+@1000200
+-picorv
 [pattern_trace] 1
 [pattern_trace] 0

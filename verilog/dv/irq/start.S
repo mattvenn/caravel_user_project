@@ -70,27 +70,10 @@ irq_vec:
     sw x30, 30*4+0x200(zero)
     sw x31, 31*4+0x200(zero)
 
-    /* call interrupt handler C function */
-
-    lui sp, %hi(irq_stack)
-    addi sp, sp, %lo(irq_stack)
-
-    // arg0 = address of regs
-    lui a0, %hi(irq_regs)
-    addi a0, a0, %lo(irq_regs)
-
-    // arg1 = interrupt type
-    addi a1, tp, 0
-
     // call to C function
     jal ra, irq
 
-    // new irq_regs address returned from C code in a0
-    addi a1, zero, 0x200
-    beq a0, a1, 1f
-    ebreak
-1:
-
+    // retire interrupt
     picorv32_retirq_insn()
 
 .balign 0x200
@@ -98,10 +81,6 @@ irq_regs:
     // registers are saved to this memory region during interrupt handling
     // the program counter is saved as register 0
     .fill 32,4
-
-    // stack for the interrupt handler
-    .fill 128,4
-irq_stack:
 
 
 start:

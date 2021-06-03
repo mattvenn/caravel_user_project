@@ -21,11 +21,9 @@
 volatile bool flag;
 
 // gets jumped to from the interrupt handler defined in start.S
-uint32_t *irq(uint32_t *regs, uint32_t irqs)
+uint32_t *irq()
 {
     flag = 0;
-    return regs;
-
 }
 
 void main()
@@ -58,7 +56,6 @@ void main()
 
     // Signal 2nd interrupt test
     reg_mprj_datah = 0x6;	
-/*
     // reset flag
     flag = 1;
 
@@ -66,10 +63,8 @@ void main()
     reg_la0_data = 0;
 
     while (flag) {
-        ;;
     }
 
-*/
     // Signal end of test
     reg_mprj_datah = 0xa;	
 }
