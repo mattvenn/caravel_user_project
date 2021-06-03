@@ -1,9 +1,9 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Thu Jun  3 12:46:31 2021
+[*] Thu Jun  3 13:08:11 2021
 [*]
 [dumpfile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_irq_demo/verilog/dv/irq/irq.vcd"
-[dumpfile_mtime] "Thu Jun  3 12:43:05 2021"
+[dumpfile_mtime] "Thu Jun  3 12:48:50 2021"
 [dumpfile_size] 183649644
 [savefile] "/home/matt/work/asic-workshop/shuttle2-mpw-two-c/caravel_irq_demo/verilog/dv/irq/irq.gtkw"
 [timestart] 0
@@ -24,8 +24,6 @@
 [signals_width] 760
 [sst_expanded] 1
 [sst_vpaned_height] 503
-@28
-irq_tb.RSTB
 @800200
 -irq gen
 @800028
