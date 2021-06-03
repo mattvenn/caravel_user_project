@@ -17,16 +17,57 @@
 -->
 ------------------------------------------------
 Caravel
-irq testbench
+user area irq testbench
 ------------------------------------------------
 
 This testbench demonstrates how to use the interrupts on the
-picoRV32.  It uses the internal picoRV32 counter to set up an
-interval timer.  At each timer expiration, an interrupt is
-generated, and the assembler code in start.S runs and captures
-data from a routine emulating a Digilent PMOD MIC-3 microphone
-module.  Data are accumulated in a ring buffer reserved in the
-top of memory.  The main loop of the program queries the
-current ring buffer position, reads the data there, and
-displays the value on the GPIO (upper 16 of the lower 32 GPIO
-channels).
+picoRV32. 
+
+Adapted from a test by Tim Edwards, and IRQ handling from Claire Wolf.
+
+IRQ handling is enabled for PicoRV32. The default IRQ address is overwritten and is set to RAM address 0.
+
+PicoRV32 has a 32bit IRQ register, which also has a mask register. Mask bits are low to allow interrupts.
+
+User area interrupts [2:0] map to PicoRV32 IRQ and mask register [14:12]. So mask must be set correctly in start.S:
+
+    li   t4, 0x8FFF 
+    picorv32_maskirq_insn(t4, t4)
+
+The custom instruction is defined in custom_ops.S
+
+Then to enable user area interrupts, use reg_mprj_irq (defined in Caravel's defs.h) in the c program: 
+
+    reg_mprj_irq = 0b001; // enable only user irq 0, which maps to picorv32 irq 12
+
+A handler must be added to start.S, see lines 37 to 84. This takes care of saving register state, jumping to the IRQ handler
+in the c program, and then retiring the interrupt so that PicoRV32 can continue execution where it left off.
+
+The address of this handler must be jumped to from address 0 in RAM.
+This is done by the following lines in start.S. The instructions are already encoded and directly written into RAM.
+
+    li  t4, 0x10000eb7  # instruction: lui t4,0x10000
+    sw  t4, 0(zero)     # address 0
+    li  t4, 0x80e70e91  # instruction: jalr ra
+    sw  t4, 4(zero)     # address 4
+    li  t4, 0x000e      # instruction: offset?
+    sw  t4, 8(zero)     # address 8
+
+Because the instruction to jump to the interrupt handler live in RAM, we must preserve some space at the start by adjusting
+sections.lds. Normally RAM starts at 0, but we reserve up to 0x80:
+
+    MEMORY {
+        FLASH (rx)	: ORIGIN = 0x10000000, LENGTH = 0x400000 	/* 4MB */
+        RAM(xrw)	: ORIGIN = 0x00000080, LENGTH = 0x0380		/* 256 words (1 KB) */ 
+    }
+
+Then in the c program, we can define the interrupt handler:
+
+    uint32_t *irq()
+    {
+        flag = 0;
+    }
+
+The included testbench uses a simple timer to generate an interrupt after a programmable amount of time.
+The logic analyser is used to set the count to 500 and then start it. The c blocks in a wait loop. When the interrupt is triggered
+it sets the flag to 0 and the program continues.
