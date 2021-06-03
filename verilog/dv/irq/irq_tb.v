@@ -57,7 +57,7 @@ module irq_tb;
 		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[10]);
 		
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (20) begin
+		repeat (10) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
@@ -94,13 +94,21 @@ module irq_tb;
 		`else
 			$display("Monitor: Test IRQ (RTL) Started");
 		`endif
+		wait(status == 4'h6);
+		`ifdef GL
+			$display("Monitor: 1st IRQ (GL) received");
+		`else
+			$display("Monitor: 1st IRQ (RTL) received");
+		`endif
+
 		wait(status == 4'ha);
 		`ifdef GL
 			$display("Monitor: Test IRQ (GL) Passed");
 		`else
 			$display("Monitor: Test IRQ (RTL) Passed");
 		`endif
-		$finish;
+        // wait another 1000 cycles to end
+		#1000 $finish;
 	end
 
 	initial begin
