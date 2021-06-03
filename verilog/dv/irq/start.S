@@ -20,9 +20,6 @@
 /*-----------------------------------------------*/
 /* Code modified specifically for this testbench */
 /*-----------------------------------------------*/
-/* Memory addresses reserved:			 */
-/* 000a :	register for flagging the interrupt */	
-/*-----------------------------------------------*/
 
 #undef ENABLE_FASTIRQ
 
@@ -161,10 +158,6 @@ sw  t4, 8(zero)     # address 8
 # https://github.com/efabless/caravel-lite/blob/13f2590e4b3a74b910dac56a6b757f5a66fd5212/verilog/rtl/mgmt_soc.v#L360
 li   t4, 0x8FFF 
 picorv32_maskirq_insn(t4, t4)
-
-# Set step value (0) in memory position 0x000a
-li   t0, 0x0000000a
-sb   zero, 0(t0)
 
 # call main
 call main
