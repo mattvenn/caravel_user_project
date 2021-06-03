@@ -18,7 +18,7 @@
 #include "verilog/dv/caravel/defs.h"
 #include "verilog/dv/caravel/stub.c"
 
-volatile bool flag = 1;
+volatile bool flag;
 
 // gets jumped to from the interrupt handler defined in start.S
 uint32_t *irq(uint32_t *regs, uint32_t irqs)
@@ -30,8 +30,7 @@ uint32_t *irq(uint32_t *regs, uint32_t irqs)
 
 void main()
 {
-    uint16_t data;
-    int i;
+    flag = 1;
 
     // Configure GPIO upper bits to assert the test code
     reg_mprj_io_35 = GPIO_MODE_MGMT_STD_OUTPUT;
@@ -55,12 +54,11 @@ void main()
 
     // wait for interrupt to be raised, the interrupt routine defined in start.S will set it to 0
     while (flag) {
-        ;;
     }
 
     // Signal 2nd interrupt test
     reg_mprj_datah = 0x6;	
-
+/*
     // reset flag
     flag = 1;
 
@@ -71,6 +69,7 @@ void main()
         ;;
     }
 
+*/
     // Signal end of test
     reg_mprj_datah = 0xa;	
 }

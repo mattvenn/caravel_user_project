@@ -57,7 +57,7 @@ module irq_tb;
 		$dumpvars(0, irq_tb.uut.storage.SRAM_0.mem[10]);
 		
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (10) begin
+		repeat (15) begin
 			repeat (1000) @(posedge clock);
 			$display("+1000 cycles");
 		end
