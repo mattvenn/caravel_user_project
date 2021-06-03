@@ -26,7 +26,6 @@
 #define reg_interrupt      (*(volatile uint32_t*)0x0000000a)
 
 // this is not documented: this address is to enable user interrupts inside the management soc
-#define reg_interrupt_en   (*(volatile uint32_t*)0x26000008)
 
 void main()
 {
@@ -43,7 +42,7 @@ void main()
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    reg_interrupt_en = 7; // enable all user irqs
+    reg_mprj_irq = 0b111; // enable all user irqs
 
     reg_mprj_datah = 0x5;	// Signal start of test
     reg_mprj_datal = 0;
