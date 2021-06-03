@@ -25,7 +25,14 @@
 // where the interrupt will write to
 #define reg_interrupt      (*(volatile uint32_t*)0x0000000a)
 
-// this is not documented: this address is to enable user interrupts inside the management soc
+//volatile bool flag = 1;
+
+uint32_t *irq(uint32_t *regs, uint32_t irqs)
+{
+    // set the flag
+    // reg_interrupt = 1;
+//    flag = 0;
+}
 
 void main()
 {
