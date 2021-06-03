@@ -18,20 +18,14 @@
 #include "verilog/dv/caravel/defs.h"
 #include "verilog/dv/caravel/stub.c"
 
-// -------------------------------------------------------------------------
-// Test SPI interface running on a timed loop 
-// -------------------------------------------------------------------------
+volatile bool flag = 1;
 
-// where the interrupt will write to
-#define reg_interrupt      (*(volatile uint32_t*)0x0000000a)
-
-//volatile bool flag = 1;
-
+// gets jumped to from the interrupt handler defined in start.S
 uint32_t *irq(uint32_t *regs, uint32_t irqs)
 {
-    // set the flag
-    // reg_interrupt = 1;
-//    flag = 0;
+    flag = 0;
+    return regs;
+
 }
 
 void main()
@@ -49,15 +43,10 @@ void main()
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    reg_mprj_irq = 0b111; // enable all user irqs
+    reg_mprj_irq = 0b001; // enable only user irq 0, which maps to picorv32 irq 12
 
     reg_mprj_datah = 0x5;	// Signal start of test
     reg_mprj_datal = 0;
-
-    // TODO following line hangs the cpu
-//    reg_interrupt = 1; 
-
-    // Note: SPI is enabled in the start.S routine, not needed here.
 
     // setup interrupt generator
 	reg_la0_oenb = reg_la0_iena = 0x0;    // enable output, disable inputs from user area
@@ -65,11 +54,24 @@ void main()
     reg_la0_data = 0;
 
     // wait for interrupt to be raised, the interrupt routine defined in start.S will set it to 0
-    // TODO change this back to memory address once that part is working
-    while (true) {
-    //while (reg_interrupt == 1) {
+    while (flag) {
+        ;;
     }
 
-    reg_mprj_datah = 0xa;	// Signal end of test
+    // Signal 2nd interrupt test
+    reg_mprj_datah = 0x6;	
+
+    // reset flag
+    flag = 1;
+
+    reg_la0_data = 500 + (1 << 16); // set the count down value and trigger the start of the timer
+    reg_la0_data = 0;
+
+    while (flag) {
+        ;;
+    }
+
+    // Signal end of test
+    reg_mprj_datah = 0xa;	
 }
 
