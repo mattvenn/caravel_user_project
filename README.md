@@ -46,19 +46,27 @@ The OpenLANE config was generated with this command:
 
 ![Fibonacci](pics/wrapper_fibonacci.gds.png)
 
-## Pong
+## Quad PWM FET Drivers
 
-* Author: Erik van Zijst
-* Github: [https://github.com/erikvanzijst/wrapped_pong.git](https://github.com/erikvanzijst/wrapped_pong.git)
-* Description: A hardware implementation of Pong
+* Author: Chris DePalm
+* Github: [https://github.com/ChrisDePalm/wrapped_quad_pwm_fet_drivers.git](https://github.com/ChrisDePalm/wrapped_quad_pwm_fet_drivers.git)
+* Description: 4 PWM FET Drivers for Power Applications
 
-![Pong](pics/pong.jpg)
+![Quad PWM FET Drivers](pics/wrapped_quad_pwm_fet_drivers.gds.png)
 
-## memLCDdriver
+## ChaCha20 Accelerator
 
-* Author: Matt Beach
-* Github: [https://github.com/matt-beach/wrapped_memLCDdriver.git](https://github.com/matt-beach/wrapped_memLCDdriver.git)
-* Description: SPI to 64-color memory LCD interface
+* Author: Richard Petri
+* Github: [https://github.com/rpls/wrapped_chacha_wb_accel](https://github.com/rpls/wrapped_chacha_wb_accel)
+* Description: A minimal Wishbone connected ChaCha20 accelerator
 
-![memLCDdriver](pics/empty.png)
+![ChaCha20 Accelerator](pics/core.png)
+
+## Framebufferless Video Core
+
+* Author: Tom Gwozdz
+* Github: [https://github.com/tomgwozdz/fbless-graphics-core](https://github.com/tomgwozdz/fbless-graphics-core)
+* Description: A framebufferless VGA video generator, under CPU control
+
+![Framebufferless Video Core](pics/fbless_graphics_core.gds.png)
 

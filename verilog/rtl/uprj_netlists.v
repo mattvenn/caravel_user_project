@@ -26,13 +26,9 @@
     
 `else
     `include "user_project_wrapper.v"
-    //  7 ('memLCDdriver',)              : /home/matt/work/asic-workshop/course/participants/group3/matthewb/wrapped_memLCDdriver
-	`include "wrapped_memLCDdriver/wrapper.v"
-	`include "wrapped_memLCDdriver/memLCDdriver/src/memLCDdriver.v"
-	`include "wrapped_memLCDdriver/memLCDdriver/src/spi_s.v"
-	`include "wrapped_memLCDdriver/memLCDdriver/src/sfifo.v"
-	`include "wrapped_memLCDdriver/memLCDdriver/src/fifomem.v"
-	`include "wrapped_memLCDdriver/memLCDdriver/src/clockdiv.v"
-	`include "wrapped_memLCDdriver/memLCDdriver/src/memlcd_fsm.v"
+    //  5 ('Quad PWM FET Drivers',)      : /home/matt/work/asic-workshop/course/participants/group2/chris/wrapped_quad_pwm_fet_drivers
+	`include "wrapped_quad_pwm_fet_drivers/src/pwm_fet_driver_unit.v"
+	`include "wrapped_quad_pwm_fet_drivers/src/pwm_fet_quad.v"
+	`include "wrapped_quad_pwm_fet_drivers/wrapper.v"
 
 `endif
