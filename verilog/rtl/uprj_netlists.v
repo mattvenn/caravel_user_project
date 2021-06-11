@@ -26,9 +26,8 @@
     
 `else
     `include "user_project_wrapper.v"
-    //  5 ('Quad PWM FET Drivers',)      : /home/matt/work/asic-workshop/course/participants/group2/chris/wrapped_quad_pwm_fet_drivers
-	`include "wrapped_quad_pwm_fet_drivers/src/pwm_fet_driver_unit.v"
-	`include "wrapped_quad_pwm_fet_drivers/src/pwm_fet_quad.v"
-	`include "wrapped_quad_pwm_fet_drivers/wrapper.v"
+    // 12 ('gfxdemo',)                   : /home/matt/work/asic-workshop/course/participants/kbeckmann/wrapped_gfxdemo
+	`include "wrapped_gfxdemo/wrapper.v"
+	`include "wrapped_gfxdemo/gfxdemo/src/gfxdemo.v"
 
 `endif

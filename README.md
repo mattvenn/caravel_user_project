@@ -54,6 +54,14 @@ The OpenLANE config was generated with this command:
 
 ![Quad PWM FET Drivers](pics/wrapped_quad_pwm_fet_drivers.gds.png)
 
+## memLCDdriver
+
+* Author: Matt Beach
+* Github: [https://github.com/matt-beach/wrapped_memLCDdriver.git](https://github.com/matt-beach/wrapped_memLCDdriver.git)
+* Description: SPI to 64-color memory LCD interface
+
+![memLCDdriver](pics/wrapped_memLCDdriver.gds.png)
+
 ## ChaCha20 Accelerator
 
 * Author: Richard Petri
@@ -69,4 +77,20 @@ The OpenLANE config was generated with this command:
 * Description: A framebufferless VGA video generator, under CPU control
 
 ![Framebufferless Video Core](pics/fbless_graphics_core.gds.png)
+
+## Pong
+
+* Author: Erik van Zijst
+* Github: [https://github.com/erikvanzijst/wrapped_pong.git](https://github.com/erikvanzijst/wrapped_pong.git)
+* Description: A hardware implementation of Pong
+
+![Pong](pics/pong.jpg)
+
+## gfxdemo
+
+* Author: Konrad Beckmann
+* Github: [https://github.com/kbeckmann/wrapped_gfxdemo](https://github.com/kbeckmann/wrapped_gfxdemo)
+* Description: gfxdemo
+
+![gfxdemo](pics/gfxdemo.png)
 
