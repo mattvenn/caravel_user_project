@@ -14,6 +14,14 @@ The OpenLANE config was generated with this command:
 
 ![multi macro](pics/multi_macro.png)
 
+## RGB Mixer
+
+* Author: Matt Venn
+* Github: [https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw-two-c](https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw-two-c)
+* Description: reads 3 encoders and generates PWM signals to drive an RGB LED
+
+![RGB Mixer](pics/schematic.jpg)
+
 ## Frequency counter
 
 * Author: Matt Venn
@@ -85,6 +93,14 @@ The OpenLANE config was generated with this command:
 * Description: gfxdemo
 
 ![gfxdemo](pics/gfxdemo.png)
+
+## Wishbone HyperRAM
+
+* Author: Pawel Sitarz
+* Github: [https://github.com/embelon/wrapped_wb_hyperram](https://github.com/embelon/wrapped_wb_hyperram)
+* Description: Simple HyperRAM driver accesible on Wishbone bus
+
+![Wishbone HyperRAM](pics/HyperRAM_WriteMemorySpace.png)
 
 ## Newmot SoC
 

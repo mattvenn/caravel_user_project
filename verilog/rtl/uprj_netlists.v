@@ -26,11 +26,10 @@
     
 `else
     `include "user_project_wrapper.v"
-    //  0 ('RGB Mixer',)                 : ../course/wrapped_rgb_mixer
-	`include "wrapped_rgb_mixer/wrapper.v"
-	`include "wrapped_rgb_mixer/rgb_mixer/src/debounce.v"
-	`include "wrapped_rgb_mixer/rgb_mixer/src/encoder.v"
-	`include "wrapped_rgb_mixer/rgb_mixer/src/pwm.v"
-	`include "wrapped_rgb_mixer/rgb_mixer/src/rgb_mixer.v"
+    // 11 ('Wishbone HyperRAM',)         : /home/matt/work/asic-workshop/course/participants/group2/pawel/wrapped_wb_hyperram
+	`include "wrapped_wb_hyperram/wrapper.v"
+	`include "wrapped_wb_hyperram/wb_hyperram/src/wb_hyperram.v"
+	`include "wrapped_wb_hyperram/wb_hyperram/src/hyperram.v"
+	`include "wrapped_wb_hyperram/wb_hyperram/src/register_rw.v"
 
 `endif
