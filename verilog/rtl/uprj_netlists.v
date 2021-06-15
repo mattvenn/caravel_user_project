@@ -26,8 +26,11 @@
     
 `else
     `include "user_project_wrapper.v"
-    // 12 ('gfxdemo',)                   : /home/matt/work/asic-workshop/course/participants/kbeckmann/wrapped_gfxdemo
-	`include "wrapped_gfxdemo/wrapper.v"
-	`include "wrapped_gfxdemo/gfxdemo/src/gfxdemo.v"
+    //  0 ('RGB Mixer',)                 : ../course/wrapped_rgb_mixer
+	`include "wrapped_rgb_mixer/wrapper.v"
+	`include "wrapped_rgb_mixer/rgb_mixer/src/debounce.v"
+	`include "wrapped_rgb_mixer/rgb_mixer/src/encoder.v"
+	`include "wrapped_rgb_mixer/rgb_mixer/src/pwm.v"
+	`include "wrapped_rgb_mixer/rgb_mixer/src/rgb_mixer.v"
 
 `endif

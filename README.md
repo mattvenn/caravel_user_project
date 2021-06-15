@@ -14,14 +14,6 @@ The OpenLANE config was generated with this command:
 
 ![multi macro](pics/multi_macro.png)
 
-## RGB Mixer
-
-* Author: Matt Venn
-* Github: [https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw-two-c](https://github.com/mattvenn/wrapped_rgb_mixer/tree/caravel-mpw-two-c)
-* Description: reads 3 encoders and generates PWM signals to drive an RGB LED
-
-![RGB Mixer](pics/schematic.jpg)
-
 ## Frequency counter
 
 * Author: Matt Venn
@@ -44,7 +36,7 @@ The OpenLANE config was generated with this command:
 * Github: [https://github.com/konradwilk/fibonacci](https://github.com/konradwilk/fibonacci)
 * Description: Fibonacci emitter connected to [37:8] and controlled via wishbone
 
-![Fibonacci](pics/wrapper_fibonacci.gds.png)
+![Fibonacci](pics/fibonacci.png)
 
 ## Quad PWM FET Drivers
 
@@ -93,4 +85,20 @@ The OpenLANE config was generated with this command:
 * Description: gfxdemo
 
 ![gfxdemo](pics/gfxdemo.png)
+
+## Newmot SoC
+
+* Author: Charles-Henri Mousset
+* Github: [https://github.com/chmousset/caravel_multi_newmot](https://github.com/chmousset/caravel_multi_newmot)
+* Description: Simple SoC dmonstrating a Stepper Motor step/dir generator, and litex wishbone / uart / pwm
+
+![Newmot SoC](pics/newmot.png)
+
+## hoggephase
+
+* Author: David Hulton
+* Github: [https://github.com/h1kari/wrapped_hoggephase_project](https://github.com/h1kari/wrapped_hoggephase_project)
+* Description: Hogge Phase EMFI/BBI Glitch Detector
+
+![hoggephase](pics/hpcore.png)
 
