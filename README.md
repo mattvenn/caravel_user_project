@@ -6,11 +6,13 @@
 
 # Multi Project Index
 
-This index was made with [multi project tools](https://github.com/mattvenn/multi_project_tools)
+This index was made with [multi project tools](https://github.com/mattvenn/multi_project_tools) at commit d1defefbe093b2b029b623f4aaf5cbe9fb362412
 
 The OpenLANE config was generated with this command:
 
     ./multi_tool.py --create-openlane-config --copy-gds  --force-delete
+
+Using this [configuration](projects.yaml)
 
 ![multi macro](pics/multi_macro.png)
 
