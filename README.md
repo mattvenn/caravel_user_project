@@ -62,6 +62,14 @@ The OpenLANE config was generated with this command:
 
 ![memLCDdriver](pics/wrapped_memLCDdriver.gds.png)
 
+## QARMA-64 Accelerator
+
+* Author: Viktor H. Brange
+* Github: [https://github.com/vbrange/verilog_qarma](https://github.com/vbrange/verilog_qarma)
+* Description: Implementation of QARMA 64
+
+![QARMA-64 Accelerator](pics/qarma.png)
+
 ## ChaCha20 Accelerator
 
 * Author: Richard Petri
@@ -85,6 +93,14 @@ The OpenLANE config was generated with this command:
 * Description: A hardware implementation of Pong
 
 ![Pong](pics/pong.jpg)
+
+## Hack soc
+
+* Author: Maximo Balestrini
+* Github: [https://github.com/mbalestrini/wrapped_hack_soc](https://github.com/mbalestrini/wrapped_hack_soc)
+* Description: Hardware implementation of the Hack Computer from the Nand to Tetris courses
+
+![Hack soc](pics/project.jpg)
 
 ## gfxdemo
 
@@ -117,4 +133,12 @@ The OpenLANE config was generated with this command:
 * Description: Hogge Phase EMFI/BBI Glitch Detector
 
 ![hoggephase](pics/hpcore.png)
+
+## bfloat16_fma
+
+* Author: Author
+* Github: [https://github.com/etalian/mensa](https://github.com/etalian/mensa)
+* Description: dual bfloat16 fused multiply-add
+
+![bfloat16_fma](pics/wrapped_bfloat16.gds.png)
 
