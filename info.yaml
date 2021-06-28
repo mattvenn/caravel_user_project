@@ -7,7 +7,7 @@ project:
   organization_url: ""
   owner: "Matt Venn"
   process: "SKY130"
-  project_name: "Caravel"
+  project_name: "Zero to ASIC course group submission"
   project_id: "00000000"
   tags:
     - "Open MPW"
