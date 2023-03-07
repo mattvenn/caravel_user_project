@@ -3,6 +3,17 @@ import sys
 sys.path.append(path.abspath('/home/rady/caravel/swift/caravel-dynamic-sims/cocotb'))
 from tests.common_functions.test_functions import repot_test
 from tests.common_functions.test_functions import test_configure
+from tests.common_functions.test_functions import max_num_error
+from tests.common_functions.test_functions import read_config_file
+from interfaces.common import fill_macros
 from interfaces.UART import UART
+from interfaces.caravel import Caravel_env
+from interfaces.cpu import RiskV
+from interfaces.defsParser import Regs
+from interfaces.caravel import GPIO_MODE
+from interfaces.common import Macros
+from interfaces.common import sky
+from interfaces.caravel import Caravel_env
+from tests.common_functions.Timeout import Timeout
 
-import cocotb
+import cocotb 
