@@ -3,7 +3,6 @@ from cocotb.triggers import RisingEdge
 import cocotb.log
 from cocotb_includes import test_configure
 from cocotb_includes import repot_test
-from cocotb_includes import Macros
 
 
 @cocotb.test()
@@ -14,9 +13,9 @@ async def user_address_space(dut):
     ack_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.wbs_ack_o
     addr_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.addr
     data_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.data
-    start_addr = Macros["USER_SPACE_ADDR"]
+    start_addr = int(caravelEnv.design_macros.USER_SPACE_ADDR)
     print(f"user space adddress = {start_addr}")
-    user_size = Macros["USER_SPACE_SIZE"]
+    user_size = int(caravelEnv.design_macros.USER_SPACE_SIZE)
     addr_arr = (
         start_addr,
         start_addr + 4,

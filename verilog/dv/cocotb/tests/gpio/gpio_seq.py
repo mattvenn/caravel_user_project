@@ -1,7 +1,6 @@
 import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
-from cocotb_includes import Macros
 from tests.common.debug_regs import DebugRegs
 
 
@@ -165,7 +164,7 @@ async def gpio_all_o_seq(dut, caravelEnv, after_config_callback=None):
             f"[Test] gpio out = {caravelEnv.monitor_gpio((active_gpios_num,0))} j = {j}"
         )
         high_gpio_val = 0x3F
-        if Macros["ARM"]:
+        if "CPU_TYPE_ARM" in caravelEnv.design_macros._asdict():
             high_gpio_val = 0x7  # with ARM the last 3 gpios are not configurable
         if caravelEnv.monitor_gpio((active_gpios_num, 32)).integer != high_gpio_val:
             cocotb.log.error(

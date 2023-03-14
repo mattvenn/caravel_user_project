@@ -3,8 +3,6 @@ from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
 from cocotb_includes import repot_test
-
-from cocotb_includes import Macros
 from tests.common.debug_regs import DebugRegs
 
 
@@ -16,7 +14,7 @@ async def la(dut):
     pass_list = (0x1B, 0x2B, 0x3B, 0x4B, 0x5B, 0x6B, 0x7B, 0x8B)
     fail_list = (0x1E, 0x2E, 0x3E, 0x4E, 0x5E, 0x6E, 0x7E, 0x8E)
     phases_fails = 8
-    if Macros["LA_SIZE"] < 128:
+    if int(caravelEnv.design_macros.LA_SIZE) < 128:
         phases_fails = 4
     phases_passes = 0
     reg1 = 0  # buffer

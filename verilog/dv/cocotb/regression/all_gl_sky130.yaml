@@ -1,0 +1,62 @@
+---
+# Regression with all tests run in GL mode 
+
+Tests: 
+    - {name: gpio_all_i, sim: GL}
+    - {name: uart_rx, sim: GL}
+    - {name: hk_regs_rst_spi, sim: GL}
+    - {name: gpio_all_i_user, sim: GL}
+    - {name: gpio_all_i_pu, sim: GL}
+    - {name: gpio_all_i_pu_user, sim: GL}
+    - {name: gpio_all_i_pd, sim: GL}
+    - {name: gpio_all_i_pd_user, sim: GL}
+    - {name: gpio_all_bidir_user, sim: GL}
+    - {name: gpio_all_o, sim: GL}
+    - {name: gpio_all_o_user, sim: GL}
+    - {name: hk_regs_wr_wb_cpu, sim: GL}
+    - {name: IRQ_timer, sim: GL}
+    - {name: bitbang_cpu_all_i, sim: GL}
+    - {name: bitbang_spi_o, sim: GL}
+    - {name: mgmt_gpio_out, sim: GL}
+    - {name: bitbang_spi_i, sim: GL}
+    - {name: IRQ_external, sim: GL}
+    - {name: IRQ_uart, sim: GL}
+    - {name: mgmt_gpio_in, sim: GL}
+    - {name: timer0_oneshot, sim: GL}
+    - {name: uart_loopback, sim: GL}
+    - {name: timer0_periodic, sim: GL}
+    - {name: uart_tx, sim: GL}
+    - {name: debug, sim: GL}
+    - {name: spi_master_rd, sim: GL}
+    - {name: user_pass_thru_rd, sim: GL}
+    - {name: mgmt_gpio_bidir, sim: GL}
+    - {name: la, sim: GL}
+    # - {name: pll, sim: GL}
+    - {name: spi_master_temp, sim: GL}
+    - {name: bitbang_cpu_all_o, sim: GL}
+    - {name: mem_dff_W, sim: GL}
+    - {name: serial_shifting_01, sim: GL}
+    - {name: mem_dff2_W, sim: GL}
+    - {name: serial_shifting_10, sim: GL}
+    - {name: serial_shifting_1100, sim: GL}
+    - {name: serial_shifting_0011, sim: GL}
+    - {name: cpu_stress, sim: GL}
+    - {name: spi_rd_wr_nbyte, sim: GL}
+    - {name: cpu_reset, sim: GL}
+    - {name: user_address_space, sim: GL}
+    - {name: mem_dff2_HW, sim: GL}
+    - {name: mem_dff_HW, sim: GL}
+    - {name: mem_dff2_B, sim: GL}
+    - {name: mem_dff_B, sim: GL}
+    - {name: mem_dff_B, sim: GL}
+    - {name: mgmt_gpio_pu_pd, sim: GL}
+    - {name: mgmt_gpio_disable, sim: GL}
+    - {name: user_pass_thru_connection, sim: GL}
+    - {name: spi_rd_wr_stream, sim: GL}
+    - {name: PoR, sim: GL}
+    - {name: IRQ_spi, sim: GL}
+    - {name: IRQ_external2, sim: GL}
+    - {name: IRQ_uart_rx, sim: GL}
+
+
+

@@ -21,7 +21,7 @@ async def user_pass_thru_rd(dut):
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_rd test")
     file_name = (
-        f"{cocotb.plusargs['MAIN_PATH']}/tests/housekeeping/housekeeping_spi/test_data"
+        f"{cocotb.plusargs['USER_PROJECT_ROOT']}/verilog/dv/cocotb/tests/housekeeping/housekeeping_spi/test_data"
     )
     mem = read_mem(file_name)
     await cocotb.start(

@@ -7,10 +7,8 @@ from cocotb_includes import RiskV
 from cocotb_includes import Regs
 from cocotb_includes import test_configure
 from cocotb_includes import repot_test
-from cocotb_includes import Macros
 from tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
 from tests.housekeeping.housekeeping_spi.spi_access_functions import read_reg_spi
-from cocotb_includes import sky
 import json
 from tests.common.debug_regs import DebugRegs
 reg = Regs()
@@ -26,7 +24,7 @@ async def hk_regs_wr_wb(dut):
     cpu = RiskV(dut)
     cpu.cpu_force_reset()
     hk_file = f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs.json'
-    if not sky:
+    if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
             f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs_gf.json'
         )
@@ -158,10 +156,10 @@ async def hk_regs_wr_wb_cpu(dut):
 @repot_test
 async def hk_regs_wr_spi(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=16720, num_error=INFINITY)
-    hk_file = f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs.json'
-    if not sky:
+    hk_file = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs.json'
+    if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs_gf.json'
+            f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs_gf.json'
         )
     with open(hk_file) as f:
         regs = json.load(f)
@@ -252,9 +250,9 @@ async def hk_regs_wr_spi(dut):
 @repot_test
 async def hk_regs_rst_spi(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=8234, num_error=INFINITY)
-    main_path = cocotb.plusargs["MAIN_PATH"].replace('"', '')
+    main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
     hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'
-    if not sky:
+    if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
             f'{main_path}/wb_models/housekeepingWB/HK_regs_gf.json'
         )
@@ -271,7 +269,7 @@ async def hk_regs_rst_spi(dut):
         0x6D,
         0x1A,
     ]  # skip testing reg_mprj_datal, reg_mprj_datah and usr2_vdd_pwrgood because when reading them it's getting the gpio input value
-    if Macros["ARM"]:
+    if "CPU_TYPE_ARM" in caravelEnv.design_macros._asdict():
         addr_to_skip.append(0x0C)  # trap signal isn't used
     for mem in mems:
         keys = [k for k in regs[mem].keys()]

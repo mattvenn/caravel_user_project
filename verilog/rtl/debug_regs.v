@@ -17,11 +17,7 @@ module debug_regs (
     // write
     always @(posedge wb_clk_i or posedge wb_rst_i) begin
         if (wb_rst_i) begin
-            `ifdef sky
-            debug_reg_1 <=1; // reset is 1 indicate sky pdk are used
-            `else
             debug_reg_1 <=0;
-            `endif // sky
             debug_reg_2 <=0;
             wbs_dat_o   <=0;
             wbs_ack_o   <=0;

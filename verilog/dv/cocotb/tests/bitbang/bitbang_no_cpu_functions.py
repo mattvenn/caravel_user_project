@@ -1,5 +1,4 @@
 from cocotb_includes import Regs
-from cocotb_includes import sky
 
 reg = Regs()
 

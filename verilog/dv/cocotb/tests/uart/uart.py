@@ -4,7 +4,6 @@ import cocotb.log
 from cocotb_includes import test_configure
 from cocotb_includes import repot_test
 
-from cocotb_includes import Macros
 from cocotb_includes import UART
 from tests.common.debug_regs import DebugRegs
 
@@ -56,8 +55,8 @@ async def uart_rx(dut):
 async def uart_check_char_recieved(caravelEnv, debug_regs):
     # check cpu recieved the correct character
     while True:
-        if not Macros["GL"]:
-            if Macros["ARM"]:
+        if 'GL' not in caravelEnv.design_macros._asdict():
+            if 'CPU_TYPE_ARM' in caravelEnv.design_macros._asdict():
                 reg_uart_data = (
                     caravelEnv.caravel_hdl.soc.core.AHB.APB_S3.S3_UART.reg_rx_buf.value.binstr
                 )
@@ -109,8 +108,8 @@ async def connect_5_6(dut, caravelEnv):
 async def uart_check_char_recieved_loopback(caravelEnv, debug_regs):
     # check cpu recieved the correct character
     while True:
-        if not Macros["GL"]:
-            if Macros["ARM"]:
+        if 'GL' not in caravelEnv.design_macros._asdict():
+            if 'CPU_TYPE_ARM' in caravelEnv.design_macros._asdict():
                 reg_uart_data = (
                     caravelEnv.caravel_hdl.soc.core.AHB.APB_S3.S3_UART.reg_rx_buf.value.binstr
                 )

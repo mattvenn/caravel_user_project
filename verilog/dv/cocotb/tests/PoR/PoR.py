@@ -6,7 +6,6 @@ from cocotb_includes import repot_test
 from cocotb_includes import Caravel_env
 from cocotb_includes import max_num_error
 from cocotb_includes import read_config_file
-from cocotb_includes import fill_macros
 from cocotb.binary import BinaryValue
 from cocotb_includes import Timeout
 # from tests.housekeeping.housekeeping_spi.spi_access_functions import *
@@ -21,7 +20,7 @@ async def PoR(dut):
     # configurations
     caravelEnv = Caravel_env(dut)
     debug_regs = DebugRegs(caravelEnv)
-    Timeout(clk=caravelEnv.clk, cycle_num=278945, precision=0.2)
+    Timeout(clk=caravelEnv.clk, cycle_num=11278945, precision=0.2)
     cocotb.scheduler.add(max_num_error(10, caravelEnv.clk))
     debug_regs = DebugRegs(caravelEnv)
     clock = Clock(
@@ -35,7 +34,6 @@ async def PoR(dut):
     await Timer(530, "ns")
     # await caravelEnv.reset() #
     await caravelEnv.disable_bins()
-    fill_macros(caravelEnv.dut.macros)  # get macros value
 
     # start test
     cocotb.log.info("[TEST] Start mgmt_gpio_bidir test")

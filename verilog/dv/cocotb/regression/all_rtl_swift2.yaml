@@ -28,19 +28,18 @@ Tests:
     - {name: uart_loopback, sim: RTL}
     - {name: timer0_periodic, sim: RTL}
     - {name: uart_tx, sim: RTL}
-    - {name: debug, sim: RTL}
     - {name: debug_swd, sim: RTL}
-    - {name: spi_master_rd, sim: RTL}
+    # - {name: spi_master_rd, sim: RTL}
     - {name: user_pass_thru_rd, sim: RTL}
     - {name: clock_redirect, sim: RTL}
     - {name: mgmt_gpio_bidir, sim: RTL}
     - {name: la, sim: RTL}
     # - {name: pll, sim: RTL}
-    - {name: spi_master_temp, sim: RTL}
+    # - {name: spi_master_temp, sim: RTL}
     - {name: bitbang_cpu_all_o, sim: RTL}
-    # - {name: mem_dff_W, sim: RTL}
+    - {name: mem_dff_W, sim: RTL}
     - {name: serial_shifting_01, sim: RTL}
-    # - {name: mem_dff2_W, sim: RTL}
+    - {name: mem_dff2_W, sim: RTL}
     - {name: serial_shifting_10, sim: RTL}
     - {name: serial_shifting_1100, sim: RTL}
     - {name: serial_shifting_0011, sim: RTL}
@@ -53,10 +52,6 @@ Tests:
     - {name: mem_dff2_B, sim: RTL}
     - {name: mem_dff_B, sim: RTL}
     - {name: mem_dff_B, sim: RTL}
-    # - {name: mem_sram_smoke, sim: RTL} # gf180 only
-    # - {name: mem_sram_W, sim: RTL}  # gf180 only
-    # - {name: mem_sram_HW, sim: RTL} # gf180 only
-    # - {name: mem_sram_B, sim: RTL} # gf180 only
     - {name: mgmt_gpio_pu_pd, sim: RTL}
     - {name: mgmt_gpio_disable, sim: RTL}
     - {name: user_pass_thru_connection, sim: RTL}

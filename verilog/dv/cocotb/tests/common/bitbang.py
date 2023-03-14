@@ -170,9 +170,7 @@ async def bb_reset_spi(caravelEnv):
 # 1	& 36
 # 0	& 37
 async def bb_configure_2_gpios_spi(configL, configR, caravelEnv):
-    from interfaces.common import get_gpio_num_bit
-
-    num_bits = get_gpio_num_bit()
+    num_bits = 13
     mask = 0x1 << num_bits - 1
     for i in reversed(range(num_bits)):
         left = (configL & mask) >> i

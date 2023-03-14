@@ -59,5 +59,6 @@ async def bitbang_spi_i_configure(caravelEnv, debug_regs):
 
 
 async def bitbang_spi_o_configure(caravelEnv, debug_regs):
+    cocotb.log.info(f"type {type(GPIO_MODE.GPIO_MODE_MGMT_STD_OUTPUT.value)} val = {GPIO_MODE.GPIO_MODE_MGMT_STD_OUTPUT.value} ")
     await bb_configure_all_gpios(GPIO_MODE.GPIO_MODE_MGMT_STD_OUTPUT.value, caravelEnv)
     debug_regs.write_debug_reg2_backdoor(0xDD)

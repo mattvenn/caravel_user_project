@@ -19,7 +19,7 @@ async def spi_master_rd(dut):
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_rd test")
     debug_regs = DebugRegs(caravelEnv)
-    file_name = f'{cocotb.plusargs["MAIN_PATH"]}/tests/spi_master/test_data'
+    file_name = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/tests/spi_master/test_data'
     mem = read_mem(file_name)
     CSB = dut.bin33_monitor
     SCK = dut.bin32_monitor
