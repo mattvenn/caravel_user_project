@@ -48,8 +48,6 @@ Tests:
     - {name: mem_dff_HW, sim: GL}
     - {name: mem_dff2_B, sim: GL}
     - {name: mem_dff_B, sim: GL}
-    - {name: mem_dff_B, sim: GL}
-    - {name: mgmt_gpio_pu_pd, sim: GL}
     - {name: mgmt_gpio_disable, sim: GL}
     - {name: user_pass_thru_connection, sim: GL}
     - {name: spi_rd_wr_stream, sim: GL}

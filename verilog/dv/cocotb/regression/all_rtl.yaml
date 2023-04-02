@@ -52,7 +52,6 @@ Tests:
     - {name: mem_dff_HW, sim: RTL}
     - {name: mem_dff2_B, sim: RTL}
     - {name: mem_dff_B, sim: RTL}
-    - {name: mem_dff_B, sim: RTL}
     # - {name: mem_sram_smoke, sim: RTL} # gf180 only
     # - {name: mem_sram_W, sim: RTL}  # gf180 only
     # - {name: mem_sram_HW, sim: RTL} # gf180 only

@@ -1,0 +1,63 @@
+---
+# Regression with all tests run in GL_SDF mode 
+
+Tests: 
+    - {name: gpio_all_i, sim: GL_SDF}
+    - {name: hk_disable, sim: GL_SDF}
+    - {name: uart_rx, sim: GL_SDF}
+    - {name: hk_regs_rst_spi, sim: GL_SDF}
+    - {name: gpio_all_i_user, sim: GL_SDF}
+    - {name: gpio_all_i_pu, sim: GL_SDF}
+    - {name: gpio_all_i_pu_user, sim: GL_SDF}
+    - {name: gpio_all_i_pd, sim: GL_SDF}
+    - {name: gpio_all_i_pd_user, sim: GL_SDF}
+    - {name: gpio_all_bidir_user, sim: GL_SDF}
+    - {name: gpio_all_o, sim: GL_SDF}
+    - {name: gpio_all_o_user, sim: GL_SDF}
+    - {name: hk_regs_wr_wb_cpu, sim: GL_SDF}
+    - {name: IRQ_timer, sim: GL_SDF}
+    - {name: bitbang_cpu_all_i, sim: GL_SDF}
+    - {name: bitbang_spi_o, sim: GL_SDF}
+    - {name: mgmt_gpio_out, sim: GL_SDF}
+    - {name: bitbang_spi_i, sim: GL_SDF}
+    - {name: hk_regs_wr_spi, sim: GL_SDF}
+    - {name: IRQ_external, sim: GL_SDF}
+    - {name: IRQ_uart, sim: GL_SDF}
+    - {name: mgmt_gpio_in, sim: GL_SDF}
+    - {name: timer0_oneshot, sim: GL_SDF}
+    - {name: uart_loopback, sim: GL_SDF}
+    - {name: timer0_periodic, sim: GL_SDF}
+    - {name: uart_tx, sim: GL_SDF}
+    - {name: debug, sim: GL_SDF}
+    - {name: spi_master_rd, sim: GL_SDF}
+    - {name: user_pass_thru_rd, sim: GL_SDF}
+    - {name: clock_redirect, sim: GL_SDF}
+    - {name: mgmt_gpio_bidir, sim: GL_SDF}
+    - {name: la, sim: GL_SDF}
+    # - {name: pll, sim: GL_SDF}
+    - {name: spi_master_temp, sim: GL_SDF}
+    - {name: bitbang_cpu_all_o, sim: GL_SDF}
+    - {name: mem_dff_W, sim: GL_SDF}
+    - {name: serial_shifting_01, sim: GL_SDF}
+    - {name: mem_dff2_W, sim: GL_SDF}
+    - {name: serial_shifting_10, sim: GL_SDF}
+    - {name: serial_shifting_1100, sim: GL_SDF}
+    - {name: serial_shifting_0011, sim: GL_SDF}
+    - {name: cpu_stress, sim: GL_SDF}
+    - {name: spi_rd_wr_nbyte, sim: GL_SDF}
+    - {name: cpu_reset, sim: GL_SDF}
+    - {name: user_address_space, sim: GL_SDF}
+    - {name: mem_dff2_HW, sim: GL_SDF}
+    - {name: mem_dff_HW, sim: GL_SDF}
+    - {name: mem_dff2_B, sim: GL_SDF}
+    - {name: mem_dff_B, sim: GL_SDF}
+    - {name: mgmt_gpio_disable, sim: GL_SDF}
+    - {name: user_pass_thru_connection, sim: GL_SDF}
+    - {name: spi_rd_wr_stream, sim: GL_SDF}
+    - {name: PoR, sim: GL_SDF}
+    - {name: IRQ_spi, sim: GL_SDF}
+    - {name: IRQ_external2, sim: GL_SDF}
+    - {name: IRQ_uart_rx, sim: GL_SDF}
+
+
+
