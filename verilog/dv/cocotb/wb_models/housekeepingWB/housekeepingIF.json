@@ -17,11 +17,11 @@
                                  "gpio_in":     {"signal":"mgmt_gpio_in","val":0},
                                  "enable":      {"signal":"uart_enabled","val":0}},
 
-                  "SPI":        {"CSB":        {"signal":"bin3","val":0},
-                                 "SCK":        {"signal":"bin4","val":0},
-                                 "SDI":        {"signal":"bin2","val":0},
-                                 "_clk":        {"signal":"bin4","val":0},
-                                 "_valid_cycle_n":{"signal":"bin3","val":0}
+                  "SPI":        {"CSB":        {"signal":"gpio3","val":0},
+                                 "SCK":        {"signal":"gpio4","val":0},
+                                 "SDI":        {"signal":"gpio2","val":0},
+                                 "_clk":        {"signal":"gpio4","val":0},
+                                 "_valid_cycle_n":{"signal":"gpio3","val":0}
                                 },
 
                   "SPI_master": {"CSB":         {"signal":"spi_csb","val":0},
@@ -74,11 +74,11 @@
 
                   "UART":       {"RX":          {"signal":"ser_rx","val":0}},
 
-                  "SPI":        {"CSB":        {"signal":"bin3","val":0},
-                                 "SCK":        {"signal":"bin4","val":0},
-                                 "SDO":        {"signal":"bin1","val":0},
-                                 "_clk":        {"signal":"bin4","val":0},
-                                 "_valid_cycle_n":{"signal":"bin3","val":0}
+                  "SPI":        {"CSB":        {"signal":"gpio3","val":0},
+                                 "SCK":        {"signal":"gpio4","val":0},
+                                 "SDO":        {"signal":"gpio1","val":0},
+                                 "_clk":        {"signal":"gpio4","val":0},
+                                 "_valid_cycle_n":{"signal":"gpio3","val":0}
                                },
 
                   "SPI_master": {"SDI":         {"signal":"spi_sdi","val":0},
