@@ -2,9 +2,8 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import read_reg_spi
+from cocotb_includes import report_test
+from cocotb_includes import SPI
 from all_tests.common.debug_regs import DebugRegs
 
 
@@ -12,9 +11,10 @@ from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def IRQ_spi(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=380308)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_spi test")
     pass_list = (0x1B, 0x2B)
@@ -31,10 +31,9 @@ async def IRQ_spi(dut):
                 break
             if reg2 == 0xAA:  # assert spi_irq
                 # write one to the IRQ spi
-                await write_reg_spi(caravelEnv, 0xA, 1)
-                await read_reg_spi(
-                    caravelEnv, 0xA
-                )  # reading any housekeeping reg is required to self reset irq_reg
+                await spi_master.write_reg_spi(0xA, 1)
+                # reading any housekeeping reg is required to self reset irq_reg
+                await spi_master.read_reg_spi( 0xA)  
 
         if reg1 != debug_regs.read_debug_reg1():
             reg1 = debug_regs.read_debug_reg1()

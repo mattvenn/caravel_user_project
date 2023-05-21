@@ -2,12 +2,12 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_dff2_W(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=3054293)
     debug_regs = DebugRegs(caravelEnv)
@@ -32,7 +32,7 @@ async def mem_dff2_W(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_dff2_HW(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=3605753)
     debug_regs = DebugRegs(caravelEnv)
@@ -57,7 +57,7 @@ async def mem_dff2_HW(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_dff2_B(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=5924713)
     debug_regs = DebugRegs(caravelEnv)
@@ -82,7 +82,7 @@ async def mem_dff2_B(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_dff_W(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=5871183)
     debug_regs = DebugRegs(caravelEnv)
@@ -105,7 +105,7 @@ async def mem_dff_W(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_dff_HW(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=4912693)
     debug_regs = DebugRegs(caravelEnv)
@@ -128,7 +128,7 @@ async def mem_dff_HW(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_dff_B(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=11804933)
     debug_regs = DebugRegs(caravelEnv)
@@ -151,7 +151,7 @@ async def mem_dff_B(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_sram_W(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=118083081)
     debug_regs = DebugRegs(caravelEnv)
@@ -178,7 +178,7 @@ async def mem_sram_W(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_sram_HW(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1116274181)
     debug_regs = DebugRegs(caravelEnv)
@@ -204,7 +204,7 @@ async def mem_sram_HW(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_sram_B(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1128500231)
     debug_regs = DebugRegs(caravelEnv)
@@ -230,7 +230,7 @@ async def mem_sram_B(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mem_sram_smoke(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=11655541)
     debug_regs = DebugRegs(caravelEnv)

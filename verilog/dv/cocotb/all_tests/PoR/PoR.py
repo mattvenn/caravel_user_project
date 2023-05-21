@@ -2,20 +2,19 @@ import random
 import cocotb
 from cocotb.triggers import ClockCycles, Timer
 import cocotb.log
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from cocotb_includes import Caravel_env
 from cocotb_includes import max_num_error
 from cocotb_includes import read_config_file
 from cocotb.binary import BinaryValue
 from cocotb_includes import Timeout
-# from all_tests.housekeeping.housekeeping_spi.spi_access_functions import *
 from all_tests.mgmt_gpio.mgmt_gpio import blink_counter
 from all_tests.common.debug_regs import DebugRegs
 from cocotb.clock import Clock
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def PoR(dut):
     # configurations
     caravelEnv = Caravel_env(dut)

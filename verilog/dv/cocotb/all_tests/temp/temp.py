@@ -2,11 +2,11 @@ import cocotb
 from cocotb.triggers import RisingEdge, ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def temp(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1137599)
     cocotb.log.info("[TEST] start  temp")

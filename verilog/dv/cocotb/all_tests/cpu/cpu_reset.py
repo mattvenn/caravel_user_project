@@ -2,15 +2,16 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
+from cocotb_includes import report_test
+from cocotb_includes import SPI
 from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def cpu_reset(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=106878)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start cpu_reset test")
     # wait for CPU to write 5 at debug_reg1
@@ -22,7 +23,7 @@ async def cpu_reset(dut):
 
     # put the cpu under reset using spi
     cocotb.log.info("[TEST] asserting cpu reset register using SPI")
-    await write_reg_spi(caravelEnv, 0xB, 1)
+    await spi_master.write_reg_spi(0xB, 1)
 
     await ClockCycles(caravelEnv.clk, 1000)
     if debug_regs.read_debug_reg1() == 0:
@@ -35,7 +36,7 @@ async def cpu_reset(dut):
         )
 
     cocotb.log.info("[TEST] deasserting cpu reset register using SPI")
-    await write_reg_spi(caravelEnv, 0xB, 0)
+    await spi_master.write_reg_spi(0xB, 0)
     watchdog = 50000
     while True:
         if debug_regs.read_debug_reg1() == 5:

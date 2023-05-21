@@ -1,7 +1,7 @@
 import cocotb
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 
@@ -52,7 +52,7 @@ def shift(gpio, shift_type, caravelEnv):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def serial_shifting_10(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=500158)
     debug_regs = DebugRegs(caravelEnv)
@@ -153,7 +153,7 @@ async def serial_shifting_10(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def serial_shifting_01(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=499090)
     debug_regs = DebugRegs(caravelEnv)
@@ -254,7 +254,7 @@ async def serial_shifting_01(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def serial_shifting_0011(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=613444)
     debug_regs = DebugRegs(caravelEnv)
@@ -355,7 +355,7 @@ async def serial_shifting_0011(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def serial_shifting_1100(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=603431)
     debug_regs = DebugRegs(caravelEnv)

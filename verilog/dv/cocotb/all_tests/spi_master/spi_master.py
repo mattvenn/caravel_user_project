@@ -2,13 +2,13 @@ import cocotb
 from cocotb.triggers import FallingEdge, RisingEdge, ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.spi_master.SPI_VIP import read_mem, SPI_VIP
 from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def spi_master_rd(dut):
     """the firmware is configured to always send clk to spi so I can't insert alot of logics reading values
 
@@ -70,7 +70,7 @@ async def spi_master_rd(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def spi_master_temp(dut):
     """the firmware is configured to always send clk to spi so I can't insert alot of logics reading values
 

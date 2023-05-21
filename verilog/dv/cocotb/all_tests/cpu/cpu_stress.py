@@ -2,14 +2,14 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 
 from all_tests.common.debug_regs import DebugRegs
 """stress the cpu with heavy processing"""
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def cpu_stress(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1528965)
     debug_regs = DebugRegs(caravelEnv)

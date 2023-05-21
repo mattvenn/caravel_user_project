@@ -2,7 +2,7 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.gpio.gpio_seq import gpio_all_o_seq
 from all_tests.gpio.gpio_seq import gpio_all_i_seq
 from all_tests.gpio.gpio_seq import gpio_all_i_pu_seq
@@ -11,35 +11,35 @@ from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_o_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=11538624)
     await gpio_all_o_seq(dut, caravelEnv)
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_i_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=11498255)
     await gpio_all_i_seq(dut, caravelEnv)
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_i_pu_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1154138)
     await gpio_all_i_pu_seq(dut, caravelEnv)
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_i_pd_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=67759)
     await gpio_all_i_pd_seq(dut, caravelEnv)
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_bidir_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=111266662)
     active_gpios_num = caravelEnv.active_gpios_num

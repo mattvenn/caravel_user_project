@@ -2,18 +2,19 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.common.debug_regs import DebugRegs
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
+from cocotb_includes import SPI
 
 
 """Testbench of GPIO configuration through bit-bang method using the StriVe housekeeping SPI."""
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def IRQ_external(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=395440)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_external test")
     pass_list = (0x1B, 0x2B)
@@ -30,7 +31,7 @@ async def IRQ_external(dut):
                 break
             if reg2 == 0xAA:  # assert mprj 7
                 caravelEnv.drive_gpio_in((7, 7), 0)
-                await write_reg_spi(caravelEnv, 0x1C, 1)
+                await spi_master.write_reg_spi(0x1C, 1)
                 cocotb.log.info(
                     f"irq 1 = {dut.uut.chip_core.housekeeping.irq_1_inputsrc.value}"
                 )

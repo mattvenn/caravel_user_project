@@ -2,12 +2,12 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_o_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1850952)
     debug_regs = DebugRegs(caravelEnv)
@@ -77,7 +77,7 @@ async def gpio_all_o_user(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_i_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=258608)
     debug_regs = DebugRegs(caravelEnv)
@@ -195,7 +195,7 @@ async def gpio_all_i_user(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_i_pu_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=75919, num_error=2000)
     debug_regs = DebugRegs(caravelEnv)
@@ -313,7 +313,7 @@ async def gpio_all_i_pu_user(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_i_pd_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1158961, num_error=2000)
     debug_regs = DebugRegs(caravelEnv)
@@ -433,7 +433,7 @@ async def gpio_all_i_pd_user(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def gpio_all_bidir_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=2001341)
     debug_regs = DebugRegs(caravelEnv)

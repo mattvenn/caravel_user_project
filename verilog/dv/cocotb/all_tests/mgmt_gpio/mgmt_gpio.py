@@ -3,7 +3,7 @@ import cocotb
 from cocotb.triggers import ClockCycles, Edge
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 
 from all_tests.common.debug_regs import DebugRegs
 
@@ -11,7 +11,7 @@ from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mgmt_gpio_out(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=377618)
     debug_regs = DebugRegs(caravelEnv)
@@ -65,7 +65,7 @@ async def mgmt_gpio_out(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mgmt_gpio_in(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1024924)
     caravelEnv.drive_mgmt_gpio(0)
@@ -116,7 +116,7 @@ async def mgmt_gpio_in(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mgmt_gpio_bidir(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1672194)
     debug_regs = DebugRegs(caravelEnv)
@@ -163,7 +163,7 @@ async def blink_counter(hdl, counter):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mgmt_gpio_pu_pd(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1112487)
     debug_regs = DebugRegs(caravelEnv)
@@ -197,7 +197,7 @@ async def mgmt_gpio_pu_pd(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def mgmt_gpio_disable(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1125554)
     debug_regs = DebugRegs(caravelEnv)

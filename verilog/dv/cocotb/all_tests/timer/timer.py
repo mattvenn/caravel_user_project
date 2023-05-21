@@ -2,7 +2,7 @@ import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 
@@ -10,7 +10,7 @@ from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def timer0_oneshot(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=150735)
     debug_regs = DebugRegs(caravelEnv)
@@ -61,7 +61,7 @@ async def timer0_oneshot(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def timer0_periodic(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=170860)
     debug_regs = DebugRegs(caravelEnv)

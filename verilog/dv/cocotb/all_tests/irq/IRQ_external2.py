@@ -3,8 +3,8 @@ from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import Regs
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
+from cocotb_includes import report_test
+from cocotb_includes import SPI
 from all_tests.common.debug_regs import DebugRegs
 
 reg = Regs()
@@ -12,9 +12,10 @@ reg = Regs()
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def IRQ_external2(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=396499)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_external2 test")
     pass_list = (0x1B, 0x2B)
@@ -31,7 +32,7 @@ async def IRQ_external2(dut):
                 break
             if reg2 == 0xAA:  # assert mprj 12
                 caravelEnv.drive_gpio_in((12, 12), 0)
-                await write_reg_spi(caravelEnv, 0x1C, 2)
+                await spi_master.write_reg_spi(0x1C, 2)
                 cocotb.log.info(
                     f"irq 2 = {dut.uut.chip_core.housekeeping.irq_2_inputsrc.value}"
                 )

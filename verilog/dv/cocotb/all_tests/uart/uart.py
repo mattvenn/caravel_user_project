@@ -2,14 +2,14 @@ import cocotb
 from cocotb.triggers import ClockCycles, Edge
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 
 from cocotb_includes import UART
 from all_tests.common.debug_regs import DebugRegs
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def uart_tx(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=407193)
     debug_regs = DebugRegs(caravelEnv)
@@ -28,7 +28,7 @@ async def uart_tx(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def uart_rx(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=154409)
     debug_regs = DebugRegs(caravelEnv)
@@ -82,7 +82,7 @@ async def uart_check_char_recieved(caravelEnv, debug_regs):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def uart_loopback(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=199023)
     debug_regs = DebugRegs(caravelEnv)
