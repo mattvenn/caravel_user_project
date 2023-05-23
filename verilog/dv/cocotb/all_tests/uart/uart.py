@@ -133,3 +133,20 @@ async def uart_check_char_recieved_loopback(caravelEnv, debug_regs):
             await debug_regs.wait_reg2(0)
 
         await ClockCycles(caravelEnv.clk, 1)
+
+@cocotb.test()
+@report_test
+async def uart_rx_msg(dut):
+    caravelEnv = await test_configure(dut, timeout_cycles=111154409)
+    uart = UART(caravelEnv)
+    debug_regs = DebugRegs(caravelEnv)
+    # IO[0] affects the uart selecting btw system and debug
+    caravelEnv.drive_gpio_in((0, 0), 0)
+    caravelEnv.drive_gpio_in((5, 5), 1)
+    await debug_regs.wait_reg1(0xAA)
+    await ClockCycles(caravelEnv.clk, 30)
+    
+    await uart.uart_send_line("hello world")
+
+    msg = await uart.get_line()
+    cocotb.log.info(f"[TEST] recieved msg '{msg}'")
