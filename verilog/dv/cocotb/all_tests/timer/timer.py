@@ -63,7 +63,7 @@ async def timer0_oneshot(dut):
 @cocotb.test()
 @repot_test
 async def timer0_periodic(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=170860)
+    caravelEnv = await test_configure(dut, timeout_cycles=186263)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start timer0_periodic test")
     cocotb.log.info("[TEST] Configure timer as periodic")

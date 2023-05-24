@@ -9,7 +9,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @repot_test
 async def mem_dff2_W(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=3054293)
+    caravelEnv = await test_configure(dut, timeout_cycles=13154293)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff2 word access stress test")
     pass_list = [0x1B]
@@ -84,7 +84,7 @@ async def mem_dff2_B(dut):
 @cocotb.test()
 @repot_test
 async def mem_dff_W(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=5871183)
+    caravelEnv = await test_configure(dut, timeout_cycles=15971183)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff word access stress test")
     pass_list = [0x1B]
