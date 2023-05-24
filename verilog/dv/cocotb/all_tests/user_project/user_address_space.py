@@ -2,11 +2,11 @@ import cocotb
 from cocotb.triggers import RisingEdge
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def user_address_space(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=37599)
     cocotb.log.info("[TEST] Start user_address_space test")

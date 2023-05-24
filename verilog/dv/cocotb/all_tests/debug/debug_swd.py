@@ -3,7 +3,7 @@ import cocotb
 from cocotb.triggers import FallingEdge, RisingEdge, ClockCycles, Timer
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from collections import namedtuple
 from cocotb.handle import Force
 from cocotb.clock import Clock
@@ -19,7 +19,7 @@ ACK = {int("100", 2): "OK", int("010", 2): "WAIT", int("001", 2): "FAULT"}
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def debug_swd(dut):
     dut._id(f"gpio{35}", False).value = 0
     dut._id(f"gpio{35}_en", False).value = Force(1)

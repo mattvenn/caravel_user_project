@@ -3,7 +3,7 @@ from cocotb.triggers import ClockCycles
 import cocotb.log
 from cocotb_includes import Regs
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 
@@ -22,7 +22,7 @@ reg = Regs()
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def IRQ_uart(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=824126)
     debug_regs = DebugRegs(caravelEnv)

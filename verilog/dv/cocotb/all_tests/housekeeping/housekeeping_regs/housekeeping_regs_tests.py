@@ -6,9 +6,9 @@ import cocotb.log
 from cocotb_includes import RiskV
 from cocotb_includes import Regs
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import read_reg_spi
+from cocotb_includes import report_test
+from cocotb_includes import SPI
+from cocotb_includes import SPI
 import json
 from all_tests.common.debug_regs import DebugRegs
 reg = Regs()
@@ -18,7 +18,7 @@ reg = Regs()
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def hk_regs_wr_wb(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=111678, num_error=INFINITY)
     cpu = RiskV(dut)
@@ -103,7 +103,7 @@ async def hk_regs_wr_wb(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def hk_regs_wr_wb_cpu(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=201816)
     debug_regs = DebugRegs(caravelEnv)
@@ -153,9 +153,10 @@ async def hk_regs_wr_wb_cpu(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def hk_regs_wr_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=16720, num_error=INFINITY)
+    caravelEnv = await test_configure(dut, timeout_cycles=16720, num_error=0)
+    spi_master = SPI(caravelEnv)
     hk_file = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs.json'
     if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
@@ -194,7 +195,7 @@ async def hk_regs_wr_spi(dut):
             cocotb.log.info(
                 f"[TEST] Writing {bin(data_in)} to reg [{regs[mem][key][0][0]}] address {hex(address)} through SPI"
             )
-            await write_reg_spi(caravelEnv, address=address, data=data_in)
+            await spi_master.write_reg_spi(address=address, data=data_in)
             # calculate the expected value for each bit
             is_unknown = False
             data_exp = ""
@@ -230,7 +231,7 @@ async def hk_regs_wr_spi(dut):
                 continue
             await ClockCycles(caravelEnv.clk, 10)
             cocotb.log.info(f"[TEST] expected data calculated = {data_exp}")
-            data_out = await read_reg_spi(caravelEnv, address=address)
+            data_out = await spi_master.read_reg_spi( address=address)
             cocotb.log.info(
                 f"[TEST] Read {bin(data_out)} from [{regs[mem][key][0][0]}] address {hex(address)} through SPI"
             )
@@ -248,9 +249,10 @@ async def hk_regs_wr_spi(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def hk_regs_rst_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=8234, num_error=INFINITY)
+    caravelEnv = await test_configure(dut, timeout_cycles=18234, num_error=INFINITY)
+    spi_master = SPI(caravelEnv)
     main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
     hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'
     if "gf180" in caravelEnv.design_macros._asdict():
@@ -304,7 +306,7 @@ async def hk_regs_rst_spi(dut):
             cocotb.log.info(
                 f"[TEST] expected reset value for [{regs[mem][key][0][0]}] is {data_exp}"
             )
-            data_out = await read_reg_spi(caravelEnv, address=address)
+            data_out = await spi_master.read_reg_spi(address=address)
             cocotb.log.info(
                 f"[TEST] Read {bin(data_out)} from [{regs[mem][key][0][0]}] address {hex(address)} through wishbone"
             )

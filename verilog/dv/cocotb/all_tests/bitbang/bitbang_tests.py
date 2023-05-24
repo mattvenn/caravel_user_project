@@ -4,7 +4,7 @@ import cocotb.log
 from cocotb_includes import RiskV
 from cocotb_includes import Regs
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 
 from cocotb_includes import GPIO_MODE
 
@@ -12,7 +12,7 @@ reg = Regs()
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def bitbang_no_cpu_all_o(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=119373)
     cpu = RiskV(dut)
@@ -215,7 +215,7 @@ async def bitbang_no_cpu_all_o(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def bitbang_no_cpu_all_i(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=117351)
     cpu = RiskV(dut)
@@ -406,7 +406,7 @@ async def bitbang_no_cpu_all_i(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def io_ports(dut):
     cpu = RiskV(dut)
     cpu.cpu_force_reset()

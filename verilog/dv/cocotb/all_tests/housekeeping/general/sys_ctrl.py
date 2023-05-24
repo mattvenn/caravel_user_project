@@ -2,8 +2,8 @@ import cocotb
 from cocotb.triggers import RisingEdge, ClockCycles
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
+from cocotb_includes import report_test
+from cocotb_includes import SPI
 from all_tests.common.debug_regs import DebugRegs
 
 
@@ -13,9 +13,10 @@ core_clock = 0
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def clock_redirect(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=50263)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     error_margin = 0.1
     # calculate core clock
@@ -28,7 +29,7 @@ async def clock_redirect(dut):
     # check clk redirect working
     # user clock
     clock_name = "user clock"
-    await write_reg_spi(caravelEnv, 0x1B, 0x0)  # disable user clock output redirect
+    await spi_master.write_reg_spi(0x1B, 0x0)  # disable user clock output redirect
     await cocotb.start(calculate_clk_period(dut.gpio15_monitor, clock_name))
     await ClockCycles(caravelEnv.clk, 110)
     if user_clock != 0:
@@ -40,7 +41,7 @@ async def clock_redirect(dut):
             f"[TEST] Pass: {clock_name} has not directed when reg clk2_output_dest is disabled"
         )
 
-    await write_reg_spi(caravelEnv, 0x1B, 0x2)  # enable user clock output redirect
+    await spi_master.write_reg_spi(0x1B, 0x2)  # enable user clock output redirect
     await cocotb.start(calculate_clk_period(dut.gpio15_monitor, clock_name))
     await ClockCycles(caravelEnv.clk, 110)
     if abs(user_clock - core_clock) > (error_margin * core_clock):
@@ -52,7 +53,7 @@ async def clock_redirect(dut):
 
     # caravel clock
     clock_name = "caravel clock"
-    await write_reg_spi(caravelEnv, 0x1B, 0x0)  # disable caravel clock output redirect
+    await spi_master.write_reg_spi(0x1B, 0x0)  # disable caravel clock output redirect
     await cocotb.start(calculate_clk_period(dut.gpio14_monitor, clock_name))
     await ClockCycles(caravelEnv.clk, 110)
     if caravel_clock != 0:
@@ -64,7 +65,7 @@ async def clock_redirect(dut):
             f"[TEST] Pass: {clock_name} has not directed when reg clk2_output_dest is disabled"
         )
 
-    await write_reg_spi(caravelEnv, 0x1B, 0x4)  # enable caravel clock output redirect
+    await spi_master.write_reg_spi(0x1B, 0x4)  # enable caravel clock output redirect
     await cocotb.start(calculate_clk_period(dut.gpio15_monitor, clock_name))
     await ClockCycles(caravelEnv.clk, 110)
     if abs(caravel_clock - core_clock) > error_margin * core_clock:
@@ -98,16 +99,17 @@ async def calculate_clk_period(clk, name):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def hk_disable(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=45143)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
 
     # check spi working by writing to PLL enables
     old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {old_pll_enable}")
-    await write_reg_spi(caravelEnv, 0x8, 1 - old_pll_enable)
+    await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
     pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:
@@ -120,7 +122,7 @@ async def hk_disable(dut):
         )
     old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {old_pll_enable}")
-    await write_reg_spi(caravelEnv, 0x8, 1 - old_pll_enable)
+    await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
     pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:
@@ -133,12 +135,12 @@ async def hk_disable(dut):
         )
 
     # disable Housekeeping SPIca
-    await write_reg_spi(caravelEnv, 0x6F, 0x1)
+    await spi_master.write_reg_spi(0x6F, 0x1)
 
     # try to change pll_en
     old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {old_pll_enable}")
-    await write_reg_spi(caravelEnv, 0x8, 1 - old_pll_enable)
+    await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
     pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:
@@ -157,7 +159,7 @@ async def hk_disable(dut):
 
     old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {old_pll_enable}")
-    await write_reg_spi(caravelEnv, 0x8, 1 - old_pll_enable)
+    await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
     pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:

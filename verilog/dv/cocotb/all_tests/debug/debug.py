@@ -3,14 +3,14 @@ import cocotb
 from cocotb.triggers import Timer
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 bit_time_ns = 0
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def debug(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=11111400)
     debug_regs = DebugRegs(caravelEnv)

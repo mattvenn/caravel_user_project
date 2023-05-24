@@ -2,11 +2,9 @@ import cocotb
 from cocotb.triggers import FallingEdge, RisingEdge
 import cocotb.log
 from cocotb_includes import test_configure
-from cocotb_includes import repot_test
+from cocotb_includes import report_test
 from all_tests.spi_master.SPI_VIP import read_mem, SPI_VIP
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import write_reg_spi
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import reg_spi_user_pass_thru
-from all_tests.housekeeping.housekeeping_spi.spi_access_functions import reg_spi_user_pass_thru_read
+from cocotb_includes import SPI
 from random import randrange
 from all_tests.common.debug_regs import DebugRegs
 
@@ -15,9 +13,10 @@ bit_time_ns = 0
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def user_pass_thru_rd(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=77637)
+    caravelEnv = await test_configure(dut, timeout_cycles=177637)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_rd test")
     file_name = (
@@ -35,33 +34,22 @@ async def user_pass_thru_rd(dut):
     )  # fork for SPI
     await debug_regs.wait_reg1(0xAA)
     cocotb.log.info("[TEST] Configuration finished")
-    # The SPI flash may need to be reset
-    # 0xff and 0xAB commands are suppose to have functionality in the future but for now they would do nothing
-    await write_reg_spi(
-        caravelEnv, 0x02, 0xFF
-    )  # 0xc2 is for appling user pass-thru command to housekeeping SPI
-    await write_reg_spi(
-        caravelEnv, 0x02, 0xAB
-    )  # 0xc2 is for appling user pass-thru command to housekeeping SPI
-
     # start reading from memory
-    address = 0x0
-    await reg_spi_user_pass_thru(
-        caravelEnv, command=0x3, address=address
-    )  # read command
-    for i in range(8):
-        val = await reg_spi_user_pass_thru_read(caravelEnv)
-        if val != mem[address]:
+    address = 0x00.to_bytes(3, "big")
+
+    data_received = await spi_master.reg_spi_user_pass_thru(send_data=[0x03, address[0], address[1], address[2]], read_byte_num=8)
+    address = int.from_bytes(address, "big")
+    for data in data_received:
+        if data != mem[address]:
             cocotb.log.error(
-                f"[TEST] reading incorrect value from address {hex(address)} expected = {hex(mem[address])} returened = {val}"
+                f"[TEST] reading incorrect value from address {hex(address)} expected = {hex(mem[address])} returened = {data}"
             )
         else:
             cocotb.log.info(
-                f"[TEST] reading correct value {hex(val)} from address {hex(address)} "
+                f"[TEST] reading correct value {hex(data)} from address {hex(address)} "
             )
         address += 1
-
-    await caravelEnv.disable_csb()
+    await spi_master.disable_csb()
 
     # Wait for processor to restart
     await debug_regs.wait_reg1(0xBB)
@@ -69,15 +57,16 @@ async def user_pass_thru_rd(dut):
 
 
 @cocotb.test()
-@repot_test
+@report_test
 async def user_pass_thru_connection(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=74319)
+    caravelEnv = await test_configure(dut, timeout_cycles=1174319)
+    spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
-    await caravelEnv.enable_csb()
-    await caravelEnv.hk_write_byte(
-        0x02
-    )  # Apply user pass-thru command to housekeeping SPI
+    await spi_master.enable_csb()
+    await spi_master._hk_write_byte(spi_master.SPI_COMMAND.USER_PASS_THRU.value)  
+    await RisingEdge(spi_master.clk)
+    spi_master._kill_spi_clk()
     caravelEnv.drive_gpio_in(4, 0)  # finish the clock cycle
     await FallingEdge(caravelEnv.clk)
     # check sdo and clk are following the spi
@@ -94,9 +83,10 @@ async def user_pass_thru_connection(dut):
             )
 
     # check sdo and clk are not following the spi when enable but command 0xc2 isn't passed
-    await caravelEnv.disable_csb()
-    await caravelEnv.enable_csb()
-    await caravelEnv.hk_write_byte(0x00)
+    await spi_master.disable_csb()
+    await spi_master.enable_csb()
+    await spi_master._hk_write_byte(spi_master.SPI_COMMAND.NO_OP.value)
+    spi_master._kill_spi_clk()
     for i in range(randrange(10, 50)):
         clk = randrange(0, 2)  # drive random value from 0 to 3 to clk and SDO
         sdo = randrange(0, 2)  # drive random value from 0 to 3 to clk and SDO
@@ -112,11 +102,11 @@ async def user_pass_thru_connection(dut):
             )
 
     # check SDI
-    await caravelEnv.disable_csb()
-    await caravelEnv.enable_csb()
-    await caravelEnv.hk_write_byte(
-        0x02
-    )  # Apply user pass-thru command to housekeeping SPI
+    await spi_master.disable_csb()
+    await spi_master.enable_csb()
+    await spi_master._hk_write_byte(spi_master.SPI_COMMAND.USER_PASS_THRU.value)
+    await RisingEdge(spi_master.clk)
+    spi_master._kill_spi_clk()
     caravelEnv.drive_gpio_in(4, 0)  # finish the clock cycle
     await FallingEdge(caravelEnv.clk)
     caravelEnv.drive_gpio_in(4, 1)  # finish the clock cycle
