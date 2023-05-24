@@ -105,12 +105,16 @@ async def hk_disable(dut):
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
-
+    try:
+        hk_hdl = dut.uut.chip_core.housekeeping
+    except AttributeError:
+        hk_hdl = dut.uut.chip_core.housekeeping_alt
     # check spi working by writing to PLL enables
-    old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+    old_pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {old_pll_enable}")
     await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
-    pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+
+    pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:
         cocotb.log.info(
@@ -120,10 +124,10 @@ async def hk_disable(dut):
         cocotb.log.error(
             f"[TEST] Error: SPI isn't working correctly it cant change pll from {old_pll_enable} to {1-old_pll_enable}"
         )
-    old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+    old_pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {old_pll_enable}")
     await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
-    pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+    pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.info(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:
         cocotb.log.info(
@@ -138,10 +142,10 @@ async def hk_disable(dut):
     await spi_master.write_reg_spi(0x6F, 0x1)
 
     # try to change pll_en
-    old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+    old_pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {old_pll_enable}")
     await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
-    pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+    pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:
         cocotb.log.error(
@@ -157,10 +161,10 @@ async def hk_disable(dut):
     debug_regs.write_debug_reg1_backdoor(0xAA)
     await debug_regs.wait_reg1(0xBB)  # enabled the housekeeping
 
-    old_pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+    old_pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {old_pll_enable}")
     await spi_master.write_reg_spi(0x8, 1 - old_pll_enable)
-    pll_enable = dut.uut.chip_core.housekeeping.pll_ena.value.integer
+    pll_enable = hk_hdl.pll_ena.value.integer
     cocotb.log.debug(f"[TEST] pll_enable = {pll_enable}")
     if pll_enable == 1 - old_pll_enable:
         cocotb.log.info(

@@ -30,7 +30,7 @@ async def uart_tx(dut):
 @cocotb.test()
 @report_test
 async def uart_rx(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=161480)
+    caravelEnv = await test_configure(dut, timeout_cycles=163294)
     debug_regs = DebugRegs(caravelEnv)
     uart = UART(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
