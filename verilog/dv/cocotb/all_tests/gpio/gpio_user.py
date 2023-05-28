@@ -42,7 +42,7 @@ async def gpio_all_i_pd_user(dut):
 @report_test
 async def gpio_all_bidir_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=111266662)
-    active_gpios_num = caravelEnv.active_gpios_num
+    active_gpios_num = caravelEnv.active_gpios_num -1
     debug_regs = DebugRegs(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0x1A)

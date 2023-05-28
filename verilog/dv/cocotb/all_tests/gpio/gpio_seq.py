@@ -5,7 +5,7 @@ from all_tests.common.debug_regs import DebugRegs
 
 
 async def gpio_all_i_seq(dut, caravelEnv, after_config_callback=None):
-    active_gpios_num = caravelEnv.active_gpios_num
+    active_gpios_num = caravelEnv.active_gpios_num-1
     debug_regs = DebugRegs(caravelEnv)
     caravelEnv.drive_gpio_in((active_gpios_num, 0), 0)
     await debug_regs.wait_reg1(0xAA)
@@ -129,7 +129,7 @@ async def gpio_all_i_seq(dut, caravelEnv, after_config_callback=None):
 
 
 async def gpio_all_o_seq(dut, caravelEnv, after_config_callback=None):
-    active_gpios_num = caravelEnv.active_gpios_num
+    active_gpios_num = caravelEnv.active_gpios_num-1
     debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     if after_config_callback is not None:
@@ -189,7 +189,7 @@ async def gpio_all_o_seq(dut, caravelEnv, after_config_callback=None):
 
 
 async def gpio_all_i_pd_seq(dut, caravelEnv):
-    active_gpios_num = caravelEnv.active_gpios_num
+    active_gpios_num = caravelEnv.active_gpios_num-1
     debug_regs = DebugRegs(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
@@ -318,7 +318,7 @@ async def gpio_all_i_pd_seq(dut, caravelEnv):
 
 
 async def gpio_all_i_pu_seq(dut, caravelEnv):
-    active_gpios_num = caravelEnv.active_gpios_num
+    active_gpios_num = caravelEnv.active_gpios_num-1
     debug_regs = DebugRegs(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
