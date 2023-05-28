@@ -13,7 +13,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def mgmt_gpio_out(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=377618)
+    caravelEnv = await test_configure(dut, timeout_cycles=1377618)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mgmt_gpio_out test")
     phases_fails = 3
@@ -118,7 +118,7 @@ async def mgmt_gpio_in(dut):
 @cocotb.test()
 @report_test
 async def mgmt_gpio_bidir(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=1672194)
+    caravelEnv = await test_configure(dut, timeout_cycles=11672194)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mgmt_gpio_bidir test")
     debug_regs = DebugRegs(caravelEnv)

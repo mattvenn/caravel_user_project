@@ -155,9 +155,13 @@ async def hk_regs_wr_wb_cpu(dut):
 @cocotb.test()
 @report_test
 async def hk_regs_wr_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=16720, num_error=0)
+    caravelEnv = await test_configure(dut, timeout_cycles=116720, num_error=0)
     spi_master = SPI(caravelEnv)
     hk_file = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs.json'
+    if "CARAVAN" in caravelEnv.design_macros._asdict():
+        hk_file = (
+            f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs_caravan.json'
+        )
     if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
             f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs_gf.json'
