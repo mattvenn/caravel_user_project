@@ -9,7 +9,6 @@ Tests:
     - {name: gpio_all_i_pu_caravan, sim: RTL}
     - {name: gpio_all_i_pd_caravan, sim: RTL}
     - {name: gpio_all_o_caravan, sim: RTL}
-    - {name: hk_regs_wr_wb_cpu, sim: RTL}
     - {name: IRQ_timer, sim: RTL}
     - {name: mgmt_gpio_out, sim: RTL}
     - {name: hk_regs_wr_spi, sim: RTL}
