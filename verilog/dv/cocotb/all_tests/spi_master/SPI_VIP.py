@@ -9,11 +9,11 @@ import cocotb.log
 """
 
 
-async def SPI_VIP(csb, clk, SDI, SDO, mem):
+async def SPI_VIP(csb, clk, SDI, SDO, mem, remove_clk=0):
     while True:
         await FallingEdge(csb)
         cocotb.log.info("[SPI_VIP] CSB is asserted operation has begin ")
-        op = await cocotb.start(SPI_op(clk, SDI, SDO, mem))
+        op = await cocotb.start(SPI_op(clk, SDI, SDO, mem, remove_clk))
         await csb_watcher(csb, op)
         cocotb.log.info("[SPI_VIP] CSB is deasserted operation has been killed")
 
@@ -26,7 +26,7 @@ async def csb_watcher(csb, thread):
 
 
 # detect command and address and apply the command
-async def SPI_op(clk, SDI, SDO, mem):
+async def SPI_op(clk, SDI, SDO, mem, remove_clk=0):
     address = ""
     command = ""
     await RisingEdge(clk)
@@ -51,7 +51,8 @@ async def SPI_op(clk, SDI, SDO, mem):
             # data_in += SDI
             # await RisingEdge(clk)
     elif command == "00000011":
-        await FallingEdge(clk)
+        if not remove_clk:
+            await FallingEdge(clk)
         while True:
             data = bin(mem[address])[2:].zfill(8)
             for i in range(8):
