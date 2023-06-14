@@ -29,7 +29,7 @@ async def user_pass_thru_rd(dut):
             dut.gpio9_monitor,
             dut.gpio10_monitor,
             (dut.gpio11_en, dut.gpio11),
-            mem,
+            mem, remove_clk=1
         )
     )  # fork for SPI
     await debug_regs.wait_reg1(0xAA)
@@ -65,17 +65,17 @@ async def user_pass_thru_connection(dut):
     await debug_regs.wait_reg1(0xAA)
     await spi_master.enable_csb()
     await spi_master._hk_write_byte(spi_master.SPI_COMMAND.USER_PASS_THRU.value)  
-    await RisingEdge(spi_master.clk)
+    await FallingEdge(spi_master.clk)
     spi_master._kill_spi_clk()
     caravelEnv.drive_gpio_in(4, 0)  # finish the clock cycle
-    await FallingEdge(caravelEnv.clk)
+    await RisingEdge(caravelEnv.clk)
     # check sdo and clk are following the spi
     for i in range(randrange(10, 50)):
         clk = randrange(0, 2)  # drive random value from 0 to 3 to clk and SDO
         sdo = randrange(0, 2)  # drive random value from 0 to 3 to clk and SDO
         caravelEnv.drive_gpio_in(4, clk)
         caravelEnv.drive_gpio_in(2, sdo)
-        await FallingEdge(caravelEnv.clk)
+        await RisingEdge(caravelEnv.clk)
         expected = int(f"0b{sdo}{clk}0", 2)
         if caravelEnv.monitor_gpio((10, 8)).integer != expected:
             cocotb.log.error(
@@ -105,15 +105,15 @@ async def user_pass_thru_connection(dut):
     await spi_master.disable_csb()
     await spi_master.enable_csb()
     await spi_master._hk_write_byte(spi_master.SPI_COMMAND.USER_PASS_THRU.value)
-    await RisingEdge(spi_master.clk)
+    await FallingEdge(spi_master.clk)
     spi_master._kill_spi_clk()
     caravelEnv.drive_gpio_in(4, 0)  # finish the clock cycle
-    await FallingEdge(caravelEnv.clk)
+    await RisingEdge(caravelEnv.clk)
     caravelEnv.drive_gpio_in(4, 1)  # finish the clock cycle
     for i in range(randrange(10, 50)):
         sdi = randrange(0, 2)  # drive random value from 0 to 3 to clk and SDO
         caravelEnv.drive_gpio_in(11, sdi)
-        await FallingEdge(caravelEnv.clk)
+        await RisingEdge(caravelEnv.clk)
         expected = sdi
         if caravelEnv.monitor_gpio((1, 1)).integer != expected:
             cocotb.log.error(
