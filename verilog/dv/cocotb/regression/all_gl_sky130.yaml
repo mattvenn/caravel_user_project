@@ -55,6 +55,7 @@ Tests:
     - {name: IRQ_spi, sim: GL}
     - {name: IRQ_external2, sim: GL}
     - {name: IRQ_uart_rx, sim: GL}
+    - {name: uart_rx_msg, sim: GL}
 
 
 

@@ -25,10 +25,10 @@ void main()
 {
 
     enable_debug();
-    configure_gpio(6,GPIO_MODE_MGMT_STD_OUTPUT);
-    configure_gpio(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
-    configure_gpio(0,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
-    gpio_config_load(); 
+    GPIOs_configure(6,GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_configure(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(0,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_loadConfigs(); 
     #ifndef ARM 
 
     (*(volatile uint32_t*) CSR_DEBUG_MODE_OUT_ADDR ) = 1; // enable debug mode
@@ -38,7 +38,7 @@ void main()
     set_debug_reg1(0xAA);
 
     // very long wait
-    dummy_delay(1500);
+    dummyDelay(1500);
 
 
 }

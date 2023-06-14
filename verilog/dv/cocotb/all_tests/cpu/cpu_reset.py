@@ -10,7 +10,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def cpu_reset(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=106878)
+    caravelEnv = await test_configure(dut, timeout_cycles=121372)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start cpu_reset test")

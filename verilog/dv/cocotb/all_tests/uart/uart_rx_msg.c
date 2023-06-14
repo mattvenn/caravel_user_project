@@ -20,17 +20,17 @@
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
-    configure_gpio(6,GPIO_MODE_MGMT_STD_OUTPUT);
-    configure_gpio(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    enableHkSpi(0);
+    GPIOs_configure(6,GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_configure(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
 
     // Now, apply the configuration
-    gpio_config_load();
-    enable_uart_TX(1);
-    uart_RX_enable(1);
+    GPIOs_loadConfigs();
+    UART_enableTX(1);
+    UART_enableRX(1);
 
     set_debug_reg1(0xAA); // configuration finished
-    char* msg = uart_get_line();
+    char* msg = UART_readLine();
     print(msg);
 
 }

@@ -6,7 +6,7 @@
 
 void main()
 {
-    enable_user_interface();
+    User_enableIF();
     // first 3 addresses 
     (*(volatile unsigned int*) (USER_SPACE_ADDR    )) = 0x97cf0d2d; 
     (*(volatile unsigned int*) (USER_SPACE_ADDR +4 )) = 0xbc748313; 
@@ -29,8 +29,8 @@ void main()
     temp = (*(volatile unsigned int*) (USER_SPACE_ADDR + 0x3602EC)); 
 
     // addresses outside user space - injecting error if user project ack is affected
-    configure_gpio(14,GPIO_MODE_MGMT_STD_OUTPUT);
-    configure_gpio(15,GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_configure(14,GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_configure(15,GPIO_MODE_MGMT_STD_OUTPUT);
     
     // finish with writing last address with Fs
     (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE)) = 0xFFFFFFFF; 

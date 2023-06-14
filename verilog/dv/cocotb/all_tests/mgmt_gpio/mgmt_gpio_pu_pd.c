@@ -29,15 +29,15 @@
 void main()
 {
     enable_debug();
-    enable_hk_spi(0);
-    mgmt_gpio_io_enable();
+    enableHkSpi(0);
+    ManagmentGpio_ioEnable();
 
     // pull up
-    mgmt_gpio_wr(1);
+    ManagmentGpio_write(1);
     set_debug_reg1(0x1B);
 
     // pull down
-    mgmt_gpio_wr(0);
+    ManagmentGpio_write(0);
     set_debug_reg1(0x2B);
 
     // no pull

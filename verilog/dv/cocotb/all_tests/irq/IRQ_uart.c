@@ -19,10 +19,10 @@
 
 void main(){
     enable_debug();
-    clear_flag();
-    configure_gpio(6,GPIO_MODE_MGMT_STD_OUTPUT);
-    gpio_config_load();
-    enable_uart_tx_irq(1);
+    IRQ_clearFlag();
+    GPIOs_configure(6,GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_loadConfigs();
+    IRQ_enableUartTx(1);
 
     set_debug_reg2(0xAA); //start sending data through the uart
     print("M");
@@ -32,7 +32,7 @@ void main(){
     int timeout = 100; 
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x1B); //test pass irq sent
             is_pass = 1;
             break;
@@ -43,12 +43,12 @@ void main(){
     }
     // test interrupt doesn't happened nothing sent at uart
     set_debug_reg2(0xBB);
-    clear_flag();
+    IRQ_clearFlag();
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x2E); //test fail interrupt isn't suppose to happened
             is_pass = 1;
             break;

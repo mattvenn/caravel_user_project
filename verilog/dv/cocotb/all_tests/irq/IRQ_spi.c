@@ -25,17 +25,17 @@ Testing spi interrupt
 
 void main(){
     enable_debug();
-    enable_hk_spi_irq(1);
+    IRQ_hkSpi(1);
 
     // test interrrupt happen when spi_irq reg got set
-    clear_flag();
+    IRQ_clearFlag();
     set_debug_reg2(0xAA); //wait for environment to make spi_irq high 
     // Loop, waiting for the interrupt to change reg_mprj_datah
     char is_pass = 0;
     int timeout = 40; 
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x1B); //test pass irq sent at mprj 7 
             is_pass = 1;
             break;
@@ -47,12 +47,12 @@ void main(){
 
     // test interrupt doesn't happened when spi_irq is deasserted
     set_debug_reg2(0xBB);
-    clear_flag();
+    IRQ_clearFlag();
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x2E); //test fail interrupt isn't suppose to happened
             is_pass = 1;
             break;

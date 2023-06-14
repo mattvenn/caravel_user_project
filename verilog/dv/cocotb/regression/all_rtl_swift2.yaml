@@ -59,6 +59,7 @@ Tests:
     - {name: IRQ_spi, sim: RTL}
     - {name: IRQ_external2, sim: RTL}
     - {name: IRQ_uart_rx, sim: RTL}
+    - {name: uart_rx_msg, sim: RTL}
 
 
 

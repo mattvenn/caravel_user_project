@@ -13,7 +13,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def IRQ_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=380308)
+    caravelEnv = await test_configure(dut, timeout_cycles=412992)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_spi test")

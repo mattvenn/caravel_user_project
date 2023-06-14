@@ -5,9 +5,9 @@
 void main(){
         unsigned int i,i_temp, j, active_gpio_num,num_high_gpio;
         enable_debug();
-        enable_hk_spi(0);
-        configure_all_gpios(GPIO_MODE_USER_STD_OUTPUT);        
-        gpio_config_load();      
+        enableHkSpi(0);
+        GPIOs_configureAll(GPIO_MODE_USER_STD_OUTPUT);        
+        GPIOs_loadConfigs();      
         set_debug_reg1(0xAA); // finish configuration 
         output_enable_all_gpio_user(1);
         set_gpio_user_l(0x0);

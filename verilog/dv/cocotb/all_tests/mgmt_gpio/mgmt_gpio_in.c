@@ -27,29 +27,29 @@
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
-    mgmt_gpio_i_enable();
+    enableHkSpi(0);
+    ManagmentGpio_inputEnable();
     set_debug_reg1(10); // wait for 10 blinks
-    // dummy_delay(250);
+    // dummyDelay(250);
 	for (int i = 0; i < 10; i++) {
-        wait_gpio_mgmt(0);
+        ManagmentGpio_wait(0);
         set_debug_reg2(0XAA); //  1 is recieved
-        wait_gpio_mgmt(1);
+        ManagmentGpio_wait(1);
         set_debug_reg2(0XBB); // 0 is recieved
 	}
     set_debug_reg2(0x1B);
     set_debug_reg1(20);
 	for (int i = 0; i < 20; i++) {
-        wait_gpio_mgmt(0);
+        ManagmentGpio_wait(0);
         set_debug_reg2(0XAA); // 1 is recieved
-        wait_gpio_mgmt(1);
+        ManagmentGpio_wait(1);
         set_debug_reg2(0XBB); // 0 is recieved
 	}
     set_debug_reg2(0x2B);
-    int temp_in = mgmt_gpio_rd();
+    int temp_in = ManagmentGpio_read();
     set_debug_reg1(0);
     for (int i =0; i<50;i++){ // timeout
-        if (temp_in != mgmt_gpio_rd())
+        if (temp_in != ManagmentGpio_read())
             set_debug_reg2(0xEE); //finish test
     }
     set_debug_reg2(0xFF); //finish test

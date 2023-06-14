@@ -19,7 +19,7 @@ async def PoR(dut):
     # configurations
     caravelEnv = Caravel_env(dut)
     debug_regs = DebugRegs(caravelEnv)
-    Timeout(clk=caravelEnv.clk, cycle_num=11278945, precision=0.2)
+    Timeout(clk=caravelEnv.clk, cycle_num=1904502, precision=0.2)
     cocotb.scheduler.add(max_num_error(10, caravelEnv.clk))
     debug_regs = DebugRegs(caravelEnv)
     clock = Clock(

@@ -5,7 +5,7 @@
 // access all housekeeping registers that can be access through firmware and change it's value
 void main(){
     enable_debug();
-    enable_hk_spi(0);
+    enableHkSpi(0);
     // store RO value regs 
     int old_reg_hkspi_status = reg_hkspi_status;
     int old_reg_hkspi_chip_id = reg_hkspi_chip_id;

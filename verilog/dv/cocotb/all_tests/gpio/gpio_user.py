@@ -13,35 +13,35 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def gpio_all_o_user(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=11538624)
+    caravelEnv = await test_configure(dut, timeout_cycles=2010463)
     await gpio_all_o_seq(dut, caravelEnv)
 
 
 @cocotb.test()
 @report_test
 async def gpio_all_i_user(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=11498255)
+    caravelEnv = await test_configure(dut, timeout_cycles=287465)
     await gpio_all_i_seq(dut, caravelEnv)
 
 
 @cocotb.test()
 @report_test
 async def gpio_all_i_pu_user(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=1154138)
+    caravelEnv = await test_configure(dut, timeout_cycles=86252)
     await gpio_all_i_pu_seq(dut, caravelEnv)
 
 
 @cocotb.test()
 @report_test
 async def gpio_all_i_pd_user(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=67759)
+    caravelEnv = await test_configure(dut, timeout_cycles=76198)
     await gpio_all_i_pd_seq(dut, caravelEnv)
 
 
 @cocotb.test()
 @report_test
 async def gpio_all_bidir_user(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=111266662)
+    caravelEnv = await test_configure(dut, timeout_cycles=2218751)
     active_gpios_num = caravelEnv.active_gpios_num
     debug_regs = DebugRegs(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)

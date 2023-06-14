@@ -15,7 +15,7 @@ core_clock = 0
 @cocotb.test()
 @report_test
 async def clock_redirect(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=50263)
+    caravelEnv = await test_configure(dut, timeout_cycles=55565)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     error_margin = 0.1
@@ -101,7 +101,7 @@ async def calculate_clk_period(clk, name):
 @cocotb.test()
 @report_test
 async def hk_disable(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=45143)
+    caravelEnv = await test_configure(dut, timeout_cycles=51474)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)

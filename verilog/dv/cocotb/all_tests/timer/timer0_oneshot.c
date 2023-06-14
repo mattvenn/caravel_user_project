@@ -24,18 +24,18 @@ void main(){
     unsigned int value;
     unsigned int old_value;
     enable_debug();
-    enable_hk_spi(0);
+    enableHkSpi(0);
 
     /* Configure timer for a single-shot countdown */
-    timer0_oneshot_configure(0xF300);
+    timer0_configureOneShot(0xF300);
 
     // test path if counter value stop updated after reach 0 and also the value is always decrementing
-    update_timer0_val(); // update reg_timer0_value with new counter value
-    old_value = get_timer0_val();
+    timer0_updateValue(); // update reg_timer0_value with new counter value
+    old_value = timer0_readValue();
     // value us decrementing until it reachs zero
     while (1) {
-        update_timer0_val(); // update reg_timer0_value with new counter value
-        value = get_timer0_val();
+        timer0_updateValue(); // update reg_timer0_value with new counter value
+        value = timer0_readValue();
         if (value < old_value && value != 0){
             set_debug_reg1(0x1B); // value decrease
         }
@@ -48,10 +48,10 @@ void main(){
 	    old_value = value;
     }
     // check 10 times that value don't change from 0
-	dummy_delay(10);
-    update_timer0_val(); // update reg_timer0_value with new counter value
+	dummyDelay(10);
+    timer0_updateValue(); // update reg_timer0_value with new counter value
 
-    if (get_timer0_val() == 0){
+    if (timer0_readValue() == 0){
         set_debug_reg1(0x3B); //timer updated correctly
     }else{
         set_debug_reg1(0x2F); //timer updated incorrectly

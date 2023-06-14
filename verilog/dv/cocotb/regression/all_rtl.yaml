@@ -38,9 +38,9 @@ Tests:
     # - {name: pll, sim: RTL}
     - {name: spi_master_temp, sim: RTL}
     - {name: bitbang_cpu_all_o, sim: RTL}
-    # - {name: mem_dff_W, sim: RTL}
+    - {name: mem_dff_W, sim: RTL}
     - {name: serial_shifting_01, sim: RTL}
-    # - {name: mem_dff2_W, sim: RTL}
+    - {name: mem_dff2_W, sim: RTL}
     - {name: serial_shifting_10, sim: RTL}
     - {name: serial_shifting_1100, sim: RTL}
     - {name: serial_shifting_0011, sim: RTL}
@@ -64,6 +64,7 @@ Tests:
     - {name: IRQ_spi, sim: RTL}
     - {name: IRQ_external2, sim: RTL}
     - {name: IRQ_uart_rx, sim: RTL}
+    - {name: uart_rx_msg, sim: RTL}
 
 
 

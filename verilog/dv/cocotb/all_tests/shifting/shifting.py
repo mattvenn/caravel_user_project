@@ -54,7 +54,7 @@ def shift(gpio, shift_type, caravelEnv):
 @cocotb.test()
 @report_test
 async def serial_shifting_10(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=500158)
+    caravelEnv = await test_configure(dut, timeout_cycles=540110)
     debug_regs = DebugRegs(caravelEnv)
     uut = dut.uut.chip_core
     debug_regs = DebugRegs(caravelEnv)
@@ -155,7 +155,7 @@ async def serial_shifting_10(dut):
 @cocotb.test()
 @report_test
 async def serial_shifting_01(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=499090)
+    caravelEnv = await test_configure(dut, timeout_cycles=541278)
     debug_regs = DebugRegs(caravelEnv)
     uut = dut.uut.chip_core
     debug_regs = DebugRegs(caravelEnv)
@@ -256,7 +256,7 @@ async def serial_shifting_01(dut):
 @cocotb.test()
 @report_test
 async def serial_shifting_0011(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=613444)
+    caravelEnv = await test_configure(dut, timeout_cycles=700516)
     debug_regs = DebugRegs(caravelEnv)
     uut = dut.uut.chip_core
     debug_regs = DebugRegs(caravelEnv)
@@ -357,7 +357,7 @@ async def serial_shifting_0011(dut):
 @cocotb.test()
 @report_test
 async def serial_shifting_1100(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=603431)
+    caravelEnv = await test_configure(dut, timeout_cycles=700331)
     debug_regs = DebugRegs(caravelEnv)
     uut = dut.uut.chip_core
     debug_regs = DebugRegs(caravelEnv)

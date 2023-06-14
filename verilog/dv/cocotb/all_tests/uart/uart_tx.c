@@ -23,8 +23,8 @@
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
-    configure_gpio(6,GPIO_MODE_MGMT_STD_OUTPUT);
+    enableHkSpi(0);
+    GPIOs_configure(6,GPIO_MODE_MGMT_STD_OUTPUT);
 
     // Set clock to 64 kbaud and enable the UART.  It is important to do this
     // before applying the configuration, or else the Tx line initializes as
@@ -32,10 +32,10 @@ void main(){
 
 
     // Now, apply the configuration
-    gpio_config_load();
+    GPIOs_loadConfigs();
 
 //    reg_uart_clkdiv = 625;
-    enable_uart_TX(1);
+    UART_enableTX(1);
 
     set_debug_reg1(0xAA);
 
@@ -46,5 +46,5 @@ void main(){
 
     // Allow transmission to complete before signalling that the program
     // has ended.
-    dummy_delay(160);
+    dummyDelay(160);
 }

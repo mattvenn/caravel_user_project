@@ -29,19 +29,19 @@
 void main()
 {
     enable_debug();
-    enable_hk_spi(0);
-    mgmt_gpio_o_enable();
+    enableHkSpi(0);
+    ManagmentGpio_outputEnable();
     set_debug_reg1(10);
 	for (int i = 0; i < 10; i++) {
 		/* Fast blink for simulation */
-		mgmt_gpio_wr(1);
-		mgmt_gpio_wr(0);
+		ManagmentGpio_write(1);
+		ManagmentGpio_write(0);
 	}
     set_debug_reg1(20);
 	for (int i = 0; i < 20; i++) {
 		/* Fast blink for simulation */
-		mgmt_gpio_wr(1);
-		mgmt_gpio_wr(0);
+		ManagmentGpio_write(1);
+		ManagmentGpio_write(0);
 	}
     set_debug_reg1(0);
     set_debug_reg1(0); // for more delay

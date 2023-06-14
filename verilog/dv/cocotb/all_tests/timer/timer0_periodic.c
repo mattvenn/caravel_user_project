@@ -23,21 +23,21 @@ void main(){
     unsigned int value;
     unsigned int old_value;
     enable_debug();
-    enable_hk_spi(0);
+    enableHkSpi(0);
 
     /* Configure timer for a periodic countdown */
-	timer0_periodic_configure(0x300);
+	timer0_configurePeriodic(0x300);
 
     // Loop, waiting for the interrupt to change reg_mprj_datah
     // test path if counter value stop updated after reach 0 and also the value is always decrementing
-    update_timer0_val(); // update reg_timer0_value with new counter value
-    old_value = get_timer0_val();
+    timer0_updateValue(); // update reg_timer0_value with new counter value
+    old_value = timer0_readValue();
     // value us decrementing until it reachs zero and rollover to 0x300 (initial value)
     int rollover = 0;
     int timeout = 400; 
     for (int i = 0; i < timeout; i++){
-        update_timer0_val(); // update reg_timer0_value with new counter value
-        value = get_timer0_val();
+        timer0_updateValue(); // update reg_timer0_value with new counter value
+        value = timer0_readValue();
         if (value > old_value){
             rollover++;
             if (rollover==1)

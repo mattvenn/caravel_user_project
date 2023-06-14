@@ -29,19 +29,19 @@
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
+    enableHkSpi(0);
 
-    configure_gpio(34,GPIO_MODE_MGMT_STD_INPUT_NOPULL); // SDI
-    configure_gpio(35,GPIO_MODE_MGMT_STD_OUTPUT);       // SDO
-    configure_gpio(33,GPIO_MODE_MGMT_STD_OUTPUT);       // CSB
-    configure_gpio(32,GPIO_MODE_MGMT_STD_OUTPUT);       // SCK
+    GPIOs_configure(34,GPIO_MODE_MGMT_STD_INPUT_NOPULL); // SDI
+    GPIOs_configure(35,GPIO_MODE_MGMT_STD_OUTPUT);       // SDO
+    GPIOs_configure(33,GPIO_MODE_MGMT_STD_OUTPUT);       // CSB
+    GPIOs_configure(32,GPIO_MODE_MGMT_STD_OUTPUT);       // SCK
 
     // Now, apply the configuration
-    gpio_config_load();
+    GPIOs_loadConfigs();
 
     set_debug_reg2(0xAA);
 
-    enable_spi(1);
+    MSPI_enable(1);
 
 
     // For SPI operation, GPIO 1 should be an input, and GPIOs 2 to 4
@@ -62,90 +62,90 @@ void main(){
     // bit 15:		(unused)
 
 
-    enable_CS(1);  // sel=0, manual CS
+    MSPI_enableCS(1);  // sel=0, manual CS
 
-    spi_write(0x03);        // Write 0x03 (read mode)
-    spi_write(0x00);        // Write 0x00 (start address high byte)
-    spi_write(0x00);        // Write 0x00 (start address middle byte)
-    spi_write(0x04);        // Write 0x04 (start address low byte)
+    MSPI_write(0x03);        // Write 0x03 (read mode)
+    MSPI_write(0x00);        // Write 0x00 (start address high byte)
+    MSPI_write(0x00);        // Write 0x00 (start address middle byte)
+    MSPI_write(0x04);        // Write 0x04 (start address low byte)
 
-    unsigned int value = spi_read(); // 0x93
+    unsigned int value = MSPI_read(); // 0x93
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
 
-    value = spi_read(); // 0x01
+    value = MSPI_read(); // 0x01
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    value = spi_read(); // 0x00
+    value = MSPI_read(); // 0x00
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    enable_CS(0);  // release CS
-    enable_CS(1);  // sel=0, manual CS
+    MSPI_enableCS(0);  // release CS
+    MSPI_enableCS(1);  // sel=0, manual CS
 
-    spi_write(0x03);        // Write 0x03 (read mode)
-    spi_write(0x00);        // Write 0x00 (start address high byte)
-    spi_write(0x00);        // Write 0x00 (start address middle byte)
-    spi_write(0x08);        // Write 0x08 (start address low byte)
+    MSPI_write(0x03);        // Write 0x03 (read mode)
+    MSPI_write(0x00);        // Write 0x00 (start address high byte)
+    MSPI_write(0x00);        // Write 0x00 (start address middle byte)
+    MSPI_write(0x08);        // Write 0x08 (start address low byte)
 
-    value = spi_read(); // 0x13
+    value = MSPI_read(); // 0x13
     if (value == 0x13)
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    value = spi_read(); // 0x02
+    value = MSPI_read(); // 0x02
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    enable_CS(0);  // release CS
-    enable_CS(1);  // sel=0, manual CS
+    MSPI_enableCS(0);  // release CS
+    MSPI_enableCS(1);  // sel=0, manual CS
 
-    spi_write(0x03);        // Write 0x03 (read mode)
-    spi_write(0x00);        // Write 0x00 (start address high byte)
-    spi_write(0x00);        // Write 0x00 (start address middle byte)
-    spi_write(0x0a);        // Write 0x0a (start address low byte)
+    MSPI_write(0x03);        // Write 0x03 (read mode)
+    MSPI_write(0x00);        // Write 0x00 (start address high byte)
+    MSPI_write(0x00);        // Write 0x00 (start address middle byte)
+    MSPI_write(0x0a);        // Write 0x0a (start address low byte)
 
-    value = spi_read(); // 0x63
+    value = MSPI_read(); // 0x63
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    value = spi_read(); // 0x57
+    value = MSPI_read(); // 0x57
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    value = spi_read(); // 0xb5
+    value = MSPI_read(); // 0xb5
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    value = spi_read(); // 0x00
+    value = MSPI_read(); // 0x00
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
     
-    value = spi_read();// 0x23
+    value = MSPI_read();// 0x23
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
 
-    value = spi_read(); // 0x20
+    value = MSPI_read(); // 0x20
     set_debug_reg1(value);
     // set_debug_reg2(0x55); // value is ready to be read
     // wait_debug_reg2(0xCC) // testbench has read the value
 
-    enable_CS(0);  // release CS
-    enable_CS(1);  // sel=0, manual CS
+    MSPI_enableCS(0);  // release CS
+    MSPI_enableCS(1);  // sel=0, manual CS
 
-    dummy_delay(100000000);
+    dummyDelay(100000000);
 }
 

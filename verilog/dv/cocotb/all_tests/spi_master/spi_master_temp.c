@@ -31,17 +31,17 @@
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
+    enableHkSpi(0);
 
-    configure_gpio(34,GPIO_MODE_MGMT_STD_INPUT_NOPULL); // SDI
-    configure_gpio(35,GPIO_MODE_MGMT_STD_OUTPUT);       // SDO
-    configure_gpio(33,GPIO_MODE_MGMT_STD_OUTPUT);       // CSB
-    configure_gpio(32,GPIO_MODE_MGMT_STD_OUTPUT);       // SCK
+    GPIOs_configure(34,GPIO_MODE_MGMT_STD_INPUT_NOPULL); // SDI
+    GPIOs_configure(35,GPIO_MODE_MGMT_STD_OUTPUT);       // SDO
+    GPIOs_configure(33,GPIO_MODE_MGMT_STD_OUTPUT);       // CSB
+    GPIOs_configure(32,GPIO_MODE_MGMT_STD_OUTPUT);       // SCK
 
     // Now, apply the configuration
-    gpio_config_load();
+    GPIOs_loadConfigs();
     set_debug_reg2(0xAA);
-    enable_spi(1);
+    MSPI_enable(1);
 
 
     // For SPI operation, GPIO 1 should be an input, and GPIOs 2 to 4
@@ -61,11 +61,11 @@ void main(){
     // bit 14:		IRQ enable (1 = enabled)
     // bit 15:		(unused)
 
-    reg_spimaster_clk_divider = 0x4E20;
-    enable_CS(1);  // sel=0, manual CS
-    spi_write(0x08);        // Write 0x03 (read mode)
-    spi_write(0x05);        // Write 0x00 (start address high byte)
-    unsigned int value = spi_read(); // 0x93
+    // reg_spimaster_clk_divider = 0x4E20;
+    MSPI_enableCS(1);  // sel=0, manual CS
+    MSPI_write(0x08);        // Write 0x03 (read mode)
+    MSPI_write(0x05);        // Write 0x00 (start address high byte)
+    unsigned int value = MSPI_read(); // 0x93
     if (value == 0xD)
         set_debug_reg1(0xBB); // get correct value
     else {
@@ -73,13 +73,13 @@ void main(){
         set_debug_reg1(0xEE); // get wrong value
     }
 
-    enable_CS(0);  // release CS
+    MSPI_enableCS(0);  // release CS
     // reg_spimaster_clk_divider = 0x4E00;
 
-    enable_CS(1);  // sel=0, manual CS
-    spi_write(0x08);        // Write 0x03 (read mode)
-    spi_write(0x05);        // Write 0x00 (start address high byte)
+    MSPI_enableCS(1);  // sel=0, manual CS
+    MSPI_write(0x08);        // Write 0x03 (read mode)
+    MSPI_write(0x05);        // Write 0x00 (start address high byte)
 
-    dummy_delay(100000000);
+    dummyDelay(100000000);
 }
 

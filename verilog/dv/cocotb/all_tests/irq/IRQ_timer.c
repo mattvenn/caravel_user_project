@@ -23,16 +23,16 @@ void main(){
 
     set_debug_reg2(0xAA); //wait for timer to send irq
 
-    clear_flag();
+    IRQ_clearFlag();
     /* Configure timer for a single-shot countdown */
-    enable_timer0_irq(1);
-    timer0_oneshot_configure(500);
+    IRQ_enableTimer(1);
+    timer0_configureOneShot(500);
     // Loop, waiting for the interrupt to change reg_mprj_datah
     char is_pass = 0;
     int timeout = 100; 
     unsigned int x;
     for (x = 0; x < timeout; x++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x1B); //test pass irq sent at timer0
             is_pass = 1;
             break;
@@ -41,16 +41,16 @@ void main(){
     if (!is_pass){
         set_debug_reg1(0x1E); // timeout
     }
-    clear_flag();
+    IRQ_clearFlag();
     // test interrupt doesn't happened when timer isnt used
     set_debug_reg2(0xBB);
-    enable_timer0(0); // disable counter
-    clear_flag();
+    timer0_enable(0); // disable counter
+    IRQ_clearFlag();
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x2E); //test fail interrupt isn't suppose to happened
             is_pass = 1;
             break;

@@ -11,7 +11,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def uart_tx(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=407193)
+    caravelEnv = await test_configure(dut, timeout_cycles=444465)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start uart test")
     expected_msg = "Monitor: Test UART (RTL) passed"
@@ -30,7 +30,7 @@ async def uart_tx(dut):
 @cocotb.test()
 @report_test
 async def uart_rx(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=154409)
+    caravelEnv = await test_configure(dut, timeout_cycles=169830)
     debug_regs = DebugRegs(caravelEnv)
     uart = UART(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
@@ -84,7 +84,7 @@ async def uart_check_char_recieved(caravelEnv, debug_regs):
 @cocotb.test()
 @report_test
 async def uart_loopback(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=199023)
+    caravelEnv = await test_configure(dut, timeout_cycles=216759)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start uart test")
     debug_regs = DebugRegs(caravelEnv)

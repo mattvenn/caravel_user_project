@@ -27,26 +27,26 @@
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
-    mgmt_gpio_i_enable();
+    enableHkSpi(0);
+    ManagmentGpio_inputEnable();
     int num_blinks = 0;
     set_debug_reg1(0XAA); // start of the test
 	while (1) {
-        wait_gpio_mgmt(0);
-        wait_gpio_mgmt(1);
+        ManagmentGpio_wait(0);
+        ManagmentGpio_wait(1);
         num_blinks++;
         if (get_debug_reg1() == 0xFF)
             break;
 	}
-    mgmt_gpio_o_enable();
+    ManagmentGpio_outputEnable();
 	for (int i = 0; i < num_blinks; i++) {
 		/* Fast blink for simulation */
-        mgmt_gpio_wr(1);
-        dummy_delay(10);
-        mgmt_gpio_wr(0);
-        dummy_delay(10);
+        ManagmentGpio_write(1);
+        dummyDelay(10);
+        ManagmentGpio_write(0);
+        dummyDelay(10);
 	}
     set_debug_reg2(0XFF); //finish test
-    dummy_delay(10000000);
+    dummyDelay(10000000);
 }
 

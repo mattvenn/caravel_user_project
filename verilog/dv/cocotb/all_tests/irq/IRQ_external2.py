@@ -14,7 +14,7 @@ reg = Regs()
 @cocotb.test()
 @report_test
 async def IRQ_external2(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=396499)
+    caravelEnv = await test_configure(dut, timeout_cycles=428337)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_external2 test")

@@ -40,20 +40,20 @@ Enable interrupt for IRQ external pin mprj_io[12] -> should be drived to 1 by th
 void main(){
     enable_debug();
     // setting bit 12 as input 
-    configure_gpio(12,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_configure(12,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
 
-    gpio_config_load();
-    enable_external2_irq(1);
+    GPIOs_loadConfigs();
+    IRQ_enableExternal2(1);
 
     // test interrrupt happen when mprj[12] is asserted
-    clear_flag();
+    IRQ_clearFlag();
     set_debug_reg2(0xAA); //wait for environment to make mprj[12] high 
     // Loop, waiting for the interrupt to change reg_mprj_datah
     char is_pass = 0;
     int timeout = 40; 
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x1B); //test pass irq sent at mprj 12 
             is_pass = 1;
             break;
@@ -65,12 +65,12 @@ void main(){
 
     // test interrupt doesn't happened when mprj[12] is deasserted
     set_debug_reg2(0xBB);
-    clear_flag();
+    IRQ_clearFlag();
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x2E); //test fail interrupt isn't suppose to happened
             is_pass = 1;
             break;

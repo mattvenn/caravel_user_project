@@ -29,29 +29,29 @@
 void main()
 {
     enable_debug();
-    enable_hk_spi(0);
+    enableHkSpi(0);
     // enable input
-    mgmt_gpio_i_enable();
-    if (mgmt_gpio_rd() == 1)
+    ManagmentGpio_inputEnable();
+    if (ManagmentGpio_read() == 1)
         set_debug_reg2(0x1B); 
     else 
         set_debug_reg2(0x1E); 
     // disable input
-    mgmt_gpio_io_disable();
-    if (mgmt_gpio_rd() == 0)
+    ManagmentGpio_disable();
+    if (ManagmentGpio_read() == 0)
         set_debug_reg2(0x2B); 
     else 
         set_debug_reg2(0x2E); 
     set_debug_reg2(0xFF);
 
     // enable output
-    mgmt_gpio_o_enable();
-    mgmt_gpio_wr(1);
+    ManagmentGpio_outputEnable();
+    ManagmentGpio_write(1);
     set_debug_reg1(0x1A);
 
     // disable output
-    mgmt_gpio_i_enable();
-    mgmt_gpio_wr(1);
+    ManagmentGpio_inputEnable();
+    ManagmentGpio_write(1);
     set_debug_reg1(0x2A);
 }
 

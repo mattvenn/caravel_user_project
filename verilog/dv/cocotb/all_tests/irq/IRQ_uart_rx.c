@@ -19,22 +19,22 @@
 
 void main(){
     enable_debug();
-    clear_flag();
-    enable_hk_spi(0);
-    configure_gpio(6,GPIO_MODE_MGMT_STD_OUTPUT);
-    configure_gpio(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
-    gpio_config_load();
-    uart_RX_enable(1);
-    enable_uart_rx_irq(1);
+    IRQ_clearFlag();
+    enableHkSpi(0);
+    GPIOs_configure(6,GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_configure(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    GPIOs_loadConfigs();
+    UART_enableRX(1);
+    IRQ_enableUartRx(1);
 
     set_debug_reg2(0xAA); //start sending data through the uart
 
     // Loop, waiting for the interrupt to change reg_mprj_datah
     char is_pass = 0;
     int timeout = 50; 
-    uart_getc();
+    UART_readChar();
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x1B); //test pass irq sent
             is_pass = 1;
             break;
@@ -45,13 +45,13 @@ void main(){
     }
     // test interrupt doesn't happened nothing sent at uart
     set_debug_reg2(0xBB);
-    enable_uart_rx_irq(0);
-    clear_flag();
+    IRQ_enableUartRx(0);
+    IRQ_clearFlag();
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 
     for (int i = 0; i < timeout; i++){
-        if (get_flag() == 1){
+        if (IRQ_getFlag() == 1){
             set_debug_reg1(0x2E); //test fail interrupt isn't suppose to happened
             is_pass = 1;
             break;

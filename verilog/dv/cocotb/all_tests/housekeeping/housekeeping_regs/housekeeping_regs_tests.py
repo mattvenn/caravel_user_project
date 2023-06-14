@@ -105,7 +105,7 @@ async def hk_regs_wr_wb(dut):
 @cocotb.test()
 @report_test
 async def hk_regs_wr_wb_cpu(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=201816)
+    caravelEnv = await test_configure(dut, timeout_cycles=294366)
     debug_regs = DebugRegs(caravelEnv)
     reg1 = 0  # buffer
     reg2 = 0
@@ -155,7 +155,7 @@ async def hk_regs_wr_wb_cpu(dut):
 @cocotb.test()
 @report_test
 async def hk_regs_wr_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=16720, num_error=0)
+    caravelEnv = await test_configure(dut, timeout_cycles=18438, num_error=0)
     spi_master = SPI(caravelEnv)
     hk_file = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs.json'
     if "gf180" in caravelEnv.design_macros._asdict():
@@ -251,7 +251,7 @@ async def hk_regs_wr_spi(dut):
 @cocotb.test()
 @report_test
 async def hk_regs_rst_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=18234, num_error=INFINITY)
+    caravelEnv = await test_configure(dut, timeout_cycles=9299, num_error=INFINITY)
     spi_master = SPI(caravelEnv)
     main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
     hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'

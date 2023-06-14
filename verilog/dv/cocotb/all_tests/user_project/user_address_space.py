@@ -8,7 +8,7 @@ from cocotb_includes import report_test
 @cocotb.test()
 @report_test
 async def user_address_space(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=37599)
+    caravelEnv = await test_configure(dut, timeout_cycles=40620)
     cocotb.log.info("[TEST] Start user_address_space test")
     ack_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.wbs_ack_o
     addr_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.addr

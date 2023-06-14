@@ -24,7 +24,7 @@ reg = Regs()
 @cocotb.test()
 @report_test
 async def IRQ_uart(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=824126)
+    caravelEnv = await test_configure(dut, timeout_cycles=896457)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_uart test")
     pass_list = (0x1B, 0x2B)

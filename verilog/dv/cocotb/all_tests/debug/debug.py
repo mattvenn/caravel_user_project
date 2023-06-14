@@ -12,7 +12,7 @@ bit_time_ns = 0
 @cocotb.test()
 @report_test
 async def debug(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=11111400)
+    caravelEnv = await test_configure(dut, timeout_cycles=81933)
     debug_regs = DebugRegs(caravelEnv)
     # calculate bit time
     clock = caravelEnv.get_clock_obj()

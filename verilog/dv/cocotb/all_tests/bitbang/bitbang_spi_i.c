@@ -7,8 +7,8 @@
 void main()
 {
     enable_debug();
-    // configure_all_gpios(GPIO_MODE_MGMT_STD_INPUT_NOPULL);	
-    // gpio_config_load();
+    // GPIOs_configureAll(GPIO_MODE_MGMT_STD_INPUT_NOPULL);	
+    // GPIOs_loadConfigs();
     set_debug_reg1(0xAA); // finish configuration 
     wait_debug_reg2(0xDD);
     // low
@@ -25,8 +25,8 @@ void main()
     // trying to inject error by sending data to gpio by firmware where gpios configured as input 
     set_debug_reg1(0XD5);
     set_debug_reg1(0XD5); // for delay insertion for release
-    set_gpio_l(0x5AE1FFB8); // random number
-    set_gpio_h(0x1E); // random number
+    GPIOs_writeLow(0x5AE1FFB8); // random number
+    GPIOs_writeHigh(0x1E); // random number
     set_debug_reg2(0xFF);
     
 }
@@ -34,12 +34,12 @@ void main()
 
 void wait_over_input_l(unsigned int start_code, unsigned int exp_val){
     set_debug_reg1(start_code); // configuration done wait environment to send exp_val to reg_mprj_datal
-    wait_gpio_l(exp_val);
-    set_debug_reg2(get_gpio_l());
+    GPIOs_waitLow(exp_val);
+    set_debug_reg2(GPIOs_readLow());
 
 }
 void wait_over_input_h(unsigned int start_code, unsigned int exp_val){
     set_debug_reg1(start_code); 
-    wait_gpio_h(exp_val);
-    set_debug_reg2(get_gpio_h());
+    GPIOs_waitHigh(exp_val);
+    set_debug_reg2(GPIOs_readHigh());
 }

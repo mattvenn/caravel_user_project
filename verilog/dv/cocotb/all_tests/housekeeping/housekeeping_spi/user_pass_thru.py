@@ -15,7 +15,7 @@ bit_time_ns = 0
 @cocotb.test()
 @report_test
 async def user_pass_thru_rd(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=177637)
+    caravelEnv = await test_configure(dut, timeout_cycles=89712)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_rd test")
@@ -59,7 +59,7 @@ async def user_pass_thru_rd(dut):
 @cocotb.test()
 @report_test
 async def user_pass_thru_connection(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=1174319)
+    caravelEnv = await test_configure(dut, timeout_cycles=86033)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)

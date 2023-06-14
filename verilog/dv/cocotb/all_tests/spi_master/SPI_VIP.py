@@ -30,6 +30,8 @@ async def SPI_op(clk, SDI, SDO, mem):
     address = ""
     command = ""
     await RisingEdge(clk)
+    SDO[0].value = 1
+    SDO[1].value = 0
     # command
     for i in range(8):
         command = command + SDI.value.binstr

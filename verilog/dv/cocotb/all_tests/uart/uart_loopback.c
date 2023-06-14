@@ -24,26 +24,26 @@
 
 void wait_for_char(char *c){
     
-    if (uart_getc() == *c){
+    if (UART_readChar() == *c){
         set_debug_reg2(0x1B); // recieved the correct character
     }else{
         set_debug_reg2(0x1E); // timeout didn't recieve the character
     }
-    uart_pop_char();
+    UART_popChar();
     set_debug_reg2(0);
 }
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
-    configure_gpio(6,GPIO_MODE_MGMT_STD_OUTPUT);
-    configure_gpio(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
+    enableHkSpi(0);
+    GPIOs_configure(6,GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_configure(5,GPIO_MODE_MGMT_STD_INPUT_NOPULL);
 
     // Now, apply the configuration
-    gpio_config_load();
+    GPIOs_loadConfigs();
 
-    uart_RX_enable(1);
-    enable_uart_TX(1);
+    UART_enableRX(1);
+    UART_enableTX(1);
 
     print("M");
     wait_for_char("M");

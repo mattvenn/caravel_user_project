@@ -4,9 +4,9 @@
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
-    configure_all_gpios(GPIO_MODE_USER_STD_INPUT_NOPULL);
-    gpio_config_load();      
+    enableHkSpi(0);
+    GPIOs_configureAll(GPIO_MODE_USER_STD_INPUT_NOPULL);
+    GPIOs_loadConfigs();      
     output_enable_all_gpio_user(0);
     // low
     wait_over_input_l(0xAA,0xFFFFFFFF);
@@ -22,8 +22,8 @@ void main(){
     // trying to inject error by sending data to gpio by firmware where gpios configured as input 
     set_debug_reg1(0XD5);
     set_debug_reg1(0XD5); // for delay insertion for release
-    set_gpio_l(0x5AE1FFB8); // random number
-    set_gpio_h(0x1E); // random number
+    GPIOs_writeLow(0x5AE1FFB8); // random number
+    GPIOs_writeHigh(0x1E); // random number
     set_debug_reg2(0xFF);
 }
 

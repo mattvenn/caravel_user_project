@@ -11,7 +11,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def IRQ_timer(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=829642)
+    caravelEnv = await test_configure(dut, timeout_cycles=901806)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_timer test")
     pass_list = (0x1B, 0x2B)

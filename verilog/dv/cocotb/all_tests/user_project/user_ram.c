@@ -7,10 +7,10 @@ This test is developed for testing RAM used inside the user area by swift 2 rele
 
 void main(){
     enable_debug();
-    enable_hk_spi(0);
-    configure_all_gpios(GPIO_MODE_MGMT_STD_OUTPUT);
-    gpio_config_load();      
-    set_gpio_l(0);
+    enableHkSpi(0);
+    GPIOs_configureAll(GPIO_MODE_MGMT_STD_OUTPUT);
+    GPIOs_loadConfigs();      
+    GPIOs_writeLow(0);
     unsigned int *dff_start_address =  (unsigned int *) AHB_EXT_BASE_ADDR;
     unsigned int dff_size =  2048/4;
     unsigned int data = 0x55555555;
@@ -30,7 +30,7 @@ void main(){
         data_used = data_used | i;
         if (data_used != *(dff_start_address+i)){
             // set_debug_reg2(i+dff_start_address);
-            set_gpio_l(0x1E); 
+            GPIOs_writeLow(0x1E); 
             return;
         }
     }
@@ -48,10 +48,10 @@ void main(){
         data_used = data_used | i;
         if (data_used != *(dff_start_address+i)){
             // set_debug_reg2(i+dff_start_address);
-            set_gpio_l(0x1E); 
+            GPIOs_writeLow(0x1E); 
             return;
         }
     }
     
-    set_gpio_l(0x1B);
+    GPIOs_writeLow(0x1B);
 }

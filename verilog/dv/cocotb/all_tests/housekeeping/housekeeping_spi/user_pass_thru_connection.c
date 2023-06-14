@@ -28,17 +28,17 @@ void main()
     enable_debug();
 
     // Management needs to apply output on these pads to access the user area SPI flash
-    configure_gpio(11 ,GPIO_MODE_MGMT_STD_INPUT_NOPULL); // SDI
-    configure_gpio(10 ,GPIO_MODE_MGMT_STD_OUTPUT); // SDO
-    configure_gpio(9  ,GPIO_MODE_MGMT_STD_OUTPUT); // clk
-    configure_gpio(8  ,GPIO_MODE_MGMT_STD_OUTPUT); // csb
-    configure_gpio(1  ,GPIO_MODE_MGMT_STD_OUTPUT); // SDI housekeeping spi
+    GPIOs_configure(11 ,GPIO_MODE_MGMT_STD_INPUT_NOPULL); // SDI
+    GPIOs_configure(10 ,GPIO_MODE_MGMT_STD_OUTPUT); // SDO
+    GPIOs_configure(9  ,GPIO_MODE_MGMT_STD_OUTPUT); // clk
+    GPIOs_configure(8  ,GPIO_MODE_MGMT_STD_OUTPUT); // csb
+    GPIOs_configure(1  ,GPIO_MODE_MGMT_STD_OUTPUT); // SDI housekeeping spi
 
-    gpio_config_load();
+    GPIOs_loadConfigs();
 
     // Start test
     set_debug_reg1(0xAA);
-    dummy_delay(100000000);
+    dummyDelay(100000000);
 
 
 }

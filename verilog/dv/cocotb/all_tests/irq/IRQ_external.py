@@ -13,7 +13,7 @@ from cocotb_includes import SPI
 @cocotb.test()
 @report_test
 async def IRQ_external(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=395440)
+    caravelEnv = await test_configure(dut, timeout_cycles=426012)
     spi_master = SPI(caravelEnv)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_external test")

@@ -11,7 +11,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def cpu_stress(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=1528965)
+    caravelEnv = await test_configure(dut, timeout_cycles=1747660)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start CPU stress test")
     pass_list = (0x1B, 0x2B, 0x3B, 0x4B, 0x5B)

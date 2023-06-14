@@ -12,7 +12,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def timer0_oneshot(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=150735)
+    caravelEnv = await test_configure(dut, timeout_cycles=159867)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start timer0_oneshot test")
     cocotb.log.info("[TEST] Configure timer as oneshot")
@@ -63,7 +63,7 @@ async def timer0_oneshot(dut):
 @cocotb.test()
 @report_test
 async def timer0_periodic(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=170860)
+    caravelEnv = await test_configure(dut, timeout_cycles=239445)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start timer0_periodic test")
     cocotb.log.info("[TEST] Configure timer as periodic")

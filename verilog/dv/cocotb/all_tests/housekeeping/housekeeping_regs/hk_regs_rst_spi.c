@@ -6,7 +6,7 @@
 
 void main()
 {
-    dummy_delay(100000000);
+    dummyDelay(100000000);
 	return;
 }
 

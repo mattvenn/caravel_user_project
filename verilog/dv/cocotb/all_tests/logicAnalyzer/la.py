@@ -9,7 +9,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def la(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=415603)
+    caravelEnv = await test_configure(dut, timeout_cycles=453671)
     debug_regs = DebugRegs(caravelEnv)
     pass_list = (0x1B, 0x2B, 0x3B, 0x4B, 0x5B, 0x6B, 0x7B, 0x8B)
     fail_list = (0x1E, 0x2E, 0x3E, 0x4E, 0x5E, 0x6E, 0x7E, 0x8E)

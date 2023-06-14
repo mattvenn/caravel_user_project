@@ -11,7 +11,7 @@ from cocotb_includes import SPI
 @cocotb.test()
 @report_test
 async def spi_rd_wr_nbyte(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=2646)
+    caravelEnv = await test_configure(dut, timeout_cycles=2763)
     spi_master = SPI(caravelEnv)
     cocotb.log.info("[TEST] start spi_rd_wr_nbyte test")
     nbytes_limits = 8
@@ -47,7 +47,7 @@ async def spi_rd_wr_nbyte(dut):
 @cocotb.test()
 @report_test
 async def spi_rd_wr_stream(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=1111370)
+    caravelEnv = await test_configure(dut, timeout_cycles=1571)
     spi_master = SPI(caravelEnv)
     cocotb.log.info("[TEST] start spi_rd_wr_stream test")
     #  writing to the random number(1 to 8) of bits after 0x1E (gpio_configure[4]) address  avoid changing gpio 3

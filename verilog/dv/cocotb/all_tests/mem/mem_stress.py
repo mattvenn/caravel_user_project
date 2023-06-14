@@ -9,7 +9,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def mem_dff2_W(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=3054293)
+    caravelEnv = await test_configure(dut, timeout_cycles=3032759)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff2 word access stress test")
     pass_list = [0x1B]
@@ -34,7 +34,7 @@ async def mem_dff2_W(dut):
 @cocotb.test()
 @report_test
 async def mem_dff2_HW(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=3605753)
+    caravelEnv = await test_configure(dut, timeout_cycles=3931459)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff2 half word access stress test")
     pass_list = [0x1B]
@@ -59,7 +59,7 @@ async def mem_dff2_HW(dut):
 @cocotb.test()
 @report_test
 async def mem_dff2_B(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=5924713)
+    caravelEnv = await test_configure(dut, timeout_cycles=5339459)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff2 Byte access stress test")
     pass_list = [0x1B]
@@ -84,7 +84,7 @@ async def mem_dff2_B(dut):
 @cocotb.test()
 @report_test
 async def mem_dff_W(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=5871183)
+    caravelEnv = await test_configure(dut, timeout_cycles=7219359)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff word access stress test")
     pass_list = [0x1B]
@@ -107,7 +107,7 @@ async def mem_dff_W(dut):
 @cocotb.test()
 @report_test
 async def mem_dff_HW(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=4912693)
+    caravelEnv = await test_configure(dut, timeout_cycles=7817759)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff half word access stress test")
     pass_list = [0x1B]
@@ -130,7 +130,7 @@ async def mem_dff_HW(dut):
 @cocotb.test()
 @report_test
 async def mem_dff_B(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=11804933)
+    caravelEnv = await test_configure(dut, timeout_cycles=7921159)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start mem dff Byte access stress test")
     pass_list = [0x1B]
