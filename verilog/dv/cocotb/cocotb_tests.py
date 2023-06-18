@@ -30,3 +30,4 @@ from all_tests.shifting.shifting import *
 from all_tests.PoR.PoR import *
 from all_tests.user_project.user_ram import *
 from all_tests.temp.temp import *
+from all_tests.flash_clk.flash_clk import *
