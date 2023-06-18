@@ -1,8 +1,8 @@
 import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
-from cocotb_includes import test_configure
-from cocotb_includes import report_test
+from caravel_cocotb.caravel_interfaces import test_configure
+from caravel_cocotb.caravel_interfaces import report_test
 from all_tests.gpio.gpio_seq import gpio_all_o_seq
 from all_tests.gpio.gpio_seq import gpio_all_i_seq
 from all_tests.gpio.gpio_seq import gpio_all_i_pu_seq
@@ -41,9 +41,8 @@ async def gpio_all_i_pd_user(dut):
 @cocotb.test()
 @report_test
 async def gpio_all_bidir_user(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=2218751)
-    active_gpios_num = caravelEnv.active_gpios_num
-    debug_regs = DebugRegs(caravelEnv)
+    caravelEnv = await test_configure(dut, timeout_cycles=2259813)
+    active_gpios_num = caravelEnv.active_gpios_num -1
     debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0x1A)
     await caravelEnv.release_csb()

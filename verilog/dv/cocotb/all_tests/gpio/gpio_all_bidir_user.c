@@ -1,4 +1,4 @@
-#include <common.h>
+#include <firmware_apis.h>
 
 void main(){
     unsigned int i,i_temp, j, active_gpio_num,num_high_gpio;

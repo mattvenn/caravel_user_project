@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include <common.h>
+#include <firmware_apis.h>
 
 
 void main(){
@@ -29,7 +29,7 @@ void main(){
     timer0_configureOneShot(500);
     // Loop, waiting for the interrupt to change reg_mprj_datah
     char is_pass = 0;
-    int timeout = 100; 
+    int timeout = 50; 
     unsigned int x;
     for (x = 0; x < timeout; x++){
         if (IRQ_getFlag() == 1){

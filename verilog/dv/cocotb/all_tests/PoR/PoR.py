@@ -2,12 +2,12 @@ import random
 import cocotb
 from cocotb.triggers import ClockCycles, Timer
 import cocotb.log
-from cocotb_includes import report_test
-from cocotb_includes import Caravel_env
-from cocotb_includes import max_num_error
-from cocotb_includes import read_config_file
+from caravel_cocotb.caravel_interfaces import report_test
+from caravel_cocotb.caravel_interfaces import Caravel_env
+from caravel_cocotb.interfaces.common_functions.test_functions import max_num_error
+from caravel_cocotb.interfaces.common_functions.test_functions import read_config_file
 from cocotb.binary import BinaryValue
-from cocotb_includes import Timeout
+from caravel_cocotb.interfaces.common_functions.test_functions import Timeout
 from all_tests.mgmt_gpio.mgmt_gpio import blink_counter
 from all_tests.common.debug_regs import DebugRegs
 from cocotb.clock import Clock

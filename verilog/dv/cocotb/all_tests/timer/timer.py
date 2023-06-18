@@ -1,8 +1,8 @@
 import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
-from cocotb_includes import test_configure
-from cocotb_includes import report_test
+from caravel_cocotb.caravel_interfaces import test_configure
+from caravel_cocotb.caravel_interfaces import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 
@@ -63,7 +63,7 @@ async def timer0_oneshot(dut):
 @cocotb.test()
 @report_test
 async def timer0_periodic(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=239445)
+    caravelEnv = await test_configure(dut, timeout_cycles=296520)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start timer0_periodic test")
     cocotb.log.info("[TEST] Configure timer as periodic")

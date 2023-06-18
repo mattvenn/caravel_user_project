@@ -1,7 +1,7 @@
 import cocotb
 import cocotb.log
-from cocotb_includes import test_configure
-from cocotb_includes import report_test
+from caravel_cocotb.caravel_interfaces import test_configure
+from caravel_cocotb.caravel_interfaces import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 

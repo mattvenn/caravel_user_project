@@ -1,8 +1,8 @@
 import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
-from cocotb_includes import test_configure
-from cocotb_includes import report_test
+from caravel_cocotb.caravel_interfaces import test_configure
+from caravel_cocotb.caravel_interfaces import report_test
 from all_tests.common.debug_regs import DebugRegs
 
 """Testbench of GPIO configuration through bit-bang method using the StriVe housekeeping SPI."""
@@ -11,7 +11,7 @@ from all_tests.common.debug_regs import DebugRegs
 @cocotb.test()
 @report_test
 async def IRQ_timer(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=901806)
+    caravelEnv = await test_configure(dut, timeout_cycles=579003)
     debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_timer test")
     pass_list = (0x1B, 0x2B)

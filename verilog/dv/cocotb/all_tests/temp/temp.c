@@ -1,4 +1,4 @@
-#include <common.h>
+#include <firmware_apis.h>
 
 void set_registers(){
     for (int i = 0; i < 38; i++){

@@ -1,4 +1,4 @@
-from cocotb_includes import Regs
+from caravel_cocotb.interfaces.defsParser import Regs
 
 reg = Regs()
 

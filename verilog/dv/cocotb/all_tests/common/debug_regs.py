@@ -1,5 +1,5 @@
 from cocotb.triggers import ClockCycles
-
+import cocotb
 
 class DebugRegs():
     def __init__(self, caravelEnv):

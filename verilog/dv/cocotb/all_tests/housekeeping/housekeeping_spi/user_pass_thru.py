@@ -1,10 +1,10 @@
 import cocotb
 from cocotb.triggers import FallingEdge, RisingEdge
 import cocotb.log
-from cocotb_includes import test_configure
-from cocotb_includes import report_test
+from caravel_cocotb.caravel_interfaces import test_configure
+from caravel_cocotb.caravel_interfaces import report_test
 from all_tests.spi_master.SPI_VIP import read_mem, SPI_VIP
-from cocotb_includes import SPI
+from caravel_cocotb.caravel_interfaces import SPI
 from random import randrange
 from all_tests.common.debug_regs import DebugRegs
 
@@ -42,7 +42,7 @@ async def user_pass_thru_rd(dut):
     for data in data_received:
         if data != mem[address]:
             cocotb.log.error(
-                f"[TEST] reading incorrect value from address {hex(address)} expected = {hex(mem[address])} returened = {data}"
+                f"[TEST] reading incorrect value from address {hex(address)} expected = {hex(mem[address])} returened = {hex(data)}"
             )
         else:
             cocotb.log.info(

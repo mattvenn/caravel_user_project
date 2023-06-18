@@ -1,12 +1,12 @@
 import cocotb
 from cocotb.triggers import ClockCycles
 import cocotb.log
-from cocotb_includes import RiskV
-from cocotb_includes import Regs
-from cocotb_includes import test_configure
-from cocotb_includes import report_test
+from caravel_cocotb.interfaces.cpu import RiskV 
+from caravel_cocotb.interfaces.defsParser import Regs
+from caravel_cocotb.caravel_interfaces import test_configure
+from caravel_cocotb.caravel_interfaces import report_test
 
-from cocotb_includes import GPIO_MODE
+from caravel_cocotb.caravel_interfaces import GPIO_MODE
 
 reg = Regs()
 

@@ -15,7 +15,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include <common.h>
+#include <firmware_apis.h>
 
 
 void main(){
