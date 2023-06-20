@@ -31,8 +31,9 @@
 
 module user_project_wrapper #(
     parameter BITS = 32
-) (
+)(
 `ifdef USE_POWER_PINS
+    `ifdef sky130
     inout vdda1,	// User area 1 3.3V supply
     inout vdda2,	// User area 2 3.3V supply
     inout vssa1,	// User area 1 analog ground
@@ -41,8 +42,12 @@ module user_project_wrapper #(
     inout vccd2,	// User area 2 1.8v supply
     inout vssd1,	// User area 1 digital ground
     inout vssd2,	// User area 2 digital ground
+    `elsif gf180 // sky130
+    inout vdd,	
+    inout vss,	
+    `endif //sky130
 `endif
-
+    `ifndef AHB
     // Wishbone Slave ports (WB MI A)
     input wb_clk_i,
     input wb_rst_i,
@@ -54,7 +59,19 @@ module user_project_wrapper #(
     input [31:0] wbs_adr_i,
     output wbs_ack_o,
     output [31:0] wbs_dat_o,
-
+    `else // not AHB
+    input  wire            HCLK,
+    input  wire            HRESETn,
+    input  wire            HSEL,
+    input  wire [31:0]     HADDR,
+    input  wire [31:0]     HWDATA,
+    input  wire            HREADY,
+    input  wire            HWRITE,
+    input  wire [1:0]      HTRANS,
+    input  wire [2:0]      HSIZE,
+    output wire [31:0]     HRDATA,
+    output wire            HREADYOUT,
+    `endif // not AHB
     // Logic Analyzer Signals
     input  [127:0] la_data_in,
     output [127:0] la_data_out,
@@ -77,22 +94,68 @@ module user_project_wrapper #(
     // User maskable interrupt signals
     output [2:0] user_irq
 );
+// Dummy assignments so that we can take it through the openlane flow
+`ifndef GPIO_TESTING
+`ifdef SIM
+// Needed for running GL simulation
+assign io_out = 0;
+assign io_oeb = 0;
+`else // SIM
+assign io_out = io_in;
+`endif
+`endif // GPIO_TESTING
 
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
+`ifdef LA_TESTING
+user_project_la_example la_testing(la_data_in,la_data_out,la_oenb);
+`endif // LA_TESTING
+`ifndef AHB
 
-user_proj_example mprj (
-`ifdef USE_POWER_PINS
-	.vccd1(vccd1),	// User area 1 1.8V power
-	.vssd1(vssd1),	// User area 1 digital ground
+// splitting the address space to user address space and debug address space 
+// debug address space are the last 2 registers of user_project_wrapper address space
+wire wbs_cyc_i_user;
+wire  wbs_ack_o_user;
+wire [31:0] wbs_dat_o_user;
+
+wire  wbs_cyc_i_debug;
+wire wbs_ack_o_debug;
+`ifdef GPIO_TESTING
+wire wbs_ack_o_gpio;
+wire [31:0] wbs_dat_o_gpio;
+`endif
+wire [31:0] wbs_dat_o_debug;
+
+// reserve the last 2 regs for debugging registers
+// `ifndef GPIO_TESTING
+`ifdef COCOTB_SIM
+assign wbs_cyc_i_user  = (wbs_adr_i[31:3] != 29'h601FFFF) ? wbs_cyc_i : 0; 
+assign wbs_cyc_i_debug = (wbs_adr_i[31:3] == 29'h601FFFF) ? wbs_cyc_i : 0; 
+assign wbs_ack_o = (wbs_adr_i[31:3] == 28'h601FFFF) ? wbs_ack_o_debug : wbs_ack_o_user; 
+assign wbs_dat_o = (wbs_adr_i[31:3] == 28'h601FFFF) ? wbs_dat_o_debug : wbs_dat_o_user; 
 `endif
 
+`ifndef GPIO_TESTING
+assign wbs_ack_o_user = 0;
+`else
+user_project_gpio_example gpio_testing(
     .wb_clk_i(wb_clk_i),
     .wb_rst_i(wb_rst_i),
+    .wbs_cyc_i(wbs_cyc_i_user),
+    .wbs_stb_i(wbs_stb_i),
+    .wbs_we_i(wbs_we_i),
+    .wbs_sel_i(wbs_sel_i),
+    .wbs_adr_i(wbs_adr_i),
+    .wbs_dat_i(wbs_dat_i),
+    .wbs_ack_o(wbs_ack_o_user),
+    .wbs_dat_o(wbs_dat_o_user), 
+    .io_in(io_in),
+    .io_out(io_out),
+    .io_oeb(io_oeb));
+`endif // GPIO_TESTING
 
-    // MGMT SoC Wishbone Slave
-
+`ifdef ADDR_SPACE_TESTING
+user_project_addr_space_example addr_space_testing(
+    .wb_clk_i(wb_clk_i),
+    .wb_rst_i(wb_rst_i),
     .wbs_cyc_i(wbs_cyc_i),
     .wbs_stb_i(wbs_stb_i),
     .wbs_we_i(wbs_we_i),
@@ -100,24 +163,79 @@ user_proj_example mprj (
     .wbs_adr_i(wbs_adr_i),
     .wbs_dat_i(wbs_dat_i),
     .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
+    .wbs_dat_o(wbs_dat_o));
+`endif// ADDR_SPACE_TESTING
 
-    // Logic Analyzer
-
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
-
-    // IO Pads
-
-    .io_in ({io_in[37:30],io_in[7:0]}),
-    .io_out({io_out[37:30],io_out[7:0]}),
-    .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
-
-    // IRQ
-    .irq(user_irq)
+`ifdef COCOTB_SIM
+debug_regs debug(
+    .wb_clk_i(wb_clk_i),
+    .wb_rst_i(wb_rst_i),
+    .wbs_cyc_i(wbs_cyc_i_debug),
+    .wbs_stb_i(wbs_stb_i),
+    .wbs_we_i(wbs_we_i),
+    .wbs_sel_i(wbs_sel_i),
+    .wbs_adr_i(wbs_adr_i),
+    .wbs_dat_i(wbs_dat_i),
+    .wbs_ack_o(wbs_ack_o_debug),
+    .wbs_dat_o(wbs_dat_o_debug)
 );
+`endif // COCOTB_SIM
+`else // not AHB 
+wire [31:0] HRDATA_user;
+wire [31:0] HRDATA_debug;
+reg [31:0] HADDR_valid;
 
+`ifdef ADDR_SPACE_TESTING
+AHB_user_project_addr_space_example addr_space_testing(
+    .HCLK(HCLK),
+    .HRESETn(HRESETn),
+    .HSEL(HSEL),
+    .HADDR(HADDR),
+    .HTRANS(HTRANS),
+    .HWDATA(HWDATA),
+    .HWRITE(HWRITE),
+    .HREADY(HREADY),
+    .HRDATA(HRDATA_user));
+`endif// ADDR_SPACE_TESTING
+
+`ifdef COCOTB_SIM
+AHB_DEBUG_REGS debug(
+    .HCLK(HCLK),
+    .HRESETn(HRESETn),
+    .HSEL(HSEL),
+    .HADDR(HADDR),
+    .HTRANS(HTRANS),
+    .HWDATA(HWDATA),
+    .HWRITE(HWRITE),
+    .HREADY(HREADY),
+    .HRDATA(HRDATA_debug)
+);
+`endif // COCOTB_SIM
+
+`ifndef GPIO_TESTING
+`else
+user_project_gpio_example gpio_testing(
+    .HCLK(HCLK),
+    .HRESETn(HRESETn),
+    .HSEL(HSEL),
+    .HADDR(HADDR),
+    .HTRANS(HTRANS),
+    .HWDATA(HWDATA),
+    .HWRITE(HWRITE),
+    .HREADY(HREADY),
+    .HRDATA(HRDATA_user),
+    .io_in(io_in),
+    .io_out(io_out),
+    .io_oeb(io_oeb));
+`endif // GPIO_TESTING
+
+always @(posedge HCLK) begin
+    if (HSEL)
+        HADDR_valid <= HADDR;
+end
+
+assign HREADYOUT = 1'b1;
+assign HRDATA = (HADDR_valid[23:0] == 24'hFFFFFC || HADDR_valid[23:0] == 24'hFFFFF8) ? HRDATA_debug : HRDATA_user; 
+
+`endif // not AHB
 endmodule	// user_project_wrapper
-
-`default_nettype wire

@@ -1,0 +1,64 @@
+---
+# Regression with all tests run in RTL mode 
+
+Tests: 
+    - {name: gpio_all_i, sim: RTL}
+    - {name: hk_disable, sim: RTL}
+    - {name: uart_rx, sim: RTL}
+    - {name: hk_regs_rst_spi, sim: RTL}
+    - {name: gpio_all_i_user, sim: RTL}
+    - {name: gpio_all_i_pu, sim: RTL}
+    - {name: gpio_all_i_pu_user, sim: RTL}
+    - {name: gpio_all_i_pd, sim: RTL}
+    - {name: gpio_all_i_pd_user, sim: RTL}
+    - {name: gpio_all_bidir_user, sim: RTL}
+    - {name: gpio_all_o, sim: RTL}
+    - {name: gpio_all_o_user, sim: RTL}
+    - {name: hk_regs_wr_wb_cpu, sim: RTL}
+    - {name: IRQ_timer, sim: RTL}
+    - {name: bitbang_cpu_all_i, sim: RTL}
+    - {name: bitbang_spi_o, sim: RTL}
+    - {name: mgmt_gpio_out, sim: RTL}
+    - {name: bitbang_spi_i, sim: RTL}
+    - {name: hk_regs_wr_spi, sim: RTL}
+    - {name: IRQ_external, sim: RTL}
+    - {name: IRQ_uart, sim: RTL}
+    - {name: mgmt_gpio_in, sim: RTL}
+    - {name: timer0_oneshot, sim: RTL}
+    - {name: uart_loopback, sim: RTL}
+    - {name: timer0_periodic, sim: RTL}
+    - {name: uart_tx, sim: RTL}
+    - {name: debug, sim: RTL}
+    - {name: spi_master_rd, sim: RTL}
+    - {name: user_pass_thru_rd, sim: RTL}
+    - {name: clock_redirect, sim: RTL}
+    - {name: mgmt_gpio_bidir, sim: RTL}
+    - {name: la, sim: RTL}
+    # - {name: pll, sim: RTL}
+    - {name: spi_master_temp, sim: RTL}
+    - {name: bitbang_cpu_all_o, sim: RTL}
+    - {name: mem_dff_W, sim: RTL}
+    - {name: serial_shifting_01, sim: RTL}
+    - {name: mem_dff2_W, sim: RTL}
+    - {name: serial_shifting_10, sim: RTL}
+    - {name: serial_shifting_1100, sim: RTL}
+    - {name: serial_shifting_0011, sim: RTL}
+    - {name: cpu_stress, sim: RTL}
+    - {name: spi_rd_wr_nbyte, sim: RTL}
+    - {name: cpu_reset, sim: RTL}
+    - {name: user_address_space, sim: RTL}
+    - {name: mem_dff2_HW, sim: RTL}
+    - {name: mem_dff_HW, sim: RTL}
+    - {name: mem_dff2_B, sim: RTL}
+    - {name: mem_dff_B, sim: RTL}
+    - {name: mgmt_gpio_disable, sim: RTL}
+    - {name: user_pass_thru_connection, sim: RTL}
+    - {name: spi_rd_wr_stream, sim: RTL}
+    - {name: PoR, sim: RTL}
+    - {name: IRQ_spi, sim: RTL}
+    - {name: IRQ_external2, sim: RTL}
+    - {name: IRQ_uart_rx, sim: RTL}
+    - {name: uart_rx_msg, sim: RTL}
+
+
+
