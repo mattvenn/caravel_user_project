@@ -5,7 +5,7 @@
 void main(){
     enable_debug();
     enableHkSpi(0);
-    output_enable_all_gpio_user(1);
+    // output_enable_all_gpio_user(1);
     GPIOs_configureAll(GPIO_MODE_USER_STD_INPUT_PULLDOWN);
     GPIOs_loadConfigs();      
     set_debug_reg1(0xAA); // finish configuration 

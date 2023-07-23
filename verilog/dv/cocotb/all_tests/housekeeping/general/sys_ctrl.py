@@ -4,7 +4,7 @@ import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
 from caravel_cocotb.caravel_interfaces import SPI
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 caravel_clock = 0
@@ -17,7 +17,7 @@ core_clock = 0
 async def clock_redirect(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=55565)
     spi_master = SPI(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     error_margin = 0.1
     # calculate core clock
     await cocotb.start(calculate_clk_period(dut.uut.clock, "core clock"))
@@ -103,8 +103,8 @@ async def calculate_clk_period(clk, name):
 async def hk_disable(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=51474)
     spi_master = SPI(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     try:
         hk_hdl = dut.uut.chip_core.housekeeping
     except AttributeError:

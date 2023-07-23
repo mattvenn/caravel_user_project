@@ -4,7 +4,7 @@ import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
 from caravel_cocotb.caravel_interfaces import SPI
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 @cocotb.test()
@@ -12,7 +12,7 @@ from all_tests.common.debug_regs import DebugRegs
 async def cpu_reset(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=121372)
     spi_master = SPI(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start cpu_reset test")
     # wait for CPU to write 5 at debug_reg1
     while True:

@@ -4,7 +4,7 @@ import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
 from all_tests.spi_master.SPI_VIP import read_mem, SPI_VIP
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 @cocotb.test()
@@ -16,10 +16,10 @@ async def spi_master_rd(dut):
     """
 
     caravelEnv = await test_configure(dut, timeout_cycles=362179)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_rd test")
-    debug_regs = DebugRegs(caravelEnv)
-    file_name = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/all_tests/spi_master/test_data'
+    debug_regs = await configure_userdesign(caravelEnv)
+    file_name = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/all_tests/spi_master/test_data'.replace('"', '')
     mem = read_mem(file_name)
     CSB = dut.gpio33_monitor
     SCK = dut.gpio32_monitor
@@ -77,7 +77,7 @@ async def spi_master_temp(dut):
     the method of testing used can't work if 2 addresses Consecutive have the same address
     """
     caravelEnv = await test_configure(dut, timeout_cycles=114548)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_temp test")
     CSB = dut.gpio33_monitor
     SCK = dut.gpio32_monitor

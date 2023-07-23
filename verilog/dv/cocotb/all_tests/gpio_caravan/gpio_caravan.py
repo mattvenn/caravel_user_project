@@ -3,14 +3,14 @@ from cocotb.triggers import ClockCycles
 import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 @cocotb.test()
 @report_test
 async def gpio_all_o_caravan(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=11586652)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
 
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
@@ -76,7 +76,7 @@ async def gpio_all_o_caravan(dut):
 @report_test
 async def gpio_all_i_caravan(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1156837)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     cocotb.log.info("[TEST] configuration finished")
     data_in = 0xFFFFFFFF
@@ -199,7 +199,7 @@ async def gpio_all_i_caravan(dut):
 @report_test
 async def gpio_all_i_pu_caravan(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1158961, num_error=2000)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
     # monitor the output of padframe module it suppose to be all ones  when no input is applied
@@ -359,7 +359,7 @@ async def gpio_all_i_pu_caravan(dut):
 @report_test
 async def gpio_all_i_pd_caravan(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1158961, num_error=2000)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
     # monitor the output of padframe module it suppose to be all ones  when no input is applied
@@ -521,7 +521,7 @@ async def gpio_all_i_pd_caravan(dut):
 @report_test
 async def gpio_all_bidir(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=111144980)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0x1A)
     await caravelEnv.release_csb()
     cocotb.log.info("[TEST] finish configuring ")

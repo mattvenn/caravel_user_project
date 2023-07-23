@@ -3,16 +3,15 @@ from cocotb.triggers import ClockCycles, Edge
 import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
-
 from caravel_cocotb.caravel_interfaces import UART
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 @cocotb.test()
 @report_test
 async def uart_tx(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=444465)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start uart test")
     expected_msg = "Monitor: Test UART (RTL) passed"
     uart = UART(caravelEnv)
@@ -31,9 +30,8 @@ async def uart_tx(dut):
 @report_test
 async def uart_rx(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=188729)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     uart = UART(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
     cocotb.log.info("[TEST] Start uart test")
     # IO[0] affects the uart selecting btw system and debug
     caravelEnv.drive_gpio_in((0, 0), 0)
@@ -85,9 +83,9 @@ async def uart_check_char_recieved(caravelEnv, debug_regs):
 @report_test
 async def uart_loopback(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=216759)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start uart test")
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await cocotb.start(connect_5_6(dut, caravelEnv))  # short gpio 6 and 5
     caravelEnv.drive_gpio_in(
         (0, 0), 0
@@ -139,7 +137,7 @@ async def uart_check_char_recieved_loopback(caravelEnv, debug_regs):
 async def uart_rx_msg(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=111154409)
     uart = UART(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     # IO[0] affects the uart selecting btw system and debug
     caravelEnv.drive_gpio_in((0, 0), 0)
     caravelEnv.drive_gpio_in((5, 5), 1)

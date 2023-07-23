@@ -5,7 +5,7 @@ from caravel_cocotb.interfaces.defsParser import Regs
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
 from caravel_cocotb.caravel_interfaces import SPI
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 reg = Regs()
 """Testbench of GPIO configuration through bit-bang method using the StriVe housekeeping SPI."""
@@ -16,7 +16,7 @@ reg = Regs()
 async def IRQ_external2(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=428337)
     spi_master = SPI(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_external2 test")
     pass_list = (0x1B, 0x2B)
     fail_list = (0x1E, 0x2E)

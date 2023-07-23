@@ -2,7 +2,7 @@ import cocotb
 import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 def shift(gpio, shift_type, caravelEnv):
@@ -55,9 +55,9 @@ def shift(gpio, shift_type, caravelEnv):
 @report_test
 async def serial_shifting_10(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=540110)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     uut = dut.uut.chip_core
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xFF)
     gpios_l = (
         "gpio_control_bidir_1[0]",
@@ -156,9 +156,9 @@ async def serial_shifting_10(dut):
 @report_test
 async def serial_shifting_01(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=541278)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     uut = dut.uut.chip_core
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xFF)
     gpios_l = (
         "gpio_control_bidir_1[0]",
@@ -257,9 +257,9 @@ async def serial_shifting_01(dut):
 @report_test
 async def serial_shifting_0011(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=700516)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     uut = dut.uut.chip_core
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xFF)
     gpios_l = (
         "gpio_control_bidir_1[0]",
@@ -358,9 +358,9 @@ async def serial_shifting_0011(dut):
 @report_test
 async def serial_shifting_1100(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=700331)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     uut = dut.uut.chip_core
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xFF)
     gpios_l = (
         "gpio_control_bidir_1[0]",

@@ -1,8 +1,9 @@
 import cocotb
-from cocotb.triggers import RisingEdge
+from cocotb.triggers import RisingEdge, NextTimeStep
 import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
+from user_design import configure_userdesign
 
 
 @cocotb.test()
@@ -10,9 +11,12 @@ from caravel_cocotb.caravel_interfaces import report_test
 async def user_address_space(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=40620)
     cocotb.log.info("[TEST] Start user_address_space test")
-    ack_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.wbs_ack_o
-    addr_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.addr
-    data_hdl = caravelEnv.caravel_hdl.mprj.addr_space_testing.data
+    ack_hdl = caravelEnv.caravel_hdl.mprj.wbs_ack_o
+    addr_hdl = caravelEnv.caravel_hdl.mprj.wbs_adr_i
+    data_o_hdl = caravelEnv.caravel_hdl.mprj.wbs_dat_o
+    data_i_hdl = caravelEnv.caravel_hdl.mprj.wbs_dat_i
+    we_hdl = caravelEnv.caravel_hdl.mprj.wbs_we_i
+    
     start_addr = int(caravelEnv.design_macros.USER_SPACE_ADDR)
     print(f"user space adddress = {start_addr}")
     user_size = int(caravelEnv.design_macros.USER_SPACE_SIZE)
@@ -46,18 +50,33 @@ async def user_address_space(dut):
         0x00000777,
         0xFFFFFFFF,
     )
+    addr_read = (start_addr + 0x9F44, start_addr + 0x58, start_addr + 0x3602EC)
+    all_addr = addr_read + addr_arr
+    await configure_userdesign(caravelEnv, used_addr=addr_arr)
     print([hex(i) for i in addr_arr])
     for addr, data in zip(addr_arr, data_arr):
         await RisingEdge(ack_hdl)
+        await NextTimeStep()
         if addr_hdl.value.integer != addr:
             cocotb.log.error(
                 f"[TEST] seeing unexpected address {hex(addr_hdl.value.integer)} expected {hex(addr)}"
             )
-        elif data_hdl.value.integer != data:
-            cocotb.log.error(
-                f"[TEST] seeing unexpected data {hex(data_hdl.value.integer)} expected {hex(data)} address {hex(addr)}"
-            )
-        else:
-            cocotb.log.info(
-                f"[TEST] seeing the correct data {hex(data)} from address {hex(addr)}"
-            )
+        elif we_hdl.value.integer == 1:# write
+            if data_i_hdl.value.integer != data:
+                cocotb.log.error(
+                    f"[TEST] seeing unexpected write data {hex(data_i_hdl.value.integer)} expected {hex(data)} address {hex(addr)}"
+                )
+            else:
+                cocotb.log.info(
+                    f"[TEST] seeing the correct data {hex(data)} from address {hex(addr)}"
+                )
+        elif we_hdl.value.integer == 0:# read
+            if data_o_hdl.value.integer != data:
+                cocotb.log.error(
+                    f"[TEST] seeing unexpected read data {hex(data_o_hdl.value.integer)} expected {hex(data)} address {hex(addr)}"
+                )
+        
+            else:
+                cocotb.log.info(
+                    f"[TEST] seeing the correct data {hex(data)} from address {hex(addr)}"
+                )

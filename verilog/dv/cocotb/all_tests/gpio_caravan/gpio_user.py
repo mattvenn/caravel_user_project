@@ -3,14 +3,14 @@ from cocotb.triggers import ClockCycles
 import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 @cocotb.test()
 @report_test
 async def gpio_all_o_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1850952)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
     cocotb.log.info("[TEST] finish configuring as user output")
@@ -80,7 +80,7 @@ async def gpio_all_o_user(dut):
 @report_test
 async def gpio_all_i_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=258608)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     cocotb.log.info("[TEST] configuration finished")
     data_in = 0xFFFFFFFF
@@ -198,7 +198,7 @@ async def gpio_all_i_user(dut):
 @report_test
 async def gpio_all_i_pu_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=75919, num_error=2000)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
     # monitor the output of padframe module it suppose to be all ones  when no input is applied
@@ -316,8 +316,8 @@ async def gpio_all_i_pu_user(dut):
 @report_test
 async def gpio_all_i_pd_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1158961, num_error=2000)
-    debug_regs = DebugRegs(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
     # monitor the output of padframe module it suppose to be all ones  when no input is applied
@@ -436,8 +436,8 @@ async def gpio_all_i_pd_user(dut):
 @report_test
 async def gpio_all_bidir_user(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=2001341)
-    debug_regs = DebugRegs(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0x1A)
     await caravelEnv.release_csb()
     cocotb.log.info("[TEST] finish configuring ")

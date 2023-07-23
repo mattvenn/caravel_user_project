@@ -15,9 +15,9 @@ void main(){
         num_high_gpio = (active_gpio_num - 32);
         i = 0x1 << num_high_gpio;
         i_temp = i;
-        for (j = 0; j < num_high_gpio; j++) {
+        for (j = 0; j <= num_high_gpio; j++) {
                 GPIOs_writeHigh(i);
-                set_debug_reg2(active_gpio_num-j);
+                set_debug_reg2(active_gpio_num+1-j);
                 wait_debug_reg1(0xD1); // wait until wait until test read 1
                 GPIOs_writeHigh(0x0);
                 set_debug_reg2(0);

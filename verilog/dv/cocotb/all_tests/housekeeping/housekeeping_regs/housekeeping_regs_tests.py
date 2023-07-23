@@ -10,7 +10,7 @@ from caravel_cocotb.caravel_interfaces import report_test
 from caravel_cocotb.caravel_interfaces import SPI
 from caravel_cocotb.caravel_interfaces import SPI
 import json
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 reg = Regs()
 
 
@@ -106,7 +106,7 @@ async def hk_regs_wr_wb(dut):
 @report_test
 async def hk_regs_wr_wb_cpu(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=294366)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     reg1 = 0  # buffer
     reg2 = 0
     regs_list = (
@@ -157,14 +157,15 @@ async def hk_regs_wr_wb_cpu(dut):
 async def hk_regs_wr_spi(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=18438, num_error=0)
     spi_master = SPI(caravelEnv)
-    hk_file = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs.json'
+    main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
+    hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'
     if "CARAVAN" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs_caravan.json'
+            f'{main_path}/wb_models/housekeepingWB/HK_regs_caravan.json'
         )
     if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs_gf.json'
+            f'{main_path}/wb_models/housekeepingWB/HK_regs_gf.json'
         )
     with open(hk_file) as f:
         regs = json.load(f)
