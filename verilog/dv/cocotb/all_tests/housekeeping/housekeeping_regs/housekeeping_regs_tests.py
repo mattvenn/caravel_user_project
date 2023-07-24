@@ -258,6 +258,7 @@ async def hk_regs_wr_spi(dut):
 async def hk_regs_rst_spi(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=9299, num_error=INFINITY)
     spi_master = SPI(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
     hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'
     if "gf180" in caravelEnv.design_macros._asdict():
