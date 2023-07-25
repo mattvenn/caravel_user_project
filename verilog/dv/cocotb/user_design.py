@@ -34,7 +34,6 @@ class UserDesign:
         await cocotb.start(self.gpio_test.start())
         if self.la_test:
             await cocotb.start(self.la_testing.start())
-        await cocotb.start(self.hk._housekeeping())
 
 
 class DebugRegs():

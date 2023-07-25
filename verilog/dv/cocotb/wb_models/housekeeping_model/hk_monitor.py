@@ -23,12 +23,12 @@ class HK_Monitor():
             if self.cs_hdl.value.integer == 1:
                 transaction = SPI_Transaction(cs=1, sdi=0, sdo=0)
                 await queue.put(transaction)
-                cocotb.log.info(f"[{__class__.__name__}][_spi_monitoring] sending transaction {transaction} to queuq")
+                cocotb.log.debug(f"[{__class__.__name__}][_spi_monitoring] sending transaction {transaction} to queuq")
                 await Edge(self.cs_hdl)  # wait until cs is low
             await RisingEdge(self.clk_hdl)
             transaction = SPI_Transaction(cs=self.cs_hdl.value, sdi=self.sdi_hdl.value, sdo=self.sdo_hdl.value)
             await queue.put(transaction)
-            cocotb.log.info(f"[{__class__.__name__}][_spi_monitoring] sending transaction {transaction} to queuq")
+            cocotb.log.debug(f"[{__class__.__name__}][_spi_monitoring] sending transaction {transaction} to queuq")
 
     def _spi_hdls(self):
         self.cs_hdl = self.hk_hdl.mgmt_gpio_in[3]
