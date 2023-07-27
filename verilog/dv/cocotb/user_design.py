@@ -3,6 +3,7 @@ from caravel_cocotb.vip import WishboneInterface
 from caravel_cocotb.vip import RegisterFile
 from cocotb.triggers import Edge, First, ClockCycles
 from wb_models.housekeeping_model.hk_model import HK_Model
+from wb_models.soc_model.soc_model import SOC_Model
 
 class UserDesign:
     def __init__(self, caravelEnv, used_addr=None, gpio_test=None, la_test=False):
@@ -17,6 +18,8 @@ class UserDesign:
         self.la_testing = LA_Testing(LAs)
         self.gpio_test = GPIO_Testing(caravelEnv, gpio_test, self.debug_regs, IOs)
         self.hk = HK_Model(caravelEnv)
+        self.SOC = SOC_Model(caravelEnv)
+        cocotb.plusargs["COVERAGE_COLLECT"] = True
 
     def get_hdls(self, caravelEnv):
         inputs = {"clk": caravelEnv.user_hdl.wb_clk_i, "rst": caravelEnv.user_hdl.wb_rst_i, "stb": caravelEnv.user_hdl.wbs_stb_i, "we": self.caravelEnv.user_hdl.wbs_we_i, "cyc": caravelEnv.user_hdl.wbs_cyc_i, "sel": caravelEnv.user_hdl.wbs_sel_i, "addr": caravelEnv.user_hdl.wbs_adr_i, "data": caravelEnv.user_hdl.wbs_dat_i}
