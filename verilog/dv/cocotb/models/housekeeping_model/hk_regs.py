@@ -10,7 +10,7 @@ class HK_Registers():
         self.get_regs()
 
     def get_regs(self):
-        file_name = f"{cocotb.plusargs['USER_PROJECT_ROOT']}/verilog/dv/cocotb/wb_models/housekeeping_model/hk_regs.yaml"
+        file_name = f"{cocotb.plusargs['USER_PROJECT_ROOT']}/verilog/dv/cocotb/models/housekeeping_model/hk_regs.yaml"
         file_name = file_name.replace('"', '')
         with open(file_name, "r") as file:
             regs = yaml.safe_load(file)["registers"]
@@ -58,6 +58,7 @@ class HK_Register():
         cocotb.log.debug(f"[{__class__.__name__}][__init__] Create register {name} at wishbone address {wb_addr}, spi address {spi_addr} with width {width} reset {reset} access_type {access_type}")
         # initialize coverage no covearge happened just sample nothing so the coverge is initialized
         self.sample_write("null")
+        self.sample_read("null")
         self.sample_write("null", interface="wb")
         self.sample_read("null", interface="wb")
 

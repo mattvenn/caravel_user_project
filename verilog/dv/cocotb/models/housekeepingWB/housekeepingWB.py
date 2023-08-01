@@ -5,10 +5,10 @@ from cocotb_bus.monitors import Monitor
 from cocotb.log import SimLogFormatter, SimTimeContextFilter
 from cocotb.binary import BinaryValue
 from math import ceil
-from wb_models.housekeepingWB.HKmonitor import HKmonitor
-from wb_models.housekeepingWB.HKSPImonitor import HKSPImonitor
-from wb_models.housekeepingWB.HKSPImonitor import CSBmonitor
-from wb_models.housekeepingWB.HK_models import HK_models
+from models.housekeepingWB.HKmonitor import HKmonitor
+from models.housekeepingWB.HKSPImonitor import HKSPImonitor
+from models.housekeepingWB.HKSPImonitor import CSBmonitor
+from models.housekeepingWB.HK_models import HK_models
 from cocotb_bus.scoreboard import Scoreboard
 import logging
 import fnmatch

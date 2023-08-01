@@ -8,7 +8,7 @@ from cocotb.result import TestFailure
 from math import ceil
 import copy
 import logging
-from wb_models.housekeepingWB.HKmonitor import HKmonitor
+from models.housekeepingWB.HKmonitor import HKmonitor
 
 
 class HKSPImonitor(Monitor):

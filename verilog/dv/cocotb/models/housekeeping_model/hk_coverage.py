@@ -18,7 +18,7 @@ class SPI_Coverage():
         self.command_mapping.update({f"11{format(n, '03b')}000": f"write read {n}-bytes" for n in range(1,8)})
         # initialize coverage no covearge happened just sample nothing so the coverge is initialized
         temp = namedtuple('temp', ['command', 'address', 'data_in', 'data_out'])
-        self.spi_cov(temp('abc', "0xFFFFF", ["0xFFFFF"], ["0xFFFFF"]))
+        self.spi_cov(None, do_sampling=False)
 
     def command_to_text(self, command):
         cocotb.log.debug(f"[{__class__.__name__}][command_to_text] command = {command}")
@@ -27,7 +27,7 @@ class SPI_Coverage():
         else:
             return "invalid command"
 
-    def spi_cov(self, spi_operation):
+    def spi_cov(self, spi_operation, do_sampling=True):
         @CoverPoint(
             "top.caravel.housekeeping.spi.modes",
             xf=lambda spi_operation: spi_operation.command,
@@ -65,12 +65,6 @@ class SPI_Coverage():
         def sample_read(data):
             pass
 
-        sample_command(spi_operation)
-        for data in spi_operation.data_in:
-            sample_write(data)
-        for data in spi_operation.data_out:
-            sample_read(data)
-
         @CoverCross(
             "top.caravel.housekeeping.spi.modes_and_address",
             items=[
@@ -80,26 +74,32 @@ class SPI_Coverage():
         )
         def sample():
             pass
-        sample()
+
+        if do_sampling:
+            sample_command(spi_operation)
+            for data in spi_operation.data_in:
+                sample_write(data)
+            for data in spi_operation.data_out:
+                sample_read(data)
+            sample()
 
 
 class WB_Coverage():
     def __init__(self) -> None:
         # initialize coverage no covearge happened just sample nothing so the coverge is initialized
-        temp = namedtuple('temp', ['write', 'address', 'write_data', 'read_data'])
 
-        self.wb_cov(temp(write=0x1000, address=0x0, write_data=0xFFFFFFFFFF, read_data=0xFFFFFFFFFF))
+        self.wb_cov(None, do_sampling=False)
 
-    def wb_cov(self, wb_operation):
+    def wb_cov(self, wb_operation, do_sampling=True):
         @CoverPoint(
-            "top.caravel.housekeeping.wb.access_type",
+            "top.caravel.housekeeping.wishbone.access_type",
             xf=lambda wb_operation: wb_operation.write,
             bins=[0, 1],
             bins_labels=["read", "write"],
             weight=1
         )
         @CoverPoint(
-            "top.caravel.housekeeping.wb.address",
+            "top.caravel.housekeeping.wishbone.address",
             xf=lambda wb_operation: wb_operation.address,
             bins=[(0x26100000, 0x26100028), (0x26000000, 0x260000b8), (0x26200000, 0x26200010)],
             bins_labels=["spi address", "gpio address", "system address"],
@@ -107,14 +107,14 @@ class WB_Coverage():
             weight=1
         )
         @CoverPoint(
-            "top.caravel.housekeeping.wb.write_data",
+            "top.caravel.housekeeping.wishbone.write_data",
             xf=lambda wb_operation: wb_operation.write_data,
             bins=[(0x00000000, 0x1FFFFFFF), (0x20000000, 0x3FFFFFFF), (0x40000000, 0x5FFFFFFF), (0x60000000, 0x7FFFFFFF), (0x80000000, 0x9FFFFFFF), (0xA0000000, 0xBFFFFFFF), (0xC0000000, 0xDFFFFFFF), (0xE0000000, 0xFFFFFFFF)],
             bins_labels=["0 to 0x1FFFFFFF", "0x20000000 to 0x3FFFFFFF", "0x40000000 to 0x5FFFFFFF", "0x60000000 to 0x7FFFFFFF", "0x80000000 to 0x9FFFFFFF", "0xA0000000 to 0xBFFFFFFF", "0xC0000000 to 0xDFFFFFFF", "0xE0000000 to 0xFFFFFFFF"],
             rel=lambda val, b: b[0] <= val <= b[1],
         )
         @CoverPoint(
-            "top.caravel.housekeeping.wb.read_data",
+            "top.caravel.housekeeping.wishbone.read_data",
             xf=lambda wb_operation: wb_operation.read_data,
             bins=[(0x00000000, 0x1FFFFFFF), (0x20000000, 0x3FFFFFFF), (0x40000000, 0x5FFFFFFF), (0x60000000, 0x7FFFFFFF), (0x80000000, 0x9FFFFFFF), (0xA0000000, 0xBFFFFFFF), (0xC0000000, 0xDFFFFFFF), (0xE0000000, 0xFFFFFFFF)],
             bins_labels=["0 to 0x1FFFFFFF", "0x20000000 to 0x3FFFFFFF", "0x40000000 to 0x5FFFFFFF", "0x60000000 to 0x7FFFFFFF", "0x80000000 to 0x9FFFFFFF", "0xA0000000 to 0xBFFFFFFF", "0xC0000000 to 0xDFFFFFFF", "0xE0000000 to 0xFFFFFFFF"],
@@ -122,4 +122,5 @@ class WB_Coverage():
         )
         def sample(wb_operation):
             pass
-        sample(wb_operation)
+        if do_sampling:
+            sample(wb_operation)

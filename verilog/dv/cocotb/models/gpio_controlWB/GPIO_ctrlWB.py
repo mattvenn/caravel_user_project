@@ -10,9 +10,9 @@ import fnmatch
 import copy
 from cocotb.result import TestFailure
 from interfaces.common import Macros
-from wb_models.gpio_controlWB.GPIO_models import GPIO_models
-from wb_models.gpio_controlWB.monitors import DefaultMonitor
-from wb_models.gpio_controlWB.monitors import (
+from models.gpio_controlWB.GPIO_models import GPIO_models
+from models.gpio_controlWB.monitors import DefaultMonitor
+from models.gpio_controlWB.monitors import (
     SerialMonitor,
     PadMonitor,
     MgmtGpioMonitor,

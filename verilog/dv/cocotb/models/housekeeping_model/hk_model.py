@@ -1,8 +1,8 @@
 import cocotb
-from wb_models.housekeeping_model.hk_monitor import HK_Monitor
-from wb_models.housekeeping_model.hk_coverage import SPI_Coverage
-from wb_models.housekeeping_model.hk_coverage import WB_Coverage
-from wb_models.housekeeping_model.hk_regs import HK_Registers
+from models.housekeeping_model.hk_monitor import HK_Monitor
+from models.housekeeping_model.hk_coverage import SPI_Coverage
+from models.housekeeping_model.hk_coverage import WB_Coverage
+from models.housekeeping_model.hk_regs import HK_Registers
 from cocotb.queue import Queue
 from collections import namedtuple
 import logging

@@ -5,6 +5,7 @@ from collections import namedtuple
 SPI_Transaction = namedtuple("SPI_Transaction", ["cs", "sdi", "sdo"])
 WB_Transaction = namedtuple("WB_Transaction", ["address", "write", "write_data", "read_data", "select"])
 
+
 class HK_Monitor():
     def __init__(self, Caravel_env, spi_queue, wb_queue):
         self.hk_hdl = Caravel_env.hk_hdl
@@ -27,6 +28,7 @@ class HK_Monitor():
             await RisingEdge(self.wb_ack_hdl)
             transaction = WB_Transaction(address=self.wb_adr_hdl.value.integer, write=self.wb_we_hdl.value.integer, write_data=self.wb_datai_hdl.value.integer, read_data=self.wb_dato_hdl.value.integer, select=self.wb_sel_hdl.value.integer)
             queue.put_nowait(transaction)
+            cocotb.log.debug(f"[{__class__.__name__}][_spi_monitoring] sending transaction {transaction} to queuq")
 
     async def _spi_monitoring(self, queue):
         while True:

@@ -18,7 +18,6 @@ async def spi_master_rd(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=362179)
     debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_rd test")
-    debug_regs = await configure_userdesign(caravelEnv)
     file_name = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/all_tests/spi_master/test_data'.replace('"', '')
     mem = read_mem(file_name)
     CSB = dut.gpio33_monitor

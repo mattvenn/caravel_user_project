@@ -23,10 +23,10 @@ async def hk_regs_wr_wb(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=111678, num_error=INFINITY)
     cpu = RiskV(dut)
     cpu.cpu_force_reset()
-    hk_file = f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs.json'
+    hk_file = f'{cocotb.plusargs["MAIN_PATH"]}/models/housekeepingWB/HK_regs.json'
     if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs_gf.json'
+            f'{cocotb.plusargs["MAIN_PATH"]}/models/housekeepingWB/HK_regs_gf.json'
         )
     with open(hk_file) as f:
         regs = json.load(f)
@@ -158,14 +158,14 @@ async def hk_regs_wr_spi(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=18438, num_error=0)
     spi_master = SPI(caravelEnv)
     main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
-    hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'
+    hk_file = f'{main_path}/models/housekeepingWB/HK_regs.json'
     if "CARAVAN" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{main_path}/wb_models/housekeepingWB/HK_regs_caravan.json'
+            f'{main_path}/models/housekeepingWB/HK_regs_caravan.json'
         )
     if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{main_path}/wb_models/housekeepingWB/HK_regs_gf.json'
+            f'{main_path}/models/housekeepingWB/HK_regs_gf.json'
         )
     with open(hk_file) as f:
         regs = json.load(f)
@@ -260,10 +260,10 @@ async def hk_regs_rst_spi(dut):
     spi_master = SPI(caravelEnv)
     debug_regs = await configure_userdesign(caravelEnv)
     main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
-    hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'
+    hk_file = f'{main_path}/models/housekeepingWB/HK_regs.json'
     if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{main_path}/wb_models/housekeepingWB/HK_regs_gf.json'
+            f'{main_path}/models/housekeepingWB/HK_regs_gf.json'
         )
     with open(hk_file) as f:
         regs = json.load(f)
