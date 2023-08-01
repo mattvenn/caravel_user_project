@@ -2,13 +2,17 @@ import cocotb
 from caravel_cocotb.vip import WishboneInterface
 from caravel_cocotb.vip import RegisterFile
 from cocotb.triggers import Edge, First, ClockCycles
-from wb_models.housekeeping_model.hk_model import HK_Model
-from wb_models.soc_model.soc_model import SOC_Model
+from models.housekeeping_model.hk_model import HK_Model
+from models.soc_model.soc_model import SOC_Model
+from models.user_project_model.user_model import UserModel
+from models.gpio_model.gpio_model import GPIOs_Model
+
 
 class UserDesign:
     def __init__(self, caravelEnv, used_addr=None, gpio_test=None, la_test=False):
         self.caravelEnv = caravelEnv
         inputs, outputs, IOs, LAs = self.get_hdls(caravelEnv)
+        self._initalize_outputs([outputs["ack"], outputs["data"], LAs["out"], IOs["out"]])
         self.debug_regs = DebugRegs(caravelEnv)
         regfile = self.debug_regs.get_regs()
         if used_addr is not None:
@@ -17,9 +21,6 @@ class UserDesign:
         self.la_test = la_test
         self.la_testing = LA_Testing(LAs)
         self.gpio_test = GPIO_Testing(caravelEnv, gpio_test, self.debug_regs, IOs)
-        self.hk = HK_Model(caravelEnv)
-        self.SOC = SOC_Model(caravelEnv)
-        cocotb.plusargs["COVERAGE_COLLECT"] = True
 
     def get_hdls(self, caravelEnv):
         inputs = {"clk": caravelEnv.user_hdl.wb_clk_i, "rst": caravelEnv.user_hdl.wb_rst_i, "stb": caravelEnv.user_hdl.wbs_stb_i, "we": self.caravelEnv.user_hdl.wbs_we_i, "cyc": caravelEnv.user_hdl.wbs_cyc_i, "sel": caravelEnv.user_hdl.wbs_sel_i, "addr": caravelEnv.user_hdl.wbs_adr_i, "data": caravelEnv.user_hdl.wbs_dat_i}
@@ -30,6 +31,10 @@ class UserDesign:
         
         LAs = {"in": caravelEnv.user_hdl.la_data_in, "out": caravelEnv.user_hdl.la_data_out, "oeb":caravelEnv.user_hdl.la_oenb}
         return inputs, outputs, IOs, LAs
+    
+    def _initalize_outputs(self, outputs: list):
+        for output in outputs:
+            output.value = 0
 
     async def start(self):
         cocotb.log.info("[UserDesign][start] start user design")
@@ -37,6 +42,16 @@ class UserDesign:
         await cocotb.start(self.gpio_test.start())
         if self.la_test:
             await cocotb.start(self.la_testing.start())
+        
+        await ClockCycles(self.caravelEnv.clk, 1)
+        self.coverage_models()
+    
+    def coverage_models(self):
+        self.hk_model = HK_Model(self.caravelEnv)
+        self.SOC_model = SOC_Model(self.caravelEnv)
+        self.user_model = UserModel(self.caravelEnv)
+        self.gpios_model = GPIOs_Model(self.caravelEnv)
+        cocotb.plusargs["COVERAGE_COLLECT"] = True
 
 
 class DebugRegs():
