@@ -64,14 +64,14 @@ class HK_Register():
 
     def write(self, data):
         self.value = data & self.mask
-        cocotb.log.info(f"[{__class__.__name__}][write] write {self.value} to register {self.name}")
+        cocotb.log.debug(f"[{__class__.__name__}][write] write {self.value} to register {self.name}")
 
     def read(self):
-        cocotb.log.info(f"[{__class__.__name__}][read] read {self.value} from register {self.name}")
+        cocotb.log.debug(f"[{__class__.__name__}][read] read {self.value} from register {self.name}")
         return self.value
 
     def reset(self):
-        cocotb.log.info(f"[{__class__.__name__}][reset] reset {self.name}")
+        cocotb.log.debug(f"[{__class__.__name__}][reset] reset {self.name}")
         self.write(self.reset)
 
     def sample_write(self, data, interface="spi"):

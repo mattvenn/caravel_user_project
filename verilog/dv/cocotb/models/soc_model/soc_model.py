@@ -119,7 +119,7 @@ class MSPI_Model(AbstractModelSOC):
                 spi_cov.spi_cov(command)
 
     def log_operation(self, transaction, header_logged=False):
-        cocotb.log.info(f"[{__class__.__name__}][log_operation] {transaction}")
+        cocotb.log.debug(f"[{__class__.__name__}][log_operation] {transaction}")
         if header_logged:
             # Log the header
             header = tabulate([], headers=["Time", "data_write", "data_read"], tablefmt="grid")

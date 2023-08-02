@@ -74,22 +74,22 @@ class HKScoreboard(Scoreboard):
         shared_keys = d1_keys.intersection(d2_keys)
         different_keys = d1_keys.symmetric_difference(d2_keys)
         if different_keys is not None:
-            cocotb.log.info(
+            cocotb.log.debug(
                 f"[HKScoreboard][dict_compare] return False because different_keys \n {d1} \n {d2}"
             )
             self.print_expected()
             return False
         modified = {o: (d1[o], d2[o]) for o in shared_keys if d1[o] != d2[o]}
         if modified is not None:
-            cocotb.log.info(
+            cocotb.log.debug(
                 f"[HKScoreboard][dict_compare] return False because modified \n {d1} \n {d2}"
             )
             self.print_expected()
             return False
-        cocotb.log.info(f"[HKScoreboard][dict_compare] return True \n {d1} \n {d2}")
+        cocotb.log.debug(f"[HKScoreboard][dict_compare] return True \n {d1} \n {d2}")
         self.print_expected()
         return True
 
     def print_expected(self):
         for val in self.expected.items():
-            cocotb.log.info(val)
+            cocotb.log.debug(val)

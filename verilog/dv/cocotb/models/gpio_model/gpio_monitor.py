@@ -76,7 +76,7 @@ class GPIO_Monitor():
             await NextTimeStep()
             config = GPIO_Config(gpio_number=self.gpio_num, config_type="configured", mgmt_en=self.mgmt_ena.value.integer, outenb=self.gpio_outenb.value.integer, holdover=self.gpio_holdover.value.integer, inenb=self.gpio_inenb.value.integer, ib_sel=self.gpio_ib_mode_sel.value.integer, ana_en=self.gpio_ana_en.value.integer, ana_sel=self.gpio_ana_sel.value.integer, ana_pol=self.gpio_ana_pol.value.integer, slow_selw=self.gpio_slow_sel.value.integer, vtrip=self.gpio_vtrip_sel.value.integer, dm=self.gpio_dm.value.integer)
             queue.put_nowait(config)
-            cocotb.log.info(f"[{__class__.__name__}][_config_monitor] sending config {config} to queue")
+            cocotb.log.debug(f"[{__class__.__name__}][_config_monitor] sending config {config} to queue")
 
     async def _input_monitor(self, queue):
         self._ios_hdls()

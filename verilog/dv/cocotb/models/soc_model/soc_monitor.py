@@ -1,5 +1,5 @@
 import cocotb
-from cocotb.triggers import RisingEdge,  Edge, FallingEdge, ClockCycles
+from cocotb.triggers import RisingEdge,  Edge, FallingEdge, ClockCycles, NextTimeStep
 from collections import namedtuple
 
 UART_Transaction = namedtuple("UART_Transaction", ["type", "char"])
@@ -58,10 +58,12 @@ class SOC_Monitor():
         while True:
             char = ""
             await FallingEdge(self.wb_uart_rx_hdl)  # start of char
-            await ClockCycles(self.clk, bit_cycles)
+            await ClockCycles(self.clk, bit_cycles+1)
+            await NextTimeStep()
             for i in range(8):
                 char = self.wb_uart_rx_hdl.value.binstr + char
-                await ClockCycles(self.clk, bit_cycles)
+                await ClockCycles(self.clk, bit_cycles+1)
+                await NextTimeStep()
             transaction = UART_Transaction(
                 type="rx", char=chr(int(char, 2)) if not not_ascii else hex(int(char, 2)))
             queue.put_nowait(transaction)
@@ -92,7 +94,7 @@ class SOC_Monitor():
                     transaction.append((i, "interrupt" if irq_arr[i] == "1" else "clear"))
             irq_arr_old = irq_arr
             queue.put_nowait(transaction)
-            cocotb.log.info(f"[{__class__.__name__}][_soc_irq_monitor] sending transaction {transaction} to queue ")
+            cocotb.log.debug(f"[{__class__.__name__}][_soc_irq_monitor] sending transaction {transaction} to queue ")
 
     def _uart_hdls(self):
         self.wb_uart_en_hdl = self.soc_hdl.uart_enabled

@@ -143,8 +143,12 @@ async def uart_rx_msg(dut):
     caravelEnv.drive_gpio_in((5, 5), 1)
     await debug_regs.wait_reg1(0xAA)
     await ClockCycles(caravelEnv.clk, 30)
-    
-    await uart.uart_send_line("hello world")
-
-    msg = await uart.get_line()
-    cocotb.log.info(f"[TEST] recieved msg '{msg}'")
+    msg = "Hello+World; "
+    await uart.uart_send_line(msg)
+    msg_received = await uart.get_line()
+    if msg_received != msg:
+        cocotb.log.error(
+            f"[TEST] recieved wrong msg from uart msg recieved:'{msg_received}' expected '{msg}'"
+        )
+    else:
+        cocotb.log.info(f"[TEST] Pass recieve the full expected msg '{msg}'")

@@ -96,5 +96,5 @@ class IO_Model(AbstractModelGPIO):
     async def _model(self, queue):
         while True:
             transaction = await self._get_transactions(queue)
-            cocotb.log.info(f"[{__class__.__name__}][_model] {transaction}")
+            cocotb.log.debug(f"[{__class__.__name__}][_model] {transaction}")
             self.gpios_cov.io_cov(transaction)

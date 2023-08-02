@@ -138,7 +138,7 @@ class HK_models:
     """reset the spi vals when CSB is going from low to high"""
 
     def reset_spi_vals(self, trans):
-        cocotb.log.info(f"[HK_models][reset_spi_vals] CSB is disabled")
+        cocotb.log.debug(f"[HK_models][reset_spi_vals] CSB is disabled")
         self.spi_mode = ["command", 0, 0]  # [mode type, bit number, stream number]
         self.command_spi = ["0"] * 8
         self.address_spi = ["0"] * 8
@@ -236,13 +236,13 @@ class HK_models:
         data = ""
         if is_valid:
             self.reg_cov(keys[0], keys[1])
-            cocotb.log.info(
+            cocotb.log.debug(
                 f"[HK_models][_getReadData] reading from memory:{keys[0]} field: {keys[1]} through SPI"
             )
             for field in self.reg_model[keys[0]][keys[1]]:
                 data = str(bin(field[6])[2:]).zfill(field[3]) + data
             data = data.zfill(8)
-            cocotb.log.info(
+            cocotb.log.debug(
                 f"[HK_models][_getReadData] reading from memory:{keys[0]} field: {keys[1]} through SPI data {data} bit[{7-bit_num}] = {data[bit_num]}"
             )
 

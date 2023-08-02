@@ -67,7 +67,8 @@ async def SPI_op(clk, SDI, SDO, mem, remove_clk=0):
             cocotb.log.info(
                 f"[SPI_VIP] [SPI_op] finish reading address {hex(address) } data = {hex(int(data,2))} "
             )
-            address += 1
+            if address < 0xFF:
+                address += 1
 
 
 def read_mem(file_name):
