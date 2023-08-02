@@ -1,5 +1,4 @@
 from cocotb_coverage.coverage import CoverPoint, CoverCross
-import cocotb
 
 
 class WB_Coverage():
