@@ -47,7 +47,8 @@ void main(){
 
     // test interrupt doesn't happened when spi_irq is deasserted
     set_debug_reg2(0xBB);
-    IRQ_clearFlag();
+    IRQ_hkSpi(0);
+    IRQ_hkSpi(1);
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 

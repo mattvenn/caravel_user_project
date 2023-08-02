@@ -1,6 +1,6 @@
 from cocotb_coverage.coverage import CoverPoint, CoverCross
 from collections import namedtuple
-
+import cocotb
 
 class UART_Coverage():
     def __init__(self) -> None:
@@ -113,42 +113,42 @@ class IRQ_Coverage():
         )
         @CoverPoint(
             "top.caravel.soc.irq.user0",
-            xf=lambda data: data[1],
+            xf=lambda data: data,
             bins=[("user0_interrupt", "clear"), ("user0_interrupt", "interrupt")],
             rel=lambda data, b: data[0] == b[0] and data[1] == b[1],
             bins_labels=["clear", "interrupt"]
         )
         @CoverPoint(
             "top.caravel.soc.irq.user1",
-            xf=lambda data: data[1],
+            xf=lambda data: data,
             bins=[("user1_interrupt", "clear"), ("user1_interrupt", "interrupt")],
             rel=lambda data, b: data[0] == b[0] and data[1] == b[1],
             bins_labels=["clear", "interrupt"]
         )
         @CoverPoint(
             "top.caravel.soc.irq.user2",
-            xf=lambda data: data[1],
+            xf=lambda data: data,
             bins=[("user2_interrupt", "clear"), ("user2_interrupt", "interrupt")],
             rel=lambda data, b: data[0] == b[0] and data[1] == b[1],
             bins_labels=["clear", "interrupt"]
         )
         @CoverPoint(
             "top.caravel.soc.irq.housekeeping",
-            xf=lambda data: data[1],
+            xf=lambda data: data,
             bins=[("housekeeping_interrupt", "clear"), ("housekeeping_interrupt", "interrupt")],
             rel=lambda data, b: data[0] == b[0] and data[1] == b[1],
             bins_labels=["clear", "interrupt"]
         )
         @CoverPoint(
             "top.caravel.soc.irq.external1",
-            xf=lambda data: data[1],
+            xf=lambda data: data,
             bins=[("external1_interrupt", "clear"), ("external1_interrupt", "interrupt")],
             rel=lambda data, b: data[0] == b[0] and data[1] == b[1],
             bins_labels=["clear", "interrupt"],
         )
         @CoverPoint(
             "top.caravel.soc.irq.external2",
-            xf=lambda data: data[1],
+            xf=lambda data: data,
             bins=[("external2_interrupt", "clear"), ("external2_interrupt", "interrupt")],
             rel=lambda data, b: data[0] == b[0] and data[1] == b[1],
             bins_labels=["clear", "interrupt"],
