@@ -105,36 +105,43 @@ class GPIO_coverage():
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.hold_override_val",
             xf=lambda operation: operation.holdover,
             bins=[0x0, 0x1],
+            at_least=0
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.IB_mode_select",
             xf=lambda operation: operation.ib_sel,
             bins=[0x0, 0x1],
+            at_least=0
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.analog_bus_en",
             xf=lambda operation: operation.ana_en,
             bins=[0x0, 0x1],
+            at_least=0
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.analog_bus_select",
             xf=lambda operation: operation.ana_sel,
             bins=[0x0, 0x1],
+            at_least=0
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.analog_bus_polarity",
             xf=lambda operation: operation.ana_pol,
             bins=[0x0, 0x1],
+            at_least=0
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.slow_slew",
             xf=lambda operation: operation.slow_selw,
             bins=[0x0, 0x1],
+            at_least=0
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.voltage_trip_select",
             xf=lambda operation: operation.vtrip,
             bins=[0x0, 0x1],
+            at_least=0
         )
         def sample(operation):
             pass
