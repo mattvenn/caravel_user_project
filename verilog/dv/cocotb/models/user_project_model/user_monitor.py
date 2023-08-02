@@ -33,6 +33,7 @@ class UserMonitor():
         la_oenb_edge = Edge(self.la_oenb)
         while True:
             await First(la_in_edge, la_oenb_edge)
+            await NextTimeStep()
             if self.la_oenb.value[bit].integer == 0:
                 if old_data != self.la_in.value[bit].integer:
                     transaction = (la_number-bit-1, self.la_in.value[bit], "in")
@@ -46,6 +47,7 @@ class UserMonitor():
         la_oenb_edge = Edge(self.la_oenb)
         while True:
             await First(la_in_edge, la_oenb_edge)
+            await NextTimeStep()
             if self.la_oenb.value[bit].integer == 1:
                 if old_data != self.la_out.value[bit].integer:
                     transaction = (la_number-bit-1, self.la_out.value[bit], "out")
