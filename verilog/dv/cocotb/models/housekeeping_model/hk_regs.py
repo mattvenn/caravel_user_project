@@ -62,6 +62,8 @@ class HK_Register():
         self.sample_write("null", interface="wb")
         self.sample_read("null", interface="wb")
 
+    def __str__(self):
+        return f"Housekeeping register {self.name} at address spi address {self.spi_addr}, wb address {hex(self.wb_addr)} with width {hex(self.width)}, reset {hex(self.reset)}, access_type {self.access_type}, backdoor_hdl {self.backdoor_hdl}"
     def write(self, data):
         self.value = data & self.mask
         cocotb.log.debug(f"[{__class__.__name__}][write] write {self.value} to register {self.name}")
@@ -77,7 +79,7 @@ class HK_Register():
     def sample_write(self, data, interface="spi"):
         @CoverPoint(
             f"top.caravel.housekeeping.registers.{self.name}.{interface}_write",
-            bins=["write"],
+            bins=["write" if "w" in self.access_type else "null"],
         )
         def sample(data):
             pass
@@ -86,7 +88,7 @@ class HK_Register():
     def sample_read(self, data, interface="spi"):
         @CoverPoint(
             f"top.caravel.housekeeping.registers.{self.name}.{interface}_read",
-            bins=["read"],
+            bins=["read" if "r" in self.access_type else "null"],
         )
         def sample(data):
             pass

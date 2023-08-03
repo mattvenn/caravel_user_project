@@ -52,7 +52,7 @@ class GPIO_coverage():
                 f"top.caravel.gpios.GPIO{self.gpio_number}.configured.controlled_by"
             ],
 
-            ign_bins=[('input 0', 'output enabled', 'input enabled', 'managment'),('input 0', 'output enabled', 'input disabled', 'user'),('input 0', 'output enabled', 'input disabled', 'managment'), ('input 0', 'output disabled', 'input enabled', 'managment'),('input 0', 'output disabled', 'input disabled', 'user'),('input 0', 'output disabled', 'input disabled', 'managment'),('input 1', 'output enabled', 'input enabled', 'managment'),('input 1', 'output enabled', 'input disabled', 'user'),('input 1', 'output enabled', 'input disabled', 'managment'),('input 1', 'output disabled', 'input enabled', 'managment'),('input 1', 'output disabled', 'input disabled', 'user'),('input 1', 'output disabled', 'input disabled', 'managment'),('output 0', 'output enabled', 'input enabled', 'managment'),('output 0', 'output enabled', 'input disabled', 'managment'),('output 0', 'output disabled', 'input enabled', 'user'),('output 0', 'output disabled', 'input enabled', 'managment'),('output 0', 'output disabled', 'input disabled', 'user'),('output 0', 'output disabled', 'input disabled', 'managment'),('output 1', 'output enabled', 'input enabled', 'managment'),('output 1', 'output enabled', 'input disabled', 'managment'),('output 1', 'output disabled', 'input enabled', 'user'),('output 1', 'output disabled', 'input disabled', 'user'),('output 1', 'output disabled', 'input disabled', 'managment'),('output 1', 'output disabled', 'input enabled', 'managment')]
+            ign_bins=[('input 0', 'output enabled', 'input enabled', 'managment'),('input 0', 'output enabled', 'input disabled', 'user'),('input 0', 'output enabled', 'input disabled', 'managment'), ('input 0', 'output disabled', 'input enabled', 'managment'),('input 0', 'output disabled', 'input disabled', 'user'),('input 0', 'output disabled', 'input disabled', 'managment'),('input 1', 'output enabled', 'input enabled', 'managment'),('input 1', 'output enabled', 'input disabled', 'user'),('input 1', 'output enabled', 'input disabled', 'managment'),('input 1', 'output disabled', 'input enabled', 'managment'),('input 1', 'output disabled', 'input disabled', 'user'),('input 1', 'output disabled', 'input disabled', 'managment'),('output 0', 'output enabled', 'input enabled', 'managment'),('output 0', 'output enabled', 'input disabled', 'managment'),('output 0', 'output disabled', 'input enabled', 'user'),('output 0', 'output disabled', 'input enabled', 'managment'),('output 0', 'output disabled', 'input disabled', 'user'),('output 0', 'output disabled', 'input disabled', 'managment'),('output 1', 'output enabled', 'input enabled', 'managment'),('output 1', 'output enabled', 'input disabled', 'managment'),('output 1', 'output disabled', 'input enabled', 'user'),('output 1', 'output disabled', 'input disabled', 'user'),('output 1', 'output disabled', 'input disabled', 'managment'),('output 1', 'output disabled', 'input enabled', 'managment'), ('output 0', 'output enabled', 'input enabled', 'managment'), ('output 1', 'output enabled', 'input enabled', 'managment')]
         )
         @CoverCross(
             f"top.caravel.gpios.GPIO{self.gpio_number}.IO.cross_mgmt_config",
@@ -90,7 +90,8 @@ class GPIO_coverage():
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.dm",
             xf=lambda operation: operation.dm,
-            bins=[0x0, 0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7],
+            bins=[0x1, 0x2, 0x3],
+            bins_labels=["no_pull", "pull up", "pull down"]
         )
         @CoverCross(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.cross_in_out_dm_control",
@@ -104,44 +105,37 @@ class GPIO_coverage():
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.hold_override_val",
             xf=lambda operation: operation.holdover,
-            bins=[0x0, 0x1],
-            at_least=0
+            bins=[0x0], # TODO: update it when the bit functionality is implemented
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.IB_mode_select",
             xf=lambda operation: operation.ib_sel,
-            bins=[0x0, 0x1],
-            at_least=0
+            bins=[0x0], # TODO: update it when the bit functionality is implemented
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.analog_bus_en",
             xf=lambda operation: operation.ana_en,
-            bins=[0x0, 0x1],
-            at_least=0
+            bins=[0x0], # TODO: update it when the bit functionality is implemented
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.analog_bus_select",
             xf=lambda operation: operation.ana_sel,
-            bins=[0x0, 0x1],
-            at_least=0
+            bins=[0x0], # TODO: update it when the bit functionality is implemented
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.analog_bus_polarity",
             xf=lambda operation: operation.ana_pol,
-            bins=[0x0, 0x1],
-            at_least=0
+            bins=[0x0], # TODO: update it when the bit functionality is implemented
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.slow_slew",
             xf=lambda operation: operation.slow_selw,
-            bins=[0x0, 0x1],
-            at_least=0
+            bins=[0x0], # TODO: update it when the bit functionality is implemented
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.voltage_trip_select",
             xf=lambda operation: operation.vtrip,
-            bins=[0x0, 0x1],
-            at_least=0
+            bins=[0x0], # TODO: update it when the bit functionality is implemented
         )
         def sample(operation):
             pass
