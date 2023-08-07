@@ -30,6 +30,7 @@ class UserDesign:
         IOs = {"out": caravelEnv.user_hdl.io_out, "oeb": caravelEnv.user_hdl.io_oeb, "in": caravelEnv.user_hdl.io_in}
         
         LAs = {"in": caravelEnv.user_hdl.la_data_in, "out": caravelEnv.user_hdl.la_data_out, "oeb":caravelEnv.user_hdl.la_oenb}
+
         return inputs, outputs, IOs, LAs
     
     def _initalize_outputs(self, outputs: list):

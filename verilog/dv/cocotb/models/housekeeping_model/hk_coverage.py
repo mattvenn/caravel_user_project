@@ -6,12 +6,11 @@ from collections import namedtuple
 class SPI_Coverage():
     def __init__(self) -> None:
         self.command_mapping = {
-            "00000000": "no operation",
             "10000000": "write stream",
             "01000000": "read stream",
             "11000000": "write read stream",
             "11000100": "Pass-through management",
-            "11000110": "Pass-through user",
+            "00000010": "Pass-through user",
         }
         self.command_mapping.update({f"10{format(n, '03b')}000": f"write {n}-bytes" for n in range(1,8)})
         self.command_mapping.update({f"01{format(n, '03b')}000": f"read {n}-bytes" for n in range(1,8)})
@@ -48,8 +47,8 @@ class SPI_Coverage():
         @CoverPoint(
             "top.caravel.housekeeping.spi.data_write",
             xf=lambda data: int(data, 16),
-            bins=[(0, 0), (1, 0xF), (0x10, 0xFF), (0xFF, 0xFF)],
-            bins_labels=["zero", "1 to 15", "16 to 255", "255"],
+            bins=[(0x00, 0x0F), (0x10, 0x1F), (0x20, 0x2F), (0x30, 0x3F), (0x40, 0x4F), (0x50, 0x5F), (0x60, 0x6F), (0x70, 0x7F), (0x80, 0x8F), (0x90, 0x9F), (0xA0, 0xAF), (0xB0, 0xBF), (0xC0, 0xCF), (0xD0, 0xDF), (0xE0, 0xEF), (0xF0, 0xFF)],   
+            bins_labels=["0x0 to 0x0F", "0x10 to 0x1F", "0x20 to 0x2F", "0x30 to 0x3F", "0x40 to 0x4F", "0x50 to 0x5F", "0x60 to 0x6F", "0x70 to 0x7F", "0x80 to 0x8F", "0x90 to 0x9F", "0xA0 to 0xAF", "0xB0 to 0xBF", "0xC0 to 0xCF", "0xD0 to 0xDF", "0xE0 to 0xEF", "0xF0 to 0xFF"],
             rel=lambda val, b: b[0] <= val <= b[1],
         )
         def sample_write(data):
@@ -58,22 +57,13 @@ class SPI_Coverage():
         @CoverPoint(
             "top.caravel.housekeeping.spi.data_read",
             xf=lambda data: int(data, 16),
-            bins=[(0, 0), (1, 0xF), (0x10, 0xFF), (0xFF, 0xFF)],
-            bins_labels=["zero", "1 to 15", "16 to 255", "255"],
+            bins=[(0x00, 0x3F), (0x40, 0x7F), (0x80, 0xFF)],
+            bins_labels=["0x00 to 0x3F", "0x40 to 0x7F", "0x80 to 0xFF"],
             rel=lambda val, b: b[0] <= val <= b[1],
         )
         def sample_read(data):
             pass
 
-        @CoverCross(
-            "top.caravel.housekeeping.spi.modes_and_address",
-            items=[
-                "top.caravel.housekeeping.spi.modes",
-                "top.caravel.housekeeping.spi.address",
-            ],
-        )
-        def sample():
-            pass
 
         if do_sampling:
             sample_command(spi_operation)
@@ -81,7 +71,6 @@ class SPI_Coverage():
                 sample_write(data)
             for data in spi_operation.data_out:
                 sample_read(data)
-            sample()
 
 
 class WB_Coverage():

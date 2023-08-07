@@ -9,6 +9,7 @@ from all_tests.housekeeping.general.sys_ctrl import *
 from all_tests.hello_world.helloWorld import *
 from all_tests.cpu.cpu_stress import *
 from all_tests.mem.mem_stress import *
+from all_tests.irq.user_irq import *
 from all_tests.irq.IRQ_external import *
 from all_tests.irq.IRQ_external2 import *
 from all_tests.irq.IRQ_timer import *

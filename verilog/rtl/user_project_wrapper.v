@@ -95,6 +95,13 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
+wire irq0;
+wire irq1;
+wire irq2;
+
+assign user_irq[0] = irq0;
+assign user_irq[1] = irq1;
+assign user_irq[2] = irq2;
 // // Dummy assignments so that we can take it through the openlane flow
 // `ifndef GPIO_TESTING
 // `ifdef SIM

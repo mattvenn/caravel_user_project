@@ -40,29 +40,25 @@ class GPIO_coverage():
             f"top.caravel.gpios.GPIO{self.gpio_number}.IO.user",
             xf=lambda operation: operation,
             bins=[("user", "input" , "0"), ("user", "input" , "1"), ("user", "output" , "0"), ("user", "output" , "1")],
-            bins_labels=[ "input 0", "input 1", "output 0", "output 1"],
+            bins_labels=["input 0", "input 1", "output 0", "output 1"],
             rel=lambda val, b: val.control == b[0] and val.io == b[1] and val.value == b[2]
         )
         @CoverCross(
-            f"top.caravel.gpios.GPIO{self.gpio_number}.IO.cross_user_config",
+            f"top.caravel.gpios.GPIO{self.gpio_number}.IO.in_out_user_configs",
             items=[
                 f"top.caravel.gpios.GPIO{self.gpio_number}.IO.user",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.output",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.input",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.controlled_by"
+                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.valid_configs"
             ],
+            ign_bins=[(i, ('managment', j, k, l)) for i in ["input 0", "input 1", "output 0", "output 1"] for j in ["output enabled", "output disabled"] for k in ["input enabled", "input disabled"] for l in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('user', j, 'input disabled', k)) for i in ["input 0", "input 1"] for j in ["output enabled", "output disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('user', 'output disabled', j,  k)) for i in ["output 0", "output 1"] for j in ["input enabled", "input disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]]
 
-            ign_bins=[('input 0', 'output enabled', 'input enabled', 'managment'),('input 0', 'output enabled', 'input disabled', 'user'),('input 0', 'output enabled', 'input disabled', 'managment'), ('input 0', 'output disabled', 'input enabled', 'managment'),('input 0', 'output disabled', 'input disabled', 'user'),('input 0', 'output disabled', 'input disabled', 'managment'),('input 1', 'output enabled', 'input enabled', 'managment'),('input 1', 'output enabled', 'input disabled', 'user'),('input 1', 'output enabled', 'input disabled', 'managment'),('input 1', 'output disabled', 'input enabled', 'managment'),('input 1', 'output disabled', 'input disabled', 'user'),('input 1', 'output disabled', 'input disabled', 'managment'),('output 0', 'output enabled', 'input enabled', 'managment'),('output 0', 'output enabled', 'input disabled', 'managment'),('output 0', 'output disabled', 'input enabled', 'user'),('output 0', 'output disabled', 'input enabled', 'managment'),('output 0', 'output disabled', 'input disabled', 'user'),('output 0', 'output disabled', 'input disabled', 'managment'),('output 1', 'output enabled', 'input enabled', 'managment'),('output 1', 'output enabled', 'input disabled', 'managment'),('output 1', 'output disabled', 'input enabled', 'user'),('output 1', 'output disabled', 'input disabled', 'user'),('output 1', 'output disabled', 'input disabled', 'managment'),('output 1', 'output disabled', 'input enabled', 'managment'), ('output 0', 'output enabled', 'input enabled', 'managment'), ('output 1', 'output enabled', 'input enabled', 'managment')]
         )
         @CoverCross(
-            f"top.caravel.gpios.GPIO{self.gpio_number}.IO.cross_mgmt_config",
+            f"top.caravel.gpios.GPIO{self.gpio_number}.IO.in_out_mgmt_configs",
             items=[
                 f"top.caravel.gpios.GPIO{self.gpio_number}.IO.managment",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.output",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.input",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.controlled_by"
+                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.valid_configs"
             ],
-            ign_bins=[('input 0', 'output enabled', 'input enabled', 'user'),('input 0', 'output enabled', 'input disabled', 'user'),('input 0', 'output disabled', 'input enabled', 'user'),('input 0', 'output disabled', 'input disabled', 'user'),('input 1', 'output enabled', 'input enabled', 'user'),('input 1', 'output enabled', 'input disabled', 'user'),('input 1', 'output disabled', 'input enabled', 'user'),('input 1', 'output disabled', 'input disabled', 'user'),('output 0', 'output enabled', 'input enabled', 'user'),('output 0', 'output enabled', 'input disabled', 'user'),('output 0', 'output disabled', 'input enabled', 'user'),('output 0', 'output disabled', 'input disabled', 'user'),('output 0', 'output disabled', 'input disabled', 'user'),('output 1', 'output enabled', 'input disabled', 'user'),('output 1', 'output disabled', 'input enabled', 'user'),('output 1', 'output disabled', 'input disabled', 'user'),('output 1', 'output enabled', 'input enabled', 'user'),('input 0', 'output enabled', 'input disabled', 'managment'),('input 0', 'output disabled', 'input disabled', 'managment'),('input 1', 'output enabled', 'input disabled', 'managment'),('input 1', 'output disabled', 'input disabled', 'managment'),('output 0', 'output disabled', 'input enabled', 'managment'),('output 0', 'output disabled', 'input disabled', 'managment'),('output 1', 'output disabled', 'input enabled', 'managment'),('output 1', 'output disabled', 'input disabled', 'managment')]
+            ign_bins=[(i, ('user', j, k, l)) for i in ["input 0", "input 1", "output 0", "output 1"] for j in ["output enabled", "output disabled"] for k in ["input enabled", "input disabled"] for l in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('managment', j, 'input disabled', k)) for i in ["input 0", "input 1"] for j in ["output enabled", "output disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('managment', 'output disabled', j,  k)) for i in ["output 0", "output 1"] for j in ["input enabled", "input disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]]
         )
         def sample(operation):
             pass
@@ -90,17 +86,18 @@ class GPIO_coverage():
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.dm",
             xf=lambda operation: operation.dm,
-            bins=[0x1, 0x2, 0x3],
-            bins_labels=["no_pull", "pull up", "pull down"]
+            bins=[0x1, 0x2, 0x3, 0x6, 0x0],
+            bins_labels=["no_pull", "pull up", "pull down", "float", "analog"]
         )
         @CoverCross(
-            f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.cross_in_out_dm_control",
+            f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.valid_configs",
             items=[
                 f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.controlled_by",
                 f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.output",
                 f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.input",
                 f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.dm",
             ],
+            ign_bins=[(i, j, "input disabled", k) for i in ["user", "managment"] for j in ['output disabled', 'output enabled'] for k in ['pull down', 'pull up']] + [(i, 'output disabled', 'input enabled', j) for i in ["user", "managment"] for j in ["pull down", "pull up"]] + [(i, j, 'input disabled', "no_pull") for i in ["user", "managment"] for j in ['output disabled', 'output enabled']] + [(i, 'output enabled', 'input enabled', 'no_pull') for i in ["user", "managment"]] + [(i, 'output disabled', j, 'float') for i in ["user", "managment"] for j in ['input disabled', 'input enabled']] + [(i, 'output enabled', j, 'analog') for i in ["user", "managment"] for j in ['input disabled', 'input enabled']] + [(i, j, "input enabled", 'analog') for i in ["user", "managment"] for j in ['output disabled', 'output enabled']]
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.hold_override_val",
