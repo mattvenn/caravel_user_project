@@ -127,7 +127,7 @@ class GPIO_Monitor():
         self.gpio_vtrip_sel = self.gpio_hdl.pad_gpio_vtrip_sel
         self.gpio_ib_mode_sel = self.gpio_hdl.pad_gpio_ib_mode_sel
         self.gpio_inenb = self.gpio_hdl.pad_gpio_inenb
-        self.gpio_outenb = self.gpio_hdl.pad_gpio_outenb
+        self.gpio_outenb = self.gpio_hdl.gpio_outenb
         self.gpio_dm = self.gpio_hdl.pad_gpio_dm
         self.gpio_ana_en = self.gpio_hdl.pad_gpio_ana_en
         self.gpio_ana_sel = self.gpio_hdl.pad_gpio_ana_sel

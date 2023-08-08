@@ -1,4 +1,4 @@
-from cocotb_coverage.coverage import CoverPoint, CoverCross
+from cocotb_coverage.coverage import CoverPoint, CoverCross, CoverageDB
 import cocotb
 
 
@@ -20,10 +20,16 @@ class GPIOs_Coverage():
         ty = "configured"
         self.gpios_cov[(gpio_num, ty)].gpio_io_cov(operation, do_sampling)
 
+
 class GPIO_coverage():
     def __init__(self, gpio_number, config_type) -> None:
         self.gpio_number = gpio_number
         self.config_type = config_type
+        self.control_list = ["user", "managment"]
+        self.input_list = ["input enabled", "input disabled"]
+        self.output_list = ["output enabled", "output disabled"]
+        self.dm_list = ["no pull", "pull up", "pull down", "float", "analog"]
+        self.config_valid_ignore = [(i, j, "input disabled", k) for i in self.control_list for j in self.output_list for k in ['pull down', 'pull up']] + [(i, 'output disabled', 'input enabled', j) for i in self.control_list for j in ["pull down", "pull up"]] + [(i, j, 'input disabled', "no pull") for i in self.control_list for j in self.output_list] + [(i, 'output enabled', 'input enabled', 'no pull') for i in self.control_list] + [(i, 'output disabled', j, 'float') for i in self.control_list for j in self.input_list] + [(i, 'output enabled', j, 'analog') for i in self.control_list for j in self.input_list] + [(i, j, "input enabled", 'analog') for i in self.control_list for j in self.output_list]
         # initialize coverage no covearge happened just sample nothing so the coverge is initialized
         self.gpio_config_cov(None, do_sampling=False)
         self.gpio_io_cov(None, do_sampling=False)
@@ -32,14 +38,14 @@ class GPIO_coverage():
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.IO.managment",
             xf=lambda operation: operation,
-            bins=[("mgmt", "input" , "0"), ("mgmt", "input" , "1"), ("mgmt", "output" , "0"), ("mgmt", "output" , "1")],
+            bins=[("mgmt", "input", "0"), ("mgmt", "input", "1"), ("mgmt", "output", "0"), ("mgmt", "output", "1")],
             bins_labels=[ "input 0", "input 1", "output 0", "output 1"],
             rel=lambda val, b: val.control == b[0] and val.io == b[1] and val.value == b[2]
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.IO.user",
             xf=lambda operation: operation,
-            bins=[("user", "input" , "0"), ("user", "input" , "1"), ("user", "output" , "0"), ("user", "output" , "1")],
+            bins=[("user", "input", "0"), ("user", "input", "1"), ("user", "output", "0"), ("user", "output", "1")],
             bins_labels=["input 0", "input 1", "output 0", "output 1"],
             rel=lambda val, b: val.control == b[0] and val.io == b[1] and val.value == b[2]
         )
@@ -47,20 +53,28 @@ class GPIO_coverage():
             f"top.caravel.gpios.GPIO{self.gpio_number}.IO.in_out_user_configs",
             items=[
                 f"top.caravel.gpios.GPIO{self.gpio_number}.IO.user",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.valid_configs"
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.controlled_by",
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.output",
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.input",
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.dm"
             ],
-            ign_bins=[(i, ('managment', j, k, l)) for i in ["input 0", "input 1", "output 0", "output 1"] for j in ["output enabled", "output disabled"] for k in ["input enabled", "input disabled"] for l in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('user', j, 'input disabled', k)) for i in ["input 0", "input 1"] for j in ["output enabled", "output disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('user', 'output disabled', j,  k)) for i in ["output 0", "output 1"] for j in ["input enabled", "input disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]]
-
+            ign_bins=[(i, valid[0], valid[1], valid[2], valid[3]) for i in ["input 0", "input 1", "output 0", "output 1"] for valid in self.config_valid_ignore] + [(i, 'managment', j, k, l) for i in ["input 0", "input 1", "output 0", "output 1"] for j in self.output_list for k in self.input_list for l in self.dm_list]  + [(i,'user', j, 'input disabled', k) for i in ["input 0", "input 1"] for j in self.output_list for k in self.dm_list if k != "analog"] + [(i, 'user', 'output disabled', j,  k) for i in ["output 0", "output 1"] for j in self.input_list for k in self.dm_list if k != "analog"] + [(i, 'user', j, k, l) for i in ["output 0", "output 1"] for j in self.output_list for k in self.input_list for l in ["pull down", "pull up", "no pull"]]
         )
         @CoverCross(
             f"top.caravel.gpios.GPIO{self.gpio_number}.IO.in_out_mgmt_configs",
             items=[
                 f"top.caravel.gpios.GPIO{self.gpio_number}.IO.managment",
-                f"top.caravel.gpios.GPIO{self.gpio_number}.configured.valid_configs"
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.controlled_by",
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.output",
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.input",
+                f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.dm"
             ],
-            ign_bins=[(i, ('user', j, k, l)) for i in ["input 0", "input 1", "output 0", "output 1"] for j in ["output enabled", "output disabled"] for k in ["input enabled", "input disabled"] for l in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('managment', j, 'input disabled', k)) for i in ["input 0", "input 1"] for j in ["output enabled", "output disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]] + [(i, ('managment', 'output disabled', j,  k)) for i in ["output 0", "output 1"] for j in ["input enabled", "input disabled"] for k in ["no_pull", "pull up", "pull down", "float", "analog"]]
+            ign_bins=[(i, valid[0], valid[1], valid[2], valid[3]) for i in ["input 0", "input 1", "output 0", "output 1"] for valid in self.config_valid_ignore] + [(i, 'user', j, k, l) for i in ["input 0", "input 1", "output 0", "output 1"] for j in self.output_list for k in self.input_list for l in self.dm_list]  + [(i,'managment', j, 'input disabled', k) for i in ["input 0", "input 1"] for j in self.output_list for k in self.dm_list if k != "analog"] + [(i, 'managment', 'output disabled', j,  k) for i in ["output 0", "output 1"] for j in self.input_list for k in self.dm_list if k != "analog"] + [(i, 'managment', j, k, l) for i in ["output 0", "output 1"] for j in self.output_list for k in self.input_list for l in ["pull down", "pull up", "no pull"]]
         )
         def sample(operation):
+            # if self.gpio_number == 0:
+                # cocotb.log.info(f"[COV] io_user = {CoverageDB()[f'top.caravel.gpios.GPIO{self.gpio_number}.IO.user'].detailed_coverage}")
+                # cocotb.log.info(f"[COV] valid = {CoverageDB()[f'top.caravel.gpios.GPIO{self.gpio_number}.configured.valid_configs'].detailed_coverage}")
             pass
         if do_sampling:
             sample(operation)
@@ -69,25 +83,25 @@ class GPIO_coverage():
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.controlled_by",
             xf=lambda operation: operation.mgmt_en,
             bins=[0, 1],
-            bins_labels=["user", "managment"],
+            bins_labels=self.control_list,
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.output",
             xf=lambda operation: operation.outenb,
             bins=[0, 1],
-            bins_labels=["output enabled", "output disabled"],
+            bins_labels=self.output_list,
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.input",
             xf=lambda operation: operation.inenb,
             bins=[0, 1],
-            bins_labels=["input enabled", "input disabled"],
+            bins_labels=self.input_list,
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.dm",
             xf=lambda operation: operation.dm,
             bins=[0x1, 0x2, 0x3, 0x6, 0x0],
-            bins_labels=["no_pull", "pull up", "pull down", "float", "analog"]
+            bins_labels=self.dm_list
         )
         @CoverCross(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.valid_configs",
@@ -97,7 +111,7 @@ class GPIO_coverage():
                 f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.input",
                 f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.dm",
             ],
-            ign_bins=[(i, j, "input disabled", k) for i in ["user", "managment"] for j in ['output disabled', 'output enabled'] for k in ['pull down', 'pull up']] + [(i, 'output disabled', 'input enabled', j) for i in ["user", "managment"] for j in ["pull down", "pull up"]] + [(i, j, 'input disabled', "no_pull") for i in ["user", "managment"] for j in ['output disabled', 'output enabled']] + [(i, 'output enabled', 'input enabled', 'no_pull') for i in ["user", "managment"]] + [(i, 'output disabled', j, 'float') for i in ["user", "managment"] for j in ['input disabled', 'input enabled']] + [(i, 'output enabled', j, 'analog') for i in ["user", "managment"] for j in ['input disabled', 'input enabled']] + [(i, j, "input enabled", 'analog') for i in ["user", "managment"] for j in ['output disabled', 'output enabled']]
+            ign_bins=self.config_valid_ignore
         )
         @CoverPoint(
             f"top.caravel.gpios.GPIO{self.gpio_number}.{self.config_type}.hold_override_val",

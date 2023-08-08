@@ -82,7 +82,7 @@ class ConfigModel(AbstractModelGPIO):
                 transaction.config_type,
                 "Managment" if transaction.mgmt_en == 1 else "User",
                 "bi-directional" if transaction.inenb == 0 and transaction.outenb == 0 else "output" if transaction.outenb == 0 else "input" if transaction.inenb == 0 else "unknown",
-                transaction.dm
+                "no_pull" if transaction.dm == 0x1 else "pull up" if transaction.dm == 0x2 else "pull down" if transaction.dm == 0x3 else "float" if transaction.dm == 0x6 else "analog" if transaction.dm == 0x0 else transaction.dm
             )]
             table = tabulate(table_data, tablefmt="grid")
             self.spi_logger.info(table)

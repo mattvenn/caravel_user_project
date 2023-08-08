@@ -63,8 +63,6 @@ class SPI_Coverage():
         )
         def sample_read(data):
             pass
-
-
         if do_sampling:
             sample_command(spi_operation)
             for data in spi_operation.data_in:
@@ -98,15 +96,15 @@ class WB_Coverage():
         @CoverPoint(
             "top.caravel.housekeeping.wishbone.write_data",
             xf=lambda wb_operation: wb_operation.write_data,
-            bins=[(0x00000000, 0x1FFFFFFF), (0x20000000, 0x3FFFFFFF), (0x40000000, 0x5FFFFFFF), (0x60000000, 0x7FFFFFFF), (0x80000000, 0x9FFFFFFF), (0xA0000000, 0xBFFFFFFF), (0xC0000000, 0xDFFFFFFF), (0xE0000000, 0xFFFFFFFF)],
-            bins_labels=["0 to 0x1FFFFFFF", "0x20000000 to 0x3FFFFFFF", "0x40000000 to 0x5FFFFFFF", "0x60000000 to 0x7FFFFFFF", "0x80000000 to 0x9FFFFFFF", "0xA0000000 to 0xBFFFFFFF", "0xC0000000 to 0xDFFFFFFF", "0xE0000000 to 0xFFFFFFFF"],
+            bins=[(0x00000000, 0x5FFFFFFF),  (0x60000000, 0xBFFFFFFF), (0xC0000000, 0xFFFFFFFF)],
+            bins_labels=["0 to 0x5FFFFFFF", "0x60000000 to 0xBFFFFFFF", "0xC0000000 to 0xFFFFFFFF"],
             rel=lambda val, b: b[0] <= val <= b[1],
         )
         @CoverPoint(
             "top.caravel.housekeeping.wishbone.read_data",
             xf=lambda wb_operation: wb_operation.read_data,
-            bins=[(0x00000000, 0x1FFFFFFF), (0x20000000, 0x3FFFFFFF), (0x40000000, 0x5FFFFFFF), (0x60000000, 0x7FFFFFFF), (0x80000000, 0x9FFFFFFF), (0xA0000000, 0xBFFFFFFF), (0xC0000000, 0xDFFFFFFF), (0xE0000000, 0xFFFFFFFF)],
-            bins_labels=["0 to 0x1FFFFFFF", "0x20000000 to 0x3FFFFFFF", "0x40000000 to 0x5FFFFFFF", "0x60000000 to 0x7FFFFFFF", "0x80000000 to 0x9FFFFFFF", "0xA0000000 to 0xBFFFFFFF", "0xC0000000 to 0xDFFFFFFF", "0xE0000000 to 0xFFFFFFFF"],
+            bins=[(0x00000000, 0x5FFFFFFF),  (0x60000000, 0xBFFFFFFF), (0xC0000000, 0xFFFFFFFF)],
+            bins_labels=["0 to 0x5FFFFFFF", "0x60000000 to 0xBFFFFFFF", "0xC0000000 to 0xFFFFFFFF"],
             rel=lambda val, b: b[0] <= val <= b[1],
         )
         def sample(wb_operation):

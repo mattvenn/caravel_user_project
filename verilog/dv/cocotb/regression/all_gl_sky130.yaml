@@ -56,6 +56,9 @@ Tests:
     - {name: IRQ_external2, sim: GL}
     - {name: IRQ_uart_rx, sim: GL}
     - {name: uart_rx_msg, sim: GL}
+    - {name: user0_irq, sim: RTL}
+    - {name: user1_irq, sim: RTL}
+    - {name: user2_irq, sim: RTL}
 
 
 
