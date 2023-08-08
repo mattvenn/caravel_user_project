@@ -113,6 +113,7 @@ class GPIOsDefaultTests:
                     cocotb.log.error(f"[TEST][test_user_out] gpio {gpio} is incorrect expected {data[index]} received {val}")
                 else:
                     cocotb.log.debug(f"[TEST][test_user_out] gpio {gpio} is correct received {val}")
+        cocotb.log.info(f"[TEST] done with test_user_out")
 
     async def drive_output(self, queue, gpios):
         while True:
@@ -141,6 +142,7 @@ class GPIOsDefaultTests:
                     cocotb.log.error(f"[TEST][test_user_in] gpio {gpio} is not {rand_values[gpio]}")
                 else:
                     cocotb.log.debug(f"[TEST][test_user_in] gpio {gpio} is {rand_values[gpio]}")
+        cocotb.log.info(f"[TEST] done with test_user_in")
 
     async def test_user_in_pull(self, gpios, pull_mode="up"):
         cocotb.log.info(f"[TEST] gpios configured as user input pull{pull_mode} = {gpios}")
@@ -162,47 +164,70 @@ class GPIOsDefaultTests:
                     cocotb.log.error(f"[TEST][test_user_in_pull] pull {pull_mode} gpio {gpio} is not {rand_val} drived by {rand_values[gpio]}")
                 else:
                     cocotb.log.debug(f"[TEST][test_user_in_pull] pull {pull_mode} gpio {gpio} is {rand_val} drived by {rand_values[gpio]}")
+        cocotb.log.info("[TEST] done with test_user_in_pull")
 
+    async def test_user_bidirectional(self, caravelEnv, gpios):
+        cocotb.log.info(f"[TEST] gpios configured as user bidirectional = {gpios}")
+        queue = Queue()
+        configure_bidirectional = await cocotb.start(self.configure_bidirectional(queue, gpios))
+        for i in range(random.randint(10, 100)):
+            configurations = await queue.get()
+            # release all gpios
+            for gpio in gpios:
+                caravelEnv.release_gpio(gpio)
+            cocotb.log.debug(f"[TEST][test_user_bidirectional] configurations = {configurations}")
+            await ClockCycles(caravelEnv.clk, 1)
+            # check output
+            drived_value = 0 if configurations[0] == "input" else 1
+            for index, configuration in enumerate(configurations):
+                if configuration == "output":
+                    cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is output")
+                    val = caravelEnv.monitor_gpio(gpios[index]).integer
+                    if val != drived_value:
+                        cocotb.log.error(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is incorrect expected {drived_value} received {val}")
+                    else:
+                        cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is correct received {val}")
+            # check input
+            rand_values = dict()
+            for index, configuration in enumerate(configurations):
+                if configuration == "input":
+                    cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is input")
+                    val = random.randint(0, 1)
+                    rand_values[gpios[index]] = val
+                    caravelEnv.drive_gpio_in(gpios[index], val)
+            await ClockCycles(caravelEnv.clk, 1)
+            for index, configuration in enumerate(configurations):
+                if configuration == "input":
+                    val = self.user_pins.monitor_io_in(gpios[index])
+                    rand_val = rand_values[gpios[index]]
+                    if val != rand_val:
+                        cocotb.log.error(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is not {rand_val} drived by {rand_values[gpios[index]]}")
+                    else:
+                        cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is {rand_val} drived by {rand_values[gpios[index]]}")
+        configure_bidirectional.kill()
+        cocotb.log.info("[TEST] done with test_user_bidirectional")
 
-    # async def test_user_bidirectional(self, caravelEnv, gpios, default_user_projects):
-    #     cocotb.log.info(f"[TEST] gpios configured as user bidirectional = {gpios}")
-    #     queue = Queue()
-    #     configure_bidirectional = await cocotb.start(default_user_projects.configure_bidirectional(queue))
-    #     for i in range(random.randint(10, 100)):
-    #         configurations = await queue.get()
-    #         # release all gpios
-    #         for gpio in gpios:
-    #             caravelEnv.release_gpio(gpio)
-    #         cocotb.log.debug(f"[TEST][test_user_bidirectional] configurations = {configurations}")
-    #         await ClockCycles(caravelEnv.clk, 1)
-    #         # check output
-    #         drived_value = 0 if configurations[0] == "input" else 1
-    #         for index, configuration in enumerate(configurations):
-    #             if configuration == "output":
-    #                 cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is output")
-    #                 val = caravelEnv.monitor_gpio(gpios[index]).integer
-    #                 if val != drived_value:
-    #                     cocotb.log.error(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is incorrect expected {drived_value} received {val}")
-    #                 else:
-    #                     cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is correct received {val}")
-    #         # check input
-    #         rand_values = dict()
-    #         for index, configuration in enumerate(configurations):
-    #             if configuration == "input":
-    #                 cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is input")
-    #                 val = random.randint(0, 1)
-    #                 rand_values[gpios[index]] = val
-    #                 caravelEnv.drive_gpio_in(gpios[index], val)
-    #         await ClockCycles(caravelEnv.clk, 1)
-    #         for index, configuration in enumerate(configurations):
-    #             if configuration == "input":
-    #                 val = default_user_projects.monitor_io_in(gpios[index])
-    #                 rand_val = rand_values[gpios[index]]
-    #                 if val != rand_val:
-    #                     cocotb.log.error(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is not {rand_val} drived by {rand_values[gpios[index]]}")
-    #                 else:
-    #                     cocotb.log.debug(f"[TEST][test_user_bidirectional] gpio {gpios[index]} is {rand_val} drived by {rand_values[gpios[index]]}")
-    #     configure_bidirectional.kill()
+    async def configure_bidirectional(self, queue, gpios):
+        while True:
+            # configure bidirectional as input or output
+            configurations = []
+            for gpio in gpios:
+                random_val = random.randint(0, 1)
+                self.user_pins.drive_io_oeb(gpio, random_val)
+                configurations.append("input" if random_val else "output")
+            await queue.put(configurations)
+            # if first configurations is input drive with 0 else drive with 1
+            if configurations[0] == "input":
+                for index, gpio in enumerate(gpios):
+                    if configurations[index] == "output":
+                        cocotb.log.info(f"[TEST] gpio {gpio} configured as output drive with 0")
+                        self.user_pins.drive_io_out(gpio, 0)
+            else:
+                for index, gpio in enumerate(gpios):
+                    if configurations[index] == "output":
+                        cocotb.log.info(f"[TEST] gpio {gpio} configured as output drive with 1")
+                        self.user_pins.drive_io_out(gpio, 1)
+            await ClockCycles(self.caravelEnv.clk, random.randint(10, 20))
 
     async def test_mgmt_out(self, gpios):
         cocotb.log.info(f"[TEST] gpios configured as mgmt output = {gpios}") 
@@ -221,6 +246,7 @@ class GPIOsDefaultTests:
                     cocotb.log.error(f"[TEST][test_mgmt_out] gpio {gpio} is not 0")
                 else: 
                     cocotb.log.debug(f"[TEST][test_mgmt_out] gpio {gpio} is 0")
+        cocotb.log.info("[TEST] done with test_mgmt_out")
 
     async def test_mgmt_in(self, gpios):
         cocotb.log.info(f"[TEST] gpios configured as mgmt input = {gpios}")
@@ -246,7 +272,8 @@ class GPIOsDefaultTests:
                     if val != rand_values[gpio]:
                         cocotb.log.error(f"[TEST][test_mgmt_in] gpio {gpio} is not {rand_values[gpio]}")
                     else:
-                        cocotb.log.debug(f"[TEST][test_mgmt_in] gpio {gpio} is {rand_values[gpio]}")          
+                        cocotb.log.debug(f"[TEST][test_mgmt_in] gpio {gpio} is {rand_values[gpio]}")   
+        cocotb.log.info("[TEST] done with test_mgmt_in")
 
     async def test_mgmt_in_pull(self, gpios, pull_mode="up"):
         cocotb.log.info(f"[TEST] gpios configured as mgmt input pull{pull_mode} = {gpios}")
@@ -277,6 +304,7 @@ class GPIOsDefaultTests:
                         cocotb.log.error(f"[TEST][test_mgmt_in_pull] pull {pull_mode} gpio {gpio} is not {rand_val} drived by {rand_values[gpio]}")
                     else:
                         cocotb.log.debug(f"[TEST][test_mgmt_in_pull] pull {pull_mode} gpio {gpio} is {rand_val} drived by {rand_values[gpio]}")
+        cocotb.log.info("[TEST] done with test_mgmt_in_pull")
 
     def get_bit_from_reg(self, reg, gpio):
         return (reg & (1 << gpio)) >> gpio
