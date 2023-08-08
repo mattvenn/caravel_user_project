@@ -26,7 +26,8 @@ class HK_Monitor():
         while True:
             # valid transaction only happened if ack is sent
             await RisingEdge(self.wb_ack_hdl)
-            transaction = WB_Transaction(address=self.wb_adr_hdl.value.integer, write=self.wb_we_hdl.value.integer, write_data=self.wb_datai_hdl.value.integer, read_data=self.wb_dato_hdl.value.integer, select=self.wb_sel_hdl.value.integer)
+            read_data = int(self.wb_dato_hdl.value.binstr.replace("x", "0"), 2)
+            transaction = WB_Transaction(address=self.wb_adr_hdl.value.integer, write=self.wb_we_hdl.value.integer, write_data=self.wb_datai_hdl.value.integer, read_data=read_data, select=self.wb_sel_hdl.value.integer)
             queue.put_nowait(transaction)
             cocotb.log.debug(f"[{__class__.__name__}][_spi_monitoring] sending transaction {transaction} to queuq")
 
