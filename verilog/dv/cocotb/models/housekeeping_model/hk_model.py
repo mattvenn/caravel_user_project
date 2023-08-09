@@ -126,14 +126,25 @@ class SPI_Model(AbstractModelHK):
                     command = spi_cov.command_to_text(command)
             elif bits_counter < 16:
                 address += str(transaction.sdi)
-                if bits_counter == 15:
+                if bits_counter == 15 and "Pass-through" not in command:
                     address = hex(int(address, 2))
             else:
                 if "read" in command:
                     data_read += str(transaction.sdo)
                 if "write" in command:
                     data_write += str(transaction.sdi)
+                if "Pass-through" in command:
+                    if bits_counter < 40:
+                        address += str(transaction.sdi)
+                        if bits_counter == 39:
+                            address = hex(int(address, 2))
+                    else: 
+                        data_read += str(transaction.sdo)
+                        data_write += str(transaction.sdi)
+
                 if (bits_counter - 15) % 8 == 0:  # if it's multiple of 8 bits
+                    if "Pass-through" in command and bits_counter < 40:
+                        continue
                     if data_write != "":
                         data_in.append(hex(int(data_write, 2)))
                     if data_read != "":

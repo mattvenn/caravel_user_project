@@ -63,7 +63,7 @@ Tests:
     - {name: user0_irq, sim: RTL}
     - {name: user1_irq, sim: RTL}
     - {name: user2_irq, sim: RTL}
-
+    - {name: mgmt_pass_thru_rd, sim: RTL}
 
 
 

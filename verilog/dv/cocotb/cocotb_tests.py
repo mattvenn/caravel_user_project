@@ -3,6 +3,7 @@ from all_tests.bitbang.bitbang_tests import *
 from all_tests.bitbang.bitbang_tests_cpu import *
 from all_tests.housekeeping.housekeeping_regs.housekeeping_regs_tests import *
 from all_tests.housekeeping.housekeeping_spi.user_pass_thru import *
+from all_tests.housekeeping.housekeeping_spi.mgmt_pass_thru import *
 from all_tests.housekeeping.housekeeping_spi.spi import *
 from all_tests.housekeeping.general.pll import *
 from all_tests.housekeeping.general.sys_ctrl import *
