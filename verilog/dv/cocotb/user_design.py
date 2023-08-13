@@ -6,6 +6,7 @@ from models.housekeeping_model.hk_model import HK_Model
 from models.soc_model.soc_model import SOC_Model
 from models.user_project_model.user_model import UserModel
 from models.gpio_model.gpio_model import GPIOs_Model
+from models.cpu_model.cpu_model import CPU_Model
 
 
 class UserDesign:
@@ -45,13 +46,15 @@ class UserDesign:
             await cocotb.start(self.la_testing.start())
         
         await ClockCycles(self.caravelEnv.clk, 1)
-        self.coverage_models()
+        if "RTL" in cocotb.plusargs:
+            self.coverage_models()
     
     def coverage_models(self):
         self.hk_model = HK_Model(self.caravelEnv)
         self.SOC_model = SOC_Model(self.caravelEnv)
         self.user_model = UserModel(self.caravelEnv)
         self.gpios_model = GPIOs_Model(self.caravelEnv)
+        self.cpu_model = CPU_Model(self.caravelEnv)
         cocotb.plusargs["COVERAGE_COLLECT"] = True
 
 
@@ -163,11 +166,6 @@ class LA_Testing:
     async def start(self):
         cocotb.log.info("[LA_Testing][start] start la testing")
         await cocotb.start(self.drive_out)
-
-    async def start(self):
-        """start the la testing"""
-        cocotb.log.info("[LA_Testing][start] start la testing")
-        await cocotb.start(self.drive_out())
 
 
 async def configure_userdesign(caravelEnv, used_addr=None, gpio_test=None, la_test=False):
