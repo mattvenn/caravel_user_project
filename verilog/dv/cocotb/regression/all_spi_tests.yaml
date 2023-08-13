@@ -8,11 +8,11 @@ Tests:
     - {name: hk_regs_wr_spi, sim: RTL}
     - {name: IRQ_external, sim: RTL}
     - {name: user_pass_thru_rd, sim: RTL}
-    - {name: clock_redirect, sim: RTL}
     - {name: spi_rd_wr_nbyte, sim: RTL}
     - {name: user_pass_thru_connection, sim: RTL}
-    - {name: spi_rd_wr_stream, sim: RTL}
+    - {name: spi_rd_wr, sim: RTL}
     - {name: IRQ_spi, sim: RTL}
+    - {name: mgmt_pass_thru_rd, sim: RTL}
     - {name: IRQ_external2, sim: RTL}
     - {name: bitbang_spi_o, sim: RTL}
 

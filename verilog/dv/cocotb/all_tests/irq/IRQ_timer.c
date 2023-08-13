@@ -41,7 +41,8 @@ void main(){
     if (!is_pass){
         set_debug_reg1(0x1E); // timeout
     }
-    IRQ_clearFlag();
+    IRQ_enableTimer(0);
+    IRQ_enableTimer(1);
     // test interrupt doesn't happened when timer isnt used
     set_debug_reg2(0xBB);
     timer0_enable(0); // disable counter

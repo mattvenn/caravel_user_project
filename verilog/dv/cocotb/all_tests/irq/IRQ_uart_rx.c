@@ -46,7 +46,7 @@ void main(){
     // test interrupt doesn't happened nothing sent at uart
     set_debug_reg2(0xBB);
     IRQ_enableUartRx(0);
-    IRQ_clearFlag();
+    IRQ_enableUartRx(1);
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 

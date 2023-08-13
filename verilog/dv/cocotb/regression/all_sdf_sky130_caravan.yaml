@@ -37,11 +37,15 @@ Tests:
     - {name: mem_dff_B, sim: GL_SDF}
     - {name: mgmt_gpio_disable, sim: GL_SDF}
     - {name: user_pass_thru_connection, sim: GL_SDF}
-    - {name: spi_rd_wr_stream, sim: GL_SDF}
+    - {name: spi_rd_wr, sim: GL_SDF}
     - {name: PoR, sim: GL_SDF}
     - {name: IRQ_spi, sim: GL_SDF}
     - {name: IRQ_external2, sim: GL_SDF}
     - {name: IRQ_uart_rx, sim: GL_SDF}
+    - {name: user0_irq, sim: GL_SDF}
+    - {name: user1_irq, sim: GL_SDF}
+    - {name: user2_irq, sim: GL_SDF}
+    - {name: mgmt_pass_thru_rd, sim: GL_SDF}
 
 
 

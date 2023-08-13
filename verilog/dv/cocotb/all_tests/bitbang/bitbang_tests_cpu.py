@@ -9,6 +9,7 @@ from all_tests.gpio.gpio_seq import gpio_all_o_seq
 from all_tests.gpio.gpio_seq import gpio_all_i_seq
 from all_tests.common.bitbang import bb_configure_all_gpios
 from caravel_cocotb.caravel_interfaces import SPI
+from user_design import configure_userdesign
 
 reg = Regs()
 
@@ -17,14 +18,16 @@ reg = Regs()
 @report_test
 async def bitbang_cpu_all_o(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=5004275)
-    await gpio_all_o_seq(dut, caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
+    await gpio_all_o_seq(dut, caravelEnv, debug_regs)
 
 
 @cocotb.test()
 @report_test
 async def bitbang_cpu_all_i(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=3311179)
-    await gpio_all_i_seq(dut, caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
+    await gpio_all_i_seq(dut, caravelEnv, debug_regs)
 
 
 """Testbench of GPIO configuration through bit-bang method using the housekeeping SPI configure all gpio as output."""
@@ -34,7 +37,8 @@ async def bitbang_cpu_all_i(dut):
 @report_test
 async def bitbang_spi_o(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=2008592)
-    await gpio_all_o_seq(dut, caravelEnv, bitbang_spi_o_configure)
+    debug_regs = await configure_userdesign(caravelEnv)
+    await gpio_all_o_seq(dut, caravelEnv, debug_regs, bitbang_spi_o_configure)
 
 
 """Testbench of GPIO configuration through bit-bang method using the housekeeping SPI configure all gpio as input."""
@@ -44,7 +48,8 @@ async def bitbang_spi_o(dut):
 @report_test
 async def bitbang_spi_i(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=316406)
-    await gpio_all_i_seq(dut, caravelEnv, bitbang_spi_i_configure)
+    debug_regs = await configure_userdesign(caravelEnv)
+    await gpio_all_i_seq(dut, caravelEnv, debug_regs, bitbang_spi_i_configure)
 
 
 async def bitbang_spi_i_configure(caravelEnv, debug_regs):

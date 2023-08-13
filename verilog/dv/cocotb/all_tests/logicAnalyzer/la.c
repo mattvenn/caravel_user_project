@@ -66,6 +66,26 @@ void main(){
     else 
         set_debug_reg1(0x4B);    
     #endif
+
+    // to make sure all transations from 1 to 0 happen
+    LogicAnalyzer_write(0,0xAAAAAAAA);
+    LogicAnalyzer_write(2,0xAAAAAAAA);
+    
+    #if LA_SIZE >= 64
+    set_debug_reg2(LogicAnalyzer_read(1));
+    if (LogicAnalyzer_read(1) != 0xAAAAAAAA)
+        set_debug_reg1(0x5E);
+    else 
+        set_debug_reg1(0x5B);
+    #endif
+
+    #if LA_SIZE >= 128
+    set_debug_reg2(LogicAnalyzer_read(3));
+    if (LogicAnalyzer_read(3) != 0xAAAAAAAA)
+        set_debug_reg1(0x6E);
+    else 
+        set_debug_reg1(0x6B);    
+    #endif
     // Configure LA probes [31:0] and [63:32] as inputs to the cpu 
 	// Configure LA probes [63:32] and [127:96] as outputs from the cpu
     // 0 as output
@@ -88,16 +108,16 @@ void main(){
     #if LA_SIZE >= 64
     set_debug_reg2(LogicAnalyzer_read(0));
     if (LogicAnalyzer_read(0) != 0xAAAAAAAA)
-        set_debug_reg1(0x5E);
+        set_debug_reg1(0x7E);
     else 
-        set_debug_reg1(0x5B);
+        set_debug_reg1(0x7B);
     #endif
     #if LA_SIZE >= 128
     set_debug_reg2(LogicAnalyzer_read(2));
     if (LogicAnalyzer_read(2) != 0xAAAAAAAA)
-        set_debug_reg1(0x6E);
+        set_debug_reg1(0x8E);
     else 
-        set_debug_reg1(0x6B);    
+        set_debug_reg1(0x8B);    
     #endif
 
     LogicAnalyzer_write(1,0x55555555);
@@ -105,17 +125,36 @@ void main(){
     #if LA_SIZE >= 64
     set_debug_reg2(LogicAnalyzer_read(0));
     if (LogicAnalyzer_read(0) != 0x55555555)
-        set_debug_reg1(0x7E);
+        set_debug_reg1(0x9E);
     else 
-        set_debug_reg1(0x7B);
+        set_debug_reg1(0x9B);
     #endif
 
     #if LA_SIZE >= 128
     set_debug_reg2(LogicAnalyzer_read(2));
     if (LogicAnalyzer_read(2) != 0x55555555)
-        set_debug_reg1(0x8E);
+        set_debug_reg1(0xaE);
     else 
-        set_debug_reg1(0x8B);    
+        set_debug_reg1(0xaB);    
+    #endif
+
+    // to make sure all transations from 1 to 0 happen
+    LogicAnalyzer_write(1,0xAAAAAAAA);
+    LogicAnalyzer_write(3,0xAAAAAAAA);
+    #if LA_SIZE >= 64
+    set_debug_reg2(LogicAnalyzer_read(0));
+    if (LogicAnalyzer_read(0) != 0xAAAAAAAA)
+        set_debug_reg1(0xbE);
+    else 
+        set_debug_reg1(0xbB);
+    #endif
+
+    #if LA_SIZE >= 128
+    set_debug_reg2(LogicAnalyzer_read(2));
+    if (LogicAnalyzer_read(2) != 0xAAAAAAAA)
+        set_debug_reg1(0xcE);
+    else 
+        set_debug_reg1(0xcB);    
     #endif
 
     

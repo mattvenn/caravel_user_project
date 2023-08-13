@@ -1,9 +1,20 @@
--v $(USER_PROJECT_VERILOG)/rtl/__user_analog_project_wrapper.v	      
+#-v $(USER_PROJECT_VERILOG)/rtl/__user_analog_project_wrapper.v	      
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	      
--v $(USER_PROJECT_VERILOG)/rtl/debug_regs.v 
--v $(USER_PROJECT_VERILOG)/rtl/__user_project_la_example.v 
--v $(USER_PROJECT_VERILOG)/rtl/__user_project_gpio_example.v 
--v $(USER_PROJECT_VERILOG)/rtl/__user_project_addr_space_project.v 
+-v $(USER_PROJECT_VERILOG)/rtl/user_defines.v	      
+#-v $(USER_PROJECT_VERILOG)/rtl/debug_regs.v 
+#-v $(USER_PROJECT_VERILOG)/rtl/__user_project_la_example.v 
+#-v $(USER_PROJECT_VERILOG)/rtl/__user_project_gpio_example.v 
+#-v $(USER_PROJECT_VERILOG)/rtl/__user_project_addr_space_project.v 
+-v $(USER_PROJECT_VERILOG)/gl/caravel_core.v
+
+# default blocks 
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0c00.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0c01.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0402.v
 -v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0403.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0800.v
 -v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0801.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_1800.v
 -v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_1803.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_1808.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_1809.v

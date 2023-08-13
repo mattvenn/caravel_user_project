@@ -10,8 +10,9 @@ from caravel_cocotb.caravel_interfaces import report_test
 from caravel_cocotb.caravel_interfaces import SPI
 from caravel_cocotb.caravel_interfaces import SPI
 import json
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 reg = Regs()
+from models.housekeeping_model.hk_regs import HK_Registers
 
 
 """randomly write then read housekeeping regs through wishbone"""
@@ -23,10 +24,10 @@ async def hk_regs_wr_wb(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=111678, num_error=INFINITY)
     cpu = RiskV(dut)
     cpu.cpu_force_reset()
-    hk_file = f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs.json'
+    hk_file = f'{cocotb.plusargs["MAIN_PATH"]}/models/housekeepingWB/HK_regs.json'
     if "gf180" in caravelEnv.design_macros._asdict():
         hk_file = (
-            f'{cocotb.plusargs["MAIN_PATH"]}/wb_models/housekeepingWB/HK_regs_gf.json'
+            f'{cocotb.plusargs["MAIN_PATH"]}/models/housekeepingWB/HK_regs_gf.json'
         )
     with open(hk_file) as f:
         regs = json.load(f)
@@ -106,7 +107,7 @@ async def hk_regs_wr_wb(dut):
 @report_test
 async def hk_regs_wr_wb_cpu(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=294366)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     reg1 = 0  # buffer
     reg2 = 0
     regs_list = (
@@ -155,173 +156,93 @@ async def hk_regs_wr_wb_cpu(dut):
 @cocotb.test()
 @report_test
 async def hk_regs_wr_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=18438, num_error=0)
+    caravelEnv = await test_configure(dut, timeout_cycles=20681, num_error=0)
     spi_master = SPI(caravelEnv)
-    hk_file = f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs.json'
-    if "CARAVAN" in caravelEnv.design_macros._asdict():
-        hk_file = (
-            f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs_caravan.json'
-        )
-    if "gf180" in caravelEnv.design_macros._asdict():
-        hk_file = (
-            f'{cocotb.plusargs["USER_PROJECT_ROOT"]}/verilog/dv/cocotb/wb_models/housekeepingWB/HK_regs_gf.json'
-        )
-    with open(hk_file) as f:
-        regs = json.load(f)
-    # write then read single byte
-    # for i in range(random.randint(40, 70)):
-    for mem in ["GPIO", "SPI", "sys"]:
-        for key in list(regs[mem].keys()):
-            bits_num = 8  # byte testing
-            # mem = random.choice(['GPIO','SPI','sys'])
-            # key = random.choice(list(regs[mem].keys()))
-            if key == "base_addr":
-                continue
-            address = regs[mem][key][0][7]
-            if address in [
-                111,
-                36,
-                10,
-                8,
-            ]:  # 111 is for Housekeeping SPI disable, writing 1 to this address will disable the SPI and 36 is for mprj_io[03] changing bit 3 of this register would disable the spi by deassert spi_is_enabled and 10 0xa cpu irq is self resetting 8 is pll enable
-                continue
-            # address = int(key,16)
-            if address in [
-                0x69,
-                0x6A,
-                0x6B,
-                0x6C,
-                0x6D,
-                0x13,
-            ]:  # skip testing reg_mprj_datal and reg_mprj_datah because when reading them it's getting the gpio input value and xfer
-                continue
-            data_in = random.getrandbits(bits_num)
-            cocotb.log.info(
-                f"[TEST] Writing {bin(data_in)} to reg [{regs[mem][key][0][0]}] address {hex(address)} through SPI"
-            )
+    debug_regs = await configure_userdesign(caravelEnv)
+    regs = HK_Registers(caravelEnv).regs_spi
+    for reg in regs.values():
+        cocotb.log.debug(f"[TEST] reg {reg}")
+        address = reg.spi_addr
+        expected_data = reg.reset
+        if reg.name in ["housekeeping_disable", "gpio_configure_3"]:
+            cocotb.log.debug(f"[TEST] skipping writing to {reg.name} as to keep housekeeping spi running")
+            continue
+        if "w" not in reg.access_type:
+            cocotb.log.warning(f"[TEST] skipping writting for {reg.name} as it has access attribute: {reg.access_type}")
+            continue
+        if isinstance(address, list):
+            data_in = random.getrandbits(8 * len(address))
+            data_list = [(data_in & (0xFF << i)) >> i for i in range(len(address))]
+            cocotb.log.info(f"[TEST] start writing register {reg.name} addresses {[hex(a) for a in address]}")
+            await spi_master.write_reg_spi_nbytes(address=address[0], data=data_list, n_bytes=len(data_list))
+            reg.write(data_in)
+        else:
+            data_in = random.getrandbits(8)
+            cocotb.log.info(f"[TEST] start writing {hex(data_in)} to register {reg.name} address {hex(address)}")
             await spi_master.write_reg_spi(address=address, data=data_in)
-            # calculate the expected value for each bit
-            is_unknown = False
-            data_exp = ""
-            for i in range(bits_num):
-                bit_exist = False
-                for field in regs[mem][key]:
-                    field_shift = field[2]
-                    field_size = field[3]
-                    field_access = field[4]
-                    reset_val = field[5]
-                    i_temp = bits_num - 1 - i
-                    if field_shift <= i_temp and i_temp <= (
-                        field_shift + field_size - 1
-                    ):
-                        if field_access == "RW":
-                            data_exp += bin(data_in)[2:].zfill(bits_num)[i]
-                            bit_exist = True
-                            break
-                        else:  # read only get the value from reset
-                            data_exp += bin(reset_val)[2:].zfill(bits_num)[i]
-                            bit_exist = True
-                            break
-                    if (
-                        field_access == "NA"
-                    ):  # that mean the value is unknown as the register value can change by hardware mostly the reg value is input to the housekeeping from other blocks
-                        is_unknown = True
-                        break
-                if not bit_exist:
-                    data_exp += "0"
-            if (
-                is_unknown
-            ):  # that mean the value is unknown as the register value can change by hardware mostly the reg value is input to the housekeeping from other blocks
-                continue
-            await ClockCycles(caravelEnv.clk, 10)
-            cocotb.log.info(f"[TEST] expected data calculated = {data_exp}")
-            data_out = await spi_master.read_reg_spi( address=address)
-            cocotb.log.info(
-                f"[TEST] Read {bin(data_out)} from [{regs[mem][key][0][0]}] address {hex(address)} through SPI"
-            )
-            if data_out != int(data_exp, 2):
+            reg.write(data_in)
+
+    for reg in regs.values():
+        cocotb.log.debug(f"[TEST] reg {reg}")
+        address = reg.spi_addr
+        expected_data = reg.read()
+        if "r" not in reg.access_type or "w" not in reg.access_type:
+            cocotb.log.warning(f"[TEST] skipping check for {reg.name} as it has access attribute: {reg.access_type}")
+            continue
+        if isinstance(address, list):
+            cocotb.log.info(f"[TEST] start reading register {reg.name} addresses {[hex(a) for a in address]}")
+            data_out_list = await spi_master.read_reg_spi_nbytes(address=address[0], n_bytes=len(address))
+            data_out = 0
+            cocotb.log.debug(f"[TEST] list of data read from {reg.name} data {[hex(a) for a in data_out_list]} ")
+            for i in range(len(data_out_list)):
+                cocotb.log.debug(f"[TEST] data_out {hex(data_out)} = data_out_list[{i}] {hex(data_out_list[i])} << (8*{i}) = {hex(data_out_list[i] << (8 * i))}")
+                data_out |= data_out_list[i] << (8 * i)
+        else: 
+            data_out = await spi_master.read_reg_spi(address=address)
+            if data_out != expected_data:
                 cocotb.log.error(
-                    f"[TEST] wrong read from [{regs[mem][key][0][0]}] address {hex(address)} retuned val= {bin(data_out)[2:].zfill(bits_num)} expected = {data_exp}"
+                    f"[TEST] wrong read from {reg.name} address {hex(address)} retuned val= {hex(data_out)} expected = {hex(expected_data)}"
                 )
             else:
                 cocotb.log.info(
-                    f"[TEST] read the right value {hex(data_out)}  from [{regs[mem][key][0][0]}] address {address} "
+                    f"[TEST] read the right value {hex(data_out)}  from {reg.name} address {hex(address)} "
                 )
 
-
 """check reset value of house keeping register"""
-
 
 @cocotb.test()
 @report_test
 async def hk_regs_rst_spi(dut):
-    caravelEnv = await test_configure(dut, timeout_cycles=9299, num_error=INFINITY)
+    caravelEnv = await test_configure(dut, timeout_cycles=20681, num_error=INFINITY)
     spi_master = SPI(caravelEnv)
-    main_path = cocotb.plusargs["USER_PROJECT_ROOT"].replace('"', '') + "/verilog/dv/cocotb/"
-    hk_file = f'{main_path}/wb_models/housekeepingWB/HK_regs.json'
-    if "gf180" in caravelEnv.design_macros._asdict():
-        hk_file = (
-            f'{main_path}/wb_models/housekeepingWB/HK_regs_gf.json'
-        )
-    with open(hk_file) as f:
-        regs = json.load(f)
-    # read
-    bits_num = 8  # byte testing
-    mems = ["GPIO", "SPI", "sys"]
-    addr_to_skip = [
-        0x69,
-        0x6A,
-        0x6B,
-        0x6C,
-        0x6D,
-        0x1A,
-    ]  # skip testing reg_mprj_datal, reg_mprj_datah and usr2_vdd_pwrgood because when reading them it's getting the gpio input value
-    if "CPU_TYPE_ARM" in caravelEnv.design_macros._asdict():
-        addr_to_skip.append(0x0C)  # trap signal isn't used
-    for mem in mems:
-        keys = [k for k in regs[mem].keys()]
-        for key in keys:
-            if key == "base_addr":
-                continue
-            address = regs[mem][key][0][7]
-
-            if (
-                address in addr_to_skip
-            ):  # skip testing reg_mprj_datal, reg_mprj_datah and usr2_vdd_pwrgood because when reading them it's getting the gpio input value
-                continue
-            # calculate the expected value for each bit for reset value
-            data_exp = ""
-            # for i in range(bits_num):
-            # bit_exist = False
-            for field in regs[mem][key]:
-                # field_shift = field[2]
-                field_size = field[3]
-                # field_access = field[4]
-                reset_val = field[5]
-                # i_temp = bits_num - 1  # -i
-                # if field_shift <= i_temp and i_temp <= (field_shift + field_size-1):
-                data_exp = bin(reset_val)[2:].zfill(field_size) + data_exp
-                # print (f'reset = {bin(reset_val)[2:].zfill(bits_num)} data exp = {data_exp} i temp = {i_temp} shift {field_shift} size {field_size}')
-                # bit_exist = True
-                # break
-            # if not bit_exist:
-            #     data_exp += '0'
-
-            cocotb.log.info(
-                f"[TEST] expected reset value for [{regs[mem][key][0][0]}] is {data_exp}"
-            )
-            data_out = await spi_master.read_reg_spi(address=address)
-            cocotb.log.info(
-                f"[TEST] Read {bin(data_out)} from [{regs[mem][key][0][0]}] address {hex(address)} through wishbone"
-            )
-            if data_out != int(data_exp, 2):
-                cocotb.log.error(
-                    f"[TEST] wrong reset value read from [{regs[mem][key][0][0]}] address {address} retuned val= {bin(data_out)[2:].zfill(bits_num)} expected = {data_exp}"
-                )
+    debug_regs = await configure_userdesign(caravelEnv)
+    regs = HK_Registers(caravelEnv).regs_spi
+    for reg in regs.values():
+        cocotb.log.debug(f"[TEST] reg {reg}")
+        address = reg.spi_addr
+        expected_data = reg.reset
+        if "r" not in reg.access_type:
+            cocotb.log.warning(f"[TEST] skipping check for {reg.name} as it has access attribute: {reg.access_type}")
+            continue
+        if isinstance(address, list):
+            cocotb.log.info(f"[TEST] start reading register {reg.name} addresses {[hex(a) for a in address]}")
+            data_out_list = await spi_master.read_reg_spi_nbytes(address=address[0], n_bytes=len(address))
+            data_out = 0
+            cocotb.log.debug(f"[TEST] list of data read from {reg.name} data {[hex(a) for a in data_out_list]} ")
+            for i in range(len(data_out_list)):
+                cocotb.log.debug(f"[TEST] data_out {hex(data_out)} = data_out_list[{i}] {hex(data_out_list[i])} << (8*{i}) = {hex(data_out_list[i] << (8 * i))}")
+                data_out |= data_out_list[i] << (8 * i)
+            if data_out != expected_data:
+                cocotb.log.error(f"[TEST] wrong read from {reg.name} address {[hex(a) for a in address]} retuned val= {bin(data_out)[2:].zfill(32)} expected = {bin(expected_data)[2:].zfill(32)}")  
             else:
-                cocotb.log.info(
-                    f"[TEST] read the right reset value {hex(data_out)}  from [{regs[mem][key][0][0]}] address {address} "
-                )
+                cocotb.log.info(f"[TEST] read the right reset value {hex(data_out)}  from {reg.name} address {[hex(a) for a in address]} ")
+        else: 
+            cocotb.log.info(f"[TEST] start reading register {reg.name} address {hex(address)}")
+            data_out = await spi_master.read_reg_spi(address=address)
+            if data_out != expected_data:
+                cocotb.log.error(f"[TEST] wrong read from {reg.name} address {hex(address)} retuned val= {bin(data_out)[2:].zfill(32)} expected = {bin(expected_data)[2:].zfill(32)}")
+            else: 
+                cocotb.log.info(f"[TEST] read the right reset value {hex(data_out)}  from {reg.name} address {hex(address)} ")
 
 
 def generate_key_from_num(num):

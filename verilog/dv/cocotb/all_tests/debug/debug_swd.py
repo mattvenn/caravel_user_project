@@ -7,7 +7,7 @@ from caravel_cocotb.caravel_interfaces import report_test
 from collections import namedtuple
 from cocotb.handle import Force
 from cocotb.clock import Clock
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 bit_time_ns = 0
@@ -24,7 +24,7 @@ async def debug_swd(dut):
     dut._id(f"gpio{35}", False).value = 0
     dut._id(f"gpio{35}_en", False).value = Force(1)
     caravelEnv = await test_configure(dut, timeout_cycles=1131011)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     caravelEnv.drive_gpio_in(0, 1)
     caravelEnv.drive_gpio_in(35, 0)
 

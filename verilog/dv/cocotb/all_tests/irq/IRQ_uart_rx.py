@@ -5,7 +5,7 @@ from caravel_cocotb.interfaces.defsParser import Regs
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
 from caravel_cocotb.caravel_interfaces import UART
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 async def write_reg_spi(caravelEnv, address, data):
@@ -26,7 +26,7 @@ reg = Regs()
 @report_test
 async def IRQ_uart_rx(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=659797)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     uart = UART(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_uart_rx test")
     pass_list = (0x1B, 0x2B)

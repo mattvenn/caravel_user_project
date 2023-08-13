@@ -3,7 +3,7 @@ from cocotb.triggers import ClockCycles
 import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 from caravel_cocotb.caravel_interfaces import SPI
 
 
@@ -15,7 +15,7 @@ from caravel_cocotb.caravel_interfaces import SPI
 async def IRQ_external(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=426012)
     spi_master = SPI(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start IRQ_external test")
     pass_list = (0x1B, 0x2B)
     fail_list = (0x1E, 0x2E)

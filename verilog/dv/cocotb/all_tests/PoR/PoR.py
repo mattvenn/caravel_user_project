@@ -9,7 +9,7 @@ from caravel_cocotb.interfaces.common_functions.test_functions import read_confi
 from cocotb.binary import BinaryValue
 from caravel_cocotb.interfaces.common_functions.test_functions import Timeout
 from all_tests.mgmt_gpio.mgmt_gpio import blink_counter
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 from cocotb.clock import Clock
 
 
@@ -18,10 +18,8 @@ from cocotb.clock import Clock
 async def PoR(dut):
     # configurations
     caravelEnv = Caravel_env(dut)
-    debug_regs = DebugRegs(caravelEnv)
     Timeout(clk=caravelEnv.clk, cycle_num=1904502, precision=0.2)
     cocotb.scheduler.add(max_num_error(10, caravelEnv.clk))
-    debug_regs = DebugRegs(caravelEnv)
     clock = Clock(
         caravelEnv.clk, read_config_file()["clock"], units="ns"
     )  # Create a 25ns period clock on port clk
@@ -33,6 +31,7 @@ async def PoR(dut):
     await Timer(530, "ns")
     # await caravelEnv.reset() #
     await caravelEnv.disable_bins()
+    debug_regs = await configure_userdesign(caravelEnv)
 
     # start test
     cocotb.log.info("[TEST] Start mgmt_gpio_bidir test")

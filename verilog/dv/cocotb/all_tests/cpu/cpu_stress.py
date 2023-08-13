@@ -4,7 +4,7 @@ import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
 
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 """stress the cpu with heavy processing"""
 
 
@@ -12,7 +12,7 @@ from all_tests.common.debug_regs import DebugRegs
 @report_test
 async def cpu_stress(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1747660)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start CPU stress test")
     pass_list = (0x1B, 0x2B, 0x3B, 0x4B, 0x5B)
     fail_list = (0x1E, 0x2E, 0x3E, 0x4E, 0x5E)

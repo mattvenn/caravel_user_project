@@ -5,7 +5,7 @@ import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
 
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 """Testbench of GPIO configuration through bit-bang method using the StriVe housekeeping SPI."""
 
@@ -14,7 +14,7 @@ from all_tests.common.debug_regs import DebugRegs
 @report_test
 async def mgmt_gpio_out(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=431562)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start mgmt_gpio_out test")
     phases_fails = 3
     phases_passes = 0
@@ -69,7 +69,7 @@ async def mgmt_gpio_out(dut):
 async def mgmt_gpio_in(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1119535)
     caravelEnv.drive_mgmt_gpio(0)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start mgmt_gpio_in test")
     phases_fails = 3
     phases_passes = 0
@@ -77,7 +77,7 @@ async def mgmt_gpio_in(dut):
     fail_list = tuple([0xEE])
     reg1 = 0  # buffer
     reg2 = 0  # buffer
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
 
     while True:
         if reg2 != debug_regs.read_debug_reg2():
@@ -119,9 +119,9 @@ async def mgmt_gpio_in(dut):
 @report_test
 async def mgmt_gpio_bidir(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=1904514)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start mgmt_gpio_bidir test")
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     num_blinks = random.randint(1, 20)
     cocotb.log.info(f"[TEST] start send {num_blinks} blinks")
@@ -166,9 +166,9 @@ async def blink_counter(hdl, counter):
 @report_test
 async def mgmt_gpio_pu_pd(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=66129)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start mgmt_gpio_pu_pd test")
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
 
     await debug_regs.wait_reg1(0x1B)
     # caravelEnv.drive_mgmt_gpio('z')
@@ -200,7 +200,7 @@ async def mgmt_gpio_pu_pd(dut):
 @report_test
 async def mgmt_gpio_disable(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=117797)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start mgmt_gpio_disable test")
     phases_fails = 2
     phases_passes = 0
@@ -208,7 +208,7 @@ async def mgmt_gpio_disable(dut):
     fail_list = (0x1E, 0x2E)
     reg2 = 0  # buffer
     caravelEnv.drive_mgmt_gpio(1)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     while True:
         caravelEnv.drive_mgmt_gpio(1)
         if reg2 != debug_regs.read_debug_reg2():

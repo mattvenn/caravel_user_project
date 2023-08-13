@@ -6,7 +6,7 @@ from caravel_cocotb.caravel_interfaces import report_test
 from all_tests.spi_master.SPI_VIP import read_mem, SPI_VIP
 from caravel_cocotb.caravel_interfaces import SPI
 from random import randrange
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 bit_time_ns = 0
@@ -17,11 +17,10 @@ bit_time_ns = 0
 async def user_pass_thru_rd(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=89712)
     spi_master = SPI(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] start spi_master_rd test")
-    file_name = (
-        f"{cocotb.plusargs['USER_PROJECT_ROOT']}/verilog/dv/cocotb/all_tests/housekeeping/housekeeping_spi/test_data"
-    )
+    file_name = f"{cocotb.plusargs['USER_PROJECT_ROOT']}/verilog/dv/cocotb/all_tests/housekeeping/housekeeping_spi/test_data"
+    file_name = file_name.replace('"', '')
     mem = read_mem(file_name)
     await cocotb.start(
         SPI_VIP(
@@ -61,7 +60,7 @@ async def user_pass_thru_rd(dut):
 async def user_pass_thru_connection(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=86033)
     spi_master = SPI(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await spi_master.enable_csb()
     await spi_master._hk_write_byte(spi_master.SPI_COMMAND.USER_PASS_THRU.value)  

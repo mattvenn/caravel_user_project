@@ -3,7 +3,7 @@ from cocotb.triggers import ClockCycles
 import cocotb.log
 from caravel_cocotb.caravel_interfaces import test_configure
 from caravel_cocotb.caravel_interfaces import report_test
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
 """Testbench of GPIO configuration through bit-bang method using the StriVe housekeeping SPI."""
@@ -13,7 +13,7 @@ from all_tests.common.debug_regs import DebugRegs
 @report_test
 async def timer0_oneshot(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=159867)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start timer0_oneshot test")
     cocotb.log.info("[TEST] Configure timer as oneshot")
     pass_list = (0x1B, 0x2B, 0x3B)
@@ -64,7 +64,7 @@ async def timer0_oneshot(dut):
 @report_test
 async def timer0_periodic(dut):
     caravelEnv = await test_configure(dut, timeout_cycles=296520)
-    debug_regs = DebugRegs(caravelEnv)
+    debug_regs = await configure_userdesign(caravelEnv)
     cocotb.log.info("[TEST] Start timer0_periodic test")
     cocotb.log.info("[TEST] Configure timer as periodic")
     pass_list = (0x1B, 0x2B, 0x3B, 0x4B)

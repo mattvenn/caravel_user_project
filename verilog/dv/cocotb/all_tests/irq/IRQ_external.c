@@ -65,7 +65,8 @@ void main(){
 
     // test interrupt doesn't happened when mprj[7] is deasserted
     set_debug_reg2(0xBB);
-    IRQ_clearFlag();
+    IRQ_enableExternal1(0);
+    IRQ_enableExternal1(1);
     // Loop, waiting for the interrupt to change reg_mprj_datah
     is_pass = 0;
 

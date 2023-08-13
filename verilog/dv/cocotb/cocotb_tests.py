@@ -3,12 +3,14 @@ from all_tests.bitbang.bitbang_tests import *
 from all_tests.bitbang.bitbang_tests_cpu import *
 from all_tests.housekeeping.housekeeping_regs.housekeeping_regs_tests import *
 from all_tests.housekeeping.housekeeping_spi.user_pass_thru import *
+from all_tests.housekeeping.housekeeping_spi.mgmt_pass_thru import *
 from all_tests.housekeeping.housekeeping_spi.spi import *
 from all_tests.housekeeping.general.pll import *
 from all_tests.housekeeping.general.sys_ctrl import *
 from all_tests.hello_world.helloWorld import *
 from all_tests.cpu.cpu_stress import *
 from all_tests.mem.mem_stress import *
+from all_tests.irq.user_irq import *
 from all_tests.irq.IRQ_external import *
 from all_tests.irq.IRQ_external2 import *
 from all_tests.irq.IRQ_timer import *
@@ -31,3 +33,4 @@ from all_tests.PoR.PoR import *
 from all_tests.user_project.user_ram import *
 from all_tests.temp.temp import *
 from all_tests.flash_clk.flash_clk import *
+from all_tests.check_defaults.check_defaults import *

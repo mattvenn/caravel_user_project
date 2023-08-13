@@ -1,12 +1,11 @@
 import cocotb
-from cocotb.triggers import ClockCycles
+from cocotb.triggers import ClockCycles, NextTimeStep
 import cocotb.log
-from all_tests.common.debug_regs import DebugRegs
+from user_design import configure_userdesign
 
 
-async def gpio_all_i_seq(dut, caravelEnv, after_config_callback=None):
+async def gpio_all_i_seq(dut, caravelEnv, debug_regs, after_config_callback=None):
     active_gpios_num = caravelEnv.active_gpios_num-1
-    debug_regs = DebugRegs(caravelEnv)
     caravelEnv.drive_gpio_in((active_gpios_num, 0), 0)
     await debug_regs.wait_reg1(0xAA)
     cocotb.log.info("[TEST] configuration finished")
@@ -128,9 +127,8 @@ async def gpio_all_i_seq(dut, caravelEnv, after_config_callback=None):
     cocotb.log.info("[TEST] finish")
 
 
-async def gpio_all_o_seq(dut, caravelEnv, after_config_callback=None):
+async def gpio_all_o_seq(dut, caravelEnv, debug_regs, after_config_callback=None):
     active_gpios_num = caravelEnv.active_gpios_num-1
-    debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     if after_config_callback is not None:
         await after_config_callback(caravelEnv, debug_regs)
@@ -138,8 +136,8 @@ async def gpio_all_o_seq(dut, caravelEnv, after_config_callback=None):
     cocotb.log.info("[TEST] finish configuring output")
     i = 0x1 << (active_gpios_num - 32)
     i_temp = i
-    for j in range(active_gpios_num - 32):
-        await debug_regs.wait_reg2(active_gpios_num - j)
+    for j in range(active_gpios_num - 31):
+        await debug_regs.wait_reg2(active_gpios_num + 1  - j)
         cocotb.log.info(
             f"[Test] gpio out = {caravelEnv.monitor_gpio((active_gpios_num,0))} j = {j}"
         )
@@ -188,10 +186,8 @@ async def gpio_all_o_seq(dut, caravelEnv, after_config_callback=None):
     await ClockCycles(caravelEnv.clk, 10)
 
 
-async def gpio_all_i_pd_seq(dut, caravelEnv):
+async def gpio_all_i_pd_seq(dut, caravelEnv, debug_regs):
     active_gpios_num = caravelEnv.active_gpios_num-1
-    debug_regs = DebugRegs(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
     # monitor the output of padframe module it suppose to be all ones  when no input is applied
@@ -317,10 +313,8 @@ async def gpio_all_i_pd_seq(dut, caravelEnv):
     await ClockCycles(caravelEnv.clk, 100)
 
 
-async def gpio_all_i_pu_seq(dut, caravelEnv):
+async def gpio_all_i_pu_seq(dut, caravelEnv, debug_regs):
     active_gpios_num = caravelEnv.active_gpios_num-1
-    debug_regs = DebugRegs(caravelEnv)
-    debug_regs = DebugRegs(caravelEnv)
     await debug_regs.wait_reg1(0xAA)
     await caravelEnv.release_csb()
     # monitor the output of padframe module it suppose to be all ones  when no input is applied

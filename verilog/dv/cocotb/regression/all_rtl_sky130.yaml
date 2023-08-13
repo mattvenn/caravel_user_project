@@ -53,12 +53,16 @@ Tests:
     - {name: mem_dff_B, sim: RTL}
     - {name: mgmt_gpio_disable, sim: RTL}
     - {name: user_pass_thru_connection, sim: RTL}
-    - {name: spi_rd_wr_stream, sim: RTL}
+    - {name: spi_rd_wr, sim: RTL}
     - {name: PoR, sim: RTL}
     - {name: IRQ_spi, sim: RTL}
     - {name: IRQ_external2, sim: RTL}
     - {name: IRQ_uart_rx, sim: RTL}
     - {name: uart_rx_msg, sim: RTL}
+    - {name: user0_irq, sim: RTL}
+    - {name: user1_irq, sim: RTL}
+    - {name: user2_irq, sim: RTL}
+    - {name: mgmt_pass_thru_rd, sim: RTL}
 
 
 

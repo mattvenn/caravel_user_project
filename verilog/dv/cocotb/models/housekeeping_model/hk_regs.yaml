@@ -1,0 +1,458 @@
+registers:
+# spi registers
+  - name: spi_status
+    spi_address: 0x0
+    wb_addr: 0x26100000
+    width: 8
+    reset: 0
+    access_type: ro
+    backdoor_hdl: null
+
+  - name: Chip_ID
+    spi_address: [0x1,0x2,0x3]
+    wb_addr: 0x26100004
+    width: 20
+    reset: 0x115604
+    access_type: ro
+    backdoor_hdl: null
+
+  - name: User_project_ID
+    spi_address: [0x4,0x5,0x6,0x7]
+    wb_addr: 0x26100008
+    width: 8
+    reset: 0x0
+    access_type: ro
+    backdoor_hdl: null
+
+  - name: PLL_enable
+    spi_address: 0x8
+    wb_addr: 0x2610000c
+    width: 2
+    reset: 0x2
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: PLL_bypass
+    spi_address: 0x9
+    wb_addr: 0x26100010
+    width: 1
+    reset: 0x1
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: CPU_IRQ
+    spi_address: 0xa
+    wb_addr: 0x26100014
+    width: 1
+    reset: 0x0
+    access_type: NA
+    backdoor_hdl: null
+
+  - name: CPU_reset
+    spi_address: 0xb
+    wb_addr: 0x26100018
+    width: 1
+    reset: 0x0
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: CPU_trap
+    spi_address: 0xc
+    wb_addr: 0x26100028
+    width: 1
+    reset: 0x0
+    access_type: ro
+    backdoor_hdl: null
+
+  - name: DCO_trim
+    spi_address: [0xd,0xe,0xf,0x10]
+    wb_addr: 0x2610001c
+    width: 26
+    reset: 0x3FFEFFF
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: PLL_divider
+    spi_address: 0x11
+    wb_addr: 0x26100020
+    width: 6
+    reset: 0x12
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: PLL_feedback
+    spi_address: 0x12
+    wb_addr: 0x26100024
+    width: 5
+    reset: 0x4
+    access_type: rw
+    backdoor_hdl: null
+# gpio registers
+  - name: xfer_bitbang_control
+    spi_address: 0x13
+    wb_addr: 0x26000000
+    width: 8
+    reset: 0x0
+    access_type: NA
+    backdoor_hdl: null
+  
+  - name: power_control
+    spi_address: 0x6e
+    wb_addr: 0x26000004
+    width: 4
+    reset: 0x0
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: GPIO_data_low
+    spi_address: [0x6a, 0x6b, 0x6c, 0x6d]
+    wb_addr: 0x2600000c
+    width: 32
+    reset: 0x0
+    access_type: NA
+    backdoor_hdl: null  
+
+  - name: GPIO_data_high
+    spi_address: [0x69]
+    wb_addr: 0x26000010
+    width: 6
+    reset: 0x0
+    access_type: NA
+    backdoor_hdl: null
+
+  - name: gpio_configure_0
+    spi_address: [0x1d, 0x1e]
+    wb_addr: 0x26000024
+    width: 1
+    reset: 0x318
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_1
+    spi_address: [0x1f, 0x20]
+    wb_addr: 0x26000028
+    width: 1
+    reset: 0x318
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name : gpio_configure_2
+    spi_address: [0x21, 0x22]
+    wb_addr: 0x2600002c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_3
+    spi_address: [0x23, 0x24]
+    wb_addr: 0x26000030
+    width: 1
+    reset: 0x108
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_4
+    spi_address: [0x25, 0x26]
+    wb_addr: 0x26000034
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_5
+    spi_address: [0x27, 0x28]
+    wb_addr: 0x26000038
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_6
+    spi_address: [0x29, 0x2a]
+    wb_addr: 0x2600003c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_7
+    spi_address: [0x2b, 0x2c]
+    wb_addr: 0x26000040
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_8
+    spi_address: [0x2d, 0x2e]
+    wb_addr: 0x26000044
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_9
+    spi_address: [0x2f, 0x30]
+    wb_addr: 0x26000048
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_10
+    spi_address: [0x31, 0x32]
+    wb_addr: 0x2600004c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_11
+    spi_address: [0x33, 0x34]
+    wb_addr: 0x26000050
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_12
+    spi_address: [0x35, 0x36]
+    wb_addr: 0x26000054
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_13
+    spi_address: [0x37, 0x38]
+    wb_addr: 0x26000058
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_14
+    spi_address: [0x39, 0x3a]
+    wb_addr: 0x2600005c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_15
+    spi_address: [0x3b, 0x3c]
+    wb_addr: 0x26000060
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_16
+    spi_address: [0x3d, 0x3e]
+    wb_addr: 0x26000064
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_17
+    spi_address: [0x3f, 0x40]
+    wb_addr: 0x26000068
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_18
+    spi_address: [0x41, 0x42]
+    wb_addr: 0x2600006c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_19
+    spi_address: [0x43, 0x44]
+    wb_addr: 0x26000070
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_20
+    spi_address: [0x45, 0x46]
+    wb_addr: 0x26000074
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_21
+    spi_address: [0x47, 0x48]
+    wb_addr: 0x26000078
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_22
+    spi_address: [0x49, 0x4a]
+    wb_addr: 0x2600007c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_23
+    spi_address: [0x4b, 0x4c]
+    wb_addr: 0x26000080
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_24
+    spi_address: [0x4d, 0x4e]
+    wb_addr: 0x26000084
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_25
+    spi_address: [0x4f, 0x50]
+    wb_addr: 0x26000088
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_26
+    spi_address: [0x51, 0x52]
+    wb_addr: 0x2600008c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_27
+    spi_address: [0x53, 0x54]
+    wb_addr: 0x26000090
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_28
+    spi_address: [0x55, 0x56]
+    wb_addr: 0x26000094
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_29
+    spi_address: [0x57, 0x58]
+    wb_addr: 0x26000098
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_30
+    spi_address: [0x59, 0x5a]
+    wb_addr: 0x2600009c
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+  
+  - name: gpio_configure_31
+    spi_address: [0x5b, 0x5c]
+    wb_addr: 0x260000a0
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_32
+    spi_address: [0x5d, 0x5e]
+    wb_addr: 0x260000a4
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_33
+    spi_address: [0x5f, 0x60]
+    wb_addr: 0x260000a8
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_34
+    spi_address: [0x61, 0x62]
+    wb_addr: 0x260000ac
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_35
+    spi_address: [0x63, 0x64]
+    wb_addr: 0x260000b0
+    width: 1
+    reset: 0x304
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_36
+    spi_address: [0x65, 0x66]
+    wb_addr: 0x260000b4
+    width: 1
+    reset: 0x318
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: gpio_configure_37
+    spi_address: [0x67, 0x68]
+    wb_addr: 0x260000b8
+    width: 1
+    reset: 0x318
+    access_type: rw
+    backdoor_hdl: null
+
+# system monitoring registers
+  - name: user_power_good
+    spi_address: 0x1a
+    wb_addr: 0x26200000
+    width: 4
+    reset: 0xF
+    access_type: ro
+    backdoor_hdl: null
+
+  - name: trap_clock_redirect
+    spi_address: 0x1b
+    wb_addr: 0x26200004
+    width: 3
+    reset: 0x0
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: irq_redirect
+    spi_address: 0x1c
+    wb_addr: 0x2620000C
+    width: 2
+    reset: 0x0
+    access_type: rw
+    backdoor_hdl: null
+
+  - name: housekeeping_disable
+    spi_address: 0x6f
+    wb_addr: 0x26200010
+    width: 1
+    reset: 0x0
+    access_type: rw
+    backdoor_hdl: null

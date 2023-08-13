@@ -50,12 +50,16 @@ Tests:
     - {name: mem_dff_B, sim: GL}
     - {name: mgmt_gpio_disable, sim: GL}
     - {name: user_pass_thru_connection, sim: GL}
-    - {name: spi_rd_wr_stream, sim: GL}
+    - {name: spi_rd_wr, sim: GL}
     - {name: PoR, sim: GL}
     - {name: IRQ_spi, sim: GL}
     - {name: IRQ_external2, sim: GL}
     - {name: IRQ_uart_rx, sim: GL}
     - {name: uart_rx_msg, sim: GL}
+    - {name: user0_irq, sim: GL}
+    - {name: user1_irq, sim: GL}
+    - {name: user2_irq, sim: GL}
+    - {name: mgmt_pass_thru_rd, sim: GL}
 
 
 
