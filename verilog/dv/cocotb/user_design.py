@@ -46,7 +46,7 @@ class UserDesign:
             await cocotb.start(self.la_testing.start())
         
         await ClockCycles(self.caravelEnv.clk, 1)
-        if "RTL" in cocotb.plusargs:
+        if cocotb.plusargs['SIM'] == "\"RTL\"" and "VCS" in cocotb.plusargs:
             self.coverage_models()
     
     def coverage_models(self):
