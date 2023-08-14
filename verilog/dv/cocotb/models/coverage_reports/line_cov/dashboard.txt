@@ -1,0 +1,27 @@
+Dashboard
+
+Date: Wed Aug  9 10:01:22 2023
+
+User: rady
+
+Version: T-2022.06
+Command line: urg -dir compilation/simv.vdb RTL-check_defaults0/simv.vdb RTL-check_defaults1/simv.vdb RTL-check_defaults2/simv.vdb RTL-check_defaults3/simv.vdb RTL-check_defaults4/simv.vdb RTL-check_defaults5/simv.vdb RTL-check_defaults6/simv.vdb RTL-check_defaults7/simv.vdb RTL-check_defaults8/simv.vdb -format both -show tests -report /home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/coverage/line_cov
+Number of tests: 69
+
+-------------------------------------------------------------------------------
+Total Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 62.92  69.38  68.41  56.81  59.14  60.88 
+
+
+-------------------------------------------------------------------------------
+Hierarchical coverage data for top-level instances 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH NAME        
+ 62.92  69.38  68.41  56.81  59.14  60.88 caravel_top 
+
+
+-------------------------------------------------------------------------------
+Total Module Definition Coverage Summary 
+SCORE  LINE   COND   TOGGLE FSM    BRANCH 
+ 75.01  88.57  80.52  64.84  59.14  82.00 
+

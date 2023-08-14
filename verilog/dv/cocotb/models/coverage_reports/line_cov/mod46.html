@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: gpio_control_block</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_gpio_control_block'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_gpio_control_block')">gpio_control_block</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s9 cl rt"> 90.30</td>
+<td class="s10 cl rt"><a href="mod46.html#Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod46.html#Cond" >100.00</a></td>
+<td class="s6 cl rt"><a href="mod46.html#Toggle" > 61.18</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod46.html#Branch" >100.00</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/rady/caravel/package/caravel/verilog/rtl/gpio_control_block.v')">/home/rady/caravel/package/caravel/verilog/rtl/gpio_control_block.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1948"  onclick="showContent('inst_tag_1948')">caravel_top.uut.chip_core.gpio_control_in_1[10]</a></td>
+<td class="s7 cl rt"> 78.98</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1948_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1948_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1948_Toggle" > 51.32</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1948_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1952"  onclick="showContent('inst_tag_1952')">caravel_top.uut.chip_core.gpio_control_in_2[0]</a></td>
+<td class="s7 cl rt"> 78.98</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1952_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1952_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1952_Toggle" > 51.32</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1952_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1933"  onclick="showContent('inst_tag_1933')">caravel_top.uut.chip_core.gpio_control_in_1a[1]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1933_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1933_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1933_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1933_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1936"  onclick="showContent('inst_tag_1936')">caravel_top.uut.chip_core.gpio_control_in_1a[4]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1936_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1936_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1936_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1936_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1937"  onclick="showContent('inst_tag_1937')">caravel_top.uut.chip_core.gpio_control_in_1a[5]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1937_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1937_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1937_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1937_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1938"  onclick="showContent('inst_tag_1938')">caravel_top.uut.chip_core.gpio_control_in_1[0]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1938_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1938_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1938_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1938_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1939"  onclick="showContent('inst_tag_1939')">caravel_top.uut.chip_core.gpio_control_in_1[1]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1939_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1939_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1939_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1939_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1941"  onclick="showContent('inst_tag_1941')">caravel_top.uut.chip_core.gpio_control_in_1[3]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1941_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1941_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1941_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1941_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1942"  onclick="showContent('inst_tag_1942')">caravel_top.uut.chip_core.gpio_control_in_1[4]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1942_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1942_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1942_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1942_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1943"  onclick="showContent('inst_tag_1943')">caravel_top.uut.chip_core.gpio_control_in_1[5]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1943_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1943_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1943_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1943_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1944"  onclick="showContent('inst_tag_1944')">caravel_top.uut.chip_core.gpio_control_in_1[6]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1944_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1944_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1944_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1944_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1945"  onclick="showContent('inst_tag_1945')">caravel_top.uut.chip_core.gpio_control_in_1[7]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1945_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1945_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1945_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1945_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1946"  onclick="showContent('inst_tag_1946')">caravel_top.uut.chip_core.gpio_control_in_1[8]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1946_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1946_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1946_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1946_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1947"  onclick="showContent('inst_tag_1947')">caravel_top.uut.chip_core.gpio_control_in_1[9]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1947_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1947_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1947_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1947_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1953"  onclick="showContent('inst_tag_1953')">caravel_top.uut.chip_core.gpio_control_in_2[1]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1953_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1953_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1953_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1953_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1954"  onclick="showContent('inst_tag_1954')">caravel_top.uut.chip_core.gpio_control_in_2[2]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1954_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1954_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1954_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1954_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1955"  onclick="showContent('inst_tag_1955')">caravel_top.uut.chip_core.gpio_control_in_2[3]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1955_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1955_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1955_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1955_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1958"  onclick="showContent('inst_tag_1958')">caravel_top.uut.chip_core.gpio_control_in_2[6]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1958_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1958_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1958_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1958_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1959"  onclick="showContent('inst_tag_1959')">caravel_top.uut.chip_core.gpio_control_in_2[7]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1959_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1959_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1959_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1959_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1960"  onclick="showContent('inst_tag_1960')">caravel_top.uut.chip_core.gpio_control_in_2[8]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1960_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1960_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1960_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1960_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1961"  onclick="showContent('inst_tag_1961')">caravel_top.uut.chip_core.gpio_control_in_2[9]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1961_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1961_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1961_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1961_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1962"  onclick="showContent('inst_tag_1962')">caravel_top.uut.chip_core.gpio_control_in_2[10]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1962_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1962_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1962_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1962_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1963"  onclick="showContent('inst_tag_1963')">caravel_top.uut.chip_core.gpio_control_in_2[11]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1963_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1963_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1963_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1963_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1964"  onclick="showContent('inst_tag_1964')">caravel_top.uut.chip_core.gpio_control_in_2[12]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1964_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1964_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1964_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1964_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_1.html#inst_tag_1965"  onclick="showContent('inst_tag_1965')">caravel_top.uut.chip_core.gpio_control_in_2[13]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_1.html#inst_tag_1965_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_1.html#inst_tag_1965_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_1.html#inst_tag_1965_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_1.html#inst_tag_1965_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_1.html#inst_tag_1966"  onclick="showContent('inst_tag_1966')">caravel_top.uut.chip_core.gpio_control_in_2[14]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_1.html#inst_tag_1966_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_1.html#inst_tag_1966_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_1.html#inst_tag_1966_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_1.html#inst_tag_1966_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_1.html#inst_tag_1967"  onclick="showContent('inst_tag_1967')">caravel_top.uut.chip_core.gpio_control_in_2[15]</a></td>
+<td class="s7 cl rt"> 79.31</td>
+<td class="s10 cl rt"><a href="mod46_1.html#inst_tag_1967_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_1.html#inst_tag_1967_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_1.html#inst_tag_1967_Toggle" > 52.63</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_1.html#inst_tag_1967_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1932"  onclick="showContent('inst_tag_1932')">caravel_top.uut.chip_core.gpio_control_in_1a[0]</a></td>
+<td class="s7 cl rt"> 79.48</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1932_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1932_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1932_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1932_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1934"  onclick="showContent('inst_tag_1934')">caravel_top.uut.chip_core.gpio_control_in_1a[2]</a></td>
+<td class="s7 cl rt"> 79.48</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1934_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1934_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1934_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1934_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1935"  onclick="showContent('inst_tag_1935')">caravel_top.uut.chip_core.gpio_control_in_1a[3]</a></td>
+<td class="s7 cl rt"> 79.48</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1935_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1935_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1935_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1935_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1940"  onclick="showContent('inst_tag_1940')">caravel_top.uut.chip_core.gpio_control_in_1[2]</a></td>
+<td class="s7 cl rt"> 79.48</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1940_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1940_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1940_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1940_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1956"  onclick="showContent('inst_tag_1956')">caravel_top.uut.chip_core.gpio_control_in_2[4]</a></td>
+<td class="s7 cl rt"> 79.48</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1956_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1956_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1956_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1956_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1957"  onclick="showContent('inst_tag_1957')">caravel_top.uut.chip_core.gpio_control_in_2[5]</a></td>
+<td class="s7 cl rt"> 79.48</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1957_Line" >100.00</a></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1957_Cond" > 80.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1957_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod46_0.html#inst_tag_1957_Branch" > 84.62</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1950"  onclick="showContent('inst_tag_1950')">caravel_top.uut.chip_core.gpio_control_bidir_2[1]</a></td>
+<td class="s8 cl rt"> 88.32</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1950_Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1950_Cond" >100.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1950_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1950_Branch" >100.00</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1951"  onclick="showContent('inst_tag_1951')">caravel_top.uut.chip_core.gpio_control_bidir_2[2]</a></td>
+<td class="s8 cl rt"> 88.32</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1951_Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1951_Cond" >100.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1951_Toggle" > 53.29</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1951_Branch" >100.00</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1930"  onclick="showContent('inst_tag_1930')">caravel_top.uut.chip_core.gpio_control_bidir_1[0]</a></td>
+<td class="s8 cl rt"> 88.49</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1930_Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1930_Cond" >100.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1930_Toggle" > 53.95</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1930_Branch" >100.00</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1949"  onclick="showContent('inst_tag_1949')">caravel_top.uut.chip_core.gpio_control_bidir_2[0]</a></td>
+<td class="s8 cl rt"> 88.49</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1949_Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1949_Cond" >100.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1949_Toggle" > 53.95</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1949_Branch" >100.00</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod46_0.html#inst_tag_1931"  onclick="showContent('inst_tag_1931')">caravel_top.uut.chip_core.gpio_control_bidir_1[1]</a></td>
+<td class="s8 cl rt"> 88.65</td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1931_Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1931_Cond" >100.00</a></td>
+<td class="s5 cl rt"><a href="mod46_0.html#inst_tag_1931_Toggle" > 54.61</a></td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt"><a href="mod46_0.html#inst_tag_1931_Branch" >100.00</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_gpio_control_block'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod46.html" >gpio_control_block</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">TOTAL</td><td></td><td>29</td><td>29</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>143</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>165</td><td>3</td><td>3</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>175</td><td>23</td><td>23</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+142                         always @(negedge serial_clock or negedge resetn) begin
+143        1/1          	if (resetn == 1'b0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+144                     	    /* Clear the shift register output */
+145        1/1          	    serial_data_out &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+146                             end else begin
+147        1/1          	    serial_data_out &lt;= shift_register[PAD_CTRL_BITS-1];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+148                     	end
+149                         end
+150                     
+151                         /* Propagate the clock and reset signals so that they aren't wired	*/
+152                         /* all over the chip, but are just wired between the blocks.	*/
+153                         (* keep *) sky130_fd_sc_hd__clkbuf_8 BUF[2:0] (
+154                         `ifdef USE_POWER_PINS
+155                                 .VPWR(vccd),
+156                                 .VGND(vssd),
+157                                 .VPB(vccd),
+158                                 .VNB(vssd),
+159                         `endif
+160                             .A({serial_clock, resetn, serial_load}),
+161                             .X({serial_clock_out, resetn_out, serial_load_out})
+162                         );
+163                     
+164                         always @(posedge serial_clock or negedge resetn) begin
+165        1/1          	if (resetn == 1'b0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+166                     	    /* Clear shift register */
+167        1/1          	    shift_register &lt;= 'd0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+168                     	end else begin
+169                     	    /* Shift data in */
+170        1/1          	    shift_register &lt;= {shift_register[PAD_CTRL_BITS-2:0], serial_data_in};
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+171                     	end
+172                         end
+173                     
+174                         always @(posedge serial_load or negedge resetn) begin
+175        1/1          	if (resetn == 1'b0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+176                     	    /* Initial state on reset depends on applied defaults */
+177        1/1          	    mgmt_ena &lt;= gpio_defaults[MGMT_EN];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+178        1/1          	    gpio_holdover &lt;= gpio_defaults[HLDH];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+179        1/1          	    gpio_slow_sel &lt;= gpio_defaults[SLOW];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+180        1/1          	    gpio_vtrip_sel &lt;= gpio_defaults[TRIP];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+181        1/1                      gpio_ib_mode_sel &lt;= gpio_defaults[MOD_SEL];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+182        1/1          	    gpio_inenb &lt;= gpio_defaults[INP_DIS];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+183        1/1          	    gpio_outenb &lt;= gpio_defaults[OEB];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+184        1/1          	    gpio_dm &lt;= gpio_defaults[DM+2:DM];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+185        1/1          	    gpio_ana_en &lt;= gpio_defaults[AN_EN];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+186        1/1          	    gpio_ana_sel &lt;= gpio_defaults[AN_SEL];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+187        1/1          	    gpio_ana_pol &lt;= gpio_defaults[AN_POL];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+188                     	end else begin
+189                     	    /* Load data */
+190        1/1          	    mgmt_ena 	     &lt;= shift_register[MGMT_EN];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+191        1/1          	    gpio_outenb      &lt;= shift_register[OEB];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+192        1/1          	    gpio_holdover    &lt;= shift_register[HLDH]; 
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+193        1/1          	    gpio_inenb 	     &lt;= shift_register[INP_DIS];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+194        1/1          	    gpio_ib_mode_sel &lt;= shift_register[MOD_SEL];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+195        1/1          	    gpio_ana_en      &lt;= shift_register[AN_EN];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+196        1/1          	    gpio_ana_sel     &lt;= shift_register[AN_SEL];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+197        1/1          	    gpio_ana_pol     &lt;= shift_register[AN_POL];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+198        1/1          	    gpio_slow_sel    &lt;= shift_register[SLOW];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+199        1/1          	    gpio_vtrip_sel   &lt;= shift_register[TRIP];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+200        1/1          	    gpio_dm 	     &lt;= shift_register[DM+2:DM];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod46.html" >gpio_control_block</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">Conditions</td><td>10</td><td>10</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">Logical</td><td>10</td><td>10</td><td>100.00</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       228
+ EXPRESSION (mgmt_ena ? ((mgmt_gpio_oeb == 1'b1) ? gpio_outenb : 1'b0) : user_gpio_oeb)
+             ----1---
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       228
+ SUB-EXPRESSION ((mgmt_gpio_oeb == 1'b1) ? gpio_outenb : 1'b0)
+                 -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       235
+ EXPRESSION (mgmt_ena ? ((mgmt_gpio_oeb == 1'b1) ? ((gpio_dm[2:1] == 2'b1) ? ((~gpio_dm[0])) : mgmt_gpio_out) : mgmt_gpio_out) : user_gpio_out)
+             ----1---
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       235
+ SUB-EXPRESSION ((mgmt_gpio_oeb == 1'b1) ? ((gpio_dm[2:1] == 2'b1) ? ((~gpio_dm[0])) : mgmt_gpio_out) : mgmt_gpio_out)
+                 -----------1-----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       235
+ SUB-EXPRESSION ((gpio_dm[2:1] == 2'b1) ? ((~gpio_dm[0])) : mgmt_gpio_out)
+                 -----------1----------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod46.html" >gpio_control_block</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s4">
+<td>Totals</td>
+<td class="rt">48</td>
+<td class="rt">21</td>
+<td class="rt">43.75 </td>
+</tr><tr class="s6">
+<td>Total Bits</td>
+<td class="rt">152</td>
+<td class="rt">93</td>
+<td class="rt">61.18 </td>
+</tr><tr class="s7">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">76</td>
+<td class="rt">56</td>
+<td class="rt">73.68 </td>
+</tr><tr class="s4">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">76</td>
+<td class="rt">37</td>
+<td class="rt">48.68 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s4">
+<td>Ports</td>
+<td class="rt">33</td>
+<td class="rt">16</td>
+<td class="rt">48.48 </td>
+</tr><tr class="s5">
+<td>Port Bits</td>
+<td class="rt">94</td>
+<td class="rt">48</td>
+<td class="rt">51.06 </td>
+</tr><tr class="s6">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">47</td>
+<td class="rt">30</td>
+<td class="rt">63.83 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">47</td>
+<td class="rt">18</td>
+<td class="rt">38.30 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Signals</td>
+<td class="rt">15</td>
+<td class="rt">5</td>
+<td class="rt">33.33 </td>
+</tr><tr class="s7">
+<td>Signal Bits</td>
+<td class="rt">58</td>
+<td class="rt">45</td>
+<td class="rt">77.59 </td>
+</tr><tr class="s8">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">29</td>
+<td class="rt">26</td>
+<td class="rt">89.66 </td>
+</tr><tr class="s6">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">29</td>
+<td class="rt">19</td>
+<td class="rt">65.52 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td><td class="alfsrt">Direction</td></tr><tr>
+<td>vccd</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INOUT</td>
+</tr><tr>
+<td>vssd</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INOUT</td>
+</tr><tr>
+<td>vccd1</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INOUT</td>
+</tr><tr>
+<td>vssd1</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INOUT</td>
+</tr><tr>
+<td>gpio_defaults[12:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>resetn</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>resetn_out</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>serial_clock</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>serial_clock_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>serial_load</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/uart_rx">T22</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>serial_load_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/uart_rx">T22</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>mgmt_gpio_in</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/bitbang_cpu_all_i">T17</span>,<span title = "compilation/simv/gpio_all_i_pd_user">T23</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/bitbang_cpu_all_i">T17</span>,<span title = "compilation/simv/gpio_all_i_pd_user">T23</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>mgmt_gpio_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/gpio_all_o">T46</span>,<span title = "compilation/simv/bitbang_spi_o">T47</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/gpio_all_o">T46</span>,<span title = "compilation/simv/bitbang_spi_o">T47</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>mgmt_gpio_oeb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_master_temp">T29</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>serial_data_in</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>serial_data_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>user_gpio_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl" nowrap><span title = "compilation/simv/gpio_all_o_user">T15</span>,<span title = "compilation/simv/gpio_all_bidir_user">T16</span>,<span title = "RTL-check_defaults0/simv/check_defaults">T33</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl" nowrap><span title = "compilation/simv/gpio_all_o_user">T15</span>,<span title = "compilation/simv/gpio_all_bidir_user">T16</span>,<span title = "RTL-check_defaults0/simv/check_defaults">T33</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>user_gpio_oeb</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/gpio_all_bidir_user">T16</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>user_gpio_in</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/bitbang_cpu_all_i">T17</span>,<span title = "compilation/simv/gpio_all_i_pd_user">T23</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/bitbang_cpu_all_i">T17</span>,<span title = "compilation/simv/gpio_all_i_pd_user">T23</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_holdover</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_slow_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_vtrip_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_inenb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/user_pass_thru_connection">T26</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_ib_mode_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_ana_en</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_ana_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_ana_pol</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_dm[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_outenb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/gpio_all_o_user">T15</span>,<span title = "compilation/simv/gpio_all_bidir_user">T16</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/gpio_all_o_user">T15</span>,<span title = "compilation/simv/gpio_all_i_pu_user">T27</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pad_gpio_in</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/bitbang_cpu_all_i">T17</span>,<span title = "compilation/simv/gpio_all_i_pd_user">T23</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/bitbang_cpu_all_i">T17</span>,<span title = "compilation/simv/gpio_all_i_pd_user">T23</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>one</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>zero</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td></tr><tr>
+<td>mgmt_ena</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>gpio_holdover</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr><tr>
+<td>gpio_slow_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr><tr>
+<td>gpio_vtrip_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr><tr>
+<td>gpio_inenb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/user_pass_thru_connection">T26</span></td>
+</tr><tr>
+<td>gpio_ib_mode_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr><tr>
+<td>gpio_outenb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>gpio_dm[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span></td>
+</tr><tr>
+<td>gpio_ana_en</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr><tr>
+<td>gpio_ana_sel</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr><tr>
+<td>gpio_ana_pol</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr><tr>
+<td>one_unbuf</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>zero_unbuf</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>gpio_logic1</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>shift_register[12:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod46.html" >gpio_control_block</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s10">
+<td>Branches</td>
+<td></td>
+<td class="rt">13</td>
+<td class="rt">13</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">228</td>
+<td class="rt">3</td>
+<td class="rt">3</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">235</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">143</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">165</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">175</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+228            assign pad_gpio_outenb = (mgmt_ena) ? ((mgmt_gpio_oeb == 1'b1) ?
+                                                   <font color = "green">-1-</font>                        <font color = "green">-2-</font>   
+                                                                              <font color = "green">==></font>  
+                                                   <font color = "green">==></font>                        <font color = "green">==></font>   
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+235            assign pad_gpio_out = (mgmt_ena) ? ((mgmt_gpio_oeb == 1'b1) ?
+                                                <font color = "green">-1-</font>                        <font color = "green">-2-</font>   
+                                                <font color = "green">==></font>                        <font color = "green">==></font>   
+236        			((gpio_dm[2:1] == 2'b01) ? ~gpio_dm[0] : mgmt_gpio_out) :
+           			                         <font color = "green">-3-</font>  
+           			                         <font color = "green">==></font>  
+           			                         <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/bitbang_cpu_all_o">T14</span>,<span title = "compilation/simv/serial_shifting_01">T11</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/serial_shifting_01">T11</span>,<span title = "compilation/simv/serial_shifting_1100">T12</span>,<span title = "compilation/simv/serial_shifting_0011">T13</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+143        	if (resetn == 1'b0) begin
+           	<font color = "green">-1-</font>  
+144        	    /* Clear the shift register output */
+145        	    serial_data_out <= 1'b0;
+           <font color = "green">	    ==></font>
+146                end else begin
+147        	    serial_data_out <= shift_register[PAD_CTRL_BITS-1];
+           <font color = "green">	    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+165        	if (resetn == 1'b0) begin
+           	<font color = "green">-1-</font>  
+166        	    /* Clear shift register */
+167        	    shift_register <= 'd0;
+           <font color = "green">	    ==></font>
+168        	end else begin
+169        	    /* Shift data in */
+170        	    shift_register <= {shift_register[PAD_CTRL_BITS-2:0], serial_data_in};
+           <font color = "green">	    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+175        	if (resetn == 1'b0) begin
+           	<font color = "green">-1-</font>  
+176        	    /* Initial state on reset depends on applied defaults */
+177        	    mgmt_ena <= gpio_defaults[MGMT_EN];
+           <font color = "green">	    ==></font>
+178        	    gpio_holdover <= gpio_defaults[HLDH];
+179        	    gpio_slow_sel <= gpio_defaults[SLOW];
+180        	    gpio_vtrip_sel <= gpio_defaults[TRIP];
+181                    gpio_ib_mode_sel <= gpio_defaults[MOD_SEL];
+182        	    gpio_inenb <= gpio_defaults[INP_DIS];
+183        	    gpio_outenb <= gpio_defaults[OEB];
+184        	    gpio_dm <= gpio_defaults[DM+2:DM];
+185        	    gpio_ana_en <= gpio_defaults[AN_EN];
+186        	    gpio_ana_sel <= gpio_defaults[AN_SEL];
+187        	    gpio_ana_pol <= gpio_defaults[AN_POL];
+188        	end else begin
+189        	    /* Load data */
+190        	    mgmt_ena 	     <= shift_register[MGMT_EN];
+           <font color = "green">	    ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul>
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: housekeeping_spi</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_housekeeping_spi'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_housekeeping_spi')">housekeeping_spi</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s9 cl rt"> 98.65</td>
+<td class="s10 cl rt"><a href="mod47.html#Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod47.html#Cond" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod47.html#Toggle" > 99.33</a></td>
+<td class="s10 cl rt"><a href="mod47.html#FSM" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod47.html#Branch" > 93.94</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/rady/caravel/package/caravel/verilog/rtl/housekeeping_spi.v')">/home/rady/caravel/package/caravel/verilog/rtl/housekeeping_spi.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod47.html#inst_tag_1968"  onclick="showContent('inst_tag_1968')">caravel_top.uut.chip_core.housekeeping.hkspi</a></td>
+<td class="s9 cl rt"> 98.65</td>
+<td class="s10 cl rt"><a href="mod47.html#Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod47.html#Cond" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod47.html#Toggle" > 99.33</a></td>
+<td class="s10 cl rt"><a href="mod47.html#FSM" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod47.html#Branch" > 93.94</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_housekeeping_spi'>
+<hr>
+<a name="inst_tag_1968"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy1.html#tag_urg_inst_1968" >caravel_top.uut.chip_core.housekeeping.hkspi</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s9 cl rt"> 98.65</td>
+<td class="s10 cl rt"><a href="mod47.html#Line" >100.00</a></td>
+<td class="s10 cl rt"><a href="mod47.html#Cond" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod47.html#Toggle" > 99.33</a></td>
+<td class="s10 cl rt"><a href="mod47.html#FSM" >100.00</a></td>
+<td class="s9 cl rt"><a href="mod47.html#Branch" > 93.94</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s9 cl rt"> 98.65</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 99.33</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 93.94</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 84.40</td>
+<td class="s9 cl rt"> 97.19</td>
+<td class="s9 cl rt"> 93.91</td>
+<td class="s7 cl rt"> 74.23</td>
+<td class="s6 cl rt"> 62.96</td>
+<td class="s9 cl rt"> 93.72</td>
+<td><a href="mod81.html#inst_tag_4058" >housekeeping</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td colspan=7>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_housekeeping_spi'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod47.html" >housekeeping_spi</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">TOTAL</td><td></td><td>83</td><td>83</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>130</td><td>20</td><td>20</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>173</td><td>63</td><td>63</td><td>100.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+129                         always @(negedge SCK or posedge csb_reset) begin
+130        1/1                  if (csb_reset == 1'b1) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+131        1/1                      wrstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+132        1/1                      ldata  &lt;= 8'b00000000;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+133        1/1                      sdoenb &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+134                             end else begin
+135                     
+136                                 // After CSB low, 1st SCK starts command
+137                     
+138        1/1                      if (state == `DATA) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+139        1/1                      	if (readmode == 1'b1) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+140        1/1                              sdoenb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+141        1/1                              if (count == 3'b000) begin
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+142        1/1                          	ldata &lt;= idata;
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+143                                         end else begin
+144        1/1                          	ldata &lt;= {ldata[6:0], 1'b0};	// Shift out
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+145                                         end
+146                                     end else begin
+147        1/1                              sdoenb &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+148                                     end
+149                     
+150                                     // Apply write strobe on SCK negative edge on the next-to-last
+151                                     // data bit so that it updates data on the rising edge of SCK
+152                                     // on the last data bit.
+153                      
+154        1/1                          if (count == 3'b111) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+155        1/1                              if (writemode == 1'b1) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+156        1/1                                  wrstb &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+157                                         end
+                        MISSING_ELSE
+158                                     end else begin
+159        1/1                              wrstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+160                                     end
+161                     
+162        1/1          	    end else if (state == `MGMTPASS || state == `USERPASS) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+163        1/1          		wrstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user_pass_thru_connection">T26</span>&nbsp;<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;
+164        1/1          		sdoenb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user_pass_thru_connection">T26</span>&nbsp;<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;
+165                                 end else begin
+166        1/1                          wrstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+167        1/1                          sdoenb &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+168                                 end		// ! state `DATA
+169                             end		// ! csb_reset
+170                         end			// always @ ~SCK
+171                     
+172                         always @(posedge SCK or posedge csb_reset) begin
+173        1/1                  if (csb_reset == 1'b1) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+174                                 // Default state on reset
+175        1/1                      addr &lt;= 8'h00;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+176        1/1          	    rdstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+177        1/1                      predata &lt;= 7'b0000000;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+178        1/1                      state  &lt;= `COMMAND;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+179        1/1                      count  &lt;= 3'b000;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+180        1/1                      readmode &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+181        1/1                      writemode &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+182        1/1                      fixed &lt;= 3'b000;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+183        1/1          	    pass_thru_mgmt &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+184        1/1          	    pass_thru_mgmt_delay &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+185        1/1          	    pre_pass_thru_mgmt &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+186        1/1          	    pass_thru_user &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+187        1/1          	    pass_thru_user_delay &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+188        1/1          	    pre_pass_thru_user &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+189                             end else begin
+190                                 // After csb_reset low, 1st SCK starts command
+191        1/1                      if (state == `COMMAND) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+192        1/1          		rdstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+193        1/1                          count &lt;= count + 1;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+194        1/1                  	if (count == 3'b000) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+195        1/1          	            writemode &lt;= SDI;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+196        1/1          	        end else if (count == 3'b001) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+197        1/1          	            readmode &lt;= SDI;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+198        1/1          	        end else if (count &lt; 3'b101) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+199        1/1          	            fixed &lt;= {fixed[1:0], SDI}; 
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+200        1/1          	        end else if (count == 3'b101) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+201        1/1          		    pre_pass_thru_mgmt &lt;= SDI;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+202        1/1          	        end else if (count == 3'b110) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+203        1/1          		    pre_pass_thru_user &lt;= SDI;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+204        1/1          		    pass_thru_mgmt_delay &lt;= pre_pass_thru_mgmt;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+205        1/1          	        end else if (count == 3'b111) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+206        1/1          		    pass_thru_user_delay &lt;= pre_pass_thru_user;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+207        1/1          		    if (pre_pass_thru_mgmt == 1'b1) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+208        1/1          			state &lt;= `MGMTPASS;
+           Tests:       <span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>&nbsp;
+209        1/1          			pre_pass_thru_mgmt &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>&nbsp;
+210        1/1          		    end else if (pre_pass_thru_user == 1'b1) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+211        1/1          			state &lt;= `USERPASS;
+           Tests:       <span title = "compilation/simv/user_pass_thru_connection">T26</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/user_pass_thru_rd">T59</span>&nbsp;
+212        1/1          			pre_pass_thru_user &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/user_pass_thru_connection">T26</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/user_pass_thru_rd">T59</span>&nbsp;
+213                     		    end else begin
+214        1/1          	                state &lt;= `ADDRESS;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+215                     		    end
+216                     	        end
+                   <font color = "red">==>  MISSING_ELSE</font>
+217        1/1                      end else if (state == `ADDRESS) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+218        1/1          	        count &lt;= count + 1;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+219        1/1          	        addr &lt;= {addr[6:0], SDI};
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+220        1/1          	        if (count == 3'b111) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+221        1/1          	            state &lt;= `DATA;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+222        1/1          		    if (readmode == 1'b1) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+223        1/1          			rdstb &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+224                     		    end
+                        MISSING_ELSE
+225                     	        end else begin
+226        1/1          		    rdstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+227                     		end
+228                     
+229        1/1                      end else if (state == `DATA) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+230        1/1          	        predata &lt;= {predata[6:0], SDI};
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+231        1/1          	        count &lt;= count + 1;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+232        1/1          	        if (count == 3'b111) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+233        1/1          	            if (fixed == 3'b001) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+234        1/1          	                state &lt;= `COMMAND;
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+235        1/1          	            end else if (fixed != 3'b000) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+236        1/1          	                fixed &lt;= fixed - 1;
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+237        1/1          	                addr &lt;= addr + 1;	// Auto increment address (fixed)
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+238                     	            end else begin	
+239        1/1          	                addr &lt;= addr + 1;	// Auto increment address (streaming)
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+240                     	            end
+241        1/1          		    if (readmode == 1'b1) begin
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+242        1/1          			rdstb &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/spi_rd_wr">T48</span>&nbsp;
+243                     		    end
+                        MISSING_ELSE
+244                     	        end else begin
+245        1/1          		    rdstb &lt;= 1'b0;
+           Tests:       <span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;<span title = "compilation/simv/hk_regs_wr_spi">T19</span>&nbsp;<span title = "compilation/simv/cpu_reset">T5</span>&nbsp;
+246                     		end
+247        1/1          	    end else if (state == `MGMTPASS) begin
+           Tests:       <span title = "compilation/simv/user_pass_thru_connection">T26</span>&nbsp;<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;
+248        1/1          		pass_thru_mgmt &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>&nbsp;
+249        1/1          	    end else if (state == `USERPASS) begin
+           Tests:       <span title = "compilation/simv/user_pass_thru_connection">T26</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/user_pass_thru_rd">T59</span>&nbsp;
+250        1/1          		pass_thru_user &lt;= 1'b1;
+           Tests:       <span title = "compilation/simv/user_pass_thru_connection">T26</span>&nbsp;<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>&nbsp;<span title = "compilation/simv/user_pass_thru_rd">T59</span>&nbsp;
+251                                 end		// ! state `DATA | `MGMTPASS | `USERPASS
+                   <font color = "red">==>  MISSING_ELSE</font>
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod47.html" >housekeeping_spi</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s10"><td class="lf">Conditions</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="s10"><td class="lf">Logical</td><td>5</td><td>5</td><td>100.00</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       121
+ EXPRESSION ((state == 3'b1) ? ({addr[6:0], SDI}) : addr)
+             -------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       162
+ EXPRESSION ((state == 3'b101) || (state == 3'b100))
+             --------1--------    --------2--------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod47.html" >housekeeping_spi</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Totals</td>
+<td class="rt">28</td>
+<td class="rt">27</td>
+<td class="rt">96.43 </td>
+</tr><tr class="s9">
+<td>Total Bits</td>
+<td class="rt">150</td>
+<td class="rt">149</td>
+<td class="rt">99.33 </td>
+</tr><tr class="s9">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">75</td>
+<td class="rt">74</td>
+<td class="rt">98.67 </td>
+</tr><tr class="s10">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">75</td>
+<td class="rt">75</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s9">
+<td>Ports</td>
+<td class="rt">17</td>
+<td class="rt">16</td>
+<td class="rt">94.12 </td>
+</tr><tr class="s9">
+<td>Port Bits</td>
+<td class="rt">76</td>
+<td class="rt">75</td>
+<td class="rt">98.68 </td>
+</tr><tr class="s9">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">38</td>
+<td class="rt">37</td>
+<td class="rt">97.37 </td>
+</tr><tr class="s10">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">38</td>
+<td class="rt">38</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s10">
+<td>Signals</td>
+<td class="rt">11</td>
+<td class="rt">11</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>Signal Bits</td>
+<td class="rt">74</td>
+<td class="rt">74</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">37</td>
+<td class="rt">37</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">37</td>
+<td class="rt">37</td>
+<td class="rt">100.00</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td><td class="alfsrt">Direction</td></tr><tr>
+<td>reset</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>SCK</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>SDI</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>CSB</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>SDO</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>sdoenb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>idata[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>odata[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>oaddr[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>rdstb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>wrstb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pass_thru_mgmt</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pass_thru_mgmt_delay</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pass_thru_user</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pass_thru_user_delay</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pass_thru_mgmt_reset</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>pass_thru_user_reset</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td></tr><tr>
+<td>addr[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr>
+<td>state[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr>
+<td>count[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr>
+<td>writemode</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr>
+<td>readmode</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span></td>
+</tr><tr>
+<td>fixed[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr>
+<td>predata[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr>
+<td>ldata[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr>
+<td>pre_pass_thru_mgmt</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr><tr>
+<td>pre_pass_thru_user</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+</tr><tr>
+<td>csb_reset</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr></table><br clear=all>
+<hr>
+<a name="FSM"></a>
+FSM Coverage for Module : <a href="mod47.html" >housekeeping_spi</a><br clear=all>
+<table align=left class="noborder">
+<caption><b>Summary for FSM :: state</b></caption>
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th><th nowrap width=200></th></tr><tr class="wht">
+<td>States</td>
+<td class="rt">5</td>
+<td class="rt">5</td>
+<td class="rt">100.00</td>
+<td>(Not included in score)</td>
+</tr><tr class="s10">
+<td>Transitions</td>
+<td class="rt">8</td>
+<td class="rt">8</td>
+<td class="rt">100.00</td>
+<td></td>
+</tr><tr class="wht">
+<td>Sequences</td>
+<td class="rt">0</td>
+<td class="rt">0</td>
+<td></td>
+<td></td>
+</tr></table><br clear=all>
+<b>State, Transition and Sequence Details for FSM :: state</b><hr>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">states</td><td>Line No.</td><td class="alfsrt">Covered</td><td class="alfsrt">Tests</td></tr><tr class="uGreen">
+<td nowrap>ADDRESS</td>
+<td class="rt">214</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td nowrap>COMMAND</td>
+<td class="rt">178</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td nowrap>DATA</td>
+<td class="rt">221</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td nowrap>MGMTPASS</td>
+<td class="rt">208</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr><tr class="uGreen">
+<td nowrap>USERPASS</td>
+<td class="rt">211</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+</tr></table><br clear=all>
+<br clear=all>
+<table align=left class="sortable noborder">
+<tr class="sortablehead">
+<td class="alfsrt">transitions</td><td>Line No.</td><td class="alfsrt">Covered</td><td class="alfsrt">Tests</td></tr><tr class="uGreen">
+<td nowrap>ADDRESS->COMMAND</td>
+<td class="rt">178</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/spi_rd_wr_nbyte">T31</span></td>
+</tr><tr class="uGreen">
+<td nowrap>ADDRESS->DATA</td>
+<td class="rt">221</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td nowrap>COMMAND->ADDRESS</td>
+<td class="rt">214</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td nowrap>COMMAND->MGMTPASS</td>
+<td class="rt">208</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr><tr class="uGreen">
+<td nowrap>COMMAND->USERPASS</td>
+<td class="rt">211</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+</tr><tr class="uGreen">
+<td nowrap>DATA->COMMAND</td>
+<td class="rt">178</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td nowrap>MGMTPASS->COMMAND</td>
+<td class="rt">178</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr><tr class="uGreen">
+<td nowrap>USERPASS->COMMAND</td>
+<td class="rt">178</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+</tr></table><br clear=all>
+<br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod47.html" >housekeeping_spi</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s9">
+<td>Branches</td>
+<td></td>
+<td class="rt">33</td>
+<td class="rt">31</td>
+<td class="rt">93.94 </td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">121</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">130</td>
+<td class="rt">9</td>
+<td class="rt">9</td>
+<td class="rt">100.00</td>
+</tr><tr class="s9">
+<td>IF</td>
+<td class="rt">173</td>
+<td class="rt">22</td>
+<td class="rt">20</td>
+<td class="rt">90.91 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+121            assign oaddr = (state == `ADDRESS) ? {addr[6:0], SDI} : addr;
+                                                  <font color = "green">-1-</font>  
+                                                  <font color = "green">==></font>  
+                                                  <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+130                if (csb_reset == 1'b1) begin
+                   <font color = "green">-1-</font>  
+131                    wrstb <= 1'b0;
+           <font color = "green">            ==></font>
+132                    ldata  <= 8'b00000000;
+133                    sdoenb <= 1'b1;
+134                end else begin
+135        
+136                    // After CSB low, 1st SCK starts command
+137        
+138                    if (state == `DATA) begin
+                       <font color = "green">-2-</font>  
+139                    	if (readmode == 1'b1) begin
+                       	<font color = "green">-3-</font>  
+140                            sdoenb <= 1'b0;
+141                            if (count == 3'b000) begin
+                               <font color = "green">-4-</font>  
+142                        	ldata <= idata;
+           <font color = "green">                	==></font>
+143                            end else begin
+144                        	ldata <= {ldata[6:0], 1'b0};	// Shift out
+           <font color = "green">                	==></font>
+145                            end
+146                        end else begin
+147                            sdoenb <= 1'b1;
+           <font color = "green">                    ==></font>
+148                        end
+149        
+150                        // Apply write strobe on SCK negative edge on the next-to-last
+151                        // data bit so that it updates data on the rising edge of SCK
+152                        // on the last data bit.
+153         
+154                        if (count == 3'b111) begin
+                           <font color = "green">-5-</font>  
+155                            if (writemode == 1'b1) begin
+                               <font color = "green">-6-</font>  
+156                                wrstb <= 1'b1;
+           <font color = "green">                        ==></font>
+157                            end
+                               MISSING_ELSE
+           <font color = "green">                    ==></font>
+158                        end else begin
+159                            wrstb <= 1'b0;
+           <font color = "green">                    ==></font>
+160                        end
+161        
+162        	    end else if (state == `MGMTPASS || state == `USERPASS) begin
+           	             <font color = "green">-7-</font>  
+163        		wrstb <= 1'b0;
+           <font color = "green">		==></font>
+164        		sdoenb <= 1'b0;
+165                    end else begin
+166                        wrstb <= 1'b0;
+           <font color = "green">                ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/IRQ_spi">T52</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+173                if (csb_reset == 1'b1) begin
+                   <font color = "green">-1-</font>  
+174                    // Default state on reset
+175                    addr <= 8'h00;
+           <font color = "green">            ==></font>
+176        	    rdstb <= 1'b0;
+177                    predata <= 7'b0000000;
+178                    state  <= `COMMAND;
+179                    count  <= 3'b000;
+180                    readmode <= 1'b0;
+181                    writemode <= 1'b0;
+182                    fixed <= 3'b000;
+183        	    pass_thru_mgmt <= 1'b0;
+184        	    pass_thru_mgmt_delay <= 1'b0;
+185        	    pre_pass_thru_mgmt <= 1'b0;
+186        	    pass_thru_user <= 1'b0;
+187        	    pass_thru_user_delay <= 1'b0;
+188        	    pre_pass_thru_user <= 1'b0;
+189                end else begin
+190                    // After csb_reset low, 1st SCK starts command
+191                    if (state == `COMMAND) begin
+                       <font color = "green">-2-</font>  
+192        		rdstb <= 1'b0;
+193                        count <= count + 1;
+194                	if (count == 3'b000) begin
+                   	<font color = "green">-3-</font>  
+195        	            writemode <= SDI;
+           <font color = "green">	            ==></font>
+196        	        end else if (count == 3'b001) begin
+           	                 <font color = "green">-4-</font>  
+197        	            readmode <= SDI;
+           <font color = "green">	            ==></font>
+198        	        end else if (count < 3'b101) begin
+           	                 <font color = "green">-5-</font>  
+199        	            fixed <= {fixed[1:0], SDI}; 
+           <font color = "green">	            ==></font>
+200        	        end else if (count == 3'b101) begin
+           	                 <font color = "green">-6-</font>  
+201        		    pre_pass_thru_mgmt <= SDI;
+           <font color = "green">		    ==></font>
+202        	        end else if (count == 3'b110) begin
+           	                 <font color = "green">-7-</font>  
+203        		    pre_pass_thru_user <= SDI;
+           <font color = "green">		    ==></font>
+204        		    pass_thru_mgmt_delay <= pre_pass_thru_mgmt;
+205        	        end else if (count == 3'b111) begin
+           	                 <font color = "red">-8-</font>  
+206        		    pass_thru_user_delay <= pre_pass_thru_user;
+207        		    if (pre_pass_thru_mgmt == 1'b1) begin
+           		    <font color = "green">-9-</font>  
+208        			state <= `MGMTPASS;
+           <font color = "green">			==></font>
+209        			pre_pass_thru_mgmt <= 1'b0;
+210        		    end else if (pre_pass_thru_user == 1'b1) begin
+           		             <font color = "green">-10-</font>  
+211        			state <= `USERPASS;
+           <font color = "green">			==></font>
+212        			pre_pass_thru_user <= 1'b0;
+213        		    end else begin
+214        	                state <= `ADDRESS;
+           <font color = "green">	                ==></font>
+215        		    end
+216        	        end
+           	        MISSING_ELSE
+           <font color = "red">	        ==></font>
+217                    end else if (state == `ADDRESS) begin
+                                <font color = "green">-11-</font>  
+218        	        count <= count + 1;
+219        	        addr <= {addr[6:0], SDI};
+220        	        if (count == 3'b111) begin
+           	        <font color = "green">-12-</font>  
+221        	            state <= `DATA;
+222        		    if (readmode == 1'b1) begin
+           		    <font color = "green">-13-</font>  
+223        			rdstb <= 1'b1;
+           <font color = "green">			==></font>
+224        		    end
+           		    MISSING_ELSE
+           <font color = "green">		    ==></font>
+225        	        end else begin
+226        		    rdstb <= 1'b0;
+           <font color = "green">		    ==></font>
+227        		end
+228        
+229                    end else if (state == `DATA) begin
+                                <font color = "green">-14-</font>  
+230        	        predata <= {predata[6:0], SDI};
+231        	        count <= count + 1;
+232        	        if (count == 3'b111) begin
+           	        <font color = "green">-15-</font>  
+233        	            if (fixed == 3'b001) begin
+           	            <font color = "green">-16-</font>  
+234        	                state <= `COMMAND;
+           <font color = "green">	                ==></font>
+235        	            end else if (fixed != 3'b000) begin
+           	                     <font color = "green">-17-</font>  
+236        	                fixed <= fixed - 1;
+           <font color = "green">	                ==></font>
+237        	                addr <= addr + 1;	// Auto increment address (fixed)
+238        	            end else begin	
+239        	                addr <= addr + 1;	// Auto increment address (streaming)
+           <font color = "green">	                ==></font>
+240        	            end
+241        		    if (readmode == 1'b1) begin
+           		    <font color = "green">-18-</font>  
+242        			rdstb <= 1'b1;
+           <font color = "green">			==></font>
+243        		    end
+           		    MISSING_ELSE
+           <font color = "green">		    ==></font>
+244        	        end else begin
+245        		    rdstb <= 1'b0;
+           <font color = "green">		    ==></font>
+246        		end
+247        	    end else if (state == `MGMTPASS) begin
+           	             <font color = "green">-19-</font>  
+248        		pass_thru_mgmt <= 1'b1;
+           <font color = "green">		==></font>
+249        	    end else if (state == `USERPASS) begin
+           	             <font color = "red">-20-</font>  
+250        		pass_thru_user <= 1'b1;
+           <font color = "green">		==></font>
+251                    end		// ! state `DATA | `MGMTPASS | `USERPASS
+                       MISSING_ELSE
+           <font color = "red">            ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>-13-</th><th nowrap width=80>-14-</th><th nowrap width=80>-15-</th><th nowrap width=80>-16-</th><th nowrap width=80>-17-</th><th nowrap width=80>-18-</th><th nowrap width=80>-19-</th><th nowrap width=80>-20-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/spi_rd_wr">T48</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/bitbang_spi_i">T3</span>,<span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/cpu_reset">T5</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user_pass_thru_connection">T26</span>,<span title = "compilation/simv/spi_rd_wr_nbyte">T31</span>,<span title = "compilation/simv/user_pass_thru_rd">T59</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+<td></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_1968">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_housekeeping_spi">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#FSM">FSM</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

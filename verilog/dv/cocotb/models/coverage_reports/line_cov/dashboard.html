@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Dashboard</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.colResizable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    }  });
+  $("table").colResizable({    liveDrag:true,
+    fixed:false,
+    draggingClass:"dragging"
+  });
+});
+</script>
+</head>
+<body><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Dashboard</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-center">
+Date: Wed Aug  9 10:01:21 2023
+<br clear=all>
+User: rady
+<br clear=all>
+Version: T-2022.06<br clear=all>
+Command line: urg -dir compilation/simv.vdb RTL-check_defaults0/simv.vdb RTL-check_defaults1/simv.vdb RTL-check_defaults2/simv.vdb RTL-check_defaults3/simv.vdb RTL-check_defaults4/simv.vdb RTL-check_defaults5/simv.vdb RTL-check_defaults6/simv.vdb RTL-check_defaults7/simv.vdb RTL-check_defaults8/simv.vdb -format both -show tests -report /home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/coverage/line_cov 
+<br clear=all>
+Number of tests: 69<br clear=all>
+<hr>
+<b>Total Coverage Summary</b>&nbsp;<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td nowrap width=65>SCORE</td><td nowrap width=65>LINE</td><td nowrap width=65>COND</td><td nowrap width=65>TOGGLE</td><td nowrap width=65>FSM</td><td nowrap width=65>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 62.92</td>
+<td class="s6 cl rt"> 69.38</td>
+<td class="s6 cl rt"> 68.41</td>
+<td class="s5 cl rt"> 56.81</td>
+<td class="s5 cl rt"> 59.14</td>
+<td class="s6 cl rt"> 60.88</td>
+</tr></table><br clear=all>
+<hr>
+<b>Hierarchical coverage data for top-level instances</b>&nbsp;<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td nowrap width=65>SCORE</td><td nowrap width=65>LINE</td><td nowrap width=65>COND</td><td nowrap width=65>TOGGLE</td><td nowrap width=65>FSM</td><td nowrap width=65>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s6 cl rt"> 62.92</td>
+<td class="s6 cl rt"> 69.38</td>
+<td class="s6 cl rt"> 68.41</td>
+<td class="s5 cl rt"> 56.81</td>
+<td class="s5 cl rt"> 59.14</td>
+<td class="s6 cl rt"> 60.88</td>
+<td class="wordwrap"><a href="mod57.html#inst_tag_3366" >caravel_top</a></td>
+</tr></table><br clear=all>
+<hr>
+<b>Total Module Definition Coverage Summary</b>&nbsp;<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td nowrap width=65>SCORE</td><td nowrap width=65>LINE</td><td nowrap width=65>COND</td><td nowrap width=65>TOGGLE</td><td nowrap width=65>FSM</td><td nowrap width=65>BRANCH</td></tr><tr>
+<td class="s7 cl rt"> 75.01</td>
+<td class="s8 cl rt"> 88.57</td>
+<td class="s8 cl rt"> 80.52</td>
+<td class="s6 cl rt"> 64.84</td>
+<td class="s5 cl rt"> 59.14</td>
+<td class="s8 cl rt"> 82.00</td>
+</tr></table></div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

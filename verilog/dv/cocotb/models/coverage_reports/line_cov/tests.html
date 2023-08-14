@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Tests</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.colResizable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    }  });
+  $("table").colResizable({    liveDrag:true,
+    fixed:false,
+    draggingClass:"dragging"
+  });
+});
+</script>
+</head>
+<body><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Tests</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-center">
+<b>Total Coverage Summary</b>&nbsp;<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td nowrap width=65>SCORE</td><td nowrap width=65>LINE</td><td nowrap width=65>COND</td><td nowrap width=65>TOGGLE</td><td nowrap width=65>FSM</td><td nowrap width=65>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 62.92</td>
+<td class="s6 cl rt"> 69.38</td>
+<td class="s6 cl rt"> 68.41</td>
+<td class="s5 cl rt"> 56.81</td>
+<td class="s5 cl rt"> 59.14</td>
+<td class="s6 cl rt"> 60.88</td>
+</tr></table><br clear=all>
+<br clear=all>
+Total tests in report: 69<hr>
+<b>Data from the following tests was used to generate this report</b><br clear=all>
+<table align=left>
+<tr>
+<th nowrap width=80>TEST LOCATION</th></tr><tr>
+<td>compilation/simv/user0_irq</td>
+</tr><tr>
+<td>compilation/simv/spi_master_rd</td>
+</tr><tr>
+<td>compilation/simv/bitbang_spi_i</td>
+</tr><tr>
+<td>compilation/simv/hk_regs_wr_spi</td>
+</tr><tr>
+<td>compilation/simv/uart_rx</td>
+</tr><tr>
+<td>compilation/simv/PoR</td>
+</tr><tr>
+<td>compilation/simv/mem_dff2_B</td>
+</tr><tr>
+<td>compilation/simv/spi_master_temp</td>
+</tr><tr>
+<td>compilation/simv/uart_loopback</td>
+</tr><tr>
+<td>compilation/simv/cpu_reset</td>
+</tr><tr>
+<td>compilation/simv/bitbang_cpu_all_o</td>
+</tr><tr>
+<td>compilation/simv/serial_shifting_01</td>
+</tr><tr>
+<td>compilation/simv/user_pass_thru_connection</td>
+</tr><tr>
+<td>compilation/simv/mgmt_gpio_disable</td>
+</tr><tr>
+<td>compilation/simv/IRQ_external</td>
+</tr><tr>
+<td>compilation/simv/user_address_space</td>
+</tr><tr>
+<td>compilation/simv/serial_shifting_1100</td>
+</tr><tr>
+<td>compilation/simv/mgmt_gpio_bidir</td>
+</tr><tr>
+<td>compilation/simv/hk_disable</td>
+</tr><tr>
+<td>compilation/simv/mgmt_gpio_out</td>
+</tr><tr>
+<td>compilation/simv/mgmt_pass_thru_rd</td>
+</tr><tr>
+<td>compilation/simv/spi_rd_wr_nbyte</td>
+</tr><tr>
+<td>compilation/simv/spi_rd_wr</td>
+</tr><tr>
+<td>compilation/simv/IRQ_external2</td>
+</tr><tr>
+<td>compilation/simv/user2_irq</td>
+</tr><tr>
+<td>compilation/simv/bitbang_cpu_all_i</td>
+</tr><tr>
+<td>compilation/simv/mem_dff2_HW</td>
+</tr><tr>
+<td>compilation/simv/IRQ_timer</td>
+</tr><tr>
+<td>compilation/simv/cpu_stress</td>
+</tr><tr>
+<td>compilation/simv/serial_shifting_0011</td>
+</tr><tr>
+<td>compilation/simv/IRQ_spi</td>
+</tr><tr>
+<td>compilation/simv/uart_rx_msg</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_o_user</td>
+</tr><tr>
+<td>compilation/simv/uart_tx</td>
+</tr><tr>
+<td>compilation/simv/debug</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_i_pd_user</td>
+</tr><tr>
+<td>compilation/simv/user_pass_thru_rd</td>
+</tr><tr>
+<td>compilation/simv/IRQ_uart_rx</td>
+</tr><tr>
+<td>compilation/simv/serial_shifting_10</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_i_pd</td>
+</tr><tr>
+<td>compilation/simv/IRQ_uart</td>
+</tr><tr>
+<td>compilation/simv/mem_dff2_W</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_i_pu_user</td>
+</tr><tr>
+<td>compilation/simv/mem_dff_B</td>
+</tr><tr>
+<td>compilation/simv/mem_dff_HW</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_i_pu</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_i_user</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_bidir_user</td>
+</tr><tr>
+<td>compilation/simv/user1_irq</td>
+</tr><tr>
+<td>compilation/simv/mem_dff_W</td>
+</tr><tr>
+<td>compilation/simv/mgmt_gpio_in</td>
+</tr><tr>
+<td>compilation/simv/timer0_oneshot</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_i</td>
+</tr><tr>
+<td>compilation/simv/timer0_periodic</td>
+</tr><tr>
+<td>compilation/simv/gpio_all_o</td>
+</tr><tr>
+<td>compilation/simv/bitbang_spi_o</td>
+</tr><tr>
+<td>compilation/simv/clock_redirect</td>
+</tr><tr>
+<td>compilation/simv/hk_regs_wr_wb_cpu</td>
+</tr><tr>
+<td>compilation/simv/hk_regs_rst_spi</td>
+</tr><tr>
+<td>compilation/simv/la</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults0/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults1/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults2/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults3/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults4/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults5/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults6/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults7/simv/check_defaults</td>
+</tr><tr>
+<td nowrap>RTL-check_defaults8/simv/check_defaults</td>
+</tr></table><br clear=all>
+<br clear=all>
+Total test records in report: 69<hr>
+<table align=left>
+<tr>
+<th nowrap width=80>TEST NO</th><th nowrap width=80>TEST LOCATION</th><th nowrap width=80>TEST NAME</th><th nowrap width=80>STATUS</th><th nowrap width=80>STARTED</th><th nowrap width=80>FINISHED</th><th nowrap width=80>SIMULATION TIME</th></tr><tr>
+<td><a href="#T1" >T1</a></td>
+<td>compilation/simv/user0_irq</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:33:56 AM PDT 23</td>
+<td>Aug 09 09:35:44 AM PDT 23</td>
+<td>6726250001 ps</td>
+</tr><tr>
+<td><a href="#T2" >T2</a></td>
+<td>compilation/simv/spi_master_rd</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:46:26 AM PDT 23</td>
+<td>Aug 09 06:49:22 AM PDT 23</td>
+<td>11649275001 ps</td>
+</tr><tr>
+<td><a href="#T3" >T3</a></td>
+<td>compilation/simv/bitbang_spi_i</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:29:04 AM PDT 23</td>
+<td>Aug 09 06:30:33 AM PDT 23</td>
+<td>4475375001 ps</td>
+</tr><tr>
+<td><a href="#T19" >T19</a></td>
+<td>compilation/simv/hk_regs_wr_spi</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:30:35 AM PDT 23</td>
+<td>Aug 09 06:31:03 AM PDT 23</td>
+<td>470000001 ps</td>
+</tr><tr>
+<td><a href="#T22" >T22</a></td>
+<td>compilation/simv/uart_rx</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:57:43 AM PDT 23</td>
+<td>Aug 09 05:58:27 AM PDT 23</td>
+<td>2708506993 ps</td>
+</tr><tr>
+<td><a href="#T7" >T7</a></td>
+<td>compilation/simv/PoR</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:19:53 AM PDT 23</td>
+<td>Aug 09 09:25:24 AM PDT 23</td>
+<td>21371150001 ps</td>
+</tr><tr>
+<td><a href="#T40" >T40</a></td>
+<td>compilation/simv/mem_dff2_B</td>
+<td></td>
+<td></td>
+<td>Aug 09 08:23:33 AM PDT 23</td>
+<td>Aug 09 08:41:43 AM PDT 23</td>
+<td>77651325001 ps</td>
+</tr><tr>
+<td><a href="#T29" >T29</a></td>
+<td>compilation/simv/spi_master_temp</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:58:37 AM PDT 23</td>
+<td>Aug 09 06:59:06 AM PDT 23</td>
+<td>1664600001 ps</td>
+</tr><tr>
+<td><a href="#T20" >T20</a></td>
+<td>compilation/simv/uart_loopback</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:41:04 AM PDT 23</td>
+<td>Aug 09 06:42:36 AM PDT 23</td>
+<td>4926325001 ps</td>
+</tr><tr>
+<td><a href="#T5" >T5</a></td>
+<td>compilation/simv/cpu_reset</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:55:42 AM PDT 23</td>
+<td>Aug 09 07:56:15 AM PDT 23</td>
+<td>1960950001 ps</td>
+</tr><tr>
+<td><a href="#T14" >T14</a></td>
+<td>compilation/simv/bitbang_cpu_all_o</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:59:07 AM PDT 23</td>
+<td>Aug 09 07:13:32 AM PDT 23</td>
+<td>58302750001 ps</td>
+</tr><tr>
+<td><a href="#T11" >T11</a></td>
+<td>compilation/simv/serial_shifting_01</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:31:39 AM PDT 23</td>
+<td>Aug 09 07:33:38 AM PDT 23</td>
+<td>7214850001 ps</td>
+</tr><tr>
+<td><a href="#T26" >T26</a></td>
+<td>compilation/simv/user_pass_thru_connection</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:19:12 AM PDT 23</td>
+<td>Aug 09 09:19:36 AM PDT 23</td>
+<td>1286750001 ps</td>
+</tr><tr>
+<td><a href="#T10" >T10</a></td>
+<td>compilation/simv/mgmt_gpio_disable</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:18:36 AM PDT 23</td>
+<td>Aug 09 09:19:11 AM PDT 23</td>
+<td>1597275001 ps</td>
+</tr><tr>
+<td><a href="#T25" >T25</a></td>
+<td>compilation/simv/IRQ_external</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:31:04 AM PDT 23</td>
+<td>Aug 09 06:32:51 AM PDT 23</td>
+<td>6776850001 ps</td>
+</tr><tr>
+<td><a href="#T39" >T39</a></td>
+<td>compilation/simv/user_address_space</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:56:16 AM PDT 23</td>
+<td>Aug 09 07:56:31 AM PDT 23</td>
+<td>722300785 ps</td>
+</tr><tr>
+<td><a href="#T12" >T12</a></td>
+<td>compilation/simv/serial_shifting_1100</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:45:10 AM PDT 23</td>
+<td>Aug 09 07:47:31 AM PDT 23</td>
+<td>8603950001 ps</td>
+</tr><tr>
+<td><a href="#T8" >T8</a></td>
+<td>compilation/simv/mgmt_gpio_bidir</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:50:09 AM PDT 23</td>
+<td>Aug 09 06:56:37 AM PDT 23</td>
+<td>23127625001 ps</td>
+</tr><tr>
+<td><a href="#T4" >T4</a></td>
+<td>compilation/simv/hk_disable</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:57:24 AM PDT 23</td>
+<td>Aug 09 05:57:42 AM PDT 23</td>
+<td>807187501 ps</td>
+</tr><tr>
+<td><a href="#T9" >T9</a></td>
+<td>compilation/simv/mgmt_gpio_out</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:27:55 AM PDT 23</td>
+<td>Aug 09 06:29:03 AM PDT 23</td>
+<td>4247425001 ps</td>
+</tr><tr>
+<td><a href="#T6" >T6</a></td>
+<td>compilation/simv/mgmt_pass_thru_rd</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:39:21 AM PDT 23</td>
+<td>Aug 09 09:39:27 AM PDT 23</td>
+<td>44225001 ps</td>
+</tr><tr>
+<td><a href="#T31" >T31</a></td>
+<td>compilation/simv/spi_rd_wr_nbyte</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:55:15 AM PDT 23</td>
+<td>Aug 09 07:55:41 AM PDT 23</td>
+<td>645375001 ps</td>
+</tr><tr>
+<td><a href="#T48" >T48</a></td>
+<td>compilation/simv/spi_rd_wr</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:19:37 AM PDT 23</td>
+<td>Aug 09 09:19:52 AM PDT 23</td>
+<td>274425001 ps</td>
+</tr><tr>
+<td><a href="#T28" >T28</a></td>
+<td>compilation/simv/IRQ_external2</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:27:10 AM PDT 23</td>
+<td>Aug 09 09:28:57 AM PDT 23</td>
+<td>6857050001 ps</td>
+</tr><tr>
+<td><a href="#T51" >T51</a></td>
+<td>compilation/simv/user2_irq</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:37:34 AM PDT 23</td>
+<td>Aug 09 09:39:20 AM PDT 23</td>
+<td>6753250001 ps</td>
+</tr><tr>
+<td><a href="#T17" >T17</a></td>
+<td>compilation/simv/bitbang_cpu_all_i</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:11:48 AM PDT 23</td>
+<td>Aug 09 06:21:11 AM PDT 23</td>
+<td>37312725001 ps</td>
+</tr><tr>
+<td><a href="#T63" >T63</a></td>
+<td>compilation/simv/mem_dff2_HW</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:56:32 AM PDT 23</td>
+<td>Aug 09 08:07:56 AM PDT 23</td>
+<td>47276325001 ps</td>
+</tr><tr>
+<td><a href="#T42" >T42</a></td>
+<td>compilation/simv/IRQ_timer</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:09:40 AM PDT 23</td>
+<td>Aug 09 06:11:47 AM PDT 23</td>
+<td>8041550001 ps</td>
+</tr><tr>
+<td><a href="#T64" >T64</a></td>
+<td>compilation/simv/cpu_stress</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:49:57 AM PDT 23</td>
+<td>Aug 09 07:55:14 AM PDT 23</td>
+<td>20194600001 ps</td>
+</tr><tr>
+<td><a href="#T13" >T13</a></td>
+<td>compilation/simv/serial_shifting_0011</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:47:33 AM PDT 23</td>
+<td>Aug 09 07:49:56 AM PDT 23</td>
+<td>8731800001 ps</td>
+</tr><tr>
+<td><a href="#T52" >T52</a></td>
+<td>compilation/simv/IRQ_spi</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:25:25 AM PDT 23</td>
+<td>Aug 09 09:27:08 AM PDT 23</td>
+<td>6609600001 ps</td>
+</tr><tr>
+<td><a href="#T21" >T21</a></td>
+<td>compilation/simv/uart_rx_msg</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:31:15 AM PDT 23</td>
+<td>Aug 09 09:33:55 AM PDT 23</td>
+<td>10815044481 ps</td>
+</tr><tr>
+<td><a href="#T15" >T15</a></td>
+<td>compilation/simv/gpio_all_o_user</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:07:29 AM PDT 23</td>
+<td>Aug 09 06:07:50 AM PDT 23</td>
+<td>1040500001 ps</td>
+</tr><tr>
+<td><a href="#T54" >T54</a></td>
+<td>compilation/simv/uart_tx</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:43:27 AM PDT 23</td>
+<td>Aug 09 06:45:57 AM PDT 23</td>
+<td>9641070161 ps</td>
+</tr><tr>
+<td><a href="#T30" >T30</a></td>
+<td>compilation/simv/debug</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:45:58 AM PDT 23</td>
+<td>Aug 09 06:46:25 AM PDT 23</td>
+<td>1432505001 ps</td>
+</tr><tr>
+<td><a href="#T23" >T23</a></td>
+<td>compilation/simv/gpio_all_i_pd_user</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:00:11 AM PDT 23</td>
+<td>Aug 09 06:00:32 AM PDT 23</td>
+<td>1078950001 ps</td>
+</tr><tr>
+<td><a href="#T59" >T59</a></td>
+<td>compilation/simv/user_pass_thru_rd</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:49:23 AM PDT 23</td>
+<td>Aug 09 06:49:47 AM PDT 23</td>
+<td>1326350001 ps</td>
+</tr><tr>
+<td><a href="#T43" >T43</a></td>
+<td>compilation/simv/IRQ_uart_rx</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:28:59 AM PDT 23</td>
+<td>Aug 09 09:31:14 AM PDT 23</td>
+<td>8487800001 ps</td>
+</tr><tr>
+<td><a href="#T18" >T18</a></td>
+<td>compilation/simv/serial_shifting_10</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:43:06 AM PDT 23</td>
+<td>Aug 09 07:45:09 AM PDT 23</td>
+<td>7228475001 ps</td>
+</tr><tr>
+<td><a href="#T62" >T62</a></td>
+<td>compilation/simv/gpio_all_i_pd</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:59:49 AM PDT 23</td>
+<td>Aug 09 06:00:10 AM PDT 23</td>
+<td>1078950001 ps</td>
+</tr><tr>
+<td><a href="#T44" >T44</a></td>
+<td>compilation/simv/IRQ_uart</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:32:52 AM PDT 23</td>
+<td>Aug 09 06:36:21 AM PDT 23</td>
+<td>13280300001 ps</td>
+</tr><tr>
+<td><a href="#T41" >T41</a></td>
+<td>compilation/simv/mem_dff2_W</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:33:39 AM PDT 23</td>
+<td>Aug 09 07:43:05 AM PDT 23</td>
+<td>40251325001 ps</td>
+</tr><tr>
+<td><a href="#T27" >T27</a></td>
+<td>compilation/simv/gpio_all_i_pu_user</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:59:26 AM PDT 23</td>
+<td>Aug 09 05:59:48 AM PDT 23</td>
+<td>1078950001 ps</td>
+</tr><tr>
+<td><a href="#T45" >T45</a></td>
+<td>compilation/simv/mem_dff_B</td>
+<td></td>
+<td></td>
+<td>Aug 09 08:41:45 AM PDT 23</td>
+<td>Aug 09 09:18:35 AM PDT 23</td>
+<td>154376325001 ps</td>
+</tr><tr>
+<td><a href="#T65" >T65</a></td>
+<td>compilation/simv/mem_dff_HW</td>
+<td></td>
+<td></td>
+<td>Aug 09 08:07:57 AM PDT 23</td>
+<td>Aug 09 08:23:32 AM PDT 23</td>
+<td>64851325001 ps</td>
+</tr><tr>
+<td><a href="#T24" >T24</a></td>
+<td>compilation/simv/gpio_all_i_pu</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:59:05 AM PDT 23</td>
+<td>Aug 09 05:59:25 AM PDT 23</td>
+<td>1078950001 ps</td>
+</tr><tr>
+<td><a href="#T66" >T66</a></td>
+<td>compilation/simv/gpio_all_i_user</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:58:43 AM PDT 23</td>
+<td>Aug 09 05:59:04 AM PDT 23</td>
+<td>1022775001 ps</td>
+</tr><tr>
+<td><a href="#T16" >T16</a></td>
+<td>compilation/simv/gpio_all_bidir_user</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:00:33 AM PDT 23</td>
+<td>Aug 09 06:00:56 AM PDT 23</td>
+<td>1040700001 ps</td>
+</tr><tr>
+<td><a href="#T50" >T50</a></td>
+<td>compilation/simv/user1_irq</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:35:45 AM PDT 23</td>
+<td>Aug 09 09:37:33 AM PDT 23</td>
+<td>6766950001 ps</td>
+</tr><tr>
+<td><a href="#T67" >T67</a></td>
+<td>compilation/simv/mem_dff_W</td>
+<td></td>
+<td></td>
+<td>Aug 09 07:13:33 AM PDT 23</td>
+<td>Aug 09 07:31:38 AM PDT 23</td>
+<td>77151325001 ps</td>
+</tr><tr>
+<td><a href="#T68" >T68</a></td>
+<td>compilation/simv/mgmt_gpio_in</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:36:22 AM PDT 23</td>
+<td>Aug 09 06:40:14 AM PDT 23</td>
+<td>14206100001 ps</td>
+</tr><tr>
+<td><a href="#T55" >T55</a></td>
+<td>compilation/simv/timer0_oneshot</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:40:15 AM PDT 23</td>
+<td>Aug 09 06:41:02 AM PDT 23</td>
+<td>2934075001 ps</td>
+</tr><tr>
+<td><a href="#T69" >T69</a></td>
+<td>compilation/simv/gpio_all_i</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:56:18 AM PDT 23</td>
+<td>Aug 09 05:57:23 AM PDT 23</td>
+<td>3877375001 ps</td>
+</tr><tr>
+<td><a href="#T56" >T56</a></td>
+<td>compilation/simv/timer0_periodic</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:42:37 AM PDT 23</td>
+<td>Aug 09 06:43:26 AM PDT 23</td>
+<td>2779550001 ps</td>
+</tr><tr>
+<td><a href="#T46" >T46</a></td>
+<td>compilation/simv/gpio_all_o</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:00:57 AM PDT 23</td>
+<td>Aug 09 06:07:27 AM PDT 23</td>
+<td>25176475001 ps</td>
+</tr><tr>
+<td><a href="#T47" >T47</a></td>
+<td>compilation/simv/bitbang_spi_o</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:21:12 AM PDT 23</td>
+<td>Aug 09 06:27:53 AM PDT 23</td>
+<td>25343850001 ps</td>
+</tr><tr>
+<td><a href="#T58" >T58</a></td>
+<td>compilation/simv/clock_redirect</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:49:49 AM PDT 23</td>
+<td>Aug 09 06:50:08 AM PDT 23</td>
+<td>923325001 ps</td>
+</tr><tr>
+<td><a href="#T53" >T53</a></td>
+<td>compilation/simv/hk_regs_wr_wb_cpu</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:07:51 AM PDT 23</td>
+<td>Aug 09 06:09:39 AM PDT 23</td>
+<td>2873075001 ps</td>
+</tr><tr>
+<td><a href="#T57" >T57</a></td>
+<td>compilation/simv/hk_regs_rst_spi</td>
+<td></td>
+<td></td>
+<td>Aug 09 05:58:28 AM PDT 23</td>
+<td>Aug 09 05:58:42 AM PDT 23</td>
+<td>272825001 ps</td>
+</tr><tr>
+<td><a href="#T49" >T49</a></td>
+<td>compilation/simv/la</td>
+<td></td>
+<td></td>
+<td>Aug 09 06:56:39 AM PDT 23</td>
+<td>Aug 09 06:58:36 AM PDT 23</td>
+<td>7204150001 ps</td>
+</tr><tr>
+<td><a href="#T33" >T33</a></td>
+<td nowrap>RTL-check_defaults0/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:39:35 AM PDT 23</td>
+<td>Aug 09 09:41:50 AM PDT 23</td>
+<td>6420325001 ps</td>
+</tr><tr>
+<td><a href="#T37" >T37</a></td>
+<td nowrap>RTL-check_defaults1/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:41:58 AM PDT 23</td>
+<td>Aug 09 09:44:11 AM PDT 23</td>
+<td>7009200001 ps</td>
+</tr><tr>
+<td><a href="#T34" >T34</a></td>
+<td nowrap>RTL-check_defaults2/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:44:19 AM PDT 23</td>
+<td>Aug 09 09:46:03 AM PDT 23</td>
+<td>5242575001 ps</td>
+</tr><tr>
+<td><a href="#T32" >T32</a></td>
+<td nowrap>RTL-check_defaults3/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:46:11 AM PDT 23</td>
+<td>Aug 09 09:48:34 AM PDT 23</td>
+<td>6420325001 ps</td>
+</tr><tr>
+<td><a href="#T38" >T38</a></td>
+<td nowrap>RTL-check_defaults4/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:48:42 AM PDT 23</td>
+<td>Aug 09 09:51:16 AM PDT 23</td>
+<td>7009200001 ps</td>
+</tr><tr>
+<td><a href="#T35" >T35</a></td>
+<td nowrap>RTL-check_defaults5/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:51:24 AM PDT 23</td>
+<td>Aug 09 09:53:48 AM PDT 23</td>
+<td>7009200001 ps</td>
+</tr><tr>
+<td><a href="#T36" >T36</a></td>
+<td nowrap>RTL-check_defaults6/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:53:57 AM PDT 23</td>
+<td>Aug 09 09:56:36 AM PDT 23</td>
+<td>7009200001 ps</td>
+</tr><tr>
+<td><a href="#T60" >T60</a></td>
+<td nowrap>RTL-check_defaults7/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:56:45 AM PDT 23</td>
+<td>Aug 09 09:59:00 AM PDT 23</td>
+<td>6420325001 ps</td>
+</tr><tr>
+<td><a href="#T61" >T61</a></td>
+<td nowrap>RTL-check_defaults8/simv/check_defaults</td>
+<td></td>
+<td></td>
+<td>Aug 09 09:59:08 AM PDT 23</td>
+<td>Aug 09 10:01:18 AM PDT 23</td>
+<td>6420325001 ps</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T1"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/user0_irq</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T1</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>6726250001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>106.8 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:33:56 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:35:44 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199144 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me user0_irq +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/c<br>aravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packag<br>e/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="user0_irq" +FTESTNAME="RTL-user0_irq" +SIM_DIR="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_M<br>GMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE<br>_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_M<br>ODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT<br>=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_<br>INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GP<br>IO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_<br>CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=10<br>27 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_2<br>5_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONF<br>IG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +<br>USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=<br>19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +M<br>EM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80530<br>6368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-user0_irq</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T2"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/spi_master_rd</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T2</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>11649275001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>174.46 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:46:26 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:49:22 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199984 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me spi_master_rd +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pa<br>ckage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="spi_master_rd" +FTESTNAME="RTL-spi_master_rd" +SIM_DIR="/home/rady/car<br>avel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 <br>+GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=102<br>6 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=<br>6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG<br>_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CO<br>NFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +US<br>ER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT<br>=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPI<br>O_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_C<br>ONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=102<br>7 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34<br>_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPR<br>J_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUST<br>OM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPAC<br>E_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-spi_master_rd</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T3"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/bitbang_spi_i</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T3</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>4475375001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>88.19 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:29:04 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:30:33 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>209180 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me bitbang_spi_i +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pa<br>ckage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="bitbang_spi_i" +FTESTNAME="RTL-bitbang_spi_i" +SIM_DIR="/home/rady/car<br>avel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 <br>+GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=102<br>6 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=<br>6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG<br>_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CO<br>NFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +US<br>ER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT<br>=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPI<br>O_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_C<br>ONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=102<br>7 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34<br>_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPR<br>J_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUST<br>OM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPAC<br>E_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-bitbang_spi_i</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T19"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/hk_regs_wr_spi</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T19</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>470000001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>27.58 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:30:35 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:31:03 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>216536 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me hk_regs_wr_spi +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_upd<br>ate/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/p<br>ackage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/covera<br>ge_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="hk_regs_wr_spi" +FTESTNAME="RTL-hk_regs_wr_spi" +SIM_DIR="/home/rady/<br>caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=10<br>27 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=<br>1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTION<br>AL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CON<br>FIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER<br>_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 <br>+USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_I<br>NIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_<br>GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USE<br>R_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=<br>1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO<br>_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +<br>MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_C<br>USTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_S<br>PACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-hk_regs_wr_spi</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T22"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/uart_rx</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T22</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>2708506993 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>42.9 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 05:57:43 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 05:58:27 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>198784 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me uart_rx +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/car<br>avel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/package/<br>caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="uart_rx" +FTESTNAME="RTL-uart_rx" +SIM_DIR="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_ST<br>D_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_<br>STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MG<br>MT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 <br>+USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1<br>027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_<br>INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG<br>_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=1027 +US<br>ER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT<br>=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPI<br>O_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +USER_C<br>ONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MP<br>RJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WOR<br>DS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=805306368 +<br>USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-uart_rx</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T7"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/PoR</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T7</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>21371150001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>330.18 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:19:53 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:25:24 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>196224 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me PoR +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/caravel<br>_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/package/cara<br>vel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_update/c<br>aravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="PoR" +FTESTNAME="RTL-PoR" +SIM_DIR="/home/rady/caravel/coverage_update/caravel_c<br>ocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULL<br>DOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PU<br>LLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIR<br>ECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG<br>_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CO<br>NFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +U<br>SER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INI<br>T=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GP<br>IO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_<br>CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=10<br>27 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_3<br>5_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=3<br>8 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFR<br>AM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=805306368 +USER_SPACE_S<br>IZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-PoR</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T40"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/mem_dff2_B</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T40</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>77651325001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>1089.54 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 08:23:33 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 08:41:43 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>198980 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me mem_dff2_B +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/<br>caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packa<br>ge/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_u<br>pdate/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="mem_dff2_B" +FTESTNAME="RTL-mem_dff2_B" +SIM_DIR="/home/rady/caravel/cove<br>rage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MOD<br>E_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_M<br>ODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPI<br>O_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_I<br>NIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO<br>_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG<br>_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +US<br>ER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT<br>=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPI<br>O_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_C<br>ONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=102<br>7 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS<br>_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM<br> +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80<br>5306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-mem_dff2_B</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T29"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/spi_master_temp</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T29</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1664600001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>27.34 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:58:37 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:59:06 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>198816 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me spi_master_temp +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/<br>package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cover<br>age_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="spi_master_temp" +FTESTNAME="RTL-spi_master_temp" +SIM_DIR="/home/ra<br>dy/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL<br>=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPU<br>LL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECT<br>IONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_<br>CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +U<br>SER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=10<br>27 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_1<br>5_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONF<br>IG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +<br>USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_IN<br>IT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_G<br>PIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=1<br>9 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +US<br>E_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USE<br>R_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-spi_master_temp</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T20"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/uart_loopback</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T20</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>4926325001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>91.43 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:41:04 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:42:36 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>207124 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me uart_loopback +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pa<br>ckage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="uart_loopback" +FTESTNAME="RTL-uart_loopback" +SIM_DIR="/home/rady/car<br>avel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 <br>+GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=102<br>6 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=<br>6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG<br>_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CO<br>NFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +US<br>ER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT<br>=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPI<br>O_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_C<br>ONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=102<br>7 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34<br>_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPR<br>J_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUST<br>OM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPAC<br>E_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-uart_loopback</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T5"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/cpu_reset</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T5</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1960950001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>32.09 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:55:42 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:56:15 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>198716 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me cpu_reset +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/c<br>aravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packag<br>e/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="cpu_reset" +FTESTNAME="RTL-cpu_reset" +SIM_DIR="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_M<br>GMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE<br>_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_M<br>ODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT<br>=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_<br>INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GP<br>IO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_<br>CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=10<br>27 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_2<br>5_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONF<br>IG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +<br>USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=<br>19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +M<br>EM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80530<br>6368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-cpu_reset</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T14"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/bitbang_cpu_all_o</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T14</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>58302750001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>863.93 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:59:07 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:13:32 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199040 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me bitbang_cpu_all_o +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carave<br>l/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cov<br>erage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="bitbang_cpu_all_o" +FTESTNAME="RTL-bitbang_cpu_all_o" +SIM_DIR="/h<br>ome/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_<br>NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPU<br>T_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BI<br>DIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 <br>+USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1<br>027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_I<br>NIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_<br>GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USE<br>R_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=<br>1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO<br>_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CO<br>NFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PA<br>DS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=<br>11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=12<br>8 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-bitbang_cpu_all_o</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T11"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/serial_shifting_01</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T11</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>7214850001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>118.23 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:31:39 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:33:38 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199168 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me serial_shifting_01 +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage<br>_update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carav<br>el/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/co<br>verage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="serial_shifting_01" +FTESTNAME="RTL-serial_shifting_01" +SIM_DIR=<br>"/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INP<br>UT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_I<br>NPUT_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD<br>_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=10<br>27 +USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INI<br>T=1027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_1<br>0_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONF<br>IG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +<br>USER_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_IN<br>IT=1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_G<br>PIO_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER<br>_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO<br>_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PA<br>DS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE<br>=128 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-serial_shifting_01</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T26"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/user_pass_thru_connection</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T26</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1286750001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>23.08 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:19:12 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:19:36 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>197068 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me user_pass_thru_connection +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/c<br>overage_update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rad<br>y/caravel/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/car<br>avel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="user_pass_thru_connection" +FTESTNAME="RTL-user_pass_thru_<br>connection" +SIM_DIR="/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +G<br>PIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 <br>+GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=615<br>2 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_<br>CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +U<br>SER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=102<br>7 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14<br>_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFI<br>G_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +U<br>SER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INI<br>T=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GP<br>IO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLO<br>BAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALO<br>G_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=<br>0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-user_pass_thru_connection</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T10"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/mgmt_gpio_disable</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T10</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1597275001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>33.73 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:18:36 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:19:11 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199660 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me mgmt_gpio_disable +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carave<br>l/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cov<br>erage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="mgmt_gpio_disable" +FTESTNAME="RTL-mgmt_gpio_disable" +SIM_DIR="/h<br>ome/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_<br>NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPU<br>T_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BI<br>DIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 <br>+USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1<br>027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_I<br>NIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_<br>GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USE<br>R_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=<br>1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO<br>_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CO<br>NFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PA<br>DS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=<br>11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=12<br>8 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-mgmt_gpio_disable</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T25"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/IRQ_external</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T25</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>6776850001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>105.85 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:31:04 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:32:51 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>205256 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me IRQ_external +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_updat<br>e/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pac<br>kage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage<br>_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="IRQ_external" +FTESTNAME="RTL-IRQ_external" +SIM_DIR="/home/rady/carave<br>l/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GP<br>IO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +<br>GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=614<br>4 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GP<br>IO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFI<br>G_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_<br>CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=10<br>27 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_2<br>0_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONF<br>IG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +<br>USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_IN<br>IT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_I<br>O_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_<br>DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_A<br>DDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-IRQ_external</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T39"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/user_address_space</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T39</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>722300785 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>13.25 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:56:16 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:56:31 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>197812 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me user_address_space +USE_POWER_PINS +UNIT_DELAY=#1 +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/cara<br>vel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/package/c<br>aravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_updat<br>e/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="user_address_space" +FTESTNAME="RTL-user_address_space" +SIM_DIR="/home/rady/<br>caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=10<br>27 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=<br>1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTION<br>AL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CON<br>FIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER<br>_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 <br>+USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_I<br>NIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_<br>GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USE<br>R_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=<br>1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO<br>_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +<br>MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_C<br>USTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_S<br>PACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-user_address_space</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T12"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/serial_shifting_1100</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T12</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>8603950001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>140.25 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:45:10 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:47:31 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>202036 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me serial_shifting_1100 +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/covera<br>ge_update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/car<br>avel/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/<br>coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="serial_shifting_1100" +FTESTNAME="RTL-serial_shifting_1100" +SI<br>M_DIR="/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_S<br>TD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER<br>_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_US<br>ER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_I<br>NIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO<br>_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_<br>GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USE<br>R_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=<br>1027 +USER_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO<br>_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CO<br>NFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027<br> +USER_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +M<br>PRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANA<br>LOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +L<br>A_SIZE=128 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-serial_shifting_1100</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T8"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/mgmt_gpio_bidir</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T8</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>23127625001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>387.67 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:50:09 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:56:37 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>200040 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me mgmt_gpio_bidir +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/<br>package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cover<br>age_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="mgmt_gpio_bidir" +FTESTNAME="RTL-mgmt_gpio_bidir" +SIM_DIR="/home/ra<br>dy/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL<br>=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPU<br>LL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECT<br>IONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_<br>CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +U<br>SER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=10<br>27 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_1<br>5_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONF<br>IG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +<br>USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_IN<br>IT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_G<br>PIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=1<br>9 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +US<br>E_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USE<br>R_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-mgmt_gpio_bidir</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T4"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/hk_disable</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T4</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>807187501 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>17.58 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 05:57:24 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 05:57:42 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>201540 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me hk_disable +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/<br>caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packa<br>ge/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_u<br>pdate/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="hk_disable" +FTESTNAME="RTL-hk_disable" +SIM_DIR="/home/rady/caravel/cove<br>rage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MOD<br>E_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_M<br>ODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPI<br>O_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_I<br>NIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO<br>_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG<br>_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +US<br>ER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT<br>=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPI<br>O_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_C<br>ONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=102<br>7 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS<br>_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM<br> +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80<br>5306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-hk_disable</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T9"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/mgmt_gpio_out</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T9</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>4247425001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>67.72 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:27:55 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:29:03 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>198808 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me mgmt_gpio_out +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pa<br>ckage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="mgmt_gpio_out" +FTESTNAME="RTL-mgmt_gpio_out" +SIM_DIR="/home/rady/car<br>avel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 <br>+GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=102<br>6 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=<br>6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG<br>_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CO<br>NFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +US<br>ER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT<br>=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPI<br>O_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_C<br>ONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=102<br>7 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34<br>_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPR<br>J_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUST<br>OM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPAC<br>E_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-mgmt_gpio_out</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T6"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/mgmt_pass_thru_rd</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T6</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>44225001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>5.14 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:39:21 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:39:27 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199024 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me mgmt_pass_thru_rd +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carave<br>l/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cov<br>erage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="mgmt_pass_thru_rd" +FTESTNAME="RTL-mgmt_pass_thru_rd" +SIM_DIR="/h<br>ome/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_<br>NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPU<br>T_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BI<br>DIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 <br>+USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1<br>027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_I<br>NIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_<br>GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USE<br>R_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=<br>1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO<br>_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CO<br>NFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PA<br>DS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=<br>11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=12<br>8 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-mgmt_pass_thru_rd</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T31"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/spi_rd_wr_nbyte</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T31</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>645375001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>25.18 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:55:15 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:55:41 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>201636 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me spi_rd_wr_nbyte +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/<br>package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cover<br>age_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="spi_rd_wr_nbyte" +FTESTNAME="RTL-spi_rd_wr_nbyte" +SIM_DIR="/home/ra<br>dy/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL<br>=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPU<br>LL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECT<br>IONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_<br>CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +U<br>SER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=10<br>27 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_1<br>5_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONF<br>IG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +<br>USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_IN<br>IT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_G<br>PIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=1<br>9 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +US<br>E_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USE<br>R_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-spi_rd_wr_nbyte</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T48"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/spi_rd_wr</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T48</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>274425001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>13.52 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:19:37 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:19:52 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199064 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me spi_rd_wr +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/c<br>aravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packag<br>e/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="spi_rd_wr" +FTESTNAME="RTL-spi_rd_wr" +SIM_DIR="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_M<br>GMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE<br>_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_M<br>ODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT<br>=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_<br>INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GP<br>IO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_<br>CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=10<br>27 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_2<br>5_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONF<br>IG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +<br>USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=<br>19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +M<br>EM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80530<br>6368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-spi_rd_wr</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T28"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/IRQ_external2</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T28</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>6857050001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>106.94 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:27:10 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:28:57 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199176 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me IRQ_external2 +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pa<br>ckage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="IRQ_external2" +FTESTNAME="RTL-IRQ_external2" +SIM_DIR="/home/rady/car<br>avel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 <br>+GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=102<br>6 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=<br>6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG<br>_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CO<br>NFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +US<br>ER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT<br>=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPI<br>O_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_C<br>ONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=102<br>7 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34<br>_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPR<br>J_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUST<br>OM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPAC<br>E_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-IRQ_external2</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T51"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/user2_irq</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T51</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>6753250001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>105.31 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:37:34 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:39:20 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>198120 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me user2_irq +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/c<br>aravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packag<br>e/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="user2_irq" +FTESTNAME="RTL-user2_irq" +SIM_DIR="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_M<br>GMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE<br>_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_M<br>ODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT<br>=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_<br>INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GP<br>IO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_<br>CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=10<br>27 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_2<br>5_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONF<br>IG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +<br>USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=<br>19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +M<br>EM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80530<br>6368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-user2_irq</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T17"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/bitbang_cpu_all_i</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T17</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>37312725001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>562.19 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:11:48 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:21:11 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>197564 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me bitbang_cpu_all_i +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carave<br>l/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cov<br>erage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="bitbang_cpu_all_i" +FTESTNAME="RTL-bitbang_cpu_all_i" +SIM_DIR="/h<br>ome/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_<br>NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPU<br>T_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BI<br>DIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 <br>+USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1<br>027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_I<br>NIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_<br>GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USE<br>R_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=<br>1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO<br>_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CO<br>NFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PA<br>DS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=<br>11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=12<br>8 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-bitbang_cpu_all_i</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T63"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/mem_dff2_HW</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T63</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>47276325001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>683.47 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:56:32 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 08:07:56 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199016 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me mem_dff2_HW +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update<br>/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pack<br>age/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="mem_dff2_HW" +FTESTNAME="RTL-mem_dff2_HW" +SIM_DIR="/home/rady/caravel/c<br>overage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_<br>MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPI<br>O_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +<br>GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_<br>1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_G<br>PIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CON<br>FIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 <br>+USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_I<br>NIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_<br>GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USE<br>R_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=<br>1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_P<br>ADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFF<br>RAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR<br>=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-mem_dff2_HW</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T42"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/IRQ_timer</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T42</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>8041550001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>126.27 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:09:40 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:11:47 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>200060 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me IRQ_timer +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/c<br>aravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packag<br>e/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="IRQ_timer" +FTESTNAME="RTL-IRQ_timer" +SIM_DIR="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_M<br>GMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE<br>_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_M<br>ODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT<br>=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_<br>INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GP<br>IO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_<br>CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=10<br>27 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_2<br>5_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONF<br>IG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +<br>USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=<br>19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +M<br>EM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80530<br>6368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-IRQ_timer</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T64"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/cpu_stress</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T64</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>20194600001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>315.96 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:49:57 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:55:14 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>197180 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me cpu_stress +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/<br>caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/packa<br>ge/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_u<br>pdate/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="cpu_stress" +FTESTNAME="RTL-cpu_stress" +SIM_DIR="/home/rady/caravel/cove<br>rage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MOD<br>E_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_M<br>ODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPI<br>O_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_I<br>NIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO<br>_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG<br>_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +US<br>ER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT<br>=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPI<br>O_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_C<br>ONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=102<br>7 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS<br>_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM<br> +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=80<br>5306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-cpu_stress</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T13"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/serial_shifting_0011</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T13</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>8731800001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>142.36 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:47:33 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:49:56 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>202020 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me serial_shifting_0011 +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/covera<br>ge_update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/car<br>avel/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/<br>coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="serial_shifting_0011" +FTESTNAME="RTL-serial_shifting_0011" +SI<br>M_DIR="/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_S<br>TD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER<br>_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_US<br>ER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_I<br>NIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO<br>_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_<br>GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USE<br>R_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=<br>1027 +USER_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO<br>_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CO<br>NFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027<br> +USER_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +M<br>PRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANA<br>LOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +L<br>A_SIZE=128 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-serial_shifting_0011</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T52"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/IRQ_spi</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T52</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>6609600001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>102.61 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:25:25 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:27:08 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199124 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me IRQ_spi +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/car<br>avel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/package/<br>caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="IRQ_spi" +FTESTNAME="RTL-IRQ_spi" +SIM_DIR="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_ST<br>D_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_<br>STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MG<br>MT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 <br>+USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1<br>027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_<br>INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG<br>_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=1027 +US<br>ER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT<br>=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPI<br>O_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +USER_C<br>ONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MP<br>RJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WOR<br>DS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=805306368 +<br>USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-IRQ_spi</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T21"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/uart_rx_msg</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T21</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>10815044481 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>159.02 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:31:15 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:33:55 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199228 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me uart_rx_msg +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update<br>/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pack<br>age/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="uart_rx_msg" +FTESTNAME="RTL-uart_rx_msg" +SIM_DIR="/home/rady/caravel/c<br>overage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_<br>MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPI<br>O_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +<br>GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_<br>1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_G<br>PIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CON<br>FIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 <br>+USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_I<br>NIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_<br>GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USE<br>R_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=<br>1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_P<br>ADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFF<br>RAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR<br>=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-uart_rx_msg</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T15"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/gpio_all_o_user</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T15</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1040500001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>20.35 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:07:29 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:07:50 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199624 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me gpio_all_o_user +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_up<br>date/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/<br>package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cover<br>age_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="gpio_all_o_user" +FTESTNAME="RTL-gpio_all_o_user" +SIM_DIR="/home/ra<br>dy/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL<br>=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPU<br>LL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECT<br>IONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_<br>CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +U<br>SER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=10<br>27 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_1<br>5_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONF<br>IG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +<br>USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_IN<br>IT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_G<br>PIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=1<br>9 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +US<br>E_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USE<br>R_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-gpio_all_o_user</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T54"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/uart_tx</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T54</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>9641070161 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>149.18 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:43:27 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:45:57 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199200 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me uart_tx +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/car<br>avel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/package/<br>caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="uart_tx" +FTESTNAME="RTL-uart_tx" +SIM_DIR="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_ST<br>D_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_<br>STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MG<br>MT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 <br>+USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1<br>027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_<br>INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG<br>_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=1027 +US<br>ER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT<br>=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPI<br>O_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +USER_C<br>ONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MP<br>RJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WOR<br>DS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=805306368 +<br>USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-uart_tx</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T30"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/debug</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T30</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1432505001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>26.37 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:45:58 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:46:25 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199144 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me debug +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update/carav<br>el_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/package/ca<br>ravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_update<br>/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="debug" +FTESTNAME="RTL-debug" +SIM_DIR="/home/rady/caravel/coverage_update/car<br>avel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPU<br>T_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPIO_MODE_USER_STD_IN<br>PUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD<br>_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_1_INIT=1027 +USER_<br>CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_GPIO_6_INIT=1027 +U<br>SER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1<br>027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_<br>16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_INIT=1027 +USER_CON<br>FIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_GPIO_25_INIT=1027 <br>+USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USER_CONFIG_GPIO_30_I<br>NIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_<br>GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_<br>PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256<br> +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR=805306368 +USER_S<br>PACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-debug</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T23"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/gpio_all_i_pd_user</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T23</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1078950001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>20.1 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:00:11 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:00:32 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>197972 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me gpio_all_i_pd_user +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage<br>_update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carav<br>el/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/co<br>verage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="gpio_all_i_pd_user" +FTESTNAME="RTL-gpio_all_i_pd_user" +SIM_DIR=<br>"/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INP<br>UT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_I<br>NPUT_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD<br>_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=10<br>27 +USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INI<br>T=1027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_1<br>0_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONF<br>IG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +<br>USER_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_IN<br>IT=1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_G<br>PIO_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER<br>_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO<br>_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PA<br>DS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE<br>=128 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-gpio_all_i_pd_user</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T59"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/user_pass_thru_rd</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T59</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1326350001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>23.61 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 06:49:23 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:49:47 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>197120 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me user_pass_thru_rd +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carave<br>l/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/cov<br>erage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="user_pass_thru_rd" +FTESTNAME="RTL-user_pass_thru_rd" +SIM_DIR="/h<br>ome/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_<br>NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPU<br>T_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BI<br>DIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 <br>+USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1<br>027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_I<br>NIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_<br>GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USE<br>R_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=<br>1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO<br>_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CO<br>NFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PA<br>DS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=<br>11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=12<br>8 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-user_pass_thru_rd</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T43"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/IRQ_uart_rx</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T43</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>8487800001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>134.17 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 09:28:59 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 09:31:14 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199144 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me IRQ_uart_rx +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_update<br>/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pack<br>age/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverage_<br>update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="IRQ_uart_rx" +FTESTNAME="RTL-IRQ_uart_rx" +SIM_DIR="/home/rady/caravel/c<br>overage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 +GPIO_<br>MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=1026 +GPI<br>O_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=6144 +<br>GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG_GPIO_<br>1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CONFIG_G<br>PIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +USER_CON<br>FIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT=1027 <br>+USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPIO_20_I<br>NIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_CONFIG_<br>GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=1027 +USE<br>R_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34_INIT=<br>1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPRJ_IO_P<br>ADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUSTOM_DFF<br>RAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPACE_ADDR<br>=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-IRQ_uart_rx</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T18"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/serial_shifting_10</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T18</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>7228475001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>121.9 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 07:43:06 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 07:45:09 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>199172 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me serial_shifting_10 +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage<br>_update/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/carav<br>el/package/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/co<br>verage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="serial_shifting_10" +FTESTNAME="RTL-serial_shifting_10" +SIM_DIR=<br>"/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INP<br>UT_NOPULL=1027 +GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_I<br>NPUT_NOPULL=1026 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD<br>_BIDIRECTIONAL=6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=10<br>27 +USER_CONFIG_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INI<br>T=1027 +USER_CONFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_1<br>0_INIT=1027 +USER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONF<br>IG_GPIO_15_INIT=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +<br>USER_CONFIG_GPIO_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_IN<br>IT=1027 +USER_CONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_G<br>PIO_29_INIT=1027 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER<br>_CONFIG_GPIO_34_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO<br>_PADS_1=19 +MPRJ_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PA<br>DS=11 +USE_CUSTOM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE<br>=128 +USER_SPACE_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-serial_shifting_10</td>
+</tr></table><br clear=all>
+<hr>
+<a name="T62"></a>
+<table align=left>
+<tr>
+<td><b>Test location</b></td>
+<td><b>compilation/simv/gpio_all_i_pd</b></td>
+</tr><tr>
+<td>Short name</td>
+<td>T62</td>
+</tr><tr>
+<td>Test name</td>
+<td></td>
+</tr><tr>
+<td>Test status</td>
+<td></td>
+</tr><tr>
+<td>Simulation time</td>
+<td>1078950001 ps</td>
+</tr><tr>
+<td>CPU time</td>
+<td>20.16 seconds</td>
+</tr><tr>
+<td>Started</td>
+<td>Aug 09 05:59:49 AM PDT 23</td>
+</tr><tr>
+<td>Finished</td>
+<td>Aug 09 06:00:10 AM PDT 23</td>
+</tr><tr>
+<td>Peak memory</td>
+<td>197992 kb</td>
+</tr><tr>
+<td>Host</td>
+<td nowrap>license-server-00</td>
+</tr><tr>
+<td>User</td>
+<td>rady</td>
+</tr><tr>
+<td>Command</td>
+<td nowrap>/home/rady/caravel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7/compilation/simv -cm line+tgl+cond+fsm+branch+assert -cm_na<br>me gpio_all_i_pd +USE_POWER_PINS +UNIT_DELAY=#1 +COCOTB_SIM +FUNCTIONAL +VCS +sky130 +CPU_TYPE_VexRISC +RUN_PATH="/home/rady/caravel/coverage_upda<br>te/caravel_cocotb_tests/verilog/dv/cocotb" +TAG="cov_fullrun7" +CARAVEL_ROOT="/home/rady/caravel/package/caravel" +MCW_ROOT="/home/rady/caravel/pa<br>ckage/caravel_mgmt_soc_litex/" +USER_PROJECT_ROOT="/home/rady/caravel/coverage_update/caravel_cocotb_tests/" +SIM_PATH="/home/rady/caravel/coverag<br>e_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/" +SIM="RTL" +TESTNAME="gpio_all_i_pd" +FTESTNAME="RTL-gpio_all_i_pd" +SIM_DIR="/home/rady/car<br>avel/coverage_update/caravel_cocotb_tests/verilog/dv/cocotb/sim/cov_fullrun7" +CORNER_nom +__USER_DEFINES_H +GPIO_MODE_MGMT_STD_INPUT_NOPULL=1027 <br>+GPIO_MODE_MGMT_STD_INPUT_PULLDOWN=3073 +GPIO_MODE_MGMT_STD_INPUT_PULLUP=2049 +GPIO_MODE_MGMT_STD_OUTPUT=6153 +GPIO_MODE_USER_STD_INPUT_NOPULL=102<br>6 +GPIO_MODE_USER_STD_INPUT_PULLDOWN=3072 +GPIO_MODE_USER_STD_INPUT_PULLUP=2048 +GPIO_MODE_USER_STD_OUTPUT=6152 +GPIO_MODE_USER_STD_BIDIRECTIONAL=<br>6144 +GPIO_MODE_MGMT_STD_BIDIRECTIONAL=6145 +GPIO_MODE_MGMT_STD_ANALOG=11 +GPIO_MODE_USER_STD_ANALOG=10 +USER_CONFIG_GPIO_0_INIT=1027 +USER_CONFIG<br>_GPIO_1_INIT=1027 +USER_CONFIG_GPIO_2_INIT=1027 +USER_CONFIG_GPIO_3_INIT=2049 +USER_CONFIG_GPIO_4_INIT=1027 +USER_CONFIG_GPIO_5_INIT=1027 +USER_CO<br>NFIG_GPIO_6_INIT=1027 +USER_CONFIG_GPIO_7_INIT=1027 +USER_CONFIG_GPIO_8_INIT=1027 +USER_CONFIG_GPIO_9_INIT=1027 +USER_CONFIG_GPIO_10_INIT=1027 +US<br>ER_CONFIG_GPIO_11_INIT=1027 +USER_CONFIG_GPIO_12_INIT=1027 +USER_CONFIG_GPIO_13_INIT=1027 +USER_CONFIG_GPIO_14_INIT=1027 +USER_CONFIG_GPIO_15_INIT<br>=1027 +USER_CONFIG_GPIO_16_INIT=1027 +USER_CONFIG_GPIO_17_INIT=1027 +USER_CONFIG_GPIO_18_INIT=1027 +USER_CONFIG_GPIO_19_INIT=1027 +USER_CONFIG_GPI<br>O_20_INIT=1027 +USER_CONFIG_GPIO_21_INIT=1027 +USER_CONFIG_GPIO_22_INIT=1027 +USER_CONFIG_GPIO_23_INIT=1027 +USER_CONFIG_GPIO_24_INIT=1027 +USER_C<br>ONFIG_GPIO_25_INIT=1027 +USER_CONFIG_GPIO_26_INIT=1027 +USER_CONFIG_GPIO_27_INIT=1027 +USER_CONFIG_GPIO_28_INIT=1027 +USER_CONFIG_GPIO_29_INIT=102<br>7 +USER_CONFIG_GPIO_30_INIT=1027 +USER_CONFIG_GPIO_31_INIT=1027 +USER_CONFIG_GPIO_32_INIT=1027 +USER_CONFIG_GPIO_33_INIT=1027 +USER_CONFIG_GPIO_34<br>_INIT=1027 +USER_CONFIG_GPIO_35_INIT=1027 +USER_CONFIG_GPIO_36_INIT=1027 +USER_CONFIG_GPIO_37_INIT=1027 +__GLOBAL_DEFINE_H +MPRJ_IO_PADS_1=19 +MPR<br>J_IO_PADS_2=19 +MPRJ_IO_PADS=38 +MPRJ_PWR_PADS_1=2 +MPRJ_PWR_PADS_2=2 +MPRJ_PWR_PADS=4 +ANALOG_PADS_1=5 +ANALOG_PADS_2=6 +ANALOG_PADS=11 +USE_CUST<br>OM_DFFRAM +MEM_WORDS=256 +DFFRAM_WSIZE=4 +DFFRAM_USE_LATCH=0 +RAM_BLOCKS=1 +CLK_DIV=2 +MGMT_INIT=0 +OENB_INIT=0 +DM_INIT=1 +LA_SIZE=128 +USER_SPAC<br>E_ADDR=805306368 +USER_SPACE_SIZE=1048572 +IO_CTRL_BITS=13 +POWER_DOMAINS=3 +OPENFRAME_IO_PADS=44 +GPIO_MODE_USER_STD_OUT_MONITORED=6146</td>
+</tr><tr>
+<td>Directory</td>
+<td nowrap>/mnt/scratch/cocotb_runs/cocotb_run_20230809055610.931_cov_fullrun7/RTL-gpio_all_i_pd</td>
+</tr></table></div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

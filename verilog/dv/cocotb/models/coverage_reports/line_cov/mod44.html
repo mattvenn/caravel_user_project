@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: even</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_even'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_even')">even</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 63.06</td>
+<td class="s8 cl rt"><a href="mod44.html#Line" > 87.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s2 cl rt"><a href="mod44.html#Toggle" > 26.67</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod44.html#Branch" > 75.00</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/rady/caravel/package/caravel/verilog/rtl/clock_div.v')">/home/rady/caravel/package/caravel/verilog/rtl/clock_div.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left class="sortable">
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod44.html#inst_tag_1926"  onclick="showContent('inst_tag_1926')">caravel_top.uut.chip_core.clock_ctrl.divider.even_0</a></td>
+<td class="s6 cl rt"> 63.06</td>
+<td class="s8 cl rt"><a href="mod44.html#inst_tag_1926_Line" > 87.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s2 cl rt"><a href="mod44.html#inst_tag_1926_Toggle" > 26.67</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod44.html#inst_tag_1926_Branch" > 75.00</a></td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod44.html#inst_tag_1927"  onclick="showContent('inst_tag_1927')">caravel_top.uut.chip_core.clock_ctrl.divider2.even_0</a></td>
+<td class="s6 cl rt"> 63.06</td>
+<td class="s8 cl rt"><a href="mod44.html#inst_tag_1927_Line" > 87.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s2 cl rt"><a href="mod44.html#inst_tag_1927_Toggle" > 26.67</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod44.html#inst_tag_1927_Branch" > 75.00</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='inst_tag_1926'>
+<hr>
+<a name="inst_tag_1926"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy1.html#tag_urg_inst_1926" >caravel_top.uut.chip_core.clock_ctrl.divider.even_0</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 63.06</td>
+<td class="s8 cl rt"><a href="mod44.html#inst_tag_1926_Line" > 87.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s2 cl rt"><a href="mod44.html#inst_tag_1926_Toggle" > 26.67</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod44.html#inst_tag_1926_Branch" > 75.00</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 63.06</td>
+<td class="s8 cl rt"> 87.50</td>
+<td class="wht cl rt"></td>
+<td class="s2 cl rt"> 26.67</td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"> 75.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 80.39</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"> 41.18</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td><a href="mod32.html#inst_tag_1822" >divider</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td colspan=7>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div name='inst_tag_1927'>
+<hr>
+<a name="inst_tag_1927"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy1.html#tag_urg_inst_1927" >caravel_top.uut.chip_core.clock_ctrl.divider2.even_0</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 63.06</td>
+<td class="s8 cl rt"><a href="mod44.html#inst_tag_1927_Line" > 87.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s2 cl rt"><a href="mod44.html#inst_tag_1927_Toggle" > 26.67</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod44.html#inst_tag_1927_Branch" > 75.00</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s6 cl rt"> 63.06</td>
+<td class="s8 cl rt"> 87.50</td>
+<td class="wht cl rt"></td>
+<td class="s2 cl rt"> 26.67</td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"> 75.00</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s7 cl rt"> 77.45</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s3 cl rt"> 32.35</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td><a href="mod32.html#inst_tag_1823" >divider2</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td colspan=7>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_even'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod44.html" >even</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">TOTAL</td><td></td><td>8</td><td>7</td><td>87.50</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>195</td><td>8</td><td>7</td><td>87.50</td></tr>
+</table>
+<pre class="code"><br clear=all>
+194                         always @(posedge clk or negedge resetb) begin
+195        1/1          	if (resetb == 1'b0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+196        1/1          	    counter &lt;= 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+197        1/1          	    out_counter &lt;= 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+198                     
+199        1/1          	end else if (enable) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+200                     	    // only use switching power if enabled
+201        1/1          	    if (counter == 1) begin
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+202                     		// divide after counter has reached bottom
+203                     		// of interval 'N' which will be value '1'
+204        1/1          		counter &lt;= div_2;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+205        1/1          		out_counter &lt;= ~out_counter;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+206                     	    end else begin
+207                     		// decrement the counter and wait
+208        <font color = "red">0/1     ==>  		counter &lt;= counter-1;	// to start next transition.</font>
+209                     	    end
+210                     	end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod44.html" >even</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s4">
+<td>Totals</td>
+<td class="rt">9</td>
+<td class="rt">4</td>
+<td class="rt">44.44 </td>
+</tr><tr class="s2">
+<td>Total Bits</td>
+<td class="rt">30</td>
+<td class="rt">8</td>
+<td class="rt">26.67 </td>
+</tr><tr class="s2">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">4</td>
+<td class="rt">26.67 </td>
+</tr><tr class="s2">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">4</td>
+<td class="rt">26.67 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">6</td>
+<td class="rt">3</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s3">
+<td>Port Bits</td>
+<td class="rt">16</td>
+<td class="rt">6</td>
+<td class="rt">37.50 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Signals</td>
+<td class="rt">3</td>
+<td class="rt">1</td>
+<td class="rt">33.33 </td>
+</tr><tr class="s1">
+<td>Signal Bits</td>
+<td class="rt">14</td>
+<td class="rt">2</td>
+<td class="rt">14.29 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">7</td>
+<td class="rt">1</td>
+<td class="rt">14.29 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">7</td>
+<td class="rt">1</td>
+<td class="rt">14.29 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>N[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>resetb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/cpu_reset">T5</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>not_zero</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>enable</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td></tr><tr>
+<td>counter[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>out_counter</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>div_2[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod44.html" >even</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Branches</td>
+<td></td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s7">
+<td>IF</td>
+<td class="rt">195</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+195        	if (resetb == 1'b0) begin
+           	<font color = "green">-1-</font>  
+196        	    counter <= 1;
+           <font color = "green">	    ==></font>
+197        	    out_counter <= 1;
+198        
+199        	end else if (enable) begin
+           	         <font color = "green">-2-</font>  
+200        	    // only use switching power if enabled
+201        	    if (counter == 1) begin
+           	    <font color = "red">-3-</font>  
+202        		// divide after counter has reached bottom
+203        		// of interval 'N' which will be value '1'
+204        		counter <= div_2;
+           <font color = "green">		==></font>
+205        		out_counter <= ~out_counter;
+206        	    end else begin
+207        		// decrement the counter and wait
+208        		counter <= counter-1;	// to start next transition.
+           <font color = "red">		==></font>
+209        	    end
+210        	end
+           	MISSING_ELSE
+           <font color = "green">	==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_1926'>
+<a name="inst_tag_1926_Line"></a>
+<b>Line Coverage for Instance : <a href="mod44.html#inst_tag_1926" >caravel_top.uut.chip_core.clock_ctrl.divider.even_0</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">TOTAL</td><td></td><td>8</td><td>7</td><td>87.50</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>195</td><td>8</td><td>7</td><td>87.50</td></tr>
+</table>
+<pre class="code"><br clear=all>
+194                         always @(posedge clk or negedge resetb) begin
+195        1/1          	if (resetb == 1'b0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+196        1/1          	    counter &lt;= 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+197        1/1          	    out_counter &lt;= 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+198                     
+199        1/1          	end else if (enable) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+200                     	    // only use switching power if enabled
+201        1/1          	    if (counter == 1) begin
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+202                     		// divide after counter has reached bottom
+203                     		// of interval 'N' which will be value '1'
+204        1/1          		counter &lt;= div_2;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+205        1/1          		out_counter &lt;= ~out_counter;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+206                     	    end else begin
+207                     		// decrement the counter and wait
+208        <font color = "red">0/1     ==>  		counter &lt;= counter-1;	// to start next transition.</font>
+209                     	    end
+210                     	end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="inst_tag_1926_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod44.html#inst_tag_1926" >caravel_top.uut.chip_core.clock_ctrl.divider.even_0</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s4">
+<td>Totals</td>
+<td class="rt">9</td>
+<td class="rt">4</td>
+<td class="rt">44.44 </td>
+</tr><tr class="s2">
+<td>Total Bits</td>
+<td class="rt">30</td>
+<td class="rt">8</td>
+<td class="rt">26.67 </td>
+</tr><tr class="s2">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">4</td>
+<td class="rt">26.67 </td>
+</tr><tr class="s2">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">4</td>
+<td class="rt">26.67 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">6</td>
+<td class="rt">3</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s3">
+<td>Port Bits</td>
+<td class="rt">16</td>
+<td class="rt">6</td>
+<td class="rt">37.50 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Signals</td>
+<td class="rt">3</td>
+<td class="rt">1</td>
+<td class="rt">33.33 </td>
+</tr><tr class="s1">
+<td>Signal Bits</td>
+<td class="rt">14</td>
+<td class="rt">2</td>
+<td class="rt">14.29 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">7</td>
+<td class="rt">1</td>
+<td class="rt">14.29 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">7</td>
+<td class="rt">1</td>
+<td class="rt">14.29 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>N[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>resetb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/cpu_reset">T5</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>not_zero</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>enable</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td></tr><tr>
+<td>counter[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>out_counter</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>div_2[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_1926_Branch"></a>
+<b>Branch Coverage for Instance : <a href="mod44.html#inst_tag_1926" >caravel_top.uut.chip_core.clock_ctrl.divider.even_0</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Branches</td>
+<td></td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s7">
+<td>IF</td>
+<td class="rt">195</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+195        	if (resetb == 1'b0) begin
+           	<font color = "green">-1-</font>  
+196        	    counter <= 1;
+           <font color = "green">	    ==></font>
+197        	    out_counter <= 1;
+198        
+199        	end else if (enable) begin
+           	         <font color = "green">-2-</font>  
+200        	    // only use switching power if enabled
+201        	    if (counter == 1) begin
+           	    <font color = "red">-3-</font>  
+202        		// divide after counter has reached bottom
+203        		// of interval 'N' which will be value '1'
+204        		counter <= div_2;
+           <font color = "green">		==></font>
+205        		out_counter <= ~out_counter;
+206        	    end else begin
+207        		// decrement the counter and wait
+208        		counter <= counter-1;	// to start next transition.
+           <font color = "red">		==></font>
+209        	    end
+210        	end
+           	MISSING_ELSE
+           <font color = "green">	==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+</div>
+<div name='inst_tag_1927'>
+<a name="inst_tag_1927_Line"></a>
+<b>Line Coverage for Instance : <a href="mod44.html#inst_tag_1927" >caravel_top.uut.chip_core.clock_ctrl.divider2.even_0</a></b><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s8"><td class="lf">TOTAL</td><td></td><td>8</td><td>7</td><td>87.50</td></tr>
+<tr class="s8"><td class="lf">ALWAYS</td><td>195</td><td>8</td><td>7</td><td>87.50</td></tr>
+</table>
+<pre class="code"><br clear=all>
+194                         always @(posedge clk or negedge resetb) begin
+195        1/1          	if (resetb == 1'b0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+196        1/1          	    counter &lt;= 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+197        1/1          	    out_counter &lt;= 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+198                     
+199        1/1          	end else if (enable) begin
+           Tests:       <span title = "compilation/simv/PoR">T7</span>&nbsp;<span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+200                     	    // only use switching power if enabled
+201        1/1          	    if (counter == 1) begin
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+202                     		// divide after counter has reached bottom
+203                     		// of interval 'N' which will be value '1'
+204        1/1          		counter &lt;= div_2;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+205        1/1          		out_counter &lt;= ~out_counter;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+206                     	    end else begin
+207                     		// decrement the counter and wait
+208        <font color = "red">0/1     ==>  		counter &lt;= counter-1;	// to start next transition.</font>
+209                     	    end
+210                     	end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="inst_tag_1927_Toggle"></a>
+<b>Toggle Coverage for Instance : <a href="mod44.html#inst_tag_1927" >caravel_top.uut.chip_core.clock_ctrl.divider2.even_0</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s4">
+<td>Totals</td>
+<td class="rt">9</td>
+<td class="rt">4</td>
+<td class="rt">44.44 </td>
+</tr><tr class="s2">
+<td>Total Bits</td>
+<td class="rt">30</td>
+<td class="rt">8</td>
+<td class="rt">26.67 </td>
+</tr><tr class="s2">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">15</td>
+<td class="rt">4</td>
+<td class="rt">26.67 </td>
+</tr><tr class="s2">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">15</td>
+<td class="rt">4</td>
+<td class="rt">26.67 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Ports</td>
+<td class="rt">6</td>
+<td class="rt">3</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s3">
+<td>Port Bits</td>
+<td class="rt">16</td>
+<td class="rt">6</td>
+<td class="rt">37.50 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+</tr><tr class="s3">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">8</td>
+<td class="rt">3</td>
+<td class="rt">37.50 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Signals</td>
+<td class="rt">3</td>
+<td class="rt">1</td>
+<td class="rt">33.33 </td>
+</tr><tr class="s1">
+<td>Signal Bits</td>
+<td class="rt">14</td>
+<td class="rt">2</td>
+<td class="rt">14.29 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">7</td>
+<td class="rt">1</td>
+<td class="rt">14.29 </td>
+</tr><tr class="s1">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">7</td>
+<td class="rt">1</td>
+<td class="rt">14.29 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td><td class="alfsrt">Direction</td></tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>out</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>N[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>resetb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/cpu_reset">T5</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>not_zero</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>enable</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td></tr><tr>
+<td>counter[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>out_counter</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>div_2[2:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr></table><br clear=all>
+<hr>
+<a name="inst_tag_1927_Branch"></a>
+<b>Branch Coverage for Instance : <a href="mod44.html#inst_tag_1927" >caravel_top.uut.chip_core.clock_ctrl.divider2.even_0</a></b><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s7">
+<td>Branches</td>
+<td></td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr><tr class="s7">
+<td>IF</td>
+<td class="rt">195</td>
+<td class="rt">4</td>
+<td class="rt">3</td>
+<td class="rt">75.00 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+195        	if (resetb == 1'b0) begin
+           	<font color = "green">-1-</font>  
+196        	    counter <= 1;
+           <font color = "green">	    ==></font>
+197        	    out_counter <= 1;
+198        
+199        	end else if (enable) begin
+           	         <font color = "green">-2-</font>  
+200        	    // only use switching power if enabled
+201        	    if (counter == 1) begin
+           	    <font color = "red">-3-</font>  
+202        		// divide after counter has reached bottom
+203        		// of interval 'N' which will be value '1'
+204        		counter <= div_2;
+           <font color = "green">		==></font>
+205        		out_counter <= ~out_counter;
+206        	    end else begin
+207        		// decrement the counter and wait
+208        		counter <= counter-1;	// to start next transition.
+           <font color = "red">		==></font>
+209        	    end
+210        	end
+           	MISSING_ELSE
+           <font color = "green">	==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/PoR">T7</span></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_1926">
+    <li>
+      <a href="#inst_tag_1926_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_1926_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_1926_Branch">Branch</a>    </li>
+  </ul>
+  <ul name="inst_tag_1927">
+    <li>
+      <a href="#inst_tag_1927_Line">Line</a>    </li>
+    <li>
+      <a href="#inst_tag_1927_Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#inst_tag_1927_Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_even">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

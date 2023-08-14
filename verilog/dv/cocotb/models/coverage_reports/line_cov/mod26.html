@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: spiflash</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_spiflash'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_spiflash')">spiflash</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s4 cl rt"> 43.77</td>
+<td class="s3 cl rt"><a href="mod26.html#Line" > 31.68</a></td>
+<td class="s5 cl rt"><a href="mod26.html#Cond" > 50.00</a></td>
+<td class="s5 cl rt"><a href="mod26.html#Toggle" > 52.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod26.html#Branch" > 40.91</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/rady/caravel/package/caravel_mgmt_soc_litex//verilog/dv/vip/spiflash.v')">/home/rady/caravel/package/caravel_mgmt_soc_litex//verilog/dv/vip/spiflash.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod26.html#inst_tag_1730"  onclick="showContent('inst_tag_1730')">caravel_top.spiflash</a></td>
+<td class="s4 cl rt"> 43.77</td>
+<td class="s3 cl rt"><a href="mod26.html#Line" > 31.68</a></td>
+<td class="s5 cl rt"><a href="mod26.html#Cond" > 50.00</a></td>
+<td class="s5 cl rt"><a href="mod26.html#Toggle" > 52.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod26.html#Branch" > 40.91</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_spiflash'>
+<hr>
+<a name="inst_tag_1730"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy.html#tag_urg_inst_1730" >caravel_top.spiflash</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s4 cl rt"> 43.77</td>
+<td class="s3 cl rt"><a href="mod26.html#Line" > 31.68</a></td>
+<td class="s5 cl rt"><a href="mod26.html#Cond" > 50.00</a></td>
+<td class="s5 cl rt"><a href="mod26.html#Toggle" > 52.50</a></td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"><a href="mod26.html#Branch" > 40.91</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s4 cl rt"> 43.77</td>
+<td class="s3 cl rt"> 31.68</td>
+<td class="s5 cl rt"> 50.00</td>
+<td class="s5 cl rt"> 52.50</td>
+<td class="wht cl rt"></td>
+<td class="s4 cl rt"> 40.91</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 97.46</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 92.37</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td><a href="mod57.html#inst_tag_3366" >caravel_top</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td colspan=7>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_spiflash'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod26.html" >spiflash</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s3"><td class="lf">TOTAL</td><td></td><td>202</td><td>64</td><td>31.68</td></tr>
+<tr class="s10"><td class="lf">INITIAL</td><td>110</td><td>4</td><td>4</td><td>100.00</td></tr>
+<tr class="s3"><td class="lf">ROUTINE</td><td>123</td><td>73</td><td>22</td><td>30.14</td></tr>
+<tr class="s0"><td class="lf">ROUTINE</td><td>243</td><td>6</td><td>0</td><td>0.00</td></tr>
+<tr class="s0"><td class="lf">ROUTINE</td><td>255</td><td>14</td><td>0</td><td>0.00</td></tr>
+<tr class="s5"><td class="lf">ALWAYS</td><td>276</td><td>21</td><td>12</td><td>57.14</td></tr>
+<tr class="s10"><td class="lf">ALWAYS</td><td>313</td><td>7</td><td>7</td><td>100.00</td></tr>
+<tr class="s1"><td class="lf">ALWAYS</td><td>327</td><td>53</td><td>10</td><td>18.87</td></tr>
+<tr class="s3"><td class="lf">ALWAYS</td><td>406</td><td>24</td><td>9</td><td>37.50</td></tr>
+</table>
+<pre class="code"><br clear=all>
+109                     	initial begin
+110        1/1          		$display(&quot;Reading %s&quot;,  FILENAME);
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+111        1/1          		$readmemh(FILENAME, memory);
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+112                     		//$display(&quot;Memory 5 bytes = 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x&quot;,
+113                     		//	memory[0], memory[1], memory[2],
+114                     		//	memory[3], memory[4]);
+115        1/1          		$display(&quot;%s loaded into memory&quot;, FILENAME);
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+116        1/1          		$display(&quot;Memory 5 bytes = 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x&quot;,
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+117                     			memory[0], memory[1], memory[2],
+118                     			memory[3], memory[4]);
+119                     	end
+120                     
+121                     	task spi_action;
+122                     		begin
+123        1/1          			spi_in = buffer;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+124                     
+125        1/1          			if (bytecount == 1) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+126        1/1          				spi_cmd = buffer;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+127                     
+128        1/1          				if (spi_cmd == 8'h ab)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+129        <font color = "red">0/1     ==>  					powered_up = 1;</font>
+                        MISSING_ELSE
+130                     
+131        1/1          				if (spi_cmd == 8'h b9)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+132        <font color = "red">0/1     ==>  					powered_up = 0;</font>
+                        MISSING_ELSE
+133                     
+134        1/1          				if (spi_cmd == 8'h ff)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+135        <font color = "red">0/1     ==>  					xip_cmd = 0;</font>
+                        MISSING_ELSE
+136                     			end
+                        MISSING_ELSE
+137                     
+138        1/1          			if (powered_up &amp;&amp; spi_cmd == 'h 03) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+139        1/1          				if (bytecount == 2)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+140        1/1          					spi_addr[23:16] = buffer;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+                        MISSING_ELSE
+141                     
+142        1/1          				if (bytecount == 3)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+143        1/1          					spi_addr[15:8] = buffer;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+                        MISSING_ELSE
+144                     
+145        1/1          				if (bytecount == 4)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+146        1/1          					spi_addr[7:0] = buffer;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+                        MISSING_ELSE
+147                     
+148        1/1          				if (bytecount &gt;= 4) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+149        1/1          					buffer = memory[spi_addr];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+150        1/1          					spi_addr = spi_addr + 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+151                     				end
+                        MISSING_ELSE
+152                     			end
+                   <font color = "red">==>  MISSING_ELSE</font>
+153                     
+154        1/1          			if (powered_up &amp;&amp; spi_cmd == 'h bb) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+155        <font color = "red">0/1     ==>  				if (bytecount == 1)</font>
+156        <font color = "red">0/1     ==>  					mode = mode_dspi_rd;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+157                     
+158        <font color = "red">0/1     ==>  				if (bytecount == 2)</font>
+159        <font color = "red">0/1     ==>  					spi_addr[23:16] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+160                     
+161        <font color = "red">0/1     ==>  				if (bytecount == 3)</font>
+162        <font color = "red">0/1     ==>  					spi_addr[15:8] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+163                     
+164        <font color = "red">0/1     ==>  				if (bytecount == 4)</font>
+165        <font color = "red">0/1     ==>  					spi_addr[7:0] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+166                     
+167        <font color = "red">0/1     ==>  				if (bytecount == 5) begin</font>
+168        <font color = "red">0/1     ==>  					xip_cmd = (buffer == 8'h a5) ? spi_cmd : 8'h 00;</font>
+169        <font color = "red">0/1     ==>  					mode = mode_dspi_wr;</font>
+170        <font color = "red">0/1     ==>  					dummycount = latency;</font>
+171                     				end
+                   <font color = "red">==>  MISSING_ELSE</font>
+172                     
+173        <font color = "red">0/1     ==>  				if (bytecount &gt;= 5) begin</font>
+174        <font color = "red">0/1     ==>  					buffer = memory[spi_addr];</font>
+175        <font color = "red">0/1     ==>  					spi_addr = spi_addr + 1;</font>
+176                     				end
+                   <font color = "red">==>  MISSING_ELSE</font>
+177                     			end
+                        MISSING_ELSE
+178                     
+179        1/1          			if (powered_up &amp;&amp; spi_cmd == 'h eb) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+180        <font color = "red">0/1     ==>  				if (bytecount == 1)</font>
+181        <font color = "red">0/1     ==>  					mode = mode_qspi_rd;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+182                     
+183        <font color = "red">0/1     ==>  				if (bytecount == 2)</font>
+184        <font color = "red">0/1     ==>  					spi_addr[23:16] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+185                     
+186        <font color = "red">0/1     ==>  				if (bytecount == 3)</font>
+187        <font color = "red">0/1     ==>  					spi_addr[15:8] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+188                     
+189        <font color = "red">0/1     ==>  				if (bytecount == 4)</font>
+190        <font color = "red">0/1     ==>  					spi_addr[7:0] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+191                     
+192        <font color = "red">0/1     ==>  				if (bytecount == 5) begin</font>
+193        <font color = "red">0/1     ==>  					xip_cmd = (buffer == 8'h a5) ? spi_cmd : 8'h 00;</font>
+194        <font color = "red">0/1     ==>  					mode = mode_qspi_wr;</font>
+195        <font color = "red">0/1     ==>  					dummycount = latency;</font>
+196                     				end
+                   <font color = "red">==>  MISSING_ELSE</font>
+197                     
+198        <font color = "red">0/1     ==>  				if (bytecount &gt;= 5) begin</font>
+199        <font color = "red">0/1     ==>  					buffer = memory[spi_addr];</font>
+200        <font color = "red">0/1     ==>  					spi_addr = spi_addr + 1;</font>
+201                     				end
+                   <font color = "red">==>  MISSING_ELSE</font>
+202                     			end
+                        MISSING_ELSE
+203                     
+204        1/1          			if (powered_up &amp;&amp; spi_cmd == 'h ed) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+205        <font color = "red">0/1     ==>  				if (bytecount == 1)</font>
+206        <font color = "red">0/1     ==>  					next_mode = mode_qspi_ddr_rd;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+207                     
+208        <font color = "red">0/1     ==>  				if (bytecount == 2)</font>
+209        <font color = "red">0/1     ==>  					spi_addr[23:16] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+210                     
+211        <font color = "red">0/1     ==>  				if (bytecount == 3)</font>
+212        <font color = "red">0/1     ==>  					spi_addr[15:8] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+213                     
+214        <font color = "red">0/1     ==>  				if (bytecount == 4)</font>
+215        <font color = "red">0/1     ==>  					spi_addr[7:0] = buffer;</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+216                     
+217        <font color = "red">0/1     ==>  				if (bytecount == 5) begin</font>
+218        <font color = "red">0/1     ==>  					xip_cmd = (buffer == 8'h a5) ? spi_cmd : 8'h 00;</font>
+219        <font color = "red">0/1     ==>  					mode = mode_qspi_ddr_wr;</font>
+220        <font color = "red">0/1     ==>  					dummycount = latency;</font>
+221                     				end
+                   <font color = "red">==>  MISSING_ELSE</font>
+222                     
+223        <font color = "red">0/1     ==>  				if (bytecount &gt;= 5) begin</font>
+224        <font color = "red">0/1     ==>  					buffer = memory[spi_addr];</font>
+225        <font color = "red">0/1     ==>  					spi_addr = spi_addr + 1;</font>
+226                     				end
+                   <font color = "red">==>  MISSING_ELSE</font>
+227                     			end
+                        MISSING_ELSE
+228                     
+229        1/1          			spi_out = buffer;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+230        1/1          			spi_io_vld = 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+231                     
+232        1/1          			if (verbose) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+233        <font color = "red">0/1     ==>  				if (bytecount == 1)</font>
+234        <font color = "red">0/1     ==>  					$write(&quot;&lt;SPI-START&gt;&quot;);</font>
+                   <font color = "red">==>  MISSING_ELSE</font>
+235        <font color = "red">0/1     ==>  				$write(&quot;&lt;SPI:%02x:%02x&gt;&quot;, spi_in, spi_out);</font>
+236                     			end
+                        MISSING_ELSE
+237                     
+238                     		end
+239                     	endtask
+240                     
+241                     	task ddr_rd_edge;
+242                     		begin
+243        <font color = "red">0/1     ==>  			buffer = {buffer, io3_delayed, io2_delayed, io1_delayed, io0_delayed};</font>
+244        <font color = "red">0/1     ==>  			bitcount = bitcount + 4;</font>
+245        <font color = "red">0/1     ==>  			if (bitcount == 8) begin</font>
+246        <font color = "red">0/1     ==>  				bitcount = 0;</font>
+247        <font color = "red">0/1     ==>  				bytecount = bytecount + 1;</font>
+248        <font color = "red">0/1     ==>  				spi_action;</font>
+249                     			end
+                   <font color = "red">==>  MISSING_ELSE</font>
+250                     		end
+251                     	endtask
+252                     
+253                     	task ddr_wr_edge;
+254                     		begin
+255        <font color = "red">0/1     ==>  			io0_oe = 1;</font>
+256        <font color = "red">0/1     ==>  			io1_oe = 1;</font>
+257        <font color = "red">0/1     ==>  			io2_oe = 1;</font>
+258        <font color = "red">0/1     ==>  			io3_oe = 1;</font>
+259                     
+260        <font color = "red">0/1     ==>  			io0_dout = buffer[4];</font>
+261        <font color = "red">0/1     ==>  			io1_dout = buffer[5];</font>
+262        <font color = "red">0/1     ==>  			io2_dout = buffer[6];</font>
+263        <font color = "red">0/1     ==>  			io3_dout = buffer[7];</font>
+264                     
+265        <font color = "red">0/1     ==>  			buffer = {buffer, 4'h 0};</font>
+266        <font color = "red">0/1     ==>  			bitcount = bitcount + 4;</font>
+267        <font color = "red">0/1     ==>  			if (bitcount == 8) begin</font>
+268        <font color = "red">0/1     ==>  				bitcount = 0;</font>
+269        <font color = "red">0/1     ==>  				bytecount = bytecount + 1;</font>
+270        <font color = "red">0/1     ==>  				spi_action;</font>
+271                     			end
+                   <font color = "red">==>  MISSING_ELSE</font>
+272                     		end
+273                     	endtask
+274                     
+275                     	always @(csb) begin
+276        1/1          		if (csb) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+277        1/1          			if (verbose) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+278        <font color = "red">0/1     ==>  				$display(&quot;&quot;);</font>
+279        <font color = "red">0/1     ==>  				$fflush;</font>
+280                     			end
+                        MISSING_ELSE
+281        1/1          			buffer = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+282        1/1          			bitcount = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+283        1/1          			bytecount = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+284        1/1          			mode = mode_spi;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+285        1/1          			io0_oe = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+286        1/1          			io1_oe = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+287        1/1          			io2_oe = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+288        1/1          			io3_oe = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+289                     
+290                     			// Handle MBR.  If in XIP continuous mode, the following
+291                     			// 8 clock cycles are normally not expected to be a command.
+292                     			// If followed by CSB high, however, if the address bits
+293                     			// are consistent with io0 == 1 for 8 clk cycles, then an
+294                     			// MBR has been issued and the system must exit XIP
+295                     			// continuous mode.
+296        1/1          			if (xip_cmd == 8'hbb || xip_cmd == 8'heb
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+297                     					|| xip_cmd == 8'hed) begin
+298        <font color = "red">0/1     ==>  				if (reset_count == 4'h8 &amp;&amp; reset_monitor == 4'h8) begin</font>
+299        <font color = "red">0/1     ==>  					xip_cmd = 8'h00;</font>
+300        <font color = "red">0/1     ==>  					spi_cmd = 8'h03;</font>
+301                     				end
+                   <font color = "red">==>  MISSING_ELSE</font>
+302                     			end
+                        MISSING_ELSE
+303                     		end else
+304        1/1          		if (xip_cmd) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+305        <font color = "red">0/1     ==>  			buffer = xip_cmd;</font>
+306        <font color = "red">0/1     ==>  			bitcount = 0;</font>
+307        <font color = "red">0/1     ==>  			bytecount = 1;</font>
+308        <font color = "red">0/1     ==>  			spi_action;</font>
+309                     		end
+                        MISSING_ELSE
+310                     	end
+311                     
+312                     	always @(posedge clk or posedge csb) begin
+313        1/1          		if (csb == 1'b1) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+314        1/1          			reset_count = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+315        1/1          			reset_monitor = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+316                     		end else begin
+317        1/1          			if (reset_count &lt; 4'h9) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+318        1/1          				reset_count = reset_count + 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+319        1/1          				if (io0_delayed == 1'b1) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+320        1/1          				    reset_monitor = reset_monitor + 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+321                     				end
+                        MISSING_ELSE
+322                     			end
+                        MISSING_ELSE
+323                     		end
+324                     	end
+325                     
+326                     	always @(csb, clk) begin
+327        1/1          		spi_io_vld = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+328        1/1          		if (!csb &amp;&amp; !clk) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+329        1/1          			if (dummycount &gt; 0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+330        <font color = "red">0/1     ==>  				io0_oe = 0;</font>
+331        <font color = "red">0/1     ==>  				io1_oe = 0;</font>
+332        <font color = "red">0/1     ==>  				io2_oe = 0;</font>
+333        <font color = "red">0/1     ==>  				io3_oe = 0;</font>
+334                     			end else
+335        1/1          			case (mode)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+336                     				mode_spi: begin
+337        1/1          					io0_oe = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+338        1/1          					io1_oe = 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+339        1/1          					io2_oe = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+340        1/1          					io3_oe = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+341        1/1          					io1_dout = buffer[7];
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+342                     				end
+343                     				mode_dspi_rd: begin
+344        <font color = "red">0/1     ==>  					io0_oe = 0;</font>
+345        <font color = "red">0/1     ==>  					io1_oe = 0;</font>
+346        <font color = "red">0/1     ==>  					io2_oe = 0;</font>
+347        <font color = "red">0/1     ==>  					io3_oe = 0;</font>
+348                     				end
+349                     				mode_dspi_wr: begin
+350        <font color = "red">0/1     ==>  					io0_oe = 1;</font>
+351        <font color = "red">0/1     ==>  					io1_oe = 1;</font>
+352        <font color = "red">0/1     ==>  					io2_oe = 0;</font>
+353        <font color = "red">0/1     ==>  					io3_oe = 0;</font>
+354        <font color = "red">0/1     ==>  					io0_dout = buffer[6];</font>
+355        <font color = "red">0/1     ==>  					io1_dout = buffer[7];</font>
+356                     				end
+357                     				mode_qspi_rd: begin
+358        <font color = "red">0/1     ==>  					io0_oe = 0;</font>
+359        <font color = "red">0/1     ==>  					io1_oe = 0;</font>
+360        <font color = "red">0/1     ==>  					io2_oe = 0;</font>
+361        <font color = "red">0/1     ==>  					io3_oe = 0;</font>
+362                     				end
+363                     				mode_qspi_wr: begin
+364        <font color = "red">0/1     ==>  					io0_oe = 1;</font>
+365        <font color = "red">0/1     ==>  					io1_oe = 1;</font>
+366        <font color = "red">0/1     ==>  					io2_oe = 1;</font>
+367        <font color = "red">0/1     ==>  					io3_oe = 1;</font>
+368        <font color = "red">0/1     ==>  					io0_dout = buffer[4];</font>
+369        <font color = "red">0/1     ==>  					io1_dout = buffer[5];</font>
+370        <font color = "red">0/1     ==>  					io2_dout = buffer[6];</font>
+371        <font color = "red">0/1     ==>  					io3_dout = buffer[7];</font>
+372                     				end
+373                     				mode_qspi_ddr_rd: begin
+374        <font color = "red">0/1     ==>  					ddr_rd_edge;</font>
+375                     				end
+376                     				mode_qspi_ddr_wr: begin
+377        <font color = "red">0/1     ==>  					ddr_wr_edge;</font>
+378                     				end
+                   <font color = "red">==>  MISSING_DEFAULT</font>
+379                     			endcase
+380        1/1          			if (next_mode) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+381        <font color = "red">0/1     ==>  				case (next_mode)</font>
+382                     					mode_qspi_ddr_rd: begin
+383        <font color = "red">0/1     ==>  						io0_oe = 0;</font>
+384        <font color = "red">0/1     ==>  						io1_oe = 0;</font>
+385        <font color = "red">0/1     ==>  						io2_oe = 0;</font>
+386        <font color = "red">0/1     ==>  						io3_oe = 0;</font>
+387                     					end
+388                     					mode_qspi_ddr_wr: begin
+389        <font color = "red">0/1     ==>  						io0_oe = 1;</font>
+390        <font color = "red">0/1     ==>  						io1_oe = 1;</font>
+391        <font color = "red">0/1     ==>  						io2_oe = 1;</font>
+392        <font color = "red">0/1     ==>  						io3_oe = 1;</font>
+393        <font color = "red">0/1     ==>  						io0_dout = buffer[4];</font>
+394        <font color = "red">0/1     ==>  						io1_dout = buffer[5];</font>
+395        <font color = "red">0/1     ==>  						io2_dout = buffer[6];</font>
+396        <font color = "red">0/1     ==>  						io3_dout = buffer[7];</font>
+397                     					end
+                   <font color = "red">==>  MISSING_DEFAULT</font>
+398                     				endcase
+399        <font color = "red">0/1     ==>  				mode = next_mode;</font>
+400        <font color = "red">0/1     ==>  				next_mode = 0;</font>
+401                     			end
+                        MISSING_ELSE
+402                     		end
+                        MISSING_ELSE
+403                     	end
+404                     
+405                     	always @(posedge clk) begin
+406        1/1          		if (!csb) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+407        1/1          			if (dummycount &gt; 0) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+408        <font color = "red">0/1     ==>  				dummycount = dummycount - 1;</font>
+409                     			end else
+410        1/1          			case (mode)
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+411                     				mode_spi: begin
+412        1/1          					buffer = {buffer, io0};
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+413        1/1          					bitcount = bitcount + 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+414        1/1          					if (bitcount == 8) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+415        1/1          						bitcount = 0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+416        1/1          						bytecount = bytecount + 1;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+417        1/1          						spi_action;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+418                     					end
+                        MISSING_ELSE
+419                     				end
+420                     				mode_dspi_rd, mode_dspi_wr: begin
+421        <font color = "red">0/1     ==>  					buffer = {buffer, io1, io0};</font>
+422        <font color = "red">0/1     ==>  					bitcount = bitcount + 2;</font>
+423        <font color = "red">0/1     ==>  					if (bitcount == 8) begin</font>
+424        <font color = "red">0/1     ==>  						bitcount = 0;</font>
+425        <font color = "red">0/1     ==>  						bytecount = bytecount + 1;</font>
+426        <font color = "red">0/1     ==>  						spi_action;</font>
+427                     					end
+                   <font color = "red">==>  MISSING_ELSE</font>
+428                     				end
+429                     				mode_qspi_rd, mode_qspi_wr: begin
+430        <font color = "red">0/1     ==>  					buffer = {buffer, io3, io2, io1, io0};</font>
+431        <font color = "red">0/1     ==>  					bitcount = bitcount + 4;</font>
+432        <font color = "red">0/1     ==>  					if (bitcount == 8) begin</font>
+433        <font color = "red">0/1     ==>  						bitcount = 0;</font>
+434        <font color = "red">0/1     ==>  						bytecount = bytecount + 1;</font>
+435        <font color = "red">0/1     ==>  						spi_action;</font>
+436                     					end
+                   <font color = "red">==>  MISSING_ELSE</font>
+437                     				end
+438                     				mode_qspi_ddr_rd: begin
+439        <font color = "red">0/1     ==>  					ddr_rd_edge;</font>
+440                     				end
+441                     				mode_qspi_ddr_wr: begin
+442        <font color = "red">0/1     ==>  					ddr_wr_edge;</font>
+443                     				end
+                   <font color = "red">==>  MISSING_DEFAULT</font>
+444                     			endcase
+445                     		end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod26.html" >spiflash</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s5"><td class="lf">Conditions</td><td>18</td><td>9</td><td>50.00</td></tr>
+<tr class="s5"><td class="lf">Logical</td><td>18</td><td>9</td><td>50.00</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       91
+ EXPRESSION (io0_oe ? io0_dout : 1'bz)
+             ---1--
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uRed"><td>1</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       92
+ EXPRESSION (io1_oe ? io1_dout : 1'bz)
+             ---1--
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       93
+ EXPRESSION (io2_oe ? io2_dout : 1'bz)
+             ---1--
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uRed"><td>1</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       94
+ EXPRESSION (io3_oe ? io3_dout : 1'bz)
+             ---1--
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uRed"><td>1</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       296
+ EXPRESSION ((xip_cmd == 8'hbb) || (xip_cmd == 8'heb) || (xip_cmd == 8'hed))
+             ---------1--------    ---------2--------    ---------3--------
+</pre>
+<table class="noborder">
+<col span="3" width="40">
+<tr><th>-1-</th><th>-2-</th><th>-3-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td>0</td><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uRed"><td>0</td><td>0</td><td>1</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+<tr class="uRed"><td>0</td><td>1</td><td>0</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+<tr class="uRed"><td>1</td><td>0</td><td>0</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       298
+ EXPRESSION ((reset_count == 4'h8) &amp;&amp; (reset_monitor == 4'h8))
+             ----------1----------    -----------2-----------
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uRed"><td>0</td><td>1</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+<tr class="uRed"><td>1</td><td>0</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+<tr class="uRed"><td>1</td><td>1</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       328
+ EXPRESSION (((!csb)) &amp;&amp; ((!clk)))
+             ----1---    ----2---
+</pre>
+<table class="noborder">
+<col span="2" width="40">
+<tr><th>-1-</th><th>-2-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod26.html" >spiflash</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s4">
+<td>Totals</td>
+<td class="rt">30</td>
+<td class="rt">12</td>
+<td class="rt">40.00 </td>
+</tr><tr class="s5">
+<td>Total Bits</td>
+<td class="rt">200</td>
+<td class="rt">105</td>
+<td class="rt">52.50 </td>
+</tr><tr class="s5">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">100</td>
+<td class="rt">53</td>
+<td class="rt">53.00 </td>
+</tr><tr class="s5">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">100</td>
+<td class="rt">52</td>
+<td class="rt">52.00 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Ports</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s6">
+<td>Port Bits</td>
+<td class="rt">12</td>
+<td class="rt">8</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s6">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr><tr class="s6">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">6</td>
+<td class="rt">4</td>
+<td class="rt">66.67 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s3">
+<td>Signals</td>
+<td class="rt">24</td>
+<td class="rt">8</td>
+<td class="rt">33.33 </td>
+</tr><tr class="s5">
+<td>Signal Bits</td>
+<td class="rt">188</td>
+<td class="rt">97</td>
+<td class="rt">51.60 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">94</td>
+<td class="rt">49</td>
+<td class="rt">52.13 </td>
+</tr><tr class="s5">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">94</td>
+<td class="rt">48</td>
+<td class="rt">51.06 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td><td class="alfsrt">Direction</td></tr><tr>
+<td>csb</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>clk</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>io0</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INOUT</td>
+</tr><tr>
+<td>io1</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INOUT</td>
+</tr><tr>
+<td>io2</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INOUT</td>
+</tr><tr>
+<td>io3</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INOUT</td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td></tr><tr>
+<td>buffer[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>reset_count[3:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>reset_monitor[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>reset_monitor[3:2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>spi_cmd[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>xip_cmd[7:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>spi_addr[13:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>spi_addr[23:14]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>spi_in[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>spi_out[7:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>spi_io_vld</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>powered_up</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>mode[0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>mode[3:1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>next_mode[3:0]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io0_oe</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io1_oe</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>io2_oe</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io3_oe</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io0_dout</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io1_dout</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>io2_dout</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io3_dout</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io0_delayed</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>io1_delayed</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr>
+<td>io2_delayed</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>io3_delayed</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod26.html" >spiflash</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s4">
+<td>Branches</td>
+<td></td>
+<td class="rt">44</td>
+<td class="rt">18</td>
+<td class="rt">40.91 </td>
+</tr><tr class="s5">
+<td>TERNARY</td>
+<td class="rt">91</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s10">
+<td>TERNARY</td>
+<td class="rt">92</td>
+<td class="rt">2</td>
+<td class="rt">2</td>
+<td class="rt">100.00</td>
+</tr><tr class="s5">
+<td>TERNARY</td>
+<td class="rt">93</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s5">
+<td>TERNARY</td>
+<td class="rt">94</td>
+<td class="rt">2</td>
+<td class="rt">1</td>
+<td class="rt">50.00 </td>
+</tr><tr class="s4">
+<td>IF</td>
+<td class="rt">276</td>
+<td class="rt">7</td>
+<td class="rt">3</td>
+<td class="rt">42.86 </td>
+</tr><tr class="s10">
+<td>IF</td>
+<td class="rt">313</td>
+<td class="rt">4</td>
+<td class="rt">4</td>
+<td class="rt">100.00</td>
+</tr><tr class="s2">
+<td>IF</td>
+<td class="rt">328</td>
+<td class="rt">14</td>
+<td class="rt">3</td>
+<td class="rt">21.43 </td>
+</tr><tr class="s2">
+<td>IF</td>
+<td class="rt">406</td>
+<td class="rt">11</td>
+<td class="rt">3</td>
+<td class="rt">27.27 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+91         	assign #1 io0 = io0_oe ? io0_dout : 1'bz;
+           	                       <font color = "red">-1-</font>  
+           	                       <font color = "red">==></font>  
+           	                       <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+92         	assign #1 io1 = io1_oe ? io1_dout : 1'bz;
+           	                       <font color = "green">-1-</font>  
+           	                       <font color = "green">==></font>  
+           	                       <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+93         	assign #1 io2 = io2_oe ? io2_dout : 1'bz;
+           	                       <font color = "red">-1-</font>  
+           	                       <font color = "red">==></font>  
+           	                       <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+94         	assign #1 io3 = io3_oe ? io3_dout : 1'bz;
+           	                       <font color = "red">-1-</font>  
+           	                       <font color = "red">==></font>  
+           	                       <font color = "green">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+276        		if (csb) begin
+           		<font color = "green">-1-</font>  
+277        			if (verbose) begin
+           			<font color = "red">-2-</font>  
+278        				$display("");
+           <font color = "red">				==></font>
+279        				$fflush;
+280        			end
+           			MISSING_ELSE
+           <font color = "green">			==></font>
+281        			buffer = 0;
+282        			bitcount = 0;
+283        			bytecount = 0;
+284        			mode = mode_spi;
+285        			io0_oe = 0;
+286        			io1_oe = 0;
+287        			io2_oe = 0;
+288        			io3_oe = 0;
+289        
+290        			// Handle MBR.  If in XIP continuous mode, the following
+291        			// 8 clock cycles are normally not expected to be a command.
+292        			// If followed by CSB high, however, if the address bits
+293        			// are consistent with io0 == 1 for 8 clk cycles, then an
+294        			// MBR has been issued and the system must exit XIP
+295        			// continuous mode.
+296        			if (xip_cmd == 8'hbb || xip_cmd == 8'heb
+           			<font color = "red">-3-</font>  
+297        					|| xip_cmd == 8'hed) begin
+298        				if (reset_count == 4'h8 && reset_monitor == 4'h8) begin
+           				<font color = "red">-4-</font>  
+299        					xip_cmd = 8'h00;
+           <font color = "red">					==></font>
+300        					spi_cmd = 8'h03;
+301        				end
+           				MISSING_ELSE
+           <font color = "red">				==></font>
+302        			end
+           			MISSING_ELSE
+           <font color = "green">			==></font>
+303        		end else
+304        		if (xip_cmd) begin
+           		<font color = "red">-5-</font>  
+305        			buffer = xip_cmd;
+           <font color = "red">			==></font>
+306        			bitcount = 0;
+307        			bytecount = 1;
+308        			spi_action;
+309        		end
+           		MISSING_ELSE
+           <font color = "green">		==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+313        		if (csb == 1'b1) begin
+           		<font color = "green">-1-</font>  
+314        			reset_count = 0;
+           <font color = "green">			==></font>
+315        			reset_monitor = 0;
+316        		end else begin
+317        			if (reset_count < 4'h9) begin
+           			<font color = "green">-2-</font>  
+318        				reset_count = reset_count + 1;
+319        				if (io0_delayed == 1'b1) begin
+           				<font color = "green">-3-</font>  
+320        				    reset_monitor = reset_monitor + 1;
+           <font color = "green">				    ==></font>
+321        				end
+           				MISSING_ELSE
+           <font color = "green">				==></font>
+322        			end
+           			MISSING_ELSE
+           <font color = "green">			==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+328        		if (!csb && !clk) begin
+           		<font color = "green">-1-</font>  
+329        			if (dummycount > 0) begin
+           			<font color = "red">-2-</font>  
+330        				io0_oe = 0;
+           <font color = "red">				==></font>
+331        				io1_oe = 0;
+332        				io2_oe = 0;
+333        				io3_oe = 0;
+334        			end else
+335        			case (mode)
+           			<font color = "red">-3-</font>  
+336        				mode_spi: begin
+337        					io0_oe = 0;
+           <font color = "green">					==></font>
+338        					io1_oe = 1;
+339        					io2_oe = 0;
+340        					io3_oe = 0;
+341        					io1_dout = buffer[7];
+342        				end
+343        				mode_dspi_rd: begin
+344        					io0_oe = 0;
+           <font color = "red">					==></font>
+345        					io1_oe = 0;
+346        					io2_oe = 0;
+347        					io3_oe = 0;
+348        				end
+349        				mode_dspi_wr: begin
+350        					io0_oe = 1;
+           <font color = "red">					==></font>
+351        					io1_oe = 1;
+352        					io2_oe = 0;
+353        					io3_oe = 0;
+354        					io0_dout = buffer[6];
+355        					io1_dout = buffer[7];
+356        				end
+357        				mode_qspi_rd: begin
+358        					io0_oe = 0;
+           <font color = "red">					==></font>
+359        					io1_oe = 0;
+360        					io2_oe = 0;
+361        					io3_oe = 0;
+362        				end
+363        				mode_qspi_wr: begin
+364        					io0_oe = 1;
+           <font color = "red">					==></font>
+365        					io1_oe = 1;
+366        					io2_oe = 1;
+367        					io3_oe = 1;
+368        					io0_dout = buffer[4];
+369        					io1_dout = buffer[5];
+370        					io2_dout = buffer[6];
+371        					io3_dout = buffer[7];
+372        				end
+373        				mode_qspi_ddr_rd: begin
+374        					ddr_rd_edge;
+           <font color = "red">					==></font>
+375        				end
+376        				mode_qspi_ddr_wr: begin
+377        					ddr_wr_edge;
+           <font color = "red">					==></font>
+378        				end
+           				MISSING_DEFAULT
+           <font color = "red">				==></font>
+379        			endcase
+380        			if (next_mode) begin
+           			<font color = "red">-4-</font>  
+381        				case (next_mode)
+           				<font color = "red">-5-</font>  
+382        					mode_qspi_ddr_rd: begin
+383        						io0_oe = 0;
+           <font color = "red">						==></font>
+384        						io1_oe = 0;
+385        						io2_oe = 0;
+386        						io3_oe = 0;
+387        					end
+388        					mode_qspi_ddr_wr: begin
+389        						io0_oe = 1;
+           <font color = "red">						==></font>
+390        						io1_oe = 1;
+391        						io2_oe = 1;
+392        						io3_oe = 1;
+393        						io0_dout = buffer[4];
+394        						io1_dout = buffer[5];
+395        						io2_dout = buffer[6];
+396        						io3_dout = buffer[7];
+397        					end
+           					MISSING_DEFAULT
+           <font color = "red">					==></font>
+398        				endcase
+399        				mode = next_mode;
+400        				next_mode = 0;
+401        			end
+           			MISSING_ELSE
+           <font color = "green">			==></font>
+402        		end
+           		MISSING_ELSE
+           <font color = "green">		==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_spi </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_dspi_rd </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_dspi_wr </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_rd </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_wr </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_ddr_rd </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_ddr_wr </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>MISSING_DEFAULT</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>mode_qspi_ddr_rd </td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>mode_qspi_ddr_wr </td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>MISSING_DEFAULT</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+406        		if (!csb) begin
+           		<font color = "green">-1-</font>  
+407        			if (dummycount > 0) begin
+           			<font color = "red">-2-</font>  
+408        				dummycount = dummycount - 1;
+           <font color = "red">				==></font>
+409        			end else
+410        			case (mode)
+           			<font color = "red">-3-</font>  
+411        				mode_spi: begin
+412        					buffer = {buffer, io0};
+413        					bitcount = bitcount + 1;
+414        					if (bitcount == 8) begin
+           					<font color = "green">-4-</font>  
+415        						bitcount = 0;
+           <font color = "green">						==></font>
+416        						bytecount = bytecount + 1;
+417        						spi_action;
+418        					end
+           					MISSING_ELSE
+           <font color = "green">					==></font>
+419        				end
+420        				mode_dspi_rd, mode_dspi_wr: begin
+421        					buffer = {buffer, io1, io0};
+422        					bitcount = bitcount + 2;
+423        					if (bitcount == 8) begin
+           					<font color = "red">-5-</font>  
+424        						bitcount = 0;
+           <font color = "red">						==></font>
+425        						bytecount = bytecount + 1;
+426        						spi_action;
+427        					end
+           					MISSING_ELSE
+           <font color = "red">					==></font>
+428        				end
+429        				mode_qspi_rd, mode_qspi_wr: begin
+430        					buffer = {buffer, io3, io2, io1, io0};
+431        					bitcount = bitcount + 4;
+432        					if (bitcount == 8) begin
+           					<font color = "red">-6-</font>  
+433        						bitcount = 0;
+           <font color = "red">						==></font>
+434        						bytecount = bytecount + 1;
+435        						spi_action;
+436        					end
+           					MISSING_ELSE
+           <font color = "red">					==></font>
+437        				end
+438        				mode_qspi_ddr_rd: begin
+439        					ddr_rd_edge;
+           <font color = "red">					==></font>
+440        				end
+441        				mode_qspi_ddr_wr: begin
+442        					ddr_wr_edge;
+           <font color = "red">					==></font>
+443        				end
+           				MISSING_DEFAULT
+           <font color = "red">				==></font>
+444        			endcase
+445        		end
+           		MISSING_ELSE
+           <font color = "green">		==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_spi </td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_spi </td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_dspi_rd mode_dspi_wr </td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_dspi_rd mode_dspi_wr </td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_rd mode_qspi_wr </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_rd mode_qspi_wr </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_ddr_rd </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>mode_qspi_ddr_wr </td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center>MISSING_DEFAULT</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/cpu_reset">T5</span>,<span title = "compilation/simv/mgmt_pass_thru_rd">T6</span></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_1730">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_spiflash">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module :: digital_pll_controller</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div class="logo"></div>
+<center class="pagetitle">Module Definition</center>
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+
+</div>
+<div class="ui-layout-west">
+<div name='tag_digital_pll_controller'>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module : <a href="#"  onclick="showContent('tag_digital_pll_controller')">digital_pll_controller</a></span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s9 cl rt"> 90.01</td>
+<td class="s9 cl rt"><a href="mod49.html#Line" > 90.00</a></td>
+<td class="s9 cl rt"><a href="mod49.html#Cond" > 98.08</a></td>
+<td class="s8 cl rt"><a href="mod49.html#Toggle" > 83.09</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod49.html#Branch" > 88.89</a></td>
+</tr></table><br clear=all>
+<span class=repname>Source File(s) : </span>
+<br clear=all>
+<a href="javascript:void(0);"  onclick="openSrcFile('/home/rady/caravel/package/caravel/verilog/rtl/digital_pll_controller.v')">/home/rady/caravel/package/caravel/verilog/rtl/digital_pll_controller.v</a><br clear=all>
+<br clear=all>
+<span class=repname>Module self-instances :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod49.html#inst_tag_1972"  onclick="showContent('inst_tag_1972')">caravel_top.uut.chip_core.pll.pll_control</a></td>
+<td class="s9 cl rt"> 90.01</td>
+<td class="s9 cl rt"><a href="mod49.html#Line" > 90.00</a></td>
+<td class="s9 cl rt"><a href="mod49.html#Cond" > 98.08</a></td>
+<td class="s8 cl rt"><a href="mod49.html#Toggle" > 83.09</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod49.html#Branch" > 88.89</a></td>
+</tr></table></div>
+</div>
+<br clear=all>
+<div name='tag_digital_pll_controller'>
+<hr>
+<a name="inst_tag_1972"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy1.html#tag_urg_inst_1972" >caravel_top.uut.chip_core.pll.pll_control</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s9 cl rt"> 90.01</td>
+<td class="s9 cl rt"><a href="mod49.html#Line" > 90.00</a></td>
+<td class="s9 cl rt"><a href="mod49.html#Cond" > 98.08</a></td>
+<td class="s8 cl rt"><a href="mod49.html#Toggle" > 83.09</a></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"><a href="mod49.html#Branch" > 88.89</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s9 cl rt"> 90.01</td>
+<td class="s9 cl rt"> 90.00</td>
+<td class="s9 cl rt"> 98.08</td>
+<td class="s8 cl rt"> 83.09</td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 88.89</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s9 cl rt"> 97.72</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 93.16</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+<td><a href="mod9.html#inst_tag_146" >pll</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td colspan=7>no children</td>
+</tr></table><br clear=all>
+</div>
+</div>
+<hr>
+Since this is the module's only instance, the coverage report is the same as for the module.</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<div name='tag_digital_pll_controller'>
+<a name="Line"></a>
+Line Coverage for Module : <a href="mod49.html" >digital_pll_controller</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="4" width="82">
+<tr><th></th><th>Line No.</th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">TOTAL</td><td></td><td>20</td><td>18</td><td>90.00</td></tr>
+<tr class="s9"><td class="lf">ALWAYS</td><td>101</td><td>20</td><td>18</td><td>90.00</td></tr>
+</table>
+<pre class="code"><br clear=all>
+100                         always @(posedge clock or posedge reset) begin
+101        1/1              if (reset == 1'b1) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+102        1/1                  tval &lt;= 7'd0;	// Note:  trim[0] must be zero for startup to work.
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+103        1/1                  oscbuf &lt;= 3'd0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+104        1/1                  prep &lt;= 3'd0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+105        1/1                  count0 &lt;= 5'd0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+106        1/1                  count1 &lt;= 5'd0;
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+107                     
+108                         end else begin
+109        1/1                  oscbuf &lt;= {oscbuf[1:0], osc};
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+110                     
+111        1/1                  if (oscbuf[2] != oscbuf[1]) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+112        1/1                  count1 &lt;= count0;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+113        1/1                  count0 &lt;= 5'b00001;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+114        1/1                  prep &lt;= {prep[1:0], 1'b1};
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+115                     
+116        1/1                  if (prep == 3'b111) begin
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+117        1/1                      if (sum &gt; div) begin
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+118        1/1          		if (tval &lt; 127) begin
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+119        1/1                      	    tval &lt;= tval + 1;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+120                     		end
+                   <font color = "red">==>  MISSING_ELSE</font>
+121        1/1                      end else if (sum &lt; div) begin
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+122        <font color = "red">0/1     ==>  		if (tval &gt; 0) begin</font>
+123        <font color = "red">0/1     ==>              	    tval &lt;= tval - 1;</font>
+124                     		end
+                   <font color = "red">==>  MISSING_ELSE</font>
+125                                 end
+                        MISSING_ELSE
+126                             end
+                        MISSING_ELSE
+127                             end else begin
+128        1/1                  if (count0 != 5'b11111) begin
+           Tests:       <span title = "compilation/simv/user0_irq">T1</span>&nbsp;<span title = "compilation/simv/spi_master_rd">T2</span>&nbsp;<span title = "compilation/simv/bitbang_spi_i">T3</span>&nbsp;
+129        1/1                          count0 &lt;= count0 + 1;
+           Tests:       <span title = "compilation/simv/hk_disable">T4</span>&nbsp;
+130                             end
+                        MISSING_ELSE
+</pre>
+<hr>
+<a name="Cond"></a>
+Cond Coverage for Module : <a href="mod49.html" >digital_pll_controller</a><br clear=all>
+<table class="noborder">
+<col width="122">
+<col span="3" width="82">
+<tr><th></th><th>Total</th><th>Covered</th><th>Percent</th></tr>
+<tr class="s9"><td class="lf">Conditions</td><td>52</td><td>51</td><td>98.08</td></tr>
+<tr class="s9"><td class="lf">Logical</td><td>52</td><td>51</td><td>98.08</td></tr>
+<tr class="wht"><td class="lf">Non-Logical</td><td>0</td><td>0</td><td></td></tr>
+<tr class="wht"><td class="lf">Event</td><td>0</td><td>0</td><td></td></tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ EXPRESSION 
+ Number  Term
+      1  (tint == 5'b0) ? 26'b0 : ((tint == 5'b1) ? 26'b1 : ((tint == 5'd2) ? 26'b00000000000000000001000001 : ((tint == 5'd3) ? 26'b00000000000000010001000001 : ((tint == 5'd4) ? 26'b00000000000000010001001001 : ((tint == 5'd5) ? 26'b00000000000000010101001001 : ((tint == 5'd6) ? 26'b00000000000001010101001001 : ((tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'b1) ? 26'b1 : ((tint == 5'd2) ? 26'b00000000000000000001000001 : ((tint == 5'd3) ? 26'b00000000000000010001000001 : ((tint == 5'd4) ? 26'b00000000000000010001001001 : ((tint == 5'd5) ? 26'b00000000000000010101001001 : ((tint == 5'd6) ? 26'b00000000000001010101001001 : ((tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd2) ? 26'b00000000000000000001000001 : ((tint == 5'd3) ? 26'b00000000000000010001000001 : ((tint == 5'd4) ? 26'b00000000000000010001001001 : ((tint == 5'd5) ? 26'b00000000000000010101001001 : ((tint == 5'd6) ? 26'b00000000000001010101001001 : ((tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd3) ? 26'b00000000000000010001000001 : ((tint == 5'd4) ? 26'b00000000000000010001001001 : ((tint == 5'd5) ? 26'b00000000000000010101001001 : ((tint == 5'd6) ? 26'b00000000000001010101001001 : ((tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd4) ? 26'b00000000000000010001001001 : ((tint == 5'd5) ? 26'b00000000000000010101001001 : ((tint == 5'd6) ? 26'b00000000000001010101001001 : ((tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd5) ? 26'b00000000000000010101001001 : ((tint == 5'd6) ? 26'b00000000000001010101001001 : ((tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd6) ? 26'b00000000000001010101001001 : ((tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd7) ? 26'b00000000000001010101101001 : ((tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd8) ? 26'b00000000000001010101101101 : ((tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd9) ? 26'b00000000000001011101101101 : ((tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd10) ? 26'b00000000000001011101111101 : ((tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd11) ? 26'b00000000000001111101111101 : ((tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd12) ? 26'b00000000000001111101111111 : ((tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd13) ? 26'b00000000000001111111111111 : ((tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd14) ? 26'b00000000000011111111111111 : ((tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd15) ? 26'b00000010000011111111111111 : ((tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd16) ? 26'b00100010000011111111111111 : ((tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd17) ? 26'b00100010010011111111111111 : ((tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd18) ? 26'b00101010010011111111111111 : ((tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd19) ? 26'b10101010010011111111111111 : ((tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd20) ? 26'b10101011010011111111111111 : ((tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd21) ? 26'b10101011011011111111111111 : ((tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd22) ? 26'b10111011011011111111111111 : ((tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION 
+ Number  Term
+      1  (tint == 5'd23) ? 26'b10111011111011111111111111 : ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)))
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION ((tint == 5'd24) ? 26'b11111011111011111111111111 : ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111))
+                 -------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uGreen"><td>0</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<br clear=all>
+<pre class="code"> LINE       72
+ SUB-EXPRESSION ((tint == 5'd25) ? 26'b11111011111111111111111111 : 26'b11111111111111111111111111)
+                 -------1-------
+</pre>
+<table class="noborder">
+<col width="40">
+<tr><th>-1-</th><th>Status</th><th>Tests</th></tr>
+<tr class="uRed"><td>0</td><td class="lf">Not Covered</td><td class="lf"></td>
+</tr>
+<tr class="uGreen"><td>1</td><td class="lf">Covered</td><td class="lf"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr>
+</table>
+<hr>
+<a name="Toggle"></a>
+Toggle Coverage for Module : <a href="mod49.html" >digital_pll_controller</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s5">
+<td>Totals</td>
+<td class="rt">12</td>
+<td class="rt">7</td>
+<td class="rt">58.33 </td>
+</tr><tr class="s8">
+<td>Total Bits</td>
+<td class="rt">136</td>
+<td class="rt">113</td>
+<td class="rt">83.09 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 0->1</td>
+<td class="rt">68</td>
+<td class="rt">57</td>
+<td class="rt">83.82 </td>
+</tr><tr class="s8">
+<td nowrap>Total Bits 1->0</td>
+<td class="rt">68</td>
+<td class="rt">56</td>
+<td class="rt">82.35 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s6">
+<td>Ports</td>
+<td class="rt">5</td>
+<td class="rt">3</td>
+<td class="rt">60.00 </td>
+</tr><tr class="s9">
+<td>Port Bits</td>
+<td class="rt">68</td>
+<td class="rt">63</td>
+<td class="rt">92.65 </td>
+</tr><tr class="s9">
+<td nowrap>Port Bits 0->1</td>
+<td class="rt">34</td>
+<td class="rt">32</td>
+<td class="rt">94.12 </td>
+</tr><tr class="s9">
+<td nowrap>Port Bits 1->0</td>
+<td class="rt">34</td>
+<td class="rt">31</td>
+<td class="rt">91.18 </td>
+</tr></table><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80></th><th nowrap width=80></th><th nowrap width=80></th></tr><tr class="s5">
+<td>Signals</td>
+<td class="rt">7</td>
+<td class="rt">4</td>
+<td class="rt">57.14 </td>
+</tr><tr class="s7">
+<td>Signal Bits</td>
+<td class="rt">68</td>
+<td class="rt">50</td>
+<td class="rt">73.53 </td>
+</tr><tr class="s7">
+<td nowrap>Signal Bits 0->1</td>
+<td class="rt">34</td>
+<td class="rt">25</td>
+<td class="rt">73.53 </td>
+</tr><tr class="s7">
+<td nowrap>Signal Bits 1->0</td>
+<td class="rt">34</td>
+<td class="rt">25</td>
+<td class="rt">73.53 </td>
+</tr></table><br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Port Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td><td class="alfsrt">Direction</td></tr><tr>
+<td>reset</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>clock</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>osc</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>div[0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_wb_cpu">*T53</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_wb_cpu">T53</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>div[1]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_wb_cpu">T53</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>div[2]</td>
+<td class="s3 cl">No</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">*T19</span>,<span title = "compilation/simv/hk_regs_wr_wb_cpu">*T53</span></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>INPUT</td>
+</tr><tr>
+<td>div[3]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_spi">T19</span>,<span title = "compilation/simv/hk_regs_wr_wb_cpu">T53</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>div[4]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_wb_cpu">T53</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_regs_wr_wb_cpu">T53</span></td>
+<td>INPUT</td>
+</tr><tr>
+<td>trim[19:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>trim[20]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td>OUTPUT</td>
+</tr><tr>
+<td>trim[25:21]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td>OUTPUT</td>
+</tr></table><br clear=all>
+*Tests covering at least one bit in the range<br clear=all>
+<table align=left class="sortable noborder">
+<caption><b>Signal Details</b></caption>
+<tr class="sortablehead">
+<td class="alfsrt">Name</td><td class="alfsrt">Toggle</td><td class="alfsrt">Toggle 1->0</td><td class="alfsrt">Tests</td><td class="alfsrt">Toggle 0->1</td><td class="alfsrt">Tests</td></tr><tr>
+<td>oscbuf[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>prep[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>count0[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>count0[4:2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>count1[1:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>count1[4:2]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr><tr>
+<td>tval[6:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>tint[4:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>sum[2:0]</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+<td class="s9 cl">Yes</td>
+<td class="s9 cl"><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr>
+<td>sum[5:3]</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+<td class="s3 cl">No</td>
+<td class="s3 cl"></td>
+</tr></table><br clear=all>
+<hr>
+<a name="Branch"></a>
+Branch Coverage for Module : <a href="mod49.html" >digital_pll_controller</a><br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=120></th><th nowrap width=80>Line No.</th><th nowrap width=80>Total</th><th nowrap width=80>Covered</th><th nowrap width=80>Percent</th></tr><tr class="s8">
+<td>Branches</td>
+<td></td>
+<td class="rt">36</td>
+<td class="rt">32</td>
+<td class="rt">88.89 </td>
+</tr><tr class="s9">
+<td>TERNARY</td>
+<td class="rt">72</td>
+<td class="rt">27</td>
+<td class="rt">26</td>
+<td class="rt">96.30 </td>
+</tr><tr class="s6">
+<td>IF</td>
+<td class="rt">101</td>
+<td class="rt">9</td>
+<td class="rt">6</td>
+<td class="rt">66.67 </td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+72             assign trim = (tint == 5'd0)  ? 26'b0000000000000_0000000000000 :
+                                             <font color = "green">-1-</font>  
+                                             <font color = "green">==></font>  
+73                   (tint == 5'd1)  ? 26'b0000000000000_0000000000001 :
+                                     <font color = "green">-2-</font>  
+                                     <font color = "green">==></font>  
+74                   (tint == 5'd2)  ? 26'b0000000000000_0000001000001 :
+                                     <font color = "green">-3-</font>  
+                                     <font color = "green">==></font>  
+75                   (tint == 5'd3)  ? 26'b0000000000000_0010001000001 :
+                                     <font color = "green">-4-</font>  
+                                     <font color = "green">==></font>  
+76                   (tint == 5'd4)  ? 26'b0000000000000_0010001001001 :
+                                     <font color = "green">-5-</font>  
+                                     <font color = "green">==></font>  
+77                   (tint == 5'd5)  ? 26'b0000000000000_0010101001001 :
+                                     <font color = "green">-6-</font>  
+                                     <font color = "green">==></font>  
+78                   (tint == 5'd6)  ? 26'b0000000000000_1010101001001 :
+                                     <font color = "green">-7-</font>  
+                                     <font color = "green">==></font>  
+79                   (tint == 5'd7)  ? 26'b0000000000000_1010101101001 :
+                                     <font color = "green">-8-</font>  
+                                     <font color = "green">==></font>  
+80                   (tint == 5'd8)  ? 26'b0000000000000_1010101101101 :
+                                     <font color = "green">-9-</font>  
+                                     <font color = "green">==></font>  
+81                   (tint == 5'd9)  ? 26'b0000000000000_1011101101101 :
+                                     <font color = "green">-10-</font>  
+                                     <font color = "green">==></font>  
+82                   (tint == 5'd10) ? 26'b0000000000000_1011101111101 :
+                                     <font color = "green">-11-</font>  
+                                     <font color = "green">==></font>  
+83                   (tint == 5'd11) ? 26'b0000000000000_1111101111101 :
+                                     <font color = "green">-12-</font>  
+                                     <font color = "green">==></font>  
+84                   (tint == 5'd12) ? 26'b0000000000000_1111101111111 :
+                                     <font color = "green">-13-</font>  
+                                     <font color = "green">==></font>  
+85                   (tint == 5'd13) ? 26'b0000000000000_1111111111111 :
+                                     <font color = "green">-14-</font>  
+                                     <font color = "green">==></font>  
+86                   (tint == 5'd14) ? 26'b0000000000001_1111111111111 :
+                                     <font color = "green">-15-</font>  
+                                     <font color = "green">==></font>  
+87                   (tint == 5'd15) ? 26'b0000001000001_1111111111111 :
+                                     <font color = "green">-16-</font>  
+                                     <font color = "green">==></font>  
+88                   (tint == 5'd16) ? 26'b0010001000001_1111111111111 :
+                                     <font color = "green">-17-</font>  
+                                     <font color = "green">==></font>  
+89                   (tint == 5'd17) ? 26'b0010001001001_1111111111111 :
+                                     <font color = "green">-18-</font>  
+                                     <font color = "green">==></font>  
+90                   (tint == 5'd18) ? 26'b0010101001001_1111111111111 :
+                                     <font color = "green">-19-</font>  
+                                     <font color = "green">==></font>  
+91                   (tint == 5'd19) ? 26'b1010101001001_1111111111111 :
+                                     <font color = "green">-20-</font>  
+                                     <font color = "green">==></font>  
+92                   (tint == 5'd20) ? 26'b1010101101001_1111111111111 :
+                                     <font color = "green">-21-</font>  
+                                     <font color = "green">==></font>  
+93                   (tint == 5'd21) ? 26'b1010101101101_1111111111111 :
+                                     <font color = "green">-22-</font>  
+                                     <font color = "green">==></font>  
+94                   (tint == 5'd22) ? 26'b1011101101101_1111111111111 :
+                                     <font color = "green">-23-</font>  
+                                     <font color = "green">==></font>  
+95                   (tint == 5'd23) ? 26'b1011101111101_1111111111111 :
+                                     <font color = "green">-24-</font>  
+                                     <font color = "green">==></font>  
+96                   (tint == 5'd24) ? 26'b1111101111101_1111111111111 :
+                                     <font color = "green">-25-</font>  
+                                     <font color = "green">==></font>  
+97                   (tint == 5'd25) ? 26'b1111101111111_1111111111111 :
+                                     <font color = "red">-26-</font>  
+                                     <font color = "green">==></font>  
+                                     <font color = "red">==></font>  
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>-9-</th><th nowrap width=80>-10-</th><th nowrap width=80>-11-</th><th nowrap width=80>-12-</th><th nowrap width=80>-13-</th><th nowrap width=80>-14-</th><th nowrap width=80>-15-</th><th nowrap width=80>-16-</th><th nowrap width=80>-17-</th><th nowrap width=80>-18-</th><th nowrap width=80>-19-</th><th nowrap width=80>-20-</th><th nowrap width=80>-21-</th><th nowrap width=80>-22-</th><th nowrap width=80>-23-</th><th nowrap width=80>-24-</th><th nowrap width=80>-25-</th><th nowrap width=80>-26-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center>0</td>
+<td>Not Covered</td>
+<td></td>
+</tr></table><br clear=all>
+<pre class="code"><br clear=all>
+101            if (reset == 1'b1) begin
+               <font color = "green">-1-</font>  
+102                tval <= 7'd0;	// Note:  trim[0] must be zero for startup to work.
+           <font color = "green">        ==></font>
+103                oscbuf <= 3'd0;
+104                prep <= 3'd0;
+105                count0 <= 5'd0;
+106                count1 <= 5'd0;
+107        
+108            end else begin
+109                oscbuf <= {oscbuf[1:0], osc};
+110        
+111                if (oscbuf[2] != oscbuf[1]) begin
+                   <font color = "green">-2-</font>  
+112                count1 <= count0;
+113                count0 <= 5'b00001;
+114                prep <= {prep[1:0], 1'b1};
+115        
+116                if (prep == 3'b111) begin
+                   <font color = "green">-3-</font>  
+117                    if (sum > div) begin
+                       <font color = "green">-4-</font>  
+118        		if (tval < 127) begin
+           		<font color = "red">-5-</font>  
+119                    	    tval <= tval + 1;
+           <font color = "green">            	    ==></font>
+120        		end
+           		MISSING_ELSE
+           <font color = "red">		==></font>
+121                    end else if (sum < div) begin
+                                <font color = "red">-6-</font>  
+122        		if (tval > 0) begin
+           		<font color = "red">-7-</font>  
+123                    	    tval <= tval - 1;
+           <font color = "red">            	    ==></font>
+124        		end
+           		MISSING_ELSE
+           <font color = "red">		==></font>
+125                    end
+                       MISSING_ELSE
+           <font color = "green">            ==></font>
+126                end
+                   MISSING_ELSE
+           <font color = "green">        ==></font>
+127                end else begin
+128                if (count0 != 5'b11111) begin
+                   <font color = "green">-8-</font>  
+129                        count0 <= count0 + 1;
+           <font color = "green">                ==></font>
+130                end
+                   MISSING_ELSE
+           <font color = "green">        ==></font>
+</pre>
+<br clear=all>
+<span class=repname>Branches:</span>
+<br clear=all>
+<table align=left class="noborder">
+<tr>
+<th nowrap width=80>-1-</th><th nowrap width=80>-2-</th><th nowrap width=80>-3-</th><th nowrap width=80>-4-</th><th nowrap width=80>-5-</th><th nowrap width=80>-6-</th><th nowrap width=80>-7-</th><th nowrap width=80>-8-</th><th nowrap width=80>Status</th><th nowrap width=80>Tests</th></tr><tr class="uGreen">
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uRed">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td>Not Covered</td>
+<td></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>1</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>1</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/hk_disable">T4</span></td>
+</tr><tr class="uGreen">
+<td align=center>0</td>
+<td align=center>0</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center nowrap>-</td>
+<td align=center>0</td>
+<td>Covered</td>
+<td><span title = "compilation/simv/user0_irq">T1</span>,<span title = "compilation/simv/spi_master_rd">T2</span>,<span title = "compilation/simv/bitbang_spi_i">T3</span></td>
+</tr></table><br clear=all>
+</div>
+</div>
+<div class="ui-layout-center-inner-north">
+<div id="center-bread-crumb" class="breadCrumb module urg-margin-bottom">
+  <ul name="inst_tag_1972">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+  <ul name="tag_digital_pll_controller">
+    <li>
+      <a href="#Line">Line</a>    </li>
+    <li>
+      <a href="#Cond">Cond</a>    </li>
+    <li>
+      <a href="#Toggle">Toggle</a>    </li>
+    <li>
+      <a href="#Branch">Branch</a>    </li>
+  </ul>
+</div>
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>

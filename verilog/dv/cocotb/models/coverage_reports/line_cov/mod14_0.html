@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Author" content="<username>"> <meta name="GENERATOR" content="urg/version [en] (platform name) [urg]">
+<title>Unified Coverage Report :: Module Instance :: caravel_top.uut.chip_core.soc.core</title>
+<link type="text/css" rel="stylesheet" href="css/.urg.css">
+<link type="text/css" rel="stylesheet" href="css/.layout.css">
+<link type="text/css" rel="stylesheet" href="css/.breadcrumb.css">
+<script type="text/javascript" src="js/.jquery.js"></script>
+<script type="text/javascript" src="js/.jquery-ui.js"></script>
+<script type="text/javascript" src="js/.sortable.js"></script>
+<script type="text/javascript" src="js/.colResizable.js"></script>
+<script type="text/javascript" src="js/.layout.js"></script>
+<script type="text/javascript" src="js/.breadcrumb.js"></script>
+<script type="text/javascript">
+var layout, westLayout, centerLayout;
+$(document).ready(function () {
+  if ($("#north-bread-crumb")) {
+    $("#north-bread-crumb").jBreadCrumb({easing:'swing'})
+  }
+  layout = $("body").layout({ 
+    resizable: true,
+    spacing_open: 4,
+    spacing_closed: 4,
+    north: {
+      size: 76
+    },
+    south: {
+      size: 45,
+      initClosed: true
+    },
+    west: {
+      size: 500,
+      resizable: true,
+      initClosed: false
+    }
+  });
+  westLayout = $('div.ui-layout-west').layout({
+    north__paneSelector: ".ui-layout-west-inner-north",
+    center__paneSelector: ".ui-layout-west-inner-center", 
+    north__size: 100,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+  centerLayout = $('div.ui-layout-center').layout({
+    north__paneSelector: ".ui-layout-center-inner-north",
+    center__paneSelector: ".ui-layout-center-inner-center", 
+    north__size: 50,
+    spacing_open: 4,
+    spacing_closed: 4
+  });
+  $("table").colResizable({    liveDrag:true,
+    fixed:false,
+    draggingClass:"dragging"
+  });
+});
+</script>
+</head>
+<body onLoad="initPage();"><div class="ui-layout-north">
+<div align="center"><a href="dashboard.html" ><b>dashboard</b></a> | <a href="hierarchy.html" ><b>hierarchy</b></a> | <a href="modlist.html" ><b>modlist</b></a> | groups | <a href="tests.html" ><b>tests</b></a> | asserts</div>
+</div>
+<div class="ui-layout-west">
+<div class="ui-layout-west-inner-center">
+<div name='inst_tag_1616'>
+<a name="inst_tag_1616"></a>
+<div class=modhdr>
+<br clear=all>
+<span class=titlename>Module Instance : <a href="hierarchy1.html#tag_urg_inst_1616" >caravel_top.uut.chip_core.soc.core</a></span>
+<br clear=all>
+<br clear=all>
+<span class=repname>Instance :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s7 cl rt"> 76.21</td>
+<td class="s9 cl rt"><a href="mod14.html#Line" > 92.56</a></td>
+<td class="wht cl rt"></td>
+<td class="s7 cl rt"><a href="mod14.html#Toggle" > 70.49</a></td>
+<td class="s6 cl rt"><a href="mod14.html#FSM" > 60.00</a></td>
+<td class="s8 cl rt"><a href="mod14.html#Branch" > 81.80</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Instance's subtree :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="s7 cl rt"> 73.62</td>
+<td class="s9 cl rt"> 91.88</td>
+<td class="s7 cl rt"> 75.33</td>
+<td class="s6 cl rt"> 66.16</td>
+<td class="s5 cl rt"> 51.72</td>
+<td class="s8 cl rt"> 83.02</td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Parent : </span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td><td class="alfsrt">NAME</td></tr><tr>
+<td class="s8 cl rt"> 88.29</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td class="s8 cl rt"> 88.29</td>
+<td class="wht cl rt"></td>
+<td class="wht cl rt"></td>
+<td><a href="mod35.html#inst_tag_1845" >soc</a></td>
+</tr></table><br clear=all>
+<br clear=all>
+<span class=repname>Subtrees :</span>
+<br clear=all>
+<table align=left>
+<tr class="sortablehead">
+<td class="alfsrt">NAME</td><td>SCORE</td><td>LINE</td><td>COND</td><td>TOGGLE</td><td>FSM</td><td>BRANCH</td></tr><tr>
+<td class="wht cl wordwrap"><a href="mod86.html#inst_tag_4072" id="tag_urg_inst_4072">RAM128</a></td>
+<td class="s9 cl rt"> 99.16</td>
+<td class="s10 cl rt">100.00</td>
+<td class="wht cl rt"></td>
+<td class="s9 cl rt"> 97.47</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod27.html#inst_tag_1731" id="tag_urg_inst_1731">RAM256</a></td>
+<td class="s9 cl rt"> 99.38</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s10 cl rt">100.00</td>
+<td class="s9 cl rt"> 97.50</td>
+<td class="wht cl rt"></td>
+<td class="s10 cl rt">100.00</td>
+</tr><tr>
+<td class="wht cl wordwrap"><a href="mod55.html#inst_tag_2146" id="tag_urg_inst_2146">VexRiscv</a></td>
+<td class="s6 cl rt"> 62.32</td>
+<td class="s9 cl rt"> 90.30</td>
+<td class="s7 cl rt"> 74.95</td>
+<td class="s6 cl rt"> 62.01</td>
+<td class="s0 cl rt">  0.00</td>
+<td class="s8 cl rt"> 84.36</td>
+</tr></table><br clear=all>
+</div>
+</div>
+</div>
+<div class="ui-layout-west-inner-north">
+<a href="mod14.html" >Go back</a><br clear=all>
+<span class=titlename>Module Instances:</span>
+<br clear=all>
+<a href="#inst_tag_1616"  onclick="showContent('inst_tag_1616')">caravel_top.uut.chip_core.soc.core</a><br>
+</div>
+</div>
+<div class="ui-layout-center">
+<div class="ui-layout-center-inner-center">
+<br clear=all>
+<span class=note>Due to its size, the report for this instance has been split into a separate page for each metric. Click on the metric boxes above to see the reports. You can control how reports are split using the -split command-line argument.</span>
+</div>
+<div class="ui-layout-center-inner-north">
+</div>
+</div>
+<div class="ui-layout-south">
+<table align=center><tr><td class="s0 cl">0%</td>
+<td class="s1 cl">10%</td>
+<td class="s2 cl">20%</td>
+<td class="s3 cl">30%</td>
+<td class="s4 cl">40%</td>
+<td class="s5 cl">50%</td>
+<td class="s6 cl">60%</td>
+<td class="s7 cl">70%</td>
+<td class="s8 cl">80%</td>
+<td class="s9 cl">90%</td>
+<td class="s10 cl">100%</td></tr></table></div>
+</body>
+</html>
