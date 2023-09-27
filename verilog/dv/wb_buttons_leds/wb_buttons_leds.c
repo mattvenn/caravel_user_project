@@ -76,6 +76,9 @@ void main()
 	reg_mprj_xfer = 1;
 	while (reg_mprj_xfer == 1);
 
+	/* enable wishbone - needed for MPW2 onwards) */
+	reg_wb_enable=1;
+	
     // wait for all 3 buttons to get pressed
     while (reg_wb_buttons != 7);
 
