@@ -14,17 +14,17 @@ void main(){
     enableHkSpi(0);
 
     // Configure LA probes [63:32] and [127:96] as inputs to the cpu 
-	// Configure LA probes [31:0] and [63:32] as outputs from the cpu
-    // 0 as input
+    // Configure LA probes [31:0] and [63:32] as outputs from the cpu
+    // 0 as output
     LogicAnalyzer_inputEnable(0,0xFFFFFFFF);
     LogicAnalyzer_outputEnable(0,0x0);
-    // 1 as output 
+    // 1 as input 
     LogicAnalyzer_inputEnable(1,0x0);
     LogicAnalyzer_outputEnable(1,0xFFFFFFFF);
-    // 2 as input
+    // 2 as output
     LogicAnalyzer_inputEnable(2,0xFFFFFFFF);
     LogicAnalyzer_outputEnable(2,0x0);
-    // 3 as output 
+    // 3 as input 
     LogicAnalyzer_inputEnable(3,0x0);
     LogicAnalyzer_outputEnable(3,0xFFFFFFFF);
     // set LA 0,2
